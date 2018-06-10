@@ -1,0 +1,42 @@
+{
+  "name": "mtg-deck-model",
+  "version": "0.0.0",
+  "description": "A module for modelling a Magic the Gathring deck.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "standard --verbose | snazzy",
+    "pretest": "npm run lint",
+    "test": "npm run test:unit",
+    "test:unit": "mocha test/unit/**/*.js",
+    "test:integration": "mocha test/integration/**/*.js",
+    "test:all": "npm run lint && npm run test:unit && npm run test:integration"
+  },
+  "keywords": [
+    "mtg",
+    "magic the gathering"
+  ],
+  "author": "blade <blade@crookedneighbor.com>",
+  "license": "MIT",
+  "dependencies": {
+    "scryfall-client": "^0.5.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "sinon": "^5.1.1",
+    "sinon-chai": "^3.1.0",
+    "snazzy": "^7.1.1",
+    "standard": "^11.0.1"
+  },
+  "standard": {
+    "globals": [
+      "afterEach",
+      "before",
+      "beforeEach",
+      "describe",
+      "context",
+      "expect",
+      "it"
+    ]
+  }
+}
