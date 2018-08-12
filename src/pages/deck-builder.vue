@@ -143,6 +143,20 @@
         <button class="button is-danger is-large" @click="deleteDeck">Delete</button>
       </div>
     </modal>
+
+    <modal :open="isFirstTime" v-on:close-modal="onCloseFirstTimeModal">
+      <h2 class="subtitle">First time here?</h2>
+
+      <div class="content">
+        <p>Hello! Welcome to this deck builder demo. Some things to note:</p>
+
+        <ul class="has-text-left">
+          <li>Your deck will be saved automatically when you make a change, but it is only saved locally to your browser's local storage. There is no database persisting your deck. So if you clear your browser's data, you'll lose your deck.</li>
+          <li>Currently, only one deck can be saved a time.</li>
+          <li>This is very much a work in progress project, so don't be surprised if there are bugs. If you find one, <a class="is-link has-text-blue" href="https://github.com/crookedneighbor/mtg-deck-builder-demo/issues">kindly report it on Github</a>.</li>
+        </ul>
+      </div>
+    </modal>
   </div>
 </template>
 
@@ -302,6 +316,11 @@ export default {
     onCloseSettingsModal() {
       this.shouldShowSettingsModal = false
     },
+    onCloseFirstTimeModal() {
+      this.isFirstTime = false
+      this.saveDeck()
+      this.$forceUpdate()
+    },
     onSaveDeck() {
       this.saveDeck()
     },
@@ -412,7 +431,11 @@ export default {
       autosize(document.querySelector('textarea#deck-description'))
     }, 100)
 
-    this.loadDeck()
+    if (!window.localStorage.getItem('deck')) {
+      this.isFirstTime = true;
+    } else {
+      this.loadDeck()
+    }
   }
 }
 </script>
