@@ -165,6 +165,7 @@ const CardList = require('../components/card-list.vue')
 const Modal = require('../components/modal.vue')
 const searchForCards = require('../lib/scryfall').searchForCards
 const formatCard = require('../lib/scryfall').formatCard
+const state = require('../lib/state')
 const autosize = require('autosize')
 
 const MISSING_CARD_IMAGE = require('../lib/constants').MISSING_CARD_IMAGE
@@ -328,27 +329,20 @@ export default {
       this.selectedCard = card
     },
     saveDeck() {
-      window.localStorage.setItem('deck', JSON.stringify({
+      state.save({
         name: this.deckName,
         deckDescription: this.deckDescription,
         format: this.format,
         mainDeck: this.mainDeck,
         sideboard: this.sideboard,
         commandZone: this.commandZone
-      }))
+      })
     },
     loadDeck() {
-      let deck
-      let stringifiedDeck = window.localStorage.getItem('deck')
+      let deck = state.load()
 
-      if (!stringifiedDeck) {
-        return
-      }
-
-      try {
-        deck = JSON.parse(stringifiedDeck)
-      } catch (e) {
-        this.deleteDeck()
+      if (!deck) {
+        state.remove()
         return
       }
 
@@ -368,8 +362,13 @@ export default {
         return
       }
 
-      window.localStorage.removeItem('deck') 
+      state.remove()
 
+      this.resetDefaults()
+
+      this.onCloseSettingsModal()
+    },
+    resetDefaults() {
       this.deckView = 'mainDeck'
       this.secondaryMenuView = 'previewCard'
       this.deckName = ''
@@ -381,8 +380,6 @@ export default {
           this[list].pop()
         }
       })
-
-      this.onCloseSettingsModal()
     },
     hasCommandZone() {
       return this.format === 'commander' || this.format === 'brawl'
