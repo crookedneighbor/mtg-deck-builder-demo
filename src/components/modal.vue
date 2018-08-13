@@ -1,5 +1,5 @@
 <template>
-  <div class="modal" :class="{'is-active': open}">
+  <div class="modal is-active">
     <div class="modal-background" @click="close"></div>
     <div class="modal-content">
       <div class="box">
@@ -15,19 +15,9 @@
 
 <script>
 export default {
-  props: ['open'],
-  data () {
-    return {
-    }
-  },
-  computed: {
-    active() {
-      return this.open
-    }
-  },
   methods: {
     close() {
-      this.$emit('close-modal')
+      this.$emit('close')
     }
   }
 }
@@ -35,4 +25,3 @@ export default {
 
 <style scoped>
 </style>
-

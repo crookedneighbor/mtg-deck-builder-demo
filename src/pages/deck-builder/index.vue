@@ -2,7 +2,7 @@
   <div id="deck-builder" class="columns">
     <div id="deck-list" class="column is-three-fifths">
       <div id="deck-name" class="box">
-        <button id="settings-button" class="button is-outlined is-small" @click="openSettingsModal">
+        <button id="settings-button" class="button is-outlined is-small" @click="shouldShowSettingsModal = true">
           <i class="icon fa fa-sliders-h"></i>
           <span>Settings</span>
         </button>
@@ -112,7 +112,7 @@
       </div>
     </div>
 
-    <modal :open="shouldShowSettingsModal" v-on:close-modal="onCloseSettingsModal">
+    <modal v-if="shouldShowSettingsModal" @close="shouldShowSettingsModal = false">
       <label class="label">Format</label>
       <div class="select">
         <select v-model="format" @change="onFormatChange">
@@ -144,32 +144,20 @@
       </div>
     </modal>
 
-    <modal :open="isFirstTime" v-on:close-modal="onCloseFirstTimeModal">
-      <h2 class="subtitle">First time here?</h2>
-
-      <div class="content">
-        <p>Hello! Welcome to this deck builder demo. Some things to note:</p>
-
-        <ul class="has-text-left">
-          <li>Your deck will be saved automatically when you make a change, but it is only saved locally to your browser's local storage. There is no database persisting your deck. So if you clear your browser's data, you'll lose your deck.</li>
-          <li>Currently, only one deck can be saved a time.</li>
-          <li>As changes are made to the app, your previously saved deck may become incompatible and be lost. Do not rely on this deck builder until it goes out of Beta.</li>
-          <li>This is very much a work in progress project, so don't be surprised if there are bugs. If you find one, <a class="has-text-weight-bold" href="https://github.com/crookedneighbor/mtg-deck-builder-demo/issues">kindly report it on Github</a>.</li>
-        </ul>
-      </div>
-    </modal>
+    <first-time-modal></first-time-modal>
   </div>
 </template>
 
 <script>
-const CardList = require('../components/card-list.vue')
-const Modal = require('../components/modal.vue')
-const searchForCards = require('../lib/scryfall').searchForCards
-const formatCard = require('../lib/scryfall').formatCard
-const state = require('../lib/state')
+const CardList = require('../../components/card-list.vue')
+const Modal = require('../../components/modal.vue')
+const FirstTimeModal = require('./first-time-modal.vue')
+const searchForCards = require('../../lib/scryfall').searchForCards
+const formatCard = require('../../lib/scryfall').formatCard
+const state = require('../../lib/state')
 const autosize = require('autosize')
 
-const MISSING_CARD_IMAGE = require('../lib/constants').MISSING_CARD_IMAGE
+const MISSING_CARD_IMAGE = require('../../lib/constants').MISSING_CARD_IMAGE
 const CARD_LISTS = ['mainDeck', 'sideboard', 'commandZone']
 
 
@@ -200,6 +188,7 @@ export default {
   components: {
     'card-list': CardList,
     'modal': Modal,
+    'first-time-modal': FirstTimeModal,
   },
   data () {
     let defaultData = {
@@ -311,17 +300,6 @@ export default {
       }
 
       this.saveDeck()
-    },
-    openSettingsModal() {
-      this.shouldShowSettingsModal = true
-    },
-    onCloseSettingsModal() {
-      this.shouldShowSettingsModal = false
-    },
-    onCloseFirstTimeModal() {
-      this.isFirstTime = false
-      this.saveDeck()
-      this.$forceUpdate()
     },
     onSaveDeck() {
       this.saveDeck()
