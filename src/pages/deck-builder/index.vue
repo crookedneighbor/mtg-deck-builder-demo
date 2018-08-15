@@ -369,30 +369,6 @@ export default {
       this.saveDeck()
     }
   },
-  computed: {
-    creatures() {
-      let creatures = []
-
-      CARD_LISTS.forEach(list => {
-        this[list].forEach(card => {
-          let types = getTypes(card)
-
-          if (types.indexOf('Creature') > -1) {
-            creatures.push(card)
-          }
-        })
-      })
-
-      return creatures
-    },
-    numberOfCreatures() {
-      return this.creatures.reduce((count, card) => {
-        count += card.quantity
-
-        return count
-      }, 0)
-    }
-  },
   created() {
     setTimeout(function () {
       autosize(document.querySelector('textarea#deck-description'))
