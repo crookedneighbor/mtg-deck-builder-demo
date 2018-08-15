@@ -129,15 +129,6 @@
         </select>
       </div>
 
-      <div v-if="!hasCommandZone()">
-        <hr>
-
-        <label class="checkbox">
-          <input type="checkbox">
-          Always Show Command Zone
-        </label>
-      </div>
-
       <hr>
       <div>
         <button class="button is-danger is-large" @click="deleteDeck">Delete</button>
