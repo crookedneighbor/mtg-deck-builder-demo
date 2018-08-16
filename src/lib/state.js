@@ -26,5 +26,5 @@ function remove () {
 module.exports = {
   save,
   load,
-  remove,
+  remove
 }

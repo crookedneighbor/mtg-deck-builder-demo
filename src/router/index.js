@@ -8,7 +8,7 @@ const DeckBuilder = require('../pages/deck-builder/index.vue')
 const routes = [
   { path: '/', component: DeckBuilder },
   // hack for github pages
-  { path: '/mtg-deck-builder-demo/', component: DeckBuilder },
+  { path: '/mtg-deck-builder-demo/', component: DeckBuilder }
 ]
 
 const router = new VueRouter({

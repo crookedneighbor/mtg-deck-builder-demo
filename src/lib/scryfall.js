@@ -1,19 +1,19 @@
 const ScryfallClient = require('scryfall-client')
 const scryfall = new ScryfallClient()
 
-function findCardByName(name) {
+function findCardByName (name) {
   return scryfall.get('/cards/named', {
     fuzzy: name
   })
 }
 
-function searchForCards(query) {
+function searchForCards (query) {
   return scryfall.get('/cards/search', {
     q: query
   })
 }
 
-function formatCard(response, card = {}) {
+function formatCard (response, card = {}) {
   card.quantity = card.quantity || 1
   card.name = response.name
   card.typeLine = response.type_line
@@ -34,5 +34,5 @@ function formatCard(response, card = {}) {
 module.exports = {
   findCardByName,
   searchForCards,
-  formatCard,
+  formatCard
 }
