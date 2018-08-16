@@ -6,16 +6,17 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production browserify -g envify src/main.js | uglifyjs -c warnings=false -m > dist/build.js",
     "prebuild": "node scripts/build-docs.js",
+
     "build:watch": "watchify -vd -p browserify-hmr -e src/main.js -o dist/build.js",
     "dev": "npm-run-all --parallel build:watch demo",
     "predemo": "npm run build",
     "demo": "http-server -o -s -c 1 -a localhost",
+
+    "cypress:open": "cypress open",
     "lint": "standard --verbose | snazzy",
     "pretest": "npm run lint",
-    "test": "npm run test:unit",
-    "test:unit": "mocha --recursive test/unit/",
-    "test:integration": "mocha test/integration/**/*.js",
-    "test:all": "npm run lint && npm run test:unit && npm run test:integration"
+    "test": "npm run test:integration",
+    "test:integration": "npm run demo & cypress run"
   },
   "keywords": [
     "mtg",
@@ -33,6 +34,7 @@
     "browserify-hmr": "^0.3.6",
     "chai": "^4.1.2",
     "cross-env": "^1.0.6",
+    "cypress": "^3.1.0",
     "envify": "^3.4.1",
     "http-server": "^0.11.1",
     "mkdirp": "^0.5.1",

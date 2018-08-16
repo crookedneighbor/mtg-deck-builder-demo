@@ -12,7 +12,7 @@
       </tr>
       <tr class="new-card">
         <td>
-          <input v-model="newCard" type="text" class="input hidden-input" @keyup.enter="addNew" @blur="addNew" v-bind:placeholder="defaultNumber + ' Card Name'"/>
+          <input data-cy="new-card-input" v-model="newCard" type="text" class="input hidden-input" @keyup.enter="addNew" @blur="addNew" v-bind:placeholder="defaultNumber + ' Card Name'"/>
         </td>
         <td></td>
       </tr>

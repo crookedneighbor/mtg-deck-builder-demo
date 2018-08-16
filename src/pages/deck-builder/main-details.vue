@@ -1,17 +1,17 @@
 <template>
   <div id="deck-name" class="box">
-    <button id="settings-button" class="button is-outlined is-small" @click="shouldShowSettingsModal = true">
+    <button data-cy="settings-button" id="settings-button" class="button is-outlined is-small" @click="shouldShowSettingsModal = true">
       <i class="icon fa fa-sliders-h"></i>
       <span>Settings</span>
     </button>
 
-    <input class="input hidden-input" v-model="name" @blur="saveDeck" @keydown.enter="saveDeck" placeholder="Deck Name"/>
-    <textarea id="deck-description" class="input hidden-input" v-model="description" @blur="saveDeck" @keydown.enter="saveDeck" placeholder="Deck notes."/>
+    <input data-cy="deck-name-input" class="input hidden-input" v-model="name" @blur="saveDeck" @keydown.enter="saveDeck" placeholder="Deck Name"/>
+    <textarea data-cy="deck-description-input" id="deck-description" class="input hidden-input" v-model="description" @blur="saveDeck" @keydown.enter="saveDeck" placeholder="Deck notes."/>
 
     <modal v-if="shouldShowSettingsModal" @close="shouldShowSettingsModal = false">
       <label class="label">Format</label>
       <div class="select">
-        <select v-model="format" @change="onFormatChange">
+        <select data-cy="format-select" v-model="format" @change="onFormatChange">
           <option disabled selected value="">Format</option>
           <option value="brawl">Brawl</option>
           <option value="commander">Commander</option>
@@ -27,7 +27,7 @@
 
       <hr>
       <div>
-        <button class="button is-danger is-large" @click="promptToDeleteDeck">Delete</button>
+        <button data-cy="delete-button" class="button is-danger is-large" @click="promptToDeleteDeck">Delete</button>
       </div>
     </modal>
   </div>

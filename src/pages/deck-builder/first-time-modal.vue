@@ -1,5 +1,5 @@
 <template>
-  <modal v-if="isFirstTime" @close="isFirstTime = false">
+  <modal data-cy="first-time-modal" v-if="isFirstTime" @close="isFirstTime = false">
     <h2 class="subtitle">First time here?</h2>
 
     <div class="content">

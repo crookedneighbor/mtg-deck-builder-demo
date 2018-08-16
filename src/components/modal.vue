@@ -5,7 +5,7 @@
       <div class="box">
         <slot></slot>
         <div class="buttons is-right">
-          <button class="button is-primary" @click="close">Done</button>
+          <button class="modal-button-close button is-primary" @click="close">Done</button>
         </div>
       </div>
     </div>
