@@ -69,7 +69,9 @@
       "describe",
       "context",
       "expect",
-      "it"
+      "it",
+      "cy",
+      "Cypress"
     ],
     "ignore": [
       "dist/build.js"

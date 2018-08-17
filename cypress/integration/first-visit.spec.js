@@ -1,9 +1,9 @@
-describe('First visit', function() {
+describe('First visit', function () {
   beforeEach(function () {
     cy.visit('http://localhost:8080')
   })
 
-  it('shows first visit prompt on first visit', function() {
+  it('shows first visit prompt on first visit', function () {
     cy.get('[data-cy="first-time-modal"] .button').click()
   })
 
@@ -16,7 +16,7 @@ describe('First visit', function() {
 
     cy.reload()
 
-    cy.get('[data-cy="first-time-modal"] .button').should('not.exist');
+    cy.get('[data-cy="first-time-modal"] .button').should('not.exist')
   })
 
   it('shows the first time prompt if pages is reloaded after deleting deck', function () {
@@ -33,6 +33,6 @@ describe('First visit', function() {
 
     cy.reload()
 
-    cy.get('[data-cy="first-time-modal"] .button').should('exist');
+    cy.get('[data-cy="first-time-modal"] .button').should('exist')
   })
 })

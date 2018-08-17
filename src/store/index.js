@@ -79,7 +79,7 @@ const store = new Vuex.Store({
       commit('removeList', 'sideboard')
       commit('removeList', 'commandZone')
     },
-    lookupCard(context, card) {
+    lookupCard (context, card) {
       card.loadInProgress = true
       card.image = card.image || MISSING_CARD_IMAGE
       card.price = card.price || {}
@@ -90,7 +90,7 @@ const store = new Vuex.Store({
         card.loadInProgress = false
       })
     },
-    refetchPendingCards({state, dispatch}) {
+    refetchPendingCards ({state, dispatch}) {
       DECK_LIST_TYPES.forEach((type) => {
         state.deck[type].forEach((card) => {
           if (card.loadInProgress) {

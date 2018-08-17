@@ -1,9 +1,9 @@
-describe('Deck Details', function() {
+describe('Deck Details', function () {
   beforeEach(function () {
     cy.start()
   })
 
-  it('adds save-able deck name', function() {
+  it('adds save-able deck name', function () {
     const name = '[data-cy="deck-name-input"]'
 
     cy.get(name).type('Deck Name').blur()
@@ -15,7 +15,7 @@ describe('Deck Details', function() {
     cy.get(name).should('have.value', 'Deck Name')
   })
 
-  it('adds save-able deck description', function() {
+  it('adds save-able deck description', function () {
     const description = '[data-cy="deck-description-input"]'
 
     cy.get(description).type('Deck description').blur()

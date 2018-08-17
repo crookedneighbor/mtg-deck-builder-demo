@@ -1,4 +1,4 @@
-function extractQuantity(number) {
+function extractQuantity (number) {
   if (!number) {
     return 1
   }
@@ -12,7 +12,7 @@ function extractQuantity(number) {
   return Number(number.trim())
 }
 
-function extractTags(tags) {
+function extractTags (tags) {
   if (!tags) {
     return []
   }
