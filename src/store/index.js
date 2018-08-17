@@ -16,12 +16,6 @@ const EMPTY_DECK = {
   commandZone: []
 }
 const savedDeck = savedDeckManager.load()
-const DEFAULT_SELECTED_CARD = {
-  image: MISSING_CARD_IMAGE,
-  price: {
-    usd: '0'
-  }
-}
 
 const deck = Object.assign({}, EMPTY_DECK, savedDeck)
 
@@ -38,8 +32,6 @@ const store = new Vuex.Store({
       commandZone: deck.commandZone
     },
     isFirstTime: Boolean(savedDeck),
-
-    selectedCard: DEFAULT_SELECTED_CARD,
 
     deckView: 'mainDeck'
   },
@@ -68,9 +60,6 @@ const store = new Vuex.Store({
       while (list.length) {
         list.pop()
       }
-    },
-    setSelectedCard (state, card) {
-      state.selectedCard = card
     }
   },
   actions: {
@@ -80,7 +69,6 @@ const store = new Vuex.Store({
     deleteDeck ({ commit }) {
       savedDeckManager.remove()
 
-      commit('setSelectedCard', DEFAULT_SELECTED_CARD)
       commit('updateDeck', {
         name: '',
         description: '',

@@ -2,7 +2,7 @@
   <div :data-cy="type + '-list'" v-if="deckView === type">
     <table class="table is-fullwidth">
       <tbody>
-        <tr v-for="card in cards" @mouseover="setSelectedCard(card)" v-if="shouldShow(card)">
+        <tr class="card-row" v-for="card in cards" @mouseover="setSelectedCard(card)" @mouseout="clearSelectedCard" v-if="shouldShow(card)">
           <td class="card-input">
             <input class="input hidden-input" :value="cardInputValue(card)" @keyup.enter="blur($event)" @blur="updateCard(card, $event)" :disabled="card.loadInProgress" @focus="focusCard(card, $event)" />
             <div v-if="card.error" class="has-text-danger">{{card.error}}</div>
@@ -13,6 +13,12 @@
           <td class="secondary-item" @click="focusNearestInput($event)">
             <mana-cost :mana-cost="card.manaCost" v-if="!card.error"></mana-cost>
           </td>
+
+          <div class="selected-card-preview" v-if="!cardInFocus && selectedCard === card">
+            <div class="preview-container">
+              <img :src="selectedCard.image" />
+            </div>
+          </div>
         </tr>
         <tr class="new-card">
           <td>
@@ -37,6 +43,13 @@
 
 <script>
 const MISSING_CARD_IMAGE = require('../../lib/constants').MISSING_CARD_IMAGE
+const DEFAULT_SELECTED_CARD = {
+  image: MISSING_CARD_IMAGE,
+  price: {
+    usd: '0'
+  }
+}
+
 const extractCardInput = require('../../lib/extract-card-input')
 
 const ManaCost = require('../../components/mana-cost.vue')
@@ -51,7 +64,8 @@ export default {
   data () {
     return {
       newCard: '',
-      activeDeckTags: {}
+      activeDeckTags: {},
+      selectedCard: DEFAULT_SELECTED_CARD
     }
   },
   computed: Object.assign(
@@ -165,7 +179,7 @@ export default {
           setTimeout(() => {
             event.target.setSelectionRange(position, position)
           }, 1)
-        }, 1) 
+        }, 1)
       },
       cardInputValue(card) {
         let value = `${card.quantity} ${card.name}`
@@ -176,11 +190,14 @@ export default {
 
         return value
       },
+      clearSelectedCard() {
+        this.selectedCard = DEFAULT_SELECTED_CARD
+      },
       setSelectedCard(card) {
         if (this.cardInFocus) {
           return
         }
-        this.$store.commit('setSelectedCard', card)
+        this.selectedCard = card
       },
       focusNearestInput(event) {
         let input, parentNode = event.target
@@ -212,5 +229,22 @@ export default {
 
 .tag {
   cursor: pointer;
+}
+
+.selected-card-preview {
+  position: relative;
+}
+
+.selected-card-preview img {
+  max-width: 100%;
+  border-radius: 15px;
+}
+
+.selected-card-preview .preview-container {
+  position: absolute;
+  right: -50px;
+  top: -150px;
+  width: 300px;
+  z-index: 99;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div id="card-search" class="column">
-    <div id="card-preview-selection" class="tabs is-centered is-boxed">
+    <div id="secondary-menu-selection" class="tabs is-centered is-boxed">
       <ul>
         <li v-for="(obj, type) in secondaryMenuOptions" :class="{'is-active': type === secondaryMenuView}" @click="secondaryMenuView = type" v-if="obj.shouldShow()">
           <a>
@@ -13,13 +13,6 @@
     <div class="box">
       <div v-if="secondaryMenuView === 'commander'">
         <img :src="card.image" v-for="card in commandZone" :width="(100 / commandZone.length) + '%'"/>
-      </div>
-
-      <div v-if="secondaryMenuView === 'previewCard'">
-        <img id="card-preview-img" :src="selectedCard.image" />
-        <div v-if="selectedCard.price.usd">
-          <strong>Price: </strong>${{selectedCard.price.usd}}
-        </div>
       </div>
 
       <div id="search" v-if="secondaryMenuView === 'search'">
@@ -66,7 +59,7 @@ export default {
       searchLoading: false,
       searchError: '',
       searchResults: [],
-      secondaryMenuView: 'previewCard',
+      secondaryMenuView: 'search',
       secondaryMenuOptions: {
         commander: {
           name(){
@@ -74,14 +67,6 @@ export default {
           },
           shouldShow: () => {
             return this.hasCommandZone
-          }
-        },
-        previewCard: {
-          name() {
-            return 'Card View' 
-          },
-          shouldShow() {
-            return true
           }
         },
         search: {
@@ -134,7 +119,6 @@ export default {
   },
   computed: Object.assign(
     mapState([
-      'selectedCard',
       'deckView',
     ]),
     mapGetters(['hasCommandZone']),
@@ -148,11 +132,6 @@ export default {
 </script>
 
 <style scoped>
-#card-preview-img {
-  max-width: 300px;
-  width: 100%;
-}
-
 .search-result {
   display: inline-block;
   width: 48%;
@@ -185,7 +164,7 @@ export default {
   overflow: scroll;
 }
 
-#card-preview-selection {
+#secondary-menu-selection {
   margin-bottom: 0;
 }
 </style>
