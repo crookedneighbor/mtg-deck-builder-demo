@@ -1,23 +1,38 @@
 <template>
-  <table :data-cy="type + '-list'" v-if="deckView === type" class="table is-fullwidth">
-    <tbody>
-      <tr v-for="card in cards" @mouseover="setSelectedCard(card)">
-        <td class="card-input">
-          <input class="input hidden-input" :value="card.quantity + ' ' + card.name" @keyup.enter="blur($event)" @blur="updateCard(card, $event)" :disabled="card.loadInProgress" @focus="focusCard(card)" />
-          <div v-if="card.error" class="has-text-danger">{{card.error}}</div>
-        </td>
-        <td class="secondary-item" @click="focusNearestInput($event)">
-          <mana-cost :mana-cost="card.manaCost" v-if="!card.error"></mana-cost>
-        </td>
-      </tr>
-      <tr class="new-card">
-        <td>
-          <input data-cy="new-card-input" v-model="newCard" type="text" class="input hidden-input" @keyup.enter="addNew" @blur="addNew" v-bind:placeholder="defaultNumber + ' Card Name'"/>
-        </td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+  <div :data-cy="type + '-list'" v-if="deckView === type">
+    <table class="table is-fullwidth">
+      <tbody>
+        <tr v-for="card in cards" @mouseover="setSelectedCard(card)" v-if="shouldShow(card)">
+          <td class="card-input">
+            <input class="input hidden-input" :value="cardInputValue(card)" @keyup.enter="blur($event)" @blur="updateCard(card, $event)" :disabled="card.loadInProgress" @focus="focusCard(card, $event)" />
+            <div v-if="card.error" class="has-text-danger">{{card.error}}</div>
+            <div class="tags" v-if="card.tags.length > 0 && cardInFocus !== card">
+              <span class="tag" :class="{'is-info': activeDeckTags[tag]}" v-for="tag in card.tags" @click="toggleTagActivity(tag)">{{formatTag(tag)}}</span>
+            </div>
+          </td>
+          <td class="secondary-item" @click="focusNearestInput($event)">
+            <mana-cost :mana-cost="card.manaCost" v-if="!card.error"></mana-cost>
+          </td>
+        </tr>
+        <tr class="new-card">
+          <td>
+            <input data-cy="new-card-input" v-model="newCard" type="text" class="input hidden-input" @keyup.enter="addNew" @blur="addNew" v-bind:placeholder="defaultNumber + ' Card Name'"/>
+          </td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div v-if="cardListTags.length > 0">
+      <h3 class="subtitle">Filter Cards by Tags</h3>
+
+      <div class="tags">
+        <span class="tag" :class="{'is-info': activeDeckTags[tag]}" v-for="tag in cardListTags" @click="toggleTagActivity(tag)">{{formatTag(tag)}}</span>
+        <span class="tag is-warning" v-if="anyTagActive()" @click="clearActiveTags">Clear Tags</span>
+      </div>
+    </div>
+
+  </div>
 </template>
 
 <script>
@@ -35,7 +50,8 @@ export default {
   },
   data () {
     return {
-      newCard: ''
+      newCard: '',
+      activeDeckTags: {}
     }
   },
   computed: Object.assign(
@@ -48,11 +64,54 @@ export default {
       defaultNumber() {
         return this.isSingletonFormat ? '1' : '4'
       },
+      cardListTags() {
+        let tags = new Set()
+
+        this.cards.forEach((card) => {
+          card.tags.forEach(tag => tags.add(tag))
+        })
+
+        return Array.from(tags)
+      }
     }
   ),
   methods: Object.assign(
     mapActions(['lookupCard']),
     {
+      anyTagActive() {
+        for (let tag in this.activeDeckTags) {
+          if (this.cardListTags.indexOf(tag) === -1) {
+            delete this.activeDeckTags[tag]
+          } else if (this.activeDeckTags[tag]) {
+            return true
+          }
+        }
+
+        return false
+      },
+      clearActiveTags() {
+        for (let tag in this.activeDeckTags) {
+          this.activeDeckTags[tag] = false
+        }
+
+        this.$forceUpdate()
+      },
+      shouldShow(card) {
+        if (!this.anyTagActive()) {
+          return true
+        }
+
+        return Boolean(card.tags.find(tag => this.activeDeckTags[tag]))
+      },
+      toggleTagActivity(tag) {
+        this.activeDeckTags[tag] = !this.activeDeckTags[tag]
+        this.$forceUpdate()
+      },
+      formatTag(tag) {
+        let words = tag.split('_')
+
+        return words.map((word) => word.charAt(0).toUpperCase() + word.substring(1)).join(' ')
+      },
       blur(event) {
         event.target.blur()
       },
@@ -85,6 +144,7 @@ export default {
 
         card.quantity = pieces.quantity
         card.name = pieces.name
+        card.tags = pieces.tags
 
         this.lookupCard(card).then(() => this.saveDeck())
       },
@@ -92,9 +152,29 @@ export default {
         this.$forceUpdate()
         this.$store.dispatch('saveDeck')
       },
-      focusCard(card) {
+      focusCard(card, event) {
         this.setSelectedCard(card)
-        this.cardInFocus = card
+
+        setTimeout(() => {
+          let position = event.target.selectionStart
+
+          this.cardInFocus = card
+
+          this.$forceUpdate()
+
+          setTimeout(() => {
+            event.target.setSelectionRange(position, position)
+          }, 1)
+        }, 1) 
+      },
+      cardInputValue(card) {
+        let value = `${card.quantity} ${card.name}`
+
+        if (this.cardInFocus === card) {
+          value += ` ${card.tags.map(tag => `#${tag}`).join(' ')}`
+        }
+
+        return value
       },
       setSelectedCard(card) {
         if (this.cardInFocus) {
@@ -128,5 +208,9 @@ export default {
 .mana-cost {
   margin-top: 7px;
   min-width: 131px;
+}
+
+.tag {
+  cursor: pointer;
 }
 </style>

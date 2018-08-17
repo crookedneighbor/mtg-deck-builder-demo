@@ -43,6 +43,8 @@ const {mapActions, mapGetters, mapState} = require('vuex')
 const constructComputedMethodsForDeck = require('../../lib/construct-computed-methods-for-deck')
 const extractCardInput = require('../../lib/extract-card-input')
 
+const TAPPEDOUT_COMMANDER_SYMBOL = ' *CMDR*'
+
 function formatDeckExportForTappedOut(deck) {
   let cards = []
 
@@ -58,7 +60,7 @@ function formatDeckExportForTappedOut(deck) {
   deck.commandZone.forEach((card) => {
     let formattedCard = formatCardForTappedOut(card)
 
-    cards.push(formattedCard + ' *CMDR*')
+    cards.push(formattedCard + TAPPEDOUT_COMMANDER_SYMBOL)
   })
 
   if (deck.sideboard.length > 0) {
@@ -74,10 +76,12 @@ function formatDeckImportForTappedOut(textFile) {
   let deck = {
     mainDeck: [],
     sideboard: [],
+    commandZone: []
   }
  
   textFile.split('\n').forEach((rawLine) => {
     let line = rawLine.replace(/[^\u0000-\u007E]/g, '').trim()
+    let isCommander = line.indexOf(TAPPEDOUT_COMMANDER_SYMBOL) > -1
 
     if (!line) {
       return
@@ -95,7 +99,11 @@ function formatDeckImportForTappedOut(textFile) {
     if (atSideboard) {
       deck.sideboard.push(card)
     } else {
-      deck.mainDeck.push(card)
+      if (isCommander) {
+        deck.commandZone.push(card)
+      } else {
+        deck.mainDeck.push(card)
+      }
     }
   })
 
@@ -124,10 +132,6 @@ export default {
   methods: Object.assign(
     mapActions(['deleteDeck', 'saveDeck']),
     {
-      onImportSelect(event) {
-      },
-      onExportSelect(event) {
-      },
       prepareExport() {
         let deck
 
@@ -165,16 +169,21 @@ export default {
           let parsedDeck
 
           try {
-
             if (this.importType === 'use') {
               parsedDeck = JSON.parse(reader.result)
             } else if (this.importType === 'tappedout') {
               parsedDeck = formatDeckImportForTappedOut(reader.result)
+
+              if (parsedDeck.commandZone.length > 0) {
+                // assume commander format if a commander is found
+                parsedDeck.format = 'commander'
+              }
             }
 
             this.deleteDeck()
             this.$store.commit('updateDeck', parsedDeck)
             this.$store.dispatch('refetchPendingCards')
+            this.$store.commit('updateDeckView', 'mainDeck')
             this.saveDeck()
 
             this.$emit('close-modal')
