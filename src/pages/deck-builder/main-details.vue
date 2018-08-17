@@ -8,7 +8,7 @@
     <input data-cy="deck-name-input" class="input hidden-input" v-model="name" @blur="saveDeck" @keydown.enter="saveDeck" placeholder="Deck Name"/>
     <textarea data-cy="deck-description-input" id="deck-description" class="input hidden-input" v-model="description" @blur="saveDeck" @keydown.enter="saveDeck" placeholder="Deck notes."/>
 
-    <modal v-if="shouldShowSettingsModal" @close="shouldShowSettingsModal = false">
+    <modal v-if="shouldShowSettingsModal" @close="closeSettingsModal">
       <label class="label">Format</label>
       <div class="select">
         <select data-cy="format-select" v-model="format" @change="onFormatChange">
@@ -26,6 +26,26 @@
       </div>
 
       <hr>
+      <div>
+        <a :href="exportedDeck" :download="downloadFileName" target="_blank">
+          <button data-cy="export-button" class="button is-info" @mouseover="prepareExport">Export Deck</button>
+        </a>
+
+          <button data-cy="import-button" class="button is-info" @click="prepareImport">Import Deck</button>
+
+          <div v-if="importError">
+            <br>
+            <div class="notification is-danger">
+              <button class="delete" @click="importError = ''"></button>
+              {{importError}}
+            </div>
+          </div>
+
+        <input data-cy="import-input" id="import-deck-file-input" type='file' accept='text/plain' @change="importDeck">
+      </div>
+
+      <hr>
+
       <div>
         <button data-cy="delete-button" class="button is-danger is-large" @click="promptToDeleteDeck">Delete</button>
       </div>
@@ -47,6 +67,8 @@ export default {
   data() {
     return {
       shouldShowSettingsModal: false,
+      exportedDeck: '',
+      importError: ''
     }
   },
   computed: Object.assign(
@@ -57,10 +79,63 @@ export default {
     ]),
     mapGetters(['hasCommandZone']),
     mapState(['deckView']),
+    {
+      downloadFileName() {
+        return `${this.name} - ${(new Date()).toString()}`
+      }
+    }
   ),
   methods: Object.assign(
     mapActions(['deleteDeck', 'saveDeck']),
     {
+      closeSettingsModal() {
+        this.shouldShowSettingsModal = false
+      },
+      prepareExport() {
+        if (this.exportedDeck) {
+          window.URL.revokeObjectURL(this.exportedDeck)
+        }
+
+        let deck = JSON.stringify(this.$store.state.deck)
+        let data = new Blob([deck], {type: 'text/plain'})
+
+        this.exportedDeck = window.URL.createObjectURL(data)
+      },
+      prepareImport() {
+        this.importError = ''
+
+        let file = document.querySelector('#import-deck-file-input')
+
+        file.click()
+      },
+      importDeck(event) {
+        let reader  = new FileReader()
+        let file = document.querySelector('#import-deck-file-input').files[0]
+
+        if (!file || !window.confirm('This will overwrite the current deck. Are you sure you want to do this?')) {
+          return
+        }
+
+        reader.addEventListener('load', () => {
+          let importedDeck = reader.result
+          let parsedDeck
+
+          try {
+            parsedDeck = JSON.parse(reader.result)
+
+            this.deleteDeck()
+            this.$store.commit('updateDeck', parsedDeck)
+            this.$store.dispatch('refetchPendingCards')
+            this.saveDeck()
+
+            this.closeSettingsModal()
+          } catch (e) {
+            this.importError = 'Something went wrong when importing the deck. Be sure you used a file that you exported from this app.'
+          }
+        }, false)
+
+        reader.readAsText(file)
+      },
       promptToDeleteDeck() {
         if (!window.confirm('Are you sure you want to delete this deck?')) {
           return
@@ -114,5 +189,9 @@ export default {
   top: 5px;
   right: 5px;
   z-index: 9;
+}
+
+#import-deck-file-input {
+  display: none;
 }
 </style>

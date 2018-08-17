@@ -1,9 +1,9 @@
 <template>
-  <table v-if="deckView === type" class="table is-fullwidth">
+  <table :data-cy="type + '-list'" v-if="deckView === type" class="table is-fullwidth">
     <tbody>
       <tr v-for="card in cards" @mouseover="setSelectedCard(card)">
         <td class="card-input">
-          <input class="input hidden-input" :value="card.quantity + ' ' + card.name" @keyup.enter="blur($event)" @blur="updateCard(card, $event)" :disabled="card.disabled" @focus="focusCard(card)" />
+          <input class="input hidden-input" :value="card.quantity + ' ' + card.name" @keyup.enter="blur($event)" @blur="updateCard(card, $event)" :disabled="card.loadInProgress" @focus="focusCard(card)" />
           <div v-if="card.error" class="has-text-danger">{{card.error}}</div>
         </td>
         <td class="secondary-item" @click="focusNearestInput($event)">
@@ -21,13 +21,11 @@
 </template>
 
 <script>
-const findCardByName = require('../../lib/scryfall').findCardByName
-const formatCard = require('../../lib/scryfall').formatCard
 const MISSING_CARD_IMAGE = require('../../lib/constants').MISSING_CARD_IMAGE
 
 const ManaCost = require('../../components/mana-cost.vue')
 
-const {mapGetters, mapState} = require('vuex')
+const {mapGetters, mapActions, mapState} = require('vuex')
 
 function extractCardInput (input) {
   const pieces = input.match(/^(\d* )?(.*)$/)
@@ -63,81 +61,73 @@ export default {
       },
     }
   ),
-  methods: {
-    blur(event) {
-      event.target.blur()
-    },
-    addNew() {
-      const card = extractCardInput(this.newCard)
+  methods: Object.assign(
+    mapActions(['lookupCard']),
+    {
+      blur(event) {
+        event.target.blur()
+      },
+      addNew() {
+        const card = extractCardInput(this.newCard)
 
-      if (!card.name) {
-        return
+        if (!card.name) {
+          return
+        }
+
+        this.$store.commit('addCard', {card, type: this.type})
+
+        this.newCard = ''
+
+        this.lookupCard(card).then(() => this.saveDeck())
+      },
+      updateCard(card, event) {
+        this.cardInFocus = null
+
+        const pieces = extractCardInput(event.target.value)
+        event.target.blur()
+
+        if (pieces.name === '') {
+          this.$store.commit('removeCard', {card, type: this.type})
+          this.saveDeck()
+          return
+        }
+
+        delete card.error
+
+        card.quantity = pieces.quantity
+        card.name = pieces.name
+
+        this.lookupCard(card).then(() => this.saveDeck())
+      },
+      saveDeck() {
+        this.$forceUpdate()
+        this.$store.dispatch('saveDeck')
+      },
+      focusCard(card) {
+        this.setSelectedCard(card)
+        this.cardInFocus = card
+      },
+      setSelectedCard(card) {
+        if (this.cardInFocus) {
+          return
+        }
+        this.$store.commit('setSelectedCard', card)
+      },
+      focusNearestInput(event) {
+        let input, parentNode = event.target
+        let maxFocusRetries = 5
+        let retries = 0
+
+        while(!input && retries < maxFocusRetries) {
+          parentNode = parentNode.parentNode
+          input = parentNode.querySelector('input')
+          retries++
+        }
+
+        input.focus()
       }
-
-      this.$store.commit('addCard', {card, type: this.type})
-
-      this.newCard = ''
-
-      this.lookupCard(card).then(() => this.saveDeck())
-    },
-    updateCard(card, event) {
-      this.cardInFocus = null
-
-      const pieces = extractCardInput(event.target.value)
-      event.target.blur()
-
-      if (pieces.name === '') {
-        this.$store.commit('removeCard', {card, type: this.type})
-        this.saveDeck()
-        return
-      }
-
-      delete card.error
-
-      card.quantity = pieces.quantity
-      card.name = pieces.name
-
-      this.lookupCard(card).then(() => this.saveDeck())
-    },
-    lookupCard(card) {
-      card.disabled = true
-      card.image = card.image || MISSING_CARD_IMAGE
-      card.price = card.price || {}
-
-      return findCardByName(card.name).then(res => formatCard(res, card)).catch((e) => {
-        card.error = e.message
-      }).then(() => {
-        card.disabled = false
-      })
-    },
-    saveDeck() {
-      this.$forceUpdate()
-      this.$store.dispatch('saveDeck')
-    },
-    focusCard(card) {
-      this.setSelectedCard(card)
-      this.cardInFocus = card
-    },
-    setSelectedCard(card) {
-      if (this.cardInFocus) {
-        return
-      }
-      this.$store.commit('setSelectedCard', card)
-    },
-    focusNearestInput(event) {
-      let input, parentNode = event.target
-      let maxFocusRetries = 5
-      let retries = 0
-
-      while(!input && retries < maxFocusRetries) {
-        parentNode = parentNode.parentNode
-        input = parentNode.querySelector('input')
-        retries++
-      }
-
-      input.focus()
     }
-  }
+  )
 }
 </script>
 

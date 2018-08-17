@@ -2,7 +2,10 @@ const Vue = require('vue')
 const Vuex = require('vuex')
 
 const MISSING_CARD_IMAGE = require('../lib/constants').MISSING_CARD_IMAGE
+const DECK_LIST_TYPES = require('../lib/constants').DECK_LIST_TYPES
 const savedDeckManager = require('../lib/state')
+const findCardByName = require('../lib/scryfall').findCardByName
+const formatCard = require('../lib/scryfall').formatCard
 
 const EMPTY_DECK = {
   name: '',
@@ -13,6 +16,12 @@ const EMPTY_DECK = {
   commandZone: []
 }
 const savedDeck = savedDeckManager.load()
+const DEFAULT_SELECTED_CARD = {
+  image: MISSING_CARD_IMAGE,
+  price: {
+    usd: '0'
+  }
+}
 
 const deck = Object.assign({}, EMPTY_DECK, savedDeck)
 
@@ -30,12 +39,7 @@ const store = new Vuex.Store({
     },
     isFirstTime: Boolean(savedDeck),
 
-    selectedCard: {
-      image: MISSING_CARD_IMAGE,
-      price: {
-        usd: '0'
-      }
-    },
+    selectedCard: DEFAULT_SELECTED_CARD,
 
     deckView: 'mainDeck'
   },
@@ -76,6 +80,7 @@ const store = new Vuex.Store({
     deleteDeck ({ commit }) {
       savedDeckManager.remove()
 
+      commit('setSelectedCard', DEFAULT_SELECTED_CARD)
       commit('updateDeck', {
         name: '',
         description: '',
@@ -85,6 +90,26 @@ const store = new Vuex.Store({
       commit('removeList', 'mainDeck')
       commit('removeList', 'sideboard')
       commit('removeList', 'commandZone')
+    },
+    lookupCard(context, card) {
+      card.loadInProgress = true
+      card.image = card.image || MISSING_CARD_IMAGE
+      card.price = card.price || {}
+
+      return findCardByName(card.name).then(res => formatCard(res, card)).catch((e) => {
+        card.error = e.message
+      }).then(() => {
+        card.loadInProgress = false
+      })
+    },
+    refetchPendingCards({state, dispatch}) {
+      DECK_LIST_TYPES.forEach((type) => {
+        state.deck[type].forEach((card) => {
+          if (card.loadInProgress) {
+            dispatch('lookupCard', card)
+          }
+        })
+      })
     }
   },
   getters: {

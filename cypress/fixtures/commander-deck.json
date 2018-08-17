@@ -1,0 +1,10 @@
+{
+  "name": "Flashmi",
+  "description": "A deck based around Rashmi, Eternities Crafter that plays cards at instant speed on each player's turn.",
+  "format": "commander",
+  "mainDeck": [
+  ],
+  "commandZone": [
+  ],
+  "sideboard": []
+}
