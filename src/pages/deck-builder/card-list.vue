@@ -22,22 +22,11 @@
 
 <script>
 const MISSING_CARD_IMAGE = require('../../lib/constants').MISSING_CARD_IMAGE
+const extractCardInput = require('../../lib/extract-card-input')
 
 const ManaCost = require('../../components/mana-cost.vue')
 
 const {mapGetters, mapActions, mapState} = require('vuex')
-
-function extractCardInput (input) {
-  const pieces = input.match(/^(\d* )?(.*)$/)
-  const quantity = pieces[1] ? Number(pieces[1].trim()) : 1
-  const name = pieces[2]
-
-  return {
-    quantity,
-    name,
-    manaCost: ''
-  }
-}
 
 export default {
   props: ['type'],
