@@ -1,4 +1,4 @@
-# unreleased
+# 0.2.0
 * Add ability to/from import/export with TappedOut.net files
 * Add tag support
 * Move card preview to be inline in card list
