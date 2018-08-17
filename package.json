@@ -1,7 +1,7 @@
 {
   "name": "deck-builder",
   "version": "0.1.0",
-  "description": "A Magice the Gathering Deck builder.",
+  "description": "A Magic the Gathering Deck builder.",
   "private": true,
   "scripts": {
     "build": "cross-env NODE_ENV=production browserify -g envify src/main.js | uglifyjs -c warnings=false -m > dist/build.js",
