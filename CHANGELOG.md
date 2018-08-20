@@ -1,3 +1,6 @@
+# unreleased
+* Bump version of scryfall-client to v0.8.0
+
 # 0.2.0
 * Add ability to/from import/export with TappedOut.net files
 * Add tag support
