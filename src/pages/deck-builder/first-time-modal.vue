@@ -9,7 +9,7 @@
         <li>Your deck will be saved automatically when you make a change, but it is only saved locally to your browser's local storage. There is no database persisting your deck. So if you clear your browser's data, you'll lose your deck.</li>
         <li>Currently, only one deck can be saved a time.</li>
         <li>As changes are made to the app, your previously saved deck may become incompatible and be lost. Do not rely on this deck builder until it goes out of Beta.</li>
-        <li>This is very much a work in progress project, so don't be surprised if there are bugs. If you find one, <a class="has-text-weight-bold" href="https://github.com/crookedneighbor/mtg-deck-builder-demo/issues">kindly report it on Github</a>.</li>
+        <li>This is very much a work in progress project, so don't be surprised if there are bugs. If you find one, <a class="link" href="https://github.com/crookedneighbor/mtg-deck-builder-demo/issues">kindly report it on Github</a>.</li>
       </ul>
     </div>
   </modal>

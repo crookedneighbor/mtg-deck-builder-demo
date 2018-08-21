@@ -30,7 +30,7 @@
 
       <div class="hero-footer">
         <div class="container has-text-centered">
-          Made by <a class="has-text-weight-bold" href="https://twitter.com/bladebarringer">Blade Barringer</a> using the <a class="has-text-weight-bold" href="https://scryfall.com/docs/api">Scryfall API</a>, with inspiration from <a class="has-text-weight-bold" href="https://scryfall.com/">Scryfall</a> and <a class="has-text-weight-bold" href="http://tappedout.net/">Tappedout.net</a>. Report any issues to <a class="has-text-weight-bold" href="">the issue tracker on Github</a>.
+          Made by <a class="link" href="https://twitter.com/bladebarringer">Blade Barringer</a> using the <a class="link" href="https://scryfall.com/docs/api">Scryfall API</a>, with inspiration from <a class="link" href="https://scryfall.com/">Scryfall</a> and <a class="link" href="http://tappedout.net/">Tappedout.net</a>. Report any issues to <a class="link" href="https://github.com/crookedneighbor/mtg-deck-builder-demo/issues">the issue tracker on Github</a>.
         </div>
       </div>
 		</section>
@@ -48,5 +48,9 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+.link {
+  font-weight: bold;
+  text-decoration: underline;
+}
 </style>
