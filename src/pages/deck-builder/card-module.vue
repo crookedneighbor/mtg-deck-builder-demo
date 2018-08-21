@@ -24,13 +24,13 @@
           See <a class="link" href="https://scryfall.com/docs/reference" target="_blank">Scryfall Syntax Guide</a> for help with search syntax.
         </p>
 
-        <div id="search-results">
+        <div id="search-results" @scroll="onSearchScroll">
           <div class="notification is-danger" v-if="searchError">
             <button class="delete" @click="clearSearchError"></button>
             {{searchError}}
           </div>
 
-          <div class="search-result"  v-for="card in searchResults" v-if="!searchLoading">
+          <div class="search-result"  v-for="card in searchResults">
             <img :src="card.image" />
             <span class="add-card-to-deck icon is-large has-text-white">
             </span>
@@ -39,6 +39,12 @@
                 <i class="fa fa-circle fa-stack-2x has-text-info"></i>
                 <i class="fas fa-plus fa-stack-1x has-text-white"></i>
               </span>
+            </span>
+          </div>
+
+          <div v-if="searchLoading">
+            <span class="icon is-large">
+              <i class="fas fa-3x fa-circle-notch fa-spin"></i>
             </span>
           </div>
         </div>
@@ -55,6 +61,7 @@ const formatCard = require('../../lib/scryfall').formatCard
 export default {
   data() {
     return {
+      rawResponseFromScryfall: null,
       search: '',
       searchLoading: false,
       searchError: '',
@@ -63,7 +70,7 @@ export default {
       secondaryMenuOptions: {
         commander: {
           name(){
-            return 'Commander' 
+            return 'Commander'
           },
           shouldShow: () => {
             return this.hasCommandZone
@@ -71,7 +78,7 @@ export default {
         },
         search: {
           name() {
-            return 'Search' 
+            return 'Search'
           },
           shouldShow() {
             return true
@@ -84,20 +91,15 @@ export default {
     searchForCards() {
       this.searchLoading = true
       this.searchError = ''
-      this.searchResults.length = 0
+      this.searchResults = []
+      this.rawResponseFromScryfall = null
 
       if (!this.search) {
         return
       }
 
       searchForCards(this.search).then((res) => {
-        return Promise.all(res.map(card => formatCard(card)))
-      }).then((cards) => {
-        this.searchResults.push.apply(this.searchResults, cards)
-      }).catch((err) => {
-        this.searchError = err.message
-      }).then(() => {
-        this.searchLoading = false
+        return this.addToSearchResults(res)
       })
     },
 
@@ -115,6 +117,33 @@ export default {
         this.$store.commit('addCard', {card, type: this.deckView})
       }
       this.$store.dispatch('saveDeck')
+    },
+    onSearchScroll(event) {
+      if (this.shouldLookForMoreResults(event)) {
+        this.searchLoading = true
+
+        this.rawResponseFromScryfall.next().then((res) => {
+          return this.addToSearchResults(res)
+        })
+      }
+    },
+    addToSearchResults(res) {
+      this.rawResponseFromScryfall = res
+
+      return Promise.all(res.map(card => formatCard(card))).then((cards) => {
+        this.searchResults.push.apply(this.searchResults, cards)
+      }).catch((err) => {
+        this.searchError = err.message
+      }).then(() => {
+        this.searchLoading = false
+      })
+    },
+    shouldLookForMoreResults(event) {
+      let target = event.target
+      let isAtEndOfCurrentResults = target.offsetHeight + target.scrollTop > target.scrollHeight - 2000
+      let hasMoreResults = this.rawResponseFromScryfall && this.rawResponseFromScryfall.has_more
+
+      return !this.searchLoading && hasMoreResults && isAtEndOfCurrentResults
     }
   },
   computed: Object.assign(
