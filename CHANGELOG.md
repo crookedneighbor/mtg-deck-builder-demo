@@ -5,6 +5,7 @@
 ## Features
 * Add automatic paging of search results
 * Add keyboard shortcuts
+* Move format to main page out of settings
 
 # 0.2.0
 ## Features

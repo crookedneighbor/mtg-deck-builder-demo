@@ -27,14 +27,10 @@ describe('Deck Details', function () {
     cy.get(description).should('have.value', 'Deck description')
   })
 
-  it('can set format in settings modal', function () {
-    cy.get('[data-cy="settings-button"]').click()
-
+  it('can set format', function () {
     cy.get('[data-cy="format-select"]').select('frontier')
 
     cy.reload()
-
-    cy.get('[data-cy="settings-button"]').click()
 
     cy.get('[data-cy="format-select"]').should('have.value', 'frontier')
   })

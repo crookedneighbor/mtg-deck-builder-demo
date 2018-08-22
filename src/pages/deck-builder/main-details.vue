@@ -6,27 +6,25 @@
     </button>
 
     <input data-cy="deck-name-input" class="input hidden-input" v-model="name" @blur="saveDeck" @keydown.enter="saveDeck" placeholder="Deck Name"/>
+
+    <div class="select">
+      <select data-cy="format-select" v-model="format" @change="onFormatChange">
+        <option disabled selected value="">Format</option>
+        <option value="brawl">Brawl</option>
+        <option value="commander">Commander</option>
+        <option value="frontier">Frontier</option>
+        <option value="legacy">Legacy</option>
+        <option value="limited">Limited</option>
+        <option value="modern">Modern</option>
+        <option value="pauper">Pauper</option>
+        <option value="standard">Standard</option>
+        <option value="vintage">Vintage</option>
+      </select>
+    </div>
+
     <textarea data-cy="deck-description-input" id="deck-description" class="input hidden-input" v-model="description" @blur="saveDeck" @keydown.enter="saveDeck" placeholder="Deck notes."/>
 
     <modal v-if="shouldShowSettingsModal" @close="closeSettingsModal">
-      <label class="label">Format</label>
-      <div class="select">
-        <select data-cy="format-select" v-model="format" @change="onFormatChange">
-          <option disabled selected value="">Format</option>
-          <option value="brawl">Brawl</option>
-          <option value="commander">Commander</option>
-          <option value="frontier">Frontier</option>
-          <option value ="legacy">Legacy</option>
-          <option value ="limited">Limited</option>
-          <option value ="modern">Modern</option>
-          <option value ="pauper">Pauper</option>
-          <option value ="standard">Standard</option>
-          <option value="vintage">Vintage</option>
-        </select>
-      </div>
-
-      <hr>
-
       <import-export-buttons
         v-on:close-modal="closeSettingsModal"
       ></import-export-buttons>
