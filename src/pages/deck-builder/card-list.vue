@@ -11,7 +11,7 @@
             </div>
           </td>
           <td class="secondary-item" @click="focusNearestInput($event)">
-            <mana-cost :mana-cost="card.manaCost" v-if="!card.error"></mana-cost>
+            <mana class="has-text-right" :symbols="card.manaCost" v-if="!card.error"></mana>
           </td>
 
           <div class="selected-card-preview" v-if="!cardInFocus && selectedCard === card">
@@ -52,14 +52,14 @@ const DEFAULT_SELECTED_CARD = {
 
 const extractCardInput = require('../../lib/extract-card-input')
 
-const ManaCost = require('../../components/mana-cost.vue')
+const Mana = require('../../components/mana.vue')
 
 const {mapGetters, mapActions, mapState} = require('vuex')
 
 export default {
   props: ['type'],
   components: {
-    'mana-cost': ManaCost,
+    'mana': Mana,
   },
   data () {
     return {

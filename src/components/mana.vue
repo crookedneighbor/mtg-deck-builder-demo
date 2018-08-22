@@ -1,5 +1,5 @@
 <template>
-  <div class="mana-cost">
+  <div class="mana-symbols">
     <img v-for="symbol in manaSymbols" :src="symbol"/>
   </div>
 </template>
@@ -8,10 +8,10 @@
 const ScryfallClient = require('scryfall-client')
 
 export default {
-  props: ['manaCost'],
+  props: ['symbols'],
   computed: {
     manaSymbols() {
-      let symbols = this.manaCost.match(/{(.)(\/(.))?}/g)
+      let symbols = this.symbols.match(/{(.)(\/(.))?}/g)
 
       if (symbols) {
         return symbols.map((symbol) => {
@@ -26,10 +26,7 @@ export default {
 </script>
 
 <style scoped>
-.mana-cost {
-  text-align: right;
-}
-.mana-cost img {
+.mana-symbols img {
   height: 20px;
   margin: 0 2px;
 }
