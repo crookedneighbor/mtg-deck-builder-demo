@@ -19,6 +19,7 @@
 <script>
 const {mapState, mapGetters} = require('vuex')
 const CardList = require('./card-list.vue')
+const DECK_LIST_TYPES = require('../../lib/constants').DECK_LIST_TYPES
 
 export default {
   components: {
@@ -57,6 +58,8 @@ export default {
   methods: {
     selectType(type) {
       this.$store.commit('updateDeckView', type)
+    },
+    incrementDeckView(index) {
     }
   },
   computed: Object.assign(
@@ -65,6 +68,24 @@ export default {
     ]),
     mapGetters(['hasCommandZone'])
   ),
+  created() {
+    this.$root.$on('toggle-deck-view', () => {
+      let currentIndex = DECK_LIST_TYPES.indexOf(this.deckView)
+      let nextIndex = currentIndex + 1
+      let view = this.listTypes[DECK_LIST_TYPES[nextIndex]]
+
+      while (view && !view.shouldShow()) {
+        nextIndex++
+        view = this.listTypes[DECK_LIST_TYPES[nextIndex]]
+      }
+
+      if (!DECK_LIST_TYPES[nextIndex]) {
+        nextIndex = 0
+      }
+
+      this.$store.commit('updateDeckView', DECK_LIST_TYPES[nextIndex])
+    })
+  }
 }
 </script>
 

@@ -22,7 +22,7 @@
         </tr>
         <tr class="new-card">
           <td>
-            <input data-cy="new-card-input" v-model="newCard" type="text" class="input hidden-input" @keyup.enter="addNew" @blur="addNew" v-bind:placeholder="defaultNumber + ' Card Name'"/>
+            <input :id="type + '-new-card'" data-cy="new-card-input" v-model="newCard" type="text" class="input hidden-input" @keyup.enter="addNew" @blur="addNew" v-bind:placeholder="defaultNumber + ' Card Name'"/>
           </td>
           <td></td>
         </tr>
@@ -213,7 +213,16 @@ export default {
         input.focus()
       }
     }
-  )
+  ),
+  created() {
+    this.$root.$on('focus-add-new-card', () => {
+      if (this.type === this.deckView) {
+        setTimeout(() => {
+          document.querySelector(`#${this.type}-new-card`).focus()
+        }, 10)
+      }
+    })
+  }
 }
 </script>
 

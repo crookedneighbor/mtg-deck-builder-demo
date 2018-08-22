@@ -1,7 +1,7 @@
 <template>
   <div id="search">
     <div class="control" :class="{'is-loading': searchLoading}">
-      <input class="input" v-model="search" placeholder="Card Name or Scryfall search" @keydown.enter="searchForCards" :disabled="searchLoading"/>
+      <input id="search-input" class="input" v-model="search" placeholder="Card Name or Scryfall search" @keydown.enter="searchForCards" :disabled="searchLoading"/>
     </div>
 
     <p class="content has-text-right is-size-7">
@@ -107,6 +107,13 @@ export default {
 
       return !this.searchLoading && hasMoreResults && isAtEndOfCurrentResults
     }
+  },
+  created() {
+    this.$root.$on('focus-search', () => {
+      setTimeout(() => {
+        document.querySelector('#search-input').focus()
+      }, 10)
+    })
   },
   computed: Object.assign(
     mapState([

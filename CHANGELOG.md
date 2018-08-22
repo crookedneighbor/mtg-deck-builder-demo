@@ -4,6 +4,7 @@
 
 ## Features
 * Add automatic paging of search results
+* Add keyboard shortcuts
 
 # 0.2.0
 ## Features

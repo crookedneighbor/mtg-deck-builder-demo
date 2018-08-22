@@ -9,12 +9,14 @@
     <card-module></card-module>
 
     <first-time-modal></first-time-modal>
+    <shortcuts></shortcuts>
   </div>
 </template>
 
 <script>
 const MainDetails = require('./main-details.vue')
 const FirstTimeModal = require('./first-time-modal.vue')
+const Shortcuts = require('./shortcuts.vue')
 const DeckList = require('./deck-list.vue')
 const CardModule = require('./card-module.vue')
 
@@ -24,6 +26,7 @@ export default {
     'deck-list': DeckList,
     'card-module': CardModule,
     'first-time-modal': FirstTimeModal,
+    'shortcuts': Shortcuts
   },
   data () {
     return {}

@@ -51,6 +51,11 @@ export default {
       },
     }
   },
+  created() {
+    this.$root.$on('focus-search', () => {
+      this.secondaryMenuView = 'search'
+    })
+  },
   computed: Object.assign(
     mapGetters(['hasCommandZone']),
     {
