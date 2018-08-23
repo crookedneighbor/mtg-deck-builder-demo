@@ -256,4 +256,8 @@ export default {
   width: 300px;
   z-index: 99;
 }
+
+.secondary-item .mana-symbols {
+  margin-top: 9px;
+}
 </style>
