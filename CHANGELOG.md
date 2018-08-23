@@ -1,4 +1,4 @@
-# unreleased
+# 0.3.0
 ## Fixes
 * Bump version of scryfall-client to v0.8.0
 * Include mechanism to refresh the cards from scryfall when changes are made to the API that require more information from the cards
