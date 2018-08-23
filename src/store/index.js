@@ -1,8 +1,11 @@
 const Vue = require('vue')
 const Vuex = require('vuex')
 
-const MISSING_CARD_IMAGE = require('../lib/constants').MISSING_CARD_IMAGE
-const DECK_LIST_TYPES = require('../lib/constants').DECK_LIST_TYPES
+const constants = require('../lib/constants')
+const MISSING_CARD_IMAGE = constants.MISSING_CARD_IMAGE
+const DECK_LIST_TYPES = constants.DECK_LIST_TYPES
+const VERSION = constants.VERSION
+
 const savedDeckManager = require('../lib/state')
 const findCardByName = require('../lib/scryfall').findCardByName
 const formatCard = require('../lib/scryfall').formatCard
@@ -19,11 +22,22 @@ const savedDeck = savedDeckManager.load()
 
 const deck = Object.assign({}, EMPTY_DECK, savedDeck)
 
+if (deck.__VERSION !== VERSION) {
+  DECK_LIST_TYPES.forEach((list) => {
+    deck[list].forEach((card) => {
+      card.loadInProgress = true
+    })
+  })
+
+  deck.__VERSION = VERSION
+}
+
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
     deck: {
+      __VERSION: deck.__VERSION,
       name: deck.name,
       format: deck.format,
       description: deck.description,
