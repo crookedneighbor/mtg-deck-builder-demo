@@ -7,6 +7,8 @@
 
     <input data-cy="deck-name-input" class="input hidden-input" v-model="name" @blur="saveDeck" @keydown.enter="saveDeck" placeholder="Deck Name"/>
 
+    <mana :symbols="colors"></mana>
+
     <div class="select">
       <select data-cy="format-select" v-model="format" @change="onFormatChange">
         <option disabled selected value="">Format</option>
@@ -44,11 +46,23 @@ const {mapActions, mapGetters, mapState} = require('vuex')
 const constructComputedMethodsForDeck = require('../../lib/construct-computed-methods-for-deck')
 
 const Modal = require('../../components/modal.vue')
+const Mana = require('../../components/mana.vue')
 const ImportExportButtons = require('./import-export-buttons.vue')
+
+const DECK_LIST_TYPES = require('../../lib/constants').DECK_LIST_TYPES
+
+function compileColors (set, list) {
+  list.forEach((card) => {
+    card.colorIdentity && card.colorIdentity.forEach((color) => {
+      set.add(color)
+    })
+  })
+}
 
 export default {
   components: {
     modal: Modal,
+    mana: Mana,
     'import-export-buttons': ImportExportButtons
   },
   data() {
@@ -63,7 +77,25 @@ export default {
       'format',
     ]),
     mapGetters(['hasCommandZone']),
-    mapState(['deckView'])
+    mapState(['deckView']),
+    {
+      colors() {
+        let colors = new Set()
+        let colorString = ''
+
+        DECK_LIST_TYPES.forEach((list) => {
+          compileColors(colors, this.$store.state.deck[list])
+        })
+
+        return ['W', 'U', 'B', 'R', 'G'].reduce((str, color) => {
+          if (colors.has(color)) {
+            str += `{${color}}`
+          }
+
+          return str
+        }, '')
+      }
+    }
   ),
   methods: Object.assign(
     mapActions(['deleteDeck', 'saveDeck']),
