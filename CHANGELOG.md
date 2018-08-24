@@ -1,3 +1,7 @@
+# unreleased
+## Fixes
+* Fix issue where cards added via search would corrupt deck
+
 # 0.3.0
 ## Fixes
 * Bump version of scryfall-client to v0.8.0

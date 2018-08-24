@@ -24,6 +24,7 @@ function formatCard (response, card = {}) {
     eur: response.eur,
     tix: response.tix
   }
+  card.tags = card.tags || []
 
   return response.getImage().then((img) => {
     card.image = img

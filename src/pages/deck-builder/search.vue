@@ -73,7 +73,7 @@ export default {
       const list = this.$store.state.deck[this.deckView]
       const lastCard = list[list.length - 1]
 
-      if (lastCard.name === card.name) {
+      if (lastCard && lastCard.name === card.name) {
         lastCard.quantity++
       } else {
         this.$store.commit('addCard', {card, type: this.deckView})
