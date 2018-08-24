@@ -11,11 +11,15 @@ export default {
   props: ['symbols'],
   computed: {
     manaSymbols () {
-      let symbols = this.symbols.match(/{(.)(\/(.))?}/g)
+      if (!this.symbols) {
+        return []
+      }
+
+      let symbols = this.symbols.substring(1, this.symbols.length - 1).split('}{')
 
       if (symbols) {
         return symbols.map((symbol) => {
-          return ScryfallClient.symbols[symbol.slice(1, -1)]
+          return ScryfallClient.symbols[symbol]
         })
       }
 
