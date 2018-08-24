@@ -41,17 +41,17 @@ const searchForCards = require('../../lib/scryfall').searchForCards
 const formatCard = require('../../lib/scryfall').formatCard
 
 export default {
-  data() {
+  data () {
     return {
       rawResponseFromScryfall: null,
       search: '',
       searchLoading: false,
       searchError: '',
-      searchResults: [],
+      searchResults: []
     }
   },
   methods: {
-    searchForCards() {
+    searchForCards () {
       this.searchLoading = true
       this.searchError = ''
       this.searchResults = []
@@ -65,11 +65,11 @@ export default {
         return this.addToSearchResults(res)
       })
     },
-    clearSearchError() {
+    clearSearchError () {
       this.searchError = ''
       this.$forceUpdate()
     },
-    addCard(card) {
+    addCard (card) {
       const list = this.$store.state.deck[this.deckView]
       const lastCard = list[list.length - 1]
 
@@ -80,7 +80,7 @@ export default {
       }
       this.$store.dispatch('saveDeck')
     },
-    onSearchScroll(event) {
+    onSearchScroll (event) {
       if (this.shouldLookForMoreResults(event)) {
         this.searchLoading = true
 
@@ -89,7 +89,7 @@ export default {
         })
       }
     },
-    addToSearchResults(res) {
+    addToSearchResults (res) {
       this.rawResponseFromScryfall = res
 
       return Promise.all(res.map(card => formatCard(card))).then((cards) => {
@@ -100,7 +100,7 @@ export default {
         this.searchLoading = false
       })
     },
-    shouldLookForMoreResults(event) {
+    shouldLookForMoreResults (event) {
       let target = event.target
       let isAtEndOfCurrentResults = target.offsetHeight + target.scrollTop > target.scrollHeight - 2000
       let hasMoreResults = this.rawResponseFromScryfall && this.rawResponseFromScryfall.has_more
@@ -108,7 +108,7 @@ export default {
       return !this.searchLoading && hasMoreResults && isAtEndOfCurrentResults
     }
   },
-  created() {
+  created () {
     this.$root.$on('focus-search', () => {
       setTimeout(() => {
         document.querySelector('#search-input').focus()
@@ -117,7 +117,7 @@ export default {
   },
   computed: Object.assign(
     mapState([
-      'deckView',
+      'deckView'
     ])
   )
 }
@@ -149,4 +149,3 @@ export default {
   overflow: scroll;
 }
 </style>
-

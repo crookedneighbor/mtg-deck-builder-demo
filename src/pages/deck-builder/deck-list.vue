@@ -23,9 +23,9 @@ const DECK_LIST_TYPES = require('../../lib/constants').DECK_LIST_TYPES
 
 export default {
   components: {
-    'card-list': CardList,
+    'card-list': CardList
   },
-  data() {
+  data () {
     return {
       listTypes: { 
         mainDeck: {
@@ -56,10 +56,10 @@ export default {
     }
   },
   methods: {
-    selectType(type) {
+    selectType (type) {
       this.$store.commit('updateDeckView', type)
     },
-    incrementDeckView(index) {
+    incrementDeckView (index) {
     }
   },
   computed: Object.assign(
@@ -68,7 +68,7 @@ export default {
     ]),
     mapGetters(['hasCommandZone'])
   ),
-  created() {
+  created () {
     this.$root.$on('toggle-deck-view', () => {
       let currentIndex = DECK_LIST_TYPES.indexOf(this.deckView)
       let nextIndex = currentIndex + 1

@@ -39,20 +39,20 @@
 </template>
 
 <script>
-const {mapActions, mapGetters, mapState} = require('vuex')
+const {mapActions} = require('vuex')
 const constructComputedMethodsForDeck = require('../../lib/construct-computed-methods-for-deck')
 const extractCardInput = require('../../lib/extract-card-input')
 
 const TAPPEDOUT_COMMANDER_SYMBOL = ' *CMDR*'
 
-function formatDeckExportForTappedOut(deck) {
+function formatDeckExportForTappedOut (deck) {
   let cards = []
 
-  function formatCardForTappedOut(card) {
+  function formatCardForTappedOut (card) {
     return `${card.quantity} ${card.name}`
   }
 
-  function addToCards(card) {
+  function addToCards (card) {
     cards.push(formatCardForTappedOut(card))
   }
 
@@ -71,16 +71,16 @@ function formatDeckExportForTappedOut(deck) {
   return cards.join('\n')
 }
 
-function formatDeckImportForTappedOut(textFile) {
+function formatDeckImportForTappedOut (textFile) {
   let atSideboard = false
   let deck = {
     mainDeck: [],
     sideboard: [],
     commandZone: []
   }
- 
+
   textFile.split('\n').forEach((rawLine) => {
-    let line = rawLine.replace(/[^\u0000-\u007E]/g, '').trim()
+    let line = rawLine.replace(/[^\u0000-\u007E]/g, '').trim() // eslint-disable-line no-control-regex
     let isCommander = line.indexOf(TAPPEDOUT_COMMANDER_SYMBOL) > -1
 
     if (!line) {
@@ -111,7 +111,7 @@ function formatDeckImportForTappedOut(textFile) {
 }
 
 export default {
-  data() {
+  data () {
     return {
       exportedDeck: '',
       importError: '',
@@ -121,10 +121,10 @@ export default {
   },
   computed: Object.assign(
     constructComputedMethodsForDeck([
-      'name',
+      'name'
     ]),
     {
-      downloadFileName() {
+      downloadFileName () {
         return `${this.name} - ${(new Date()).toString()}`
       }
     }
@@ -132,7 +132,7 @@ export default {
   methods: Object.assign(
     mapActions(['deleteDeck', 'saveDeck']),
     {
-      prepareExport() {
+      prepareExport () {
         let deck
 
         if (this.exportedDeck) {
@@ -149,15 +149,15 @@ export default {
 
         this.exportedDeck = window.URL.createObjectURL(data)
       },
-      prepareImport() {
+      prepareImport () {
         this.importError = ''
 
         let file = document.querySelector('#import-deck-file-input')
 
         file.click()
       },
-      importDeck(event) {
-        let reader  = new FileReader()
+      importDeck (event) {
+        let reader = new FileReader()
         let file = document.querySelector('#import-deck-file-input').files[0]
 
         if (!file || !window.confirm('This will overwrite the current deck. Are you sure you want to do this?')) {
@@ -165,7 +165,6 @@ export default {
         }
 
         reader.addEventListener('load', () => {
-          let importedDeck = reader.result
           let parsedDeck
 
           try {

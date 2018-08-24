@@ -23,25 +23,25 @@ export default {
   components: {
     modal: Modal
   },
-  data() {
+  data () {
     return {
       isOpen: false
     }
   },
   methods: {
-    focusOnAddNewCard() {
+    focusOnAddNewCard () {
       if (this.isOpen) {
         return
       }
       this.$root.$emit('focus-add-new-card')
     },
-    focusOnSearch() {
+    focusOnSearch () {
       if (this.isOpen) {
         return
       }
       this.$root.$emit('focus-search')
     },
-    toggleDeckView() {
+    toggleDeckView () {
       if (this.isOpen) {
         return
       }
@@ -49,16 +49,14 @@ export default {
       this.$root.$emit('toggle-deck-view')
     }
   },
-  created() {
+  created () {
     Mousetrap.bind('?', () => { this.isOpen = true })
     Mousetrap.bind('a', () => { this.focusOnAddNewCard() })
     Mousetrap.bind('t', () => { this.toggleDeckView() })
     Mousetrap.bind('/', () => { this.focusOnSearch() })
-  },
+  }
 }
 </script>
 
 <style scoped>
 </style>
-
-

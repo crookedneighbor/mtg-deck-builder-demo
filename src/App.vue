@@ -33,7 +33,7 @@
           Made by <a class="link" href="https://twitter.com/bladebarringer">Blade Barringer</a> using the <a class="link" href="https://scryfall.com/docs/api">Scryfall API</a>, with inspiration from <a class="link" href="https://scryfall.com/">Scryfall</a> and <a class="link" href="http://tappedout.net/">Tappedout.net</a>. Report any issues to <a class="link" href="https://github.com/crookedneighbor/mtg-deck-builder-demo/issues">the issue tracker on Github</a>.
         </div>
       </div>
-		</section>
+    </section>
   </div>
 </template>
 

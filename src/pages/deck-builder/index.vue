@@ -31,7 +31,7 @@ export default {
   data () {
     return {}
   },
-  created() {
+  created () {
     this.$store.dispatch('refetchPendingCards')
   }
 }

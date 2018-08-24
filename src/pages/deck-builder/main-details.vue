@@ -65,23 +65,22 @@ export default {
     mana: Mana,
     'import-export-buttons': ImportExportButtons
   },
-  data() {
+  data () {
     return {
-      shouldShowSettingsModal: false,
+      shouldShowSettingsModal: false
     }
   },
   computed: Object.assign(
     constructComputedMethodsForDeck([
       'name',
       'description',
-      'format',
+      'format'
     ]),
     mapGetters(['hasCommandZone']),
     mapState(['deckView']),
     {
-      colors() {
+      colors () {
         let colors = new Set()
-        let colorString = ''
 
         DECK_LIST_TYPES.forEach((list) => {
           compileColors(colors, this.$store.state.deck[list])
@@ -100,10 +99,10 @@ export default {
   methods: Object.assign(
     mapActions(['deleteDeck', 'saveDeck']),
     {
-      closeSettingsModal() {
+      closeSettingsModal () {
         this.shouldShowSettingsModal = false
       },
-      promptToDeleteDeck() {
+      promptToDeleteDeck () {
         if (!window.confirm('Are you sure you want to delete this deck?')) {
           return
         }
@@ -112,7 +111,7 @@ export default {
 
         this.shouldShowSettingsModal = false
       },
-      onFormatChange(event) {
+      onFormatChange (event) {
         this.$store.commit('updateDeck', {
           format: event.target.value
         })
@@ -129,7 +128,7 @@ export default {
       }
     }
   ),
-  created() {
+  created () {
     setTimeout(function () {
       autosize(document.querySelector('textarea#deck-description'))
     }, 100)

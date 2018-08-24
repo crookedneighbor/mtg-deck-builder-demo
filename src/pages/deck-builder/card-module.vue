@@ -28,7 +28,7 @@ export default {
   components: {
     search: Search
   },
-  data() {
+  data () {
     return {
       secondaryMenuView: 'search',
       secondaryMenuOptions: {
@@ -51,7 +51,7 @@ export default {
       },
     }
   },
-  created() {
+  created () {
     this.$root.$on('focus-search', () => {
       this.secondaryMenuView = 'search'
     })
@@ -59,11 +59,11 @@ export default {
   computed: Object.assign(
     mapGetters(['hasCommandZone']),
     {
-      commandZone() {
+      commandZone () {
         return this.$store.state.deck.commandZone
       },
     }
-  ),
+  )
 }
 </script>
 

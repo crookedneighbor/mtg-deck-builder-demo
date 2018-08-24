@@ -10,14 +10,14 @@ const ScryfallClient = require('scryfall-client')
 export default {
   props: ['symbols'],
   computed: {
-    manaSymbols() {
+    manaSymbols () {
       let symbols = this.symbols.match(/{(.)(\/(.))?}/g)
 
       if (symbols) {
         return symbols.map((symbol) => {
           return ScryfallClient.symbols[symbol.slice(1, -1)]
         })
-      } 
+      }
 
       return []
     }

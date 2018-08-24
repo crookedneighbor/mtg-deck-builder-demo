@@ -22,17 +22,15 @@ export default {
   components: {
     modal: Modal
   },
-  data() {
+  data () {
     const hasStoredDeck = window.localStorage.getItem('deck')
 
     return {
       isFirstTime: !hasStoredDeck
     }
-  },
+  }
 }
 </script>
 
 <style scoped>
 </style>
-
-

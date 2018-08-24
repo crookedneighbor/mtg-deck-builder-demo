@@ -16,7 +16,7 @@
 <script>
 export default {
   methods: {
-    close() {
+    close () {
       this.$emit('close')
     }
   }

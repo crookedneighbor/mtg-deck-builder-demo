@@ -59,7 +59,7 @@ const {mapGetters, mapActions, mapState} = require('vuex')
 export default {
   props: ['type'],
   components: {
-    'mana': Mana,
+    'mana': Mana
   },
   data () {
     return {
@@ -75,10 +75,10 @@ export default {
       cards() {
         return this.$store.state.deck[this.type]
       },
-      defaultNumber() {
+      defaultNumber () {
         return this.isSingletonFormat ? '1' : '4'
       },
-      cardListTags() {
+      cardListTags () {
         let tags = new Set()
 
         this.cards.forEach((card) => {
@@ -92,7 +92,7 @@ export default {
   methods: Object.assign(
     mapActions(['lookupCard']),
     {
-      anyTagActive() {
+      anyTagActive () {
         for (let tag in this.activeDeckTags) {
           if (this.cardListTags.indexOf(tag) === -1) {
             delete this.activeDeckTags[tag]
@@ -103,33 +103,33 @@ export default {
 
         return false
       },
-      clearActiveTags() {
+      clearActiveTags () {
         for (let tag in this.activeDeckTags) {
           this.activeDeckTags[tag] = false
         }
 
         this.$forceUpdate()
       },
-      shouldShow(card) {
+      shouldShow (card) {
         if (!this.anyTagActive()) {
           return true
         }
 
         return Boolean(card.tags.find(tag => this.activeDeckTags[tag]))
       },
-      toggleTagActivity(tag) {
+      toggleTagActivity (tag) {
         this.activeDeckTags[tag] = !this.activeDeckTags[tag]
         this.$forceUpdate()
       },
-      formatTag(tag) {
+      formatTag (tag) {
         let words = tag.split('_')
 
         return words.map((word) => word.charAt(0).toUpperCase() + word.substring(1)).join(' ')
       },
-      blur(event) {
+      blur (event) {
         event.target.blur()
       },
-      addNew() {
+      addNew () {
         const card = extractCardInput(this.newCard)
 
         if (!card.name) {
@@ -142,7 +142,7 @@ export default {
 
         this.lookupCard(card).then(() => this.saveDeck())
       },
-      updateCard(card, event) {
+      updateCard (card, event) {
         this.cardInFocus = null
 
         const pieces = extractCardInput(event.target.value)
@@ -162,11 +162,11 @@ export default {
 
         this.lookupCard(card).then(() => this.saveDeck())
       },
-      saveDeck() {
+      saveDeck () {
         this.$forceUpdate()
         this.$store.dispatch('saveDeck')
       },
-      focusCard(card, event) {
+      focusCard (card, event) {
         this.setSelectedCard(card)
 
         setTimeout(() => {
@@ -181,7 +181,7 @@ export default {
           }, 1)
         }, 1)
       },
-      cardInputValue(card) {
+      cardInputValue (card) {
         let value = `${card.quantity} ${card.name}`
 
         if (this.cardInFocus === card) {
@@ -190,21 +190,22 @@ export default {
 
         return value
       },
-      clearSelectedCard() {
+      clearSelectedCard () {
         this.selectedCard = DEFAULT_SELECTED_CARD
       },
-      setSelectedCard(card) {
+      setSelectedCard (card) {
         if (this.cardInFocus) {
           return
         }
         this.selectedCard = card
       },
-      focusNearestInput(event) {
-        let input, parentNode = event.target
+      focusNearestInput (event) {
+        let input
+        let parentNode = event.target
         let maxFocusRetries = 5
         let retries = 0
 
-        while(!input && retries < maxFocusRetries) {
+        while (!input && retries < maxFocusRetries) {
           parentNode = parentNode.parentNode
           input = parentNode.querySelector('input')
           retries++
@@ -214,7 +215,7 @@ export default {
       }
     }
   ),
-  created() {
+  created () {
     this.$root.$on('focus-add-new-card', () => {
       if (this.type === this.deckView) {
         setTimeout(() => {
