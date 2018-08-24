@@ -27,31 +27,25 @@ export default {
   },
   data () {
     return {
-      listTypes: { 
+      listTypes: {
         mainDeck: {
-          name: 'Main Deck', 
-          shouldShow() {
+          name: 'Main Deck',
+          shouldShow () {
             return true
           }
         },
         commandZone: {
-          name: 'Command Zone', 
+          name: 'Command Zone',
           shouldShow: () => {
             return this.hasCommandZone
           }
         },
         sideboard: {
-          name: 'Sideboard', 
-          shouldShow() {
+          name: 'Sideboard',
+          shouldShow () {
             return true
           }
-        },
-        // maybe: {
-        //   name: 'Maybe',
-        //   shouldShow() {
-        //     return true
-        //   }
-        // }
+        }
       }
     }
   },

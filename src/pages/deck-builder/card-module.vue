@@ -33,7 +33,7 @@ export default {
       secondaryMenuView: 'search',
       secondaryMenuOptions: {
         commander: {
-          name(){
+          name () {
             return 'Commander'
           },
           shouldShow: () => {
@@ -41,14 +41,14 @@ export default {
           }
         },
         search: {
-          name() {
+          name () {
             return 'Search'
           },
-          shouldShow() {
+          shouldShow () {
             return true
           }
         }
-      },
+      }
     }
   },
   created () {
@@ -61,7 +61,7 @@ export default {
     {
       commandZone () {
         return this.$store.state.deck.commandZone
-      },
+      }
     }
   )
 }

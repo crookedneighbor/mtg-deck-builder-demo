@@ -72,7 +72,7 @@ export default {
     mapGetters(['isSingletonFormat']),
     mapState(['deckView']),
     {
-      cards() {
+      cards () {
         return this.$store.state.deck[this.type]
       },
       defaultNumber () {
