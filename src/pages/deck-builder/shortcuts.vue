@@ -51,9 +51,15 @@ export default {
   },
   created () {
     Mousetrap.bind('?', () => { this.isOpen = true })
-    Mousetrap.bind('a', () => { this.focusOnAddNewCard() })
+    Mousetrap.bind('a', (e) => {
+      e.preventDefault()
+      this.focusOnAddNewCard()
+    })
     Mousetrap.bind('t', () => { this.toggleDeckView() })
-    Mousetrap.bind('/', () => { this.focusOnSearch() })
+    Mousetrap.bind('/', (e) => {
+      e.preventDefault()
+      this.focusOnSearch()
+    })
   }
 }
 </script>

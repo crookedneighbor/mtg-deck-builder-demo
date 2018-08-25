@@ -129,9 +129,9 @@ export default {
     }
   ),
   created () {
-    setTimeout(function () {
+    this.$nextTick().then(() => {
       autosize(document.querySelector('textarea#deck-description'))
-    }, 100)
+    })
   }
 }
 </script>

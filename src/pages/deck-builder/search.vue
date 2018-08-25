@@ -113,9 +113,7 @@ export default {
   },
   created () {
     this.$root.$on('focus-search', () => {
-      setTimeout(() => {
-        document.querySelector('#search-input').focus()
-      }, 10)
+      document.querySelector('#search-input').focus()
     })
   },
   computed: Object.assign(
