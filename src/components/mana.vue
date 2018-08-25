@@ -1,6 +1,9 @@
 <template>
   <div class="mana-symbols">
-    <img v-for="symbol in manaSymbols" :src="symbol"/>
+    <img
+      v-for="(symbol, index) in manaSymbols" :key="`mana-${index}`"
+      :src="symbol"
+    />
   </div>
 </template>
 
