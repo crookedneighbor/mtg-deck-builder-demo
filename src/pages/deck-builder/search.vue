@@ -14,7 +14,10 @@
         {{searchError}}
       </div>
 
-      <div class="search-result"  v-for="card in searchResults">
+      <div
+        v-for="card in searchResults" :key="`search-result-${card.id}`"
+        class="search-result"
+      >
         <img :src="card.image" />
         <span class="add-card-to-deck icon is-large has-text-white">
         </span>

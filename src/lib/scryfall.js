@@ -1,3 +1,4 @@
+const uuid = require('uuid/v4')
 const ScryfallClient = require('scryfall-client')
 const scryfall = new ScryfallClient()
 
@@ -15,6 +16,7 @@ function searchForCards (query) {
 
 function formatCard (response, card = {}) {
   card.quantity = card.quantity || 1
+  card.id = card.id || uuid()
   card.name = response.name
   card.typeLine = response.type_line
   card.manaCost = response.mana_cost || (response.card_faces && response.card_faces[0].mana_cost) || ''
