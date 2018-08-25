@@ -17,7 +17,9 @@ function extractTags (tags) {
     return []
   }
 
-  return tags.split('#').map(tag => tag.toLowerCase().trim()).filter(tag => tag)
+  let allTags = tags.split('#').map(tag => tag.toLowerCase().trim()).filter(tag => tag)
+
+  return Array.from(new Set(allTags))
 }
 
 module.exports = function extractCardInput (input) {

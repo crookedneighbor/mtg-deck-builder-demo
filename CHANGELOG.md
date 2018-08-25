@@ -2,6 +2,7 @@
 ## Fixes
 * Fix issue where cards added via search would corrupt deck
 * Fix issue where high generic mana cost (10+) symbols would not appear
+* Fix issue where tags could be duplicated
 
 # 0.3.0
 ## Fixes
