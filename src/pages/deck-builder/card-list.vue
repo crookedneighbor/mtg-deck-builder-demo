@@ -2,12 +2,23 @@
   <div :data-cy="type + '-list'" v-if="deckView === type">
     <table class="table is-fullwidth">
       <tbody>
-        <tr class="card-row" v-for="card in cards" @mouseover="setSelectedCard(card)" @mouseout="clearSelectedCard" v-if="shouldShow(card)">
+        <tr
+          v-for="card in cards" :key="`card-${card.id}`"
+          v-show="shouldShow(card)"
+          class="card-row"
+          @mouseover="setSelectedCard(card)"
+          @mouseout="clearSelectedCard"
+        >
           <td class="card-input">
             <input class="input hidden-input" :value="cardInputValue(card)" @keyup.enter="blur($event)" @blur="updateCard(card, $event)" :disabled="card.loadInProgress" @focus="focusCard(card, $event)" />
             <div v-if="card.error" class="has-text-danger">{{card.error}}</div>
             <div class="tags" v-if="card.tags.length > 0 && cardInFocus !== card">
-              <span class="tag" :class="{'is-info': activeDeckTags[tag]}" v-for="tag in card.tags" @click="toggleTagActivity(tag)">{{formatTag(tag)}}</span>
+              <span
+                v-for="tag in card.tags" :key="`${card.id}-tag-${tag}`"
+                class="tag"
+                :class="{'is-info': activeDeckTags[tag]}"
+                @click="toggleTagActivity(tag)"
+              >{{formatTag(tag)}}</span>
             </div>
           </td>
           <td class="secondary-item" @click="focusNearestInput($event)">
@@ -15,7 +26,7 @@
           </td>
 
           <div class="selected-card-preview" v-if="!cardInFocus && selectedCard === card">
-            <div class="preview-container">
+            <div class="preview-container" @click="focusNearestInput($event)">
               <img :src="selectedCard.image" />
             </div>
           </div>
@@ -33,7 +44,12 @@
       <h3 class="subtitle">Filter Cards by Tags</h3>
 
       <div class="tags">
-        <span class="tag" :class="{'is-info': activeDeckTags[tag]}" v-for="tag in cardListTags" @click="toggleTagActivity(tag)">{{formatTag(tag)}}</span>
+        <span
+          v-for="tag in cardListTags" :key="`tag-name-${tag}`"
+          class="tag"
+          :class="{'is-info': activeDeckTags[tag]}"
+          @click="toggleTagActivity(tag)"
+        >{{formatTag(tag)}}</span>
         <span class="tag is-warning" v-if="anyTagActive()" @click="clearActiveTags">Clear Tags</span>
       </div>
     </div>
@@ -107,8 +123,6 @@ export default {
         for (let tag in this.activeDeckTags) {
           this.activeDeckTags[tag] = false
         }
-
-        this.$forceUpdate()
       },
       shouldShow (card) {
         if (!this.anyTagActive()) {
@@ -118,8 +132,7 @@ export default {
         return Boolean(card.tags.find(tag => this.activeDeckTags[tag]))
       },
       toggleTagActivity (tag) {
-        this.activeDeckTags[tag] = !this.activeDeckTags[tag]
-        this.$forceUpdate()
+        this.$set(this.activeDeckTags, tag, !this.activeDeckTags[tag])
       },
       formatTag (tag) {
         let words = tag.split('_')
@@ -167,19 +180,21 @@ export default {
         this.$store.dispatch('saveDeck')
       },
       focusCard (card, event) {
+        let position
+
         this.setSelectedCard(card)
 
-        setTimeout(() => {
-          let position = event.target.selectionStart
+        this.$nextTick().then(() => {
+          position = event.target.selectionStart
 
           this.cardInFocus = card
 
           this.$forceUpdate()
 
-          setTimeout(() => {
-            event.target.setSelectionRange(position, position)
-          }, 1)
-        }, 1)
+          return this.$nextTick()
+        }).then(() => {
+          event.target.setSelectionRange(position, position)
+        })
       },
       cardInputValue (card) {
         let value = `${card.quantity} ${card.name}`
@@ -218,9 +233,7 @@ export default {
   created () {
     this.$root.$on('focus-add-new-card', () => {
       if (this.type === this.deckView) {
-        setTimeout(() => {
-          document.querySelector(`#${this.type}-new-card`).focus()
-        }, 10)
+        document.querySelector(`#${this.type}-new-card`).focus()
       }
     })
   }
