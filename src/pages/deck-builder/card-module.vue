@@ -1,21 +1,29 @@
 <template>
   <div id="card-search" class="column">
-    <div id="secondary-menu-selection" class="tabs is-centered is-boxed">
+    <div id="menu-selection" class="tabs is-centered is-boxed">
       <ul>
-        <li v-for="(obj, type) in secondaryMenuOptions" :class="{'is-active': type === secondaryMenuView}" @click="secondaryMenuView = type" v-if="obj.shouldShow()">
+        <li
+          v-for="option in viewAbleMenuOptions" :key="`menu-option-${option.key}`"
+          :class="{'is-active': option.key === menuView}"
+          @click="menuView = option.key"
+        >
           <a>
-            <span>{{obj.name()}}</span>
+            <span>{{option.name}}</span>
           </a>
         </li>
       </ul>
     </div>
 
     <div class="box">
-      <div v-if="secondaryMenuView === 'commander'">
-        <img :src="card.image" v-for="card in commandZone" :width="(100 / commandZone.length) + '%'"/>
+      <div v-if="menuView === 'commander'">
+        <img
+          v-for="card in commandZone" :key="`command-zone-${card.id}`"
+          :src="card.image"
+          :width="(100 / commandZone.length) + '%'"
+        />
       </div>
 
-      <search v-if="secondaryMenuView === 'search'"></search>
+      <search v-if="menuView === 'search'"></search>
     </div>
   </div>
 </template>
@@ -30,30 +38,25 @@ export default {
   },
   data () {
     return {
-      secondaryMenuView: 'search',
-      secondaryMenuOptions: {
-        commander: {
-          name () {
-            return 'Commander'
-          },
-          shouldShow: () => {
-            return this.hasCommandZone
-          }
-        },
-        search: {
-          name () {
-            return 'Search'
-          },
-          shouldShow () {
-            return true
-          }
+      menuView: 'search',
+      menuOptions: [{
+        key: 'commander',
+        name: 'Commander',
+        shouldShow: () => {
+          return this.hasCommandZone
         }
-      }
+      }, {
+        key: 'search',
+        name: 'Search',
+        shouldShow () {
+          return true
+        }
+      }]
     }
   },
   created () {
     this.$root.$on('focus-search', () => {
-      this.secondaryMenuView = 'search'
+      this.menuView = 'search'
     })
   },
   computed: Object.assign(
@@ -61,6 +64,9 @@ export default {
     {
       commandZone () {
         return this.$store.state.deck.commandZone
+      },
+      viewAbleMenuOptions () {
+        return this.menuOptions.filter((option) => option.shouldShow())
       }
     }
   )
@@ -75,7 +81,7 @@ export default {
   height: min-content;
 }
 
-#secondary-menu-selection {
+#menu-selection {
   margin-bottom: 0;
 }
 </style>
