@@ -1,4 +1,4 @@
-# unreleased
+# 0.4.0
 ## Fixes
 * Fix issue with card ids not being set properly
 * Fix issue with search errors not being surfaced
