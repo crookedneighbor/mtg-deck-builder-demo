@@ -30,7 +30,7 @@
 
       <div class="hero-footer">
         <div class="container has-text-centered">
-          Made by <a class="link" href="https://twitter.com/bladebarringer">Blade Barringer</a> using the <a class="link" href="https://scryfall.com/docs/api">Scryfall API</a>, with inspiration from <a class="link" href="https://scryfall.com/">Scryfall</a> and <a class="link" href="http://tappedout.net/">Tappedout.net</a>. Report any issues to <a class="link" href="https://github.com/crookedneighbor/mtg-deck-builder-demo/issues">the issue tracker on Github</a>.
+          Version v{{version}}. Made by <a class="link" href="https://twitter.com/bladebarringer">Blade Barringer</a> using the <a class="link" href="https://scryfall.com/docs/api">Scryfall API</a>, with inspiration from <a class="link" href="https://scryfall.com/">Scryfall</a> and <a class="link" href="http://tappedout.net/">Tappedout.net</a>. Report any issues to <a class="link" href="https://github.com/crookedneighbor/mtg-deck-builder-demo/issues">the issue tracker on Github</a>.
         </div>
       </div>
     </section>
@@ -38,11 +38,14 @@
 </template>
 
 <script>
+const version = require('../package.json').version
+
 export default {
   name: 'mtg-demos',
   data () {
     return {
-      showNav: false
+      showNav: false,
+      version
     }
   }
 }

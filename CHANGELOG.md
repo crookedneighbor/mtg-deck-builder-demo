@@ -1,3 +1,7 @@
+# unreleased
+## Features
+* Display version in footer
+
 # 0.3.1
 ## Fixes
 * Fix issue where cards added via search would corrupt deck
