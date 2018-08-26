@@ -1,6 +1,8 @@
 const Vue = require('vue')
 const Vuex = require('vuex')
 
+const uuid = require('uuid/v4')
+
 const constants = require('../lib/constants')
 const MISSING_CARD_IMAGE = constants.MISSING_CARD_IMAGE
 const DECK_LIST_TYPES = constants.DECK_LIST_TYPES
@@ -97,6 +99,7 @@ const store = new Vuex.Store({
       card.loadInProgress = true
       card.image = card.image || MISSING_CARD_IMAGE
       card.price = card.price || {}
+      card.id = card.id || uuid()
 
       return findCardByName(card.name).then(res => formatCard(res, card)).catch((e) => {
         card.error = e.message

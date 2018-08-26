@@ -1,4 +1,7 @@
 # unreleased
+## Fixes
+* Fix issue with card ids not being set properly
+
 ## Features
 * Display version in footer
 
