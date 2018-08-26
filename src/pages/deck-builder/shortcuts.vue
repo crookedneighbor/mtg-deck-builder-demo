@@ -8,7 +8,7 @@
           <li><strong>?</strong> Open this help menu</li>
           <li><strong>a</strong> Add new card</li>
           <li><strong>t</strong> Move between deck views</li>
-          <li><strong>/</strong> Focus on the search menu</li>
+          <li><strong>/</strong> or <strong>s</strong> Focus on the search menu</li>
         </ul>
       </div>
     </div>
@@ -56,7 +56,7 @@ export default {
       this.focusOnAddNewCard()
     })
     Mousetrap.bind('t', () => { this.toggleDeckView() })
-    Mousetrap.bind('/', (e) => {
+    Mousetrap.bind(['/', 's'], (e) => {
       e.preventDefault()
       this.focusOnSearch()
     })

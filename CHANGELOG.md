@@ -5,6 +5,7 @@
 
 ## Features
 * Display version in footer
+* Use `s` shortcut to focus search
 
 # 0.3.1
 ## Fixes
