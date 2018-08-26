@@ -56,7 +56,7 @@ export default {
   methods: {
     searchForCards () {
       this.searchLoading = true
-      this.searchError = ''
+      this.clearSearchError()
       this.searchResults = []
       this.rawResponseFromScryfall = null
 
@@ -66,11 +66,13 @@ export default {
 
       searchForCards(this.search).then((res) => {
         return this.addToSearchResults(res)
+      }).catch((err) => {
+        this.searchError = err.message
+        this.searchLoading = false
       })
     },
     clearSearchError () {
       this.searchError = ''
-      this.$forceUpdate()
     },
     addCard (card) {
       const list = this.$store.state.deck[this.deckView]
