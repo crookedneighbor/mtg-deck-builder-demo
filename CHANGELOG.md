@@ -1,4 +1,4 @@
-# unreleased
+# 0.3.1
 ## Fixes
 * Fix issue where cards added via search would corrupt deck
 * Fix issue where high generic mana cost (10+) symbols would not appear
