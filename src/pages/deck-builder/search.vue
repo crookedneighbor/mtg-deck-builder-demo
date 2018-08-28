@@ -113,7 +113,11 @@ export default {
   },
   created () {
     this.$root.$on('focus-search', () => {
-      document.querySelector('#search-input').focus()
+      // need to wait for the next tick in case the search
+      // view is not yet selected
+      this.$nextTick().then(() => {
+        document.querySelector('#search-input').focus()
+      })
     })
   },
   computed: Object.assign(

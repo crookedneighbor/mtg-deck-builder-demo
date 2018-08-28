@@ -1,3 +1,7 @@
+# unreleased
+## Fixes
+* Fix issue where search would not be selected when using the `/` or `s` shortcut if commander view was selected
+
 # 0.4.0
 ## Fixes
 * Fix issue with card ids not being set properly
