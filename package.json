@@ -12,7 +12,7 @@
     "predemo": "npm run build",
     "demo": "http-server -o -s -c 1 -a localhost",
     "cypress:open": "cypress open",
-    "lint": "eslint --ext .js,.vue src",
+    "lint": "eslint --ext .js,.vue src cypress",
     "pretest": "npm run lint",
     "test": "npm run test:integration",
     "test:integration": "npm run demo & cypress run"
