@@ -6,6 +6,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production browserify -g envify src/main.js | uglifyjs -c warnings=false -m > dist/build.js",
     "build:precommit": "/bin/bash scripts/build-precommit.sh",
+    "build:prepush": "npm test",
     "prebuild": "node scripts/build-docs.js",
     "build:watch": "watchify -vd -p browserify-hmr -e src/main.js -o dist/build.js",
     "dev": "npm-run-all --parallel build:watch demo",
