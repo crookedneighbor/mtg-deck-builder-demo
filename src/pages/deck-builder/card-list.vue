@@ -11,7 +11,7 @@
         >
           <td class="card-input">
             <input class="input hidden-input" :value="cardInputValue(card)" @keyup.enter="blur($event)" @blur="updateCard(card, $event)" :disabled="card.loadInProgress" @focus="focusCard(card, $event)" />
-            <div v-if="card.error" class="has-text-danger">{{card.error}}</div>
+            <div v-if="card.error" class="card-lookup-error has-text-danger">{{card.error}}</div>
             <div class="tags" v-if="card.tags.length > 0 && cardInFocus !== card">
               <span
                 v-for="tag in card.tags" :key="`${card.id}-tag-${tag}`"

@@ -1,15 +1,15 @@
 <template>
   <div id="search">
     <div class="control" :class="{'is-loading': searchLoading}">
-      <input id="search-input" class="input" v-model="search" placeholder="Card Name or Scryfall search" @keydown.enter="searchForCards" :disabled="searchLoading"/>
+      <input data-cy="search-input" id="search-input" class="input" v-model="search" placeholder="Card Name or Scryfall search" @keydown.enter="searchForCards" :disabled="searchLoading"/>
     </div>
 
     <p class="content has-text-right is-size-7">
       See <a class="link" href="https://scryfall.com/docs/reference" target="_blank">Scryfall Syntax Guide</a> for help with search syntax.
     </p>
 
-    <div id="search-results" @scroll="onSearchScroll">
-      <div class="notification is-danger" v-if="searchError">
+    <div data-cy="search-results" id="search-results" @scroll="onSearchScroll">
+      <div data-cy="search-error" class="notification is-danger" v-if="searchError">
         <button class="delete" @click="clearSearchError"></button>
         {{searchError}}
       </div>
@@ -19,8 +19,6 @@
         class="search-result"
       >
         <img :src="card.image" />
-        <span class="add-card-to-deck icon is-large has-text-white">
-        </span>
         <span class="add-card-to-deck icon is-large" @click="addCard(card)">
           <span class="fa-stack fa-lg">
             <i class="fa fa-circle fa-stack-2x has-text-info"></i>

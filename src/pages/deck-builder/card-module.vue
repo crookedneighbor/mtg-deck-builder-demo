@@ -4,6 +4,7 @@
       <ul>
         <li
           v-for="option in viewAbleMenuOptions" :key="`menu-option-${option.key}`"
+          :data-cy="`${option.key}-secondary-menu-selection`"
           :class="{'is-active': option.key === menuView}"
           @click="menuView = option.key"
         >
@@ -15,7 +16,7 @@
     </div>
 
     <div class="box">
-      <div v-if="menuView === 'commander'">
+      <div data-cy="commander-view" v-if="menuView === 'commander'">
         <img
           v-for="card in commandZone" :key="`command-zone-${card.id}`"
           :src="card.image"

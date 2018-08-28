@@ -5,6 +5,7 @@
         <li
           v-for="list in listTypeOptions" :key="`card-list-selection-${list.key}`"
           :class="{'is-active': list.key === deckView}"
+          :data-cy="`${list.key}-selection`"
           @click="selectType(list.key)"
         >
           <a>
