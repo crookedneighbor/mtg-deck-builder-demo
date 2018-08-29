@@ -1,4 +1,4 @@
-# unreleased
+# 0.5.0
 ## Fixes
 * Fix issue where color identity did not update right away (#2)
 
