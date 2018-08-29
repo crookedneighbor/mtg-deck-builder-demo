@@ -2,6 +2,9 @@
 ## Fixes
 * Fix issue where color identity did not update right away (#2)
 
+## Features
+* Skip lookup for updating card if card name hasn't changed and there is no error
+
 # 0.4.1
 ## Fixes
 * Fix issue where search would not be selected when using the `/` or `s` shortcut if commander view was selected

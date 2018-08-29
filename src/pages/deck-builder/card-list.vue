@@ -170,8 +170,15 @@ export default {
         delete card.error
 
         card.quantity = pieces.quantity
-        card.name = pieces.name
         card.tags = pieces.tags
+
+        if (pieces.name === card.name && !card.error) {
+          // skip look up if card name has not changed
+          this.saveDeck()
+          return
+        }
+
+        card.name = pieces.name
 
         this.lookupCard(card).then(() => this.saveDeck())
       },
