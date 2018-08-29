@@ -16,7 +16,7 @@
     "lint": "eslint --ext .js,.vue src cypress",
     "pretest": "npm run lint",
     "test": "npm run test:integration",
-    "test:integration": "npm run demo & cypress run"
+    "test:integration": "cypress run"
   },
   "keywords": [
     "mtg",
