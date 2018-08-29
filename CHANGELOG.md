@@ -1,3 +1,7 @@
+# unreleased
+## Fixes
+* Fix issue where color identity did not update right away (#2)
+
 # 0.4.1
 ## Fixes
 * Fix issue where search would not be selected when using the `/` or `s` shortcut if commander view was selected

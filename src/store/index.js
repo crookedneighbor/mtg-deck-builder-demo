@@ -16,6 +16,7 @@ const EMPTY_DECK = {
   name: '',
   format: '',
   description: '',
+  colorIdentity: '',
   mainDeck: [],
   sideboard: [],
   commandZone: []
@@ -34,6 +35,14 @@ if (deck.__VERSION !== VERSION) {
   deck.__VERSION = VERSION
 }
 
+function compileColors (set, list) {
+  list.forEach((card) => {
+    card.colorIdentity && card.colorIdentity.forEach((color) => {
+      set.add(color)
+    })
+  })
+}
+
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
@@ -43,6 +52,7 @@ const store = new Vuex.Store({
       name: deck.name,
       format: deck.format,
       description: deck.description,
+      colorIdentity: deck.colorIdentity,
       mainDeck: deck.mainDeck,
       sideboard: deck.sideboard,
       commandZone: deck.commandZone
@@ -60,6 +70,25 @@ const store = new Vuex.Store({
       Object.keys(deck).forEach((key) => {
         state.deck[key] = deck[key]
       })
+    },
+    updateColorIdentity (state, hasCommandZone) {
+      let colors = new Set()
+
+      if (hasCommandZone && state.deck.commandZone.length > 0) {
+        compileColors(colors, state.deck.commandZone)
+      } else {
+        DECK_LIST_TYPES.forEach((list) => {
+          compileColors(colors, state.deck[list])
+        })
+      }
+
+      state.deck.colorIdentity = ['W', 'U', 'B', 'R', 'G'].reduce((str, color) => {
+        if (colors.has(color)) {
+          str += `{${color}}`
+        }
+
+        return str
+      }, '')
     },
     addCard (state, {card, type}) {
       state.deck[type].push(card)
@@ -79,7 +108,8 @@ const store = new Vuex.Store({
     }
   },
   actions: {
-    saveDeck ({state}) {
+    saveDeck ({commit, state, getters}) {
+      commit('updateColorIdentity', getters.hasCommandZone)
       savedDeckManager.save(state.deck)
     },
     deleteDeck ({ commit }) {
@@ -88,7 +118,8 @@ const store = new Vuex.Store({
       commit('updateDeck', {
         name: '',
         description: '',
-        format: ''
+        format: '',
+        colorIdentity: ''
       })
 
       commit('removeList', 'mainDeck')
