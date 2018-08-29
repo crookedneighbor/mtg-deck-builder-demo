@@ -1,5 +1,5 @@
 language: node_js
-before_script: npm run demo
+before_script: npm run demo &
 script: npm run $TEST
 env:
   matrix:
