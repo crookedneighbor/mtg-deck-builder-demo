@@ -1,5 +1,12 @@
-// dismisses the first time visit modal
-Cypress.Commands.add('start', () => {
-  cy.visit('http://localhost:8080')
-  cy.get('[data-cy="first-time-modal"] .modal-close').click()
+// preloads site with deck, defaults to an empty deck
+Cypress.Commands.add('start', (deckName = 'empty-deck') => {
+  cy.fixture(deckName).then((deck) => {
+    let deckAsString = JSON.stringify(deck)
+
+    cy.visit('http://localhost:8080', {
+      onBeforeLoad (win) {
+        win.localStorage.setItem('deck', deckAsString)
+      }
+    })
+  })
 })
