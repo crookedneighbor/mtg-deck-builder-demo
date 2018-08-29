@@ -9,8 +9,10 @@ const DECK_LIST_TYPES = constants.DECK_LIST_TYPES
 const VERSION = constants.VERSION
 
 const savedDeckManager = require('../lib/state')
-const findCardByName = require('../lib/scryfall').findCardByName
-const formatCard = require('../lib/scryfall').formatCard
+const scryfall = require('../lib/scryfall')
+const findCardByName = scryfall.findCardByName
+const findCardByScryfallId = scryfall.findCardByScryfallId
+const formatCard = scryfall.formatCard
 
 const EMPTY_DECK = {
   name: '',
@@ -127,12 +129,20 @@ const store = new Vuex.Store({
       commit('removeList', 'commandZone')
     },
     lookupCard (context, card) {
+      let promise
+
       card.loadInProgress = true
       card.image = card.image || MISSING_CARD_IMAGE
       card.price = card.price || {}
       card.id = card.id || uuid()
 
-      return findCardByName(card.name).then(res => formatCard(res, card)).catch((e) => {
+      if (card.scryfallId) {
+        promise = findCardByScryfallId(card.scryfallId)
+      } else {
+        promise = findCardByName(card.name)
+      }
+
+      return promise.then(res => formatCard(res, card)).catch((e) => {
         card.error = e.message
       }).then(() => {
         card.loadInProgress = false

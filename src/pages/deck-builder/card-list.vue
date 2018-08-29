@@ -178,6 +178,11 @@ export default {
           return
         }
 
+        if (pieces.name !== card.name) {
+          // force fresh look up if card name has changed
+          delete card.scryfallId
+        }
+
         card.name = pieces.name
 
         this.lookupCard(card).then(() => this.saveDeck())

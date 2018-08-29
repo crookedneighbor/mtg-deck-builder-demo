@@ -4,6 +4,7 @@
 
 ## Features
 * Skip lookup for updating card if card name hasn't changed and there is no error
+* Speed up card refetching if scryfall id exists on card object (#16)
 
 # 0.4.1
 ## Fixes
