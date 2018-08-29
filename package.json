@@ -11,7 +11,7 @@
     "build:watch": "watchify -vd -p browserify-hmr -e src/main.js -o dist/build.js",
     "dev": "npm-run-all --parallel build:watch demo",
     "predemo": "npm run build",
-    "demo": "http-server -o -s -c 1 -a localhost",
+    "demo": "http-server -p 8080 -o --silent -c 1 -a localhost",
     "cypress:open": "cypress open",
     "lint": "eslint --ext .js,.vue src cypress",
     "pretest": "npm run lint",
