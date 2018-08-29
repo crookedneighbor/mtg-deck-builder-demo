@@ -1,3 +1,10 @@
+# unreleaed
+## Fixes
+* Fix issue where deck could not be imported
+
+## Features
+* Export deck with .json extension
+
 # 0.5.0
 ## Fixes
 * Fix issue where color identity did not update right away (#2)

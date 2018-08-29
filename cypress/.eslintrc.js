@@ -7,6 +7,7 @@ module.exports = {
     after: false,
     before: false,
     afterEach: false,
-    beforeEach: false
+    beforeEach: false,
+    expect: false
   }
 }

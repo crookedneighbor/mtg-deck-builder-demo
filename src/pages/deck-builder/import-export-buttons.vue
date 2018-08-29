@@ -8,7 +8,7 @@
         </select>
       </div>
 
-      <a :href="exportedDeck" :download="downloadFileName" target="_blank">
+      <a data-cy="export-link" :href="exportedDeck" :download="downloadFileName" target="_blank">
         <button data-cy="export-button" class="button is-info" @mouseover="prepareExport">Export Deck</button>
       </a>
     </div>
@@ -33,7 +33,7 @@
         </div>
       </div>
 
-      <input data-cy="import-input" id="import-deck-file-input" type='file' accept='text/plain' @change="importDeck">
+      <input data-cy="import-input" id="import-deck-file-input" type='file' accept='text/plain, application/json' @change="importDeck">
     </div>
   </div>
 </template>
@@ -125,7 +125,13 @@ export default {
     ]),
     {
       downloadFileName () {
-        return `${this.name} - ${(new Date()).toString()}`
+        let name = `${this.name} - ${(new Date()).toString()}`
+
+        if (this.exportType === 'us') {
+          name = name + '.json'
+        }
+
+        return name
       }
     }
   ),
@@ -168,7 +174,7 @@ export default {
           let parsedDeck
 
           try {
-            if (this.importType === 'use') {
+            if (this.importType === 'us') {
               parsedDeck = JSON.parse(reader.result)
             } else if (this.importType === 'tappedout') {
               parsedDeck = formatDeckImportForTappedOut(reader.result)
