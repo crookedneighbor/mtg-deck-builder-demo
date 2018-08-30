@@ -9,16 +9,16 @@
       "quantity":1,
       "name":"Acidic Slime",
       "tags":[
-
+        "removal"
       ],
       "manaCost":"{3}{G}{G}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/127.jpg?1535503706",
       "price":{
-        "usd":"0.14",
-        "eur":"0.11"
+        "usd":"0.13",
+        "eur":"0.10"
       },
-      "id":"5888625c-5249-4b5f-93a5-1f8b0453c434",
+      "id":"61806e7a-7f9e-4815-ba02-04363b721e5a",
       "typeLine":"Creature — Ooze",
       "scryfallId":"abd6f5d1-7421-47f6-9e95-70372a365716",
       "colorIdentity":[
@@ -29,17 +29,18 @@
       "quantity":1,
       "name":"Alchemist's Refuge",
       "tags":[
-
+        "flash",
+        "land"
       ],
       "manaCost":"",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/avr/225.jpg?1517813031",
       "price":{
-        "usd":"1.99",
+        "usd":"3.23",
         "eur":"2.10",
-        "tix":"0.02"
+        "tix":"0.03"
       },
-      "id":"34fc4235-c4e4-40f1-8f2e-2d0bfe8abb00",
+      "id":"3b95a804-507b-4c52-9a78-0841a8a75c03",
       "typeLine":"Land",
       "scryfallId":"c767a897-52e3-4401-8104-930157bb2b02",
       "colorIdentity":[
@@ -51,7 +52,7 @@
       "quantity":1,
       "name":"Altered Ego",
       "tags":[
-
+        "finisher"
       ],
       "manaCost":"{X}{2}{G}{U}",
       "loadInProgress":false,
@@ -61,7 +62,7 @@
         "eur":"0.23",
         "tix":"0.01"
       },
-      "id":"d95b73f3-f154-4a19-bf4b-b1c61ecb94c9",
+      "id":"9e3bd552-609e-4ff2-a476-c0850895f5bb",
       "typeLine":"Creature — Shapeshifter",
       "scryfallId":"c05da08d-8fac-47bc-80d8-78a80d1463d2",
       "colorIdentity":[
@@ -73,7 +74,7 @@
       "quantity":1,
       "name":"Archetype of Imagination",
       "tags":[
-
+        "flying"
       ],
       "manaCost":"{4}{U}{U}",
       "loadInProgress":false,
@@ -82,7 +83,7 @@
         "usd":"0.13",
         "eur":"0.07"
       },
-      "id":"53eb9bec-02ac-423f-a78f-46fc2784e899",
+      "id":"c95424bf-97c1-4c3b-8701-9d40fef7b8fe",
       "typeLine":"Enchantment Creature — Human Wizard",
       "scryfallId":"037b396c-2146-4d86-9d13-757685c850c7",
       "colorIdentity":[
@@ -93,7 +94,7 @@
       "quantity":1,
       "name":"Artisan of Kozilek",
       "tags":[
-
+        "finisher"
       ],
       "manaCost":"{9}",
       "loadInProgress":false,
@@ -102,7 +103,7 @@
         "usd":"0.34",
         "eur":"0.21"
       },
-      "id":"b77042a5-3e3f-4d9e-b774-8675a02c08b3",
+      "id":"6ab3ce4f-7fe3-47d1-af61-c8e94875aa95",
       "typeLine":"Creature — Eldrazi",
       "scryfallId":"07daf75f-2e4d-479f-8231-6966335fa32e",
       "colorIdentity":[
@@ -113,17 +114,17 @@
       "quantity":1,
       "name":"As Foretold",
       "tags":[
-
+        "cheat_mana_cost"
       ],
       "manaCost":"{2}{U}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/akh/42.jpg?1517813031",
       "price":{
-        "usd":"5.78",
+        "usd":"5.73",
         "eur":"5.43",
-        "tix":"0.83"
+        "tix":"0.84"
       },
-      "id":"7cff0513-817a-4e15-a9df-9941debf9c6d",
+      "id":"42b93c38-33e2-43c7-b5da-fb9068630533",
       "typeLine":"Enchantment",
       "scryfallId":"0f91d225-788e-42fc-9d01-8668f672b717",
       "colorIdentity":[
@@ -134,17 +135,17 @@
       "quantity":1,
       "name":"Avatar of Might",
       "tags":[
-
+        "cheat_mana_cost"
       ],
       "manaCost":"{6}{G}{G}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/10e/251.jpg?1521654064",
       "price":{
         "usd":"0.69",
-        "eur":"0.41",
+        "eur":"0.50",
         "tix":"0.01"
       },
-      "id":"438faac1-ee86-4dc6-805b-6ce3675a099d",
+      "id":"e79b2be9-8296-447f-89ac-7572f010023b",
       "typeLine":"Creature — Avatar",
       "scryfallId":"ca570876-23b2-4915-a5b9-20f1fa976fab",
       "colorIdentity":[
@@ -155,16 +156,16 @@
       "quantity":1,
       "name":"Beast Within",
       "tags":[
-
+        "removal"
       ],
       "manaCost":"{2}{G}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/bbd/190.jpg?1529062906",
       "price":{
-        "usd":"0.91",
-        "eur":"0.42"
+        "usd":"0.97",
+        "eur":"0.43"
       },
-      "id":"d8a74f3c-4490-4078-b501-e57c62a64582",
+      "id":"296b4908-6351-4d88-990e-e154f55afacb",
       "typeLine":"Instant",
       "scryfallId":"ab3e096a-d6e8-4148-bbea-f26fc67e2fe2",
       "colorIdentity":[
@@ -175,16 +176,16 @@
       "quantity":1,
       "name":"Birds of Paradise",
       "tags":[
-
+        "ramp"
       ],
       "manaCost":"{G}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/cn2/176.jpg?1517813031",
       "price":{
-        "usd":"7.55",
-        "eur":"4.73"
+        "usd":"7.49",
+        "eur":"4.70"
       },
-      "id":"45a5c912-4608-403b-b26a-2aa224982cf6",
+      "id":"7e36a232-fce2-4b28-8939-8ee2ba56e92a",
       "typeLine":"Creature — Bird",
       "scryfallId":"feefe9f0-24a6-461c-9ef1-86c5a6f33b83",
       "colorIdentity":[
@@ -195,17 +196,17 @@
       "quantity":1,
       "name":"Blue Sun's Zenith",
       "tags":[
-
+        "card_draw"
       ],
       "manaCost":"{X}{U}{U}{U}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/a25/44.jpg?1521725066",
       "price":{
         "usd":"0.49",
-        "eur":"0.35",
+        "eur":"0.38",
         "tix":"0.09"
       },
-      "id":"7f24da51-da13-4c7c-a9af-bc5e5092a27e",
+      "id":"44e2b2c9-9665-4a8a-a3cd-4c22ea1b43f6",
       "typeLine":"Instant",
       "scryfallId":"500a2aa4-712f-41be-920e-f2f448ff83d0",
       "colorIdentity":[
@@ -222,11 +223,11 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/kld/244.jpg?1517813031",
       "price":{
-        "usd":"2.93",
-        "eur":"2.95",
-        "tix":"0.69"
+        "usd":"3.04",
+        "eur":"2.91",
+        "tix":"0.66"
       },
-      "id":"f1852c29-7ce6-44f7-beee-bf29d67e1edf",
+      "id":"e75126fd-e4ef-4041-8e8c-fa3ce11d7e94",
       "typeLine":"Land",
       "scryfallId":"8744471b-a528-47d9-84d0-4526273f55e9",
       "colorIdentity":[
@@ -238,16 +239,16 @@
       "quantity":1,
       "name":"Brainstorm",
       "tags":[
-
+        "deck_manipulation"
       ],
       "manaCost":"{U}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/82.jpg?1535503035",
       "price":{
-        "usd":"0.49",
+        "usd":"0.42",
         "eur":"0.35"
       },
-      "id":"125d1d65-4cab-46fa-a9c8-d1774885146c",
+      "id":"92bb99bd-382f-4ca1-acb6-2f2cd54afbc1",
       "typeLine":"Instant",
       "scryfallId":"821f1c26-6253-4ecc-a243-a5662c637a4a",
       "colorIdentity":[
@@ -258,7 +259,7 @@
       "quantity":1,
       "name":"Brittle Effigy",
       "tags":[
-
+        "removal"
       ],
       "manaCost":"{1}",
       "loadInProgress":false,
@@ -267,7 +268,7 @@
         "usd":"0.14",
         "eur":"0.18"
       },
-      "id":"d1212c7a-d5da-4913-baef-f79d03c3e1ec",
+      "id":"8c701429-ac93-438d-beef-8feea376bd63",
       "typeLine":"Artifact",
       "scryfallId":"d492418e-fce9-4333-85e7-004a06546b3c",
       "colorIdentity":[
@@ -278,16 +279,16 @@
       "quantity":1,
       "name":"Burgeoning",
       "tags":[
-
+        "ramp"
       ],
       "manaCost":"{G}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c16/143.jpg?1517813031",
       "price":{
-        "usd":"6.87",
-        "eur":"2.66"
+        "usd":"6.93",
+        "eur":"2.65"
       },
-      "id":"b2567343-0de1-4ada-a469-1d1c7ce17813",
+      "id":"13e5bee1-ab2a-4e59-8196-b57b4560597d",
       "typeLine":"Enchantment",
       "scryfallId":"6da045f8-6278-4c84-9d39-025adf0789c1",
       "colorIdentity":[
@@ -298,17 +299,17 @@
       "quantity":1,
       "name":"Colossus of Akros",
       "tags":[
-
+        "finisher"
       ],
       "manaCost":"{8}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/ths/214.jpg?1517813031",
       "price":{
         "usd":"1.25",
-        "eur":"0.44",
+        "eur":"0.48",
         "tix":"0.01"
       },
-      "id":"a73d1142-1967-4191-baca-6781168e3195",
+      "id":"cdd3ad1c-bfbe-4602-b525-8bf76c87be62",
       "typeLine":"Artifact Creature — Golem",
       "scryfallId":"3e394ffe-7460-4c59-a403-e9404b0d10c1",
       "colorIdentity":[
@@ -325,10 +326,10 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/240.jpg?1535505276",
       "price":{
-        "usd":"1.23",
+        "usd":"1.02",
         "eur":"0.37"
       },
-      "id":"e48ccee3-79ad-4316-b458-b7fe0e58a1d5",
+      "id":"140f30a2-6c35-417a-ba22-b416ee5504f3",
       "typeLine":"Land",
       "scryfallId":"6d28946e-a478-4e0b-b39b-ec0236ddc9a5",
       "colorIdentity":[
@@ -339,7 +340,7 @@
       "quantity":1,
       "name":"Conduit of Ruin",
       "tags":[
-
+        "cheat_mana_cost"
       ],
       "manaCost":"{6}",
       "loadInProgress":false,
@@ -349,7 +350,7 @@
         "eur":"0.50",
         "tix":"0.01"
       },
-      "id":"d7110626-1c56-4467-b44f-6534726d3e6c",
+      "id":"19baeaa7-5b87-40d7-b150-231b173f31d4",
       "typeLine":"Creature — Eldrazi",
       "scryfallId":"4bc855d3-817c-4748-a7f5-1533d8b0e930",
       "colorIdentity":[
@@ -360,17 +361,17 @@
       "quantity":1,
       "name":"Courser of Kruphix",
       "tags":[
-
+        "deck_manipulation"
       ],
       "manaCost":"{1}{G}{G}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/a25/164.jpg?1521660883",
       "price":{
         "usd":"3.81",
-        "eur":"3.57",
-        "tix":"2.05"
+        "eur":"3.58",
+        "tix":"2.07"
       },
-      "id":"8652118c-c8a4-466e-8678-c0f8a6fa551a",
+      "id":"df266e15-020f-4c09-b5ca-ae039e9c17cc",
       "typeLine":"Enchantment Creature — Centaur",
       "scryfallId":"8683a978-1bef-4b01-9361-56b1fc157d26",
       "colorIdentity":[
@@ -381,16 +382,16 @@
       "quantity":1,
       "name":"Crystal Ball",
       "tags":[
-
+        "deck_manipulation"
       ],
       "manaCost":"{3}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/201.jpg?1535504715",
       "price":{
-        "usd":"0.14",
+        "usd":"0.15",
         "eur":"0.15"
       },
-      "id":"f3bf5d69-4dbc-4a16-a230-16f5821b2801",
+      "id":"1ddcd5ef-832a-4217-b4ac-33324c55779e",
       "typeLine":"Artifact",
       "scryfallId":"d344d88f-a63b-4593-990f-af6346cad91a",
       "colorIdentity":[
@@ -401,17 +402,17 @@
       "quantity":1,
       "name":"Cyclonic Rift",
       "tags":[
-
+        "wrath"
       ],
       "manaCost":"{1}{U}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/mm3/35.jpg?1517813031",
       "price":{
-        "usd":"15.38",
-        "eur":"8.91",
+        "usd":"15.37",
+        "eur":"9.27",
         "tix":"0.41"
       },
-      "id":"1ce68d69-a2f2-4997-9a4c-9fb2b9d94355",
+      "id":"194bf59d-b0a9-4ae1-93ee-084150a0d36c",
       "typeLine":"Instant",
       "scryfallId":"268f6afc-bf16-4ca7-a986-945a95d3bffc",
       "colorIdentity":[
@@ -429,10 +430,10 @@
       "image":"https://img.scryfall.com/cards/normal/en/hou/172.jpg?1517813031",
       "price":{
         "usd":"0.09",
-        "eur":"0.08",
+        "eur":"0.09",
         "tix":"0.01"
       },
-      "id":"a2eb3e50-b855-4275-b45b-bf42df5a6fce",
+      "id":"4310af1a-ec91-4d40-b4b9-8f111ca3416a",
       "typeLine":"Land — Desert",
       "scryfallId":"7d42aa0c-0408-4b0d-bec5-9861dbcf9ee1",
       "colorIdentity":[
@@ -450,10 +451,10 @@
       "image":"https://img.scryfall.com/cards/normal/en/hou/173.jpg?1517813031",
       "price":{
         "usd":"0.09",
-        "eur":"0.06",
+        "eur":"0.07",
         "tix":"0.01"
       },
-      "id":"0c66539c-fc60-45ee-b0f7-a2dc4fa8d3dd",
+      "id":"aa8b74cf-b3dd-4a44-ab7c-061c2143a2c7",
       "typeLine":"Land — Desert",
       "scryfallId":"91b92d87-776c-490f-9ff1-234e47145df8",
       "colorIdentity":[
@@ -464,17 +465,17 @@
       "quantity":1,
       "name":"Draining Whelk",
       "tags":[
-
+        "flash"
       ],
       "manaCost":"{4}{U}{U}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/tsp/57.jpg?1517813031",
       "price":{
         "usd":"3.36",
-        "eur":"1.08",
+        "eur":"1.07",
         "tix":"0.01"
       },
-      "id":"97b84d80-922e-41d2-9398-07e407a84528",
+      "id":"8d171f78-7c60-493b-93eb-a3191e4e5c45",
       "typeLine":"Creature — Illusion",
       "scryfallId":"c559d326-b97b-43d9-b7c9-c09e1a0e9db6",
       "colorIdentity":[
@@ -485,16 +486,16 @@
       "quantity":1,
       "name":"Eternal Witness",
       "tags":[
-
+        "recursion"
       ],
       "manaCost":"{1}{G}{G}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/cm2/136.jpg?1534112110",
       "price":{
-        "usd":"6.95",
-        "eur":"3.90"
+        "usd":"6.87",
+        "eur":"3.88"
       },
-      "id":"7589ebd0-6f96-46ab-95d0-1b93da02a086",
+      "id":"11a1a139-a438-48c4-9f51-e008ab7686eb",
       "typeLine":"Creature — Human Shaman",
       "scryfallId":"ee7d035f-184f-4067-876a-1d26cb8d3fa2",
       "colorIdentity":[
@@ -514,7 +515,7 @@
         "usd":"0.08",
         "eur":"0.07"
       },
-      "id":"d10530f1-b17e-4066-91dc-d64bf7e1ab8e",
+      "id":"b91eb124-862f-4d4f-b129-2183a10fe9be",
       "typeLine":"Land",
       "scryfallId":"b34c171f-8d86-429d-ad5d-f3cd64cce2b3",
       "colorIdentity":[
@@ -525,7 +526,7 @@
       "quantity":1,
       "name":"Farseek",
       "tags":[
-
+        "ramp"
       ],
       "manaCost":"{1}{G}",
       "loadInProgress":false,
@@ -534,7 +535,7 @@
         "usd":"0.79",
         "eur":"0.23"
       },
-      "id":"75c6bc5a-e079-4db1-9538-e38b2758ecd3",
+      "id":"893b1b52-c9bb-4f32-98d6-8c98b54193e5",
       "typeLine":"Sorcery",
       "scryfallId":"7f5a3b1c-dcbc-4803-8e5b-42314d46701e",
       "colorIdentity":[
@@ -545,16 +546,16 @@
       "quantity":1,
       "name":"Fellwar Stone",
       "tags":[
-
+        "ramp"
       ],
       "manaCost":"{2}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/cm2/189.jpg?1534112735",
       "price":{
-        "usd":"2.48",
-        "eur":"0.26"
+        "usd":"2.38",
+        "eur":"0.27"
       },
-      "id":"f3f399fe-9f50-400e-a0d5-33153620fad0",
+      "id":"3b6ec5a6-4698-481e-8b37-a220bde5dd42",
       "typeLine":"Artifact",
       "scryfallId":"1e60622b-7c25-444d-8eeb-c443acdfc488",
       "colorIdentity":[
@@ -565,7 +566,7 @@
       "quantity":1,
       "name":"Fertile Ground",
       "tags":[
-
+        "ramp"
       ],
       "manaCost":"{1}{G}",
       "loadInProgress":false,
@@ -574,7 +575,7 @@
         "usd":"0.09",
         "eur":"0.07"
       },
-      "id":"ca57b09b-3226-40f6-93fc-ea904fea7ef7",
+      "id":"83420a8f-b912-4402-b800-a697bd9dd898",
       "typeLine":"Enchantment — Aura",
       "scryfallId":"5e1fbfce-9677-4ae2-b525-1bb371c8e109",
       "colorIdentity":[
@@ -585,7 +586,8 @@
       "quantity":1,
       "name":"Fleetfeather Cockatrice",
       "tags":[
-
+        "finisher",
+        "flash"
       ],
       "manaCost":"{3}{G}{U}",
       "loadInProgress":false,
@@ -595,7 +597,7 @@
         "eur":"0.08",
         "tix":"0.01"
       },
-      "id":"464a7864-3101-4d0d-9f1f-c26666e5c29b",
+      "id":"17987f39-6f59-47fc-a4ba-9a3e3a97ddad",
       "typeLine":"Creature — Cockatrice",
       "scryfallId":"1139236e-5d71-4fc1-937d-ba1efadee031",
       "colorIdentity":[
@@ -607,7 +609,7 @@
       "quantity":10,
       "name":"Forest",
       "tags":[
-
+        "land"
       ],
       "manaCost":"",
       "loadInProgress":false,
@@ -616,7 +618,7 @@
         "usd":"0.25",
         "eur":"0.09"
       },
-      "id":"37ca0d0a-11b6-44bd-8475-fa47d1dfefaa",
+      "id":"bffa3ce3-6b85-482f-8883-26422e79e83a",
       "typeLine":"Basic Land — Forest",
       "scryfallId":"3d365b22-2304-4f20-86f9-9560f59546f1",
       "colorIdentity":[
@@ -627,17 +629,17 @@
       "quantity":1,
       "name":"Future Sight",
       "tags":[
-
+        "deck_manipulation"
       ],
       "manaCost":"{2}{U}{U}{U}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/ema/50.jpg?1519048136",
       "price":{
-        "usd":"0.47",
+        "usd":"0.45",
         "eur":"0.55",
         "tix":"0.02"
       },
-      "id":"e15a9edd-961f-4f05-a88c-efc19eefbe7f",
+      "id":"85481736-aeda-40b9-862c-9e476bff084e",
       "typeLine":"Enchantment",
       "scryfallId":"fdf3b52f-edcd-429d-9a65-703bbd97cb5e",
       "colorIdentity":[
@@ -654,10 +656,10 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/253.jpg?1535505457",
       "price":{
-        "usd":"0.22",
+        "usd":"0.19",
         "eur":"0.19"
       },
-      "id":"4d44962e-8093-48db-80f4-7fa2d81503ec",
+      "id":"ffa5fc48-bb09-4b9b-a09f-158ac7acb316",
       "typeLine":"Land",
       "scryfallId":"29479ab2-c492-479c-82ba-441703b27c0c",
       "colorIdentity":[
@@ -668,17 +670,17 @@
       "quantity":1,
       "name":"Heroic Intervention",
       "tags":[
-
+        "protection"
       ],
       "manaCost":"{1}{G}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/aer/109.jpg?1517813031",
       "price":{
         "usd":"5.49",
-        "eur":"4.25",
+        "eur":"4.27",
         "tix":"0.14"
       },
-      "id":"801b8e02-adeb-469a-8b83-ffc70f58e2b0",
+      "id":"53f673c1-600a-4e66-b027-84289df90be4",
       "typeLine":"Instant",
       "scryfallId":"8f5a620c-fde7-4b72-bf8a-efc4f14560c5",
       "colorIdentity":[
@@ -695,11 +697,11 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/dom/240.jpg?1524792404",
       "price":{
-        "usd":"2.28",
+        "usd":"2.31",
         "eur":"2.14",
-        "tix":"0.74"
+        "tix":"0.72"
       },
-      "id":"7844de06-a6b3-4317-8234-b7d38a33410f",
+      "id":"3e21679c-c922-4b28-a2cd-bbee36d91ceb",
       "typeLine":"Land",
       "scryfallId":"d631d040-51e9-4540-91e7-aeb5ade84090",
       "colorIdentity":[
@@ -711,17 +713,17 @@
       "quantity":1,
       "name":"Imprisoned in the Moon",
       "tags":[
-
+        "removal"
       ],
       "manaCost":"{2}{U}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/emn/65.jpg?1517813031",
       "price":{
-        "usd":"2.49",
-        "eur":"0.45",
+        "usd":"2.45",
+        "eur":"0.44",
         "tix":"0.01"
       },
-      "id":"a8c5c233-1305-4aa1-b11c-997dbec23261",
+      "id":"ba5e5e7b-eae7-480d-ab85-a87f569ff213",
       "typeLine":"Enchantment — Aura",
       "scryfallId":"7990ebba-e9f2-4ba4-a352-e26ec81d4bed",
       "colorIdentity":[
@@ -732,7 +734,7 @@
       "quantity":9,
       "name":"Island",
       "tags":[
-
+        "land"
       ],
       "manaCost":"",
       "loadInProgress":false,
@@ -741,7 +743,7 @@
         "usd":"0.25",
         "eur":"0.06"
       },
-      "id":"314be16a-9ced-4c9b-842e-f86976551c56",
+      "id":"2aec9067-5436-480d-a020-6be4823975e5",
       "typeLine":"Basic Land — Island",
       "scryfallId":"28347f33-bfd5-48fd-ab10-228dfad1669d",
       "colorIdentity":[
@@ -752,16 +754,16 @@
       "quantity":1,
       "name":"Kaseto, Orochi Archmage",
       "tags":[
-
+        "finisher"
       ],
       "manaCost":"{1}{G}{U}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c15/47.jpg?1519044359",
       "price":{
         "usd":"0.73",
-        "eur":"0.82"
+        "eur":"0.81"
       },
-      "id":"bdcf39fa-8551-4a69-81f4-41ee0698c836",
+      "id":"da50cb0b-3028-461f-9ddc-6376b9e6bd24",
       "typeLine":"Legendary Creature — Snake Wizard",
       "scryfallId":"ee333196-20e2-4414-8bb4-5cae6b88893e",
       "colorIdentity":[
@@ -773,16 +775,16 @@
       "quantity":1,
       "name":"Kiora's Follower",
       "tags":[
-
+        "ramp"
       ],
       "manaCost":"{G}{U}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/ddo/52.jpg?1530676847",
       "price":{
         "usd":"0.15",
-        "eur":"0.18"
+        "eur":"0.20"
       },
-      "id":"e382dcba-286f-49ca-be8d-43cdb528dbfa",
+      "id":"928621cf-8e8d-4fa9-aaf3-fe67d6f1ed6e",
       "typeLine":"Creature — Merfolk",
       "scryfallId":"d9704f4f-eb5b-4862-8efd-ff1d8fd4177a",
       "colorIdentity":[
@@ -794,17 +796,17 @@
       "quantity":1,
       "name":"Kruphix, God of Horizons",
       "tags":[
-
+        "cheat_mana_cost"
       ],
       "manaCost":"{3}{G}{U}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/jou/152.jpg?1517813031",
       "price":{
-        "usd":"8.39",
+        "usd":"8.49",
         "eur":"5.30",
         "tix":"0.66"
       },
-      "id":"877c58bb-5e9b-4f5f-aea7-d595a26769ce",
+      "id":"43a7e41a-2fa4-4a51-ac73-a3723f087362",
       "typeLine":"Legendary Enchantment Creature — God",
       "scryfallId":"27427233-da58-45af-ade8-e0727929efaa",
       "colorIdentity":[
@@ -816,17 +818,17 @@
       "quantity":1,
       "name":"Leyline of Anticipation",
       "tags":[
-
+        "flash"
       ],
       "manaCost":"{2}{U}{U}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/m11/61.jpg?1517813031",
       "price":{
         "usd":"14.99",
-        "eur":"9.53",
-        "tix":"0.35"
+        "eur":"9.51",
+        "tix":"0.34"
       },
-      "id":"84fdda70-6529-41fa-b8a6-3a721ac67909",
+      "id":"431ed985-068f-47f7-810e-e4410f9b9f76",
       "typeLine":"Enchantment",
       "scryfallId":"d7dbb092-3bb0-445e-ab26-d939cac92a73",
       "colorIdentity":[
@@ -837,7 +839,7 @@
       "quantity":1,
       "name":"Lightning Greaves",
       "tags":[
-
+        "protection"
       ],
       "manaCost":"{2}",
       "loadInProgress":false,
@@ -846,7 +848,7 @@
         "usd":"3.99",
         "eur":"1.88"
       },
-      "id":"f7f7eda1-0681-4f73-a994-c10f68949768",
+      "id":"1de844ad-f3fd-42cb-ab73-a6078886b924",
       "typeLine":"Artifact — Equipment",
       "scryfallId":"f0fbee02-b6cc-4cd1-a702-cf4f89c17921",
       "colorIdentity":[
@@ -857,17 +859,17 @@
       "quantity":1,
       "name":"Mind's Dilation",
       "tags":[
-
+        "cheat_mana_cost"
       ],
       "manaCost":"{5}{U}{U}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/emn/70.jpg?1517813031",
       "price":{
         "usd":"3.99",
-        "eur":"1.43",
-        "tix":"0.11"
+        "eur":"1.35",
+        "tix":"0.12"
       },
-      "id":"7990158d-0307-4db1-b94e-9cc7275e9a25",
+      "id":"a58841a2-1b7a-4b1d-889a-4aba8d17d31f",
       "typeLine":"Enchantment",
       "scryfallId":"b3d6522a-b9a0-4185-b5ba-c20fa1b772eb",
       "colorIdentity":[
@@ -878,17 +880,17 @@
       "quantity":1,
       "name":"Momir Vig, Simic Visionary",
       "tags":[
-
+        "deck_manipulation"
       ],
       "manaCost":"{3}{G}{U}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/dis/118.jpg?1517813031",
       "price":{
         "usd":"3.43",
-        "eur":"1.66",
-        "tix":"0.02"
+        "eur":"1.72",
+        "tix":"0.01"
       },
-      "id":"041ef801-a487-41dd-8be7-083f3043e047",
+      "id":"c49e5fe4-dbff-4397-a32b-630453265e1b",
       "typeLine":"Legendary Creature — Elf Wizard",
       "scryfallId":"25a8c801-df0c-402b-a41c-4703a2abfb66",
       "colorIdentity":[
@@ -900,17 +902,17 @@
       "quantity":1,
       "name":"Moonring Island",
       "tags":[
-
+        "land"
       ],
       "manaCost":"",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/shm/276.jpg?1517813031",
       "price":{
         "usd":"0.22",
-        "eur":"0.12",
+        "eur":"0.13",
         "tix":"0.01"
       },
-      "id":"e10c1d21-529b-4caf-bd5a-de5b309b1ad9",
+      "id":"f947b535-76be-4a3f-8a91-ad103f2226cc",
       "typeLine":"Land — Island",
       "scryfallId":"64b36993-666c-40d0-b61a-1d162bd06dcc",
       "colorIdentity":[
@@ -927,10 +929,10 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/267.jpg?1535505657",
       "price":{
-        "usd":"0.22",
+        "usd":"0.19",
         "eur":"0.15"
       },
-      "id":"7d5fd5a7-b55c-4040-8ebe-9900f7f7fd71",
+      "id":"feaeb2c7-097f-4f24-8b27-135056b6e731",
       "typeLine":"Land",
       "scryfallId":"b4f80d5f-539b-4abf-909b-be710d95a2a1",
       "colorIdentity":[
@@ -941,7 +943,7 @@
       "quantity":1,
       "name":"Murkfiend Liege",
       "tags":[
-
+        "finisher"
       ],
       "manaCost":"{2}{G/U}{G/U}{G/U}",
       "loadInProgress":false,
@@ -950,7 +952,7 @@
         "usd":"2.49",
         "eur":"1.02"
       },
-      "id":"c563a015-6339-4a89-898f-4db2a58651e3",
+      "id":"5a6a747c-32ed-4b59-9dd5-fee746036cb3",
       "typeLine":"Creature — Horror",
       "scryfallId":"b85d2921-16ee-48bf-abd3-f49fae163855",
       "colorIdentity":[
@@ -962,16 +964,16 @@
       "quantity":1,
       "name":"Nevinyrral's Disk",
       "tags":[
-
+        "wrath"
       ],
       "manaCost":"{4}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c17/217.jpg?1517813031",
       "price":{
-        "usd":"1.15",
-        "eur":"0.59"
+        "usd":"1.16",
+        "eur":"0.61"
       },
-      "id":"7c80aa16-9ff5-420a-8e11-a291dd714809",
+      "id":"cac651af-88f6-47b5-ad98-842a0fe76a38",
       "typeLine":"Artifact",
       "scryfallId":"9c79e497-656e-40f5-8a32-2ec5541915ad",
       "colorIdentity":[
@@ -982,7 +984,7 @@
       "quantity":1,
       "name":"Nimbus Swimmer",
       "tags":[
-
+        "flying"
       ],
       "manaCost":"{X}{G}{U}",
       "loadInProgress":false,
@@ -991,7 +993,7 @@
         "usd":"0.10",
         "eur":"0.08"
       },
-      "id":"10b58441-4df1-4bda-96f7-bbdc1b9603aa",
+      "id":"1702bde6-c572-431b-8fa9-4cd3aa134e54",
       "typeLine":"Creature — Leviathan",
       "scryfallId":"1efbf7be-bc11-4285-a37d-83790b292b3a",
       "colorIdentity":[
@@ -1003,17 +1005,17 @@
       "quantity":1,
       "name":"Nissa, Steward of Elements",
       "tags":[
-
+        "cheat_mana_cost"
       ],
       "manaCost":"{X}{G}{U}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/akh/204.jpg?1517813031",
       "price":{
-        "usd":"3.41",
-        "eur":"3.51",
-        "tix":"0.29"
+        "usd":"3.45",
+        "eur":"3.53",
+        "tix":"0.28"
       },
-      "id":"102cae72-1b68-4aa7-9800-cbc866684d98",
+      "id":"46ae4443-e673-4627-a8a7-d217fe137869",
       "typeLine":"Legendary Planeswalker — Nissa",
       "scryfallId":"c79036a1-2239-4d4f-8b58-6cf9ac4863fc",
       "colorIdentity":[
@@ -1025,17 +1027,18 @@
       "quantity":1,
       "name":"Nylea, God of the Hunt",
       "tags":[
-
+        "finisher",
+        "trample"
       ],
       "manaCost":"{3}{G}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/ths/166.jpg?1517813031",
       "price":{
-        "usd":"6.59",
-        "eur":"4.51",
+        "usd":"6.54",
+        "eur":"4.48",
         "tix":"0.70"
       },
-      "id":"6282fd3a-d97a-46fb-976b-2730719a3623",
+      "id":"e9c62d29-082b-4f6b-b0f5-f1525a31a24a",
       "typeLine":"Legendary Enchantment Creature — God",
       "scryfallId":"f185a734-a32a-4244-88e8-dabafbfd064f",
       "colorIdentity":[
@@ -1046,16 +1049,16 @@
       "quantity":1,
       "name":"Plasm Capture",
       "tags":[
-
+        "cheat_mana_cost"
       ],
       "manaCost":"{G}{G}{U}{U}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/ddo/55.jpg?1530676857",
       "price":{
         "usd":"0.33",
-        "eur":"0.35"
+        "eur":"0.43"
       },
-      "id":"23ad4d18-4854-41e8-b778-37031a44a0e8",
+      "id":"d3d53355-abf0-4a1a-b361-bd812e8031fe",
       "typeLine":"Instant",
       "scryfallId":"37fa090d-b756-4de3-8dcb-c20c5fcd4c6a",
       "colorIdentity":[
@@ -1067,16 +1070,17 @@
       "quantity":1,
       "name":"Praetor's Counsel",
       "tags":[
-
+        "infinite_hand_size",
+        "recursion"
       ],
       "manaCost":"{5}{G}{G}{G}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/cma/134.jpg?1519869641",
       "price":{
         "usd":"2.79",
-        "eur":"1.11"
+        "eur":"1.12"
       },
-      "id":"f3e2058f-e2b9-4f74-b676-9aac1f5159ee",
+      "id":"7c872ce1-360a-4558-b54c-326ef6b0da40",
       "typeLine":"Sorcery",
       "scryfallId":"b6d5bf06-f735-4e9f-9460-e6cdf501662f",
       "colorIdentity":[
@@ -1087,16 +1091,16 @@
       "quantity":1,
       "name":"Propaganda",
       "tags":[
-
+        "protection"
       ],
       "manaCost":"{2}{U}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c16/94.jpg?1517813031",
       "price":{
         "usd":"7.99",
-        "eur":"4.58"
+        "eur":"4.69"
       },
-      "id":"6430750c-7528-4fe4-835e-299a39c79ac2",
+      "id":"4ab6a4b3-8cf3-4d3e-b434-bb89d4b9f2c4",
       "typeLine":"Enchantment",
       "scryfallId":"c180f9bd-7dd7-4318-8625-2fa674cbc528",
       "colorIdentity":[
@@ -1107,16 +1111,16 @@
       "quantity":1,
       "name":"Rampant Growth",
       "tags":[
-
+        "ramp"
       ],
       "manaCost":"{1}{G}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/dds/48.jpg?1517813031",
       "price":{
         "usd":"0.23",
-        "eur":"0.14"
+        "eur":"0.13"
       },
-      "id":"55973291-2b87-4a06-8425-71a0017d169f",
+      "id":"43277e79-aff3-4bfc-87e3-87efc455ace3",
       "typeLine":"Sorcery",
       "scryfallId":"1c0a6253-aa08-4393-b370-bb3e2496d88c",
       "colorIdentity":[
@@ -1127,7 +1131,7 @@
       "quantity":1,
       "name":"Reality Shift",
       "tags":[
-
+        "removal"
       ],
       "manaCost":"{1}{U}",
       "loadInProgress":false,
@@ -1136,7 +1140,7 @@
         "usd":"0.79",
         "eur":"0.24"
       },
-      "id":"9f51bca0-6863-4a7d-8e45-a3baaf863102",
+      "id":"9098c51b-70aa-4af7-a606-85bde1f85100",
       "typeLine":"Instant",
       "scryfallId":"c9a96e38-413f-49cd-90fa-178a91a406ba",
       "colorIdentity":[
@@ -1147,17 +1151,18 @@
       "quantity":1,
       "name":"Reliquary Tower",
       "tags":[
-
+        "infinite_hand_size",
+        "land"
       ],
       "manaCost":"",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/m19/254.jpg?1531451525",
       "price":{
         "usd":"1.72",
-        "eur":"0.61",
+        "eur":"0.64",
         "tix":"0.04"
       },
-      "id":"fefa25fc-c0e8-47ec-a467-a586b3103c56",
+      "id":"e5d96b73-77e4-4962-bc04-e4cfd7271e10",
       "typeLine":"Land",
       "scryfallId":"81766fd6-c7e0-4527-a63e-512d126c0421",
       "colorIdentity":[
@@ -1168,17 +1173,18 @@
       "quantity":1,
       "name":"Rishkar's Expertise",
       "tags":[
-
+        "card_draw",
+        "cheat_mana_cost"
       ],
       "manaCost":"{4}{G}{G}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/aer/123.jpg?1517813031",
       "price":{
         "usd":"1.49",
-        "eur":"0.70",
+        "eur":"0.69",
         "tix":"0.01"
       },
-      "id":"a8cb3fb9-cbd6-4a15-a53f-d02403403e9e",
+      "id":"7114647a-0e94-46d4-9080-a61fbee059f3",
       "typeLine":"Sorcery",
       "scryfallId":"5d58ba68-05c1-4cd8-a93d-321cd1739ccb",
       "colorIdentity":[
@@ -1189,17 +1195,17 @@
       "quantity":1,
       "name":"River's Rebuke",
       "tags":[
-
+        "wrath"
       ],
       "manaCost":"{4}{U}{U}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/xln/71.jpg?1527428461",
       "price":{
-        "usd":"0.99",
-        "eur":"0.39",
-        "tix":"0.29"
+        "usd":"0.98",
+        "eur":"0.38",
+        "tix":"0.25"
       },
-      "id":"3a14391d-9b39-4d86-afa4-f040b3544458",
+      "id":"15e33249-1c00-4dd3-917f-c7663e175d32",
       "typeLine":"Sorcery",
       "scryfallId":"fda8ef30-bbfa-4857-9750-0dd0def8b13f",
       "colorIdentity":[
@@ -1210,16 +1216,16 @@
       "quantity":1,
       "name":"Rogue's Passage",
       "tags":[
-
+        "land"
       ],
       "manaCost":"",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c17/272.jpg?1517813031",
       "price":{
-        "usd":"0.44",
-        "eur":"0.17"
+        "usd":"0.42",
+        "eur":"0.16"
       },
-      "id":"345b6789-8d0e-4f7b-bec9-55bf938be0d2",
+      "id":"1d5d914c-b3df-4f8c-9fa6-f8162085768d",
       "typeLine":"Land",
       "scryfallId":"766b7834-f54e-4948-80c5-bc37c1d5344e",
       "colorIdentity":[
@@ -1230,7 +1236,7 @@
       "quantity":1,
       "name":"Sagu Mauler",
       "tags":[
-
+        "finisher"
       ],
       "manaCost":"{4}{G}{U}",
       "loadInProgress":false,
@@ -1240,7 +1246,7 @@
         "eur":"0.18",
         "tix":"0.01"
       },
-      "id":"9163929a-afbf-4cc2-bdac-122180e4f674",
+      "id":"d69144d2-8529-47f8-aa33-e42898f2fe7f",
       "typeLine":"Creature — Beast",
       "scryfallId":"4c64af58-963d-497b-ab95-104839d96b94",
       "colorIdentity":[
@@ -1252,16 +1258,16 @@
       "quantity":1,
       "name":"Sakura-Tribe Elder",
       "tags":[
-
+        "ramp"
       ],
       "manaCost":"{1}{G}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/160.jpg?1535504129",
       "price":{
-        "usd":"0.98",
+        "usd":"0.96",
         "eur":"0.30"
       },
-      "id":"86788e91-9933-4731-a7d4-673216df3960",
+      "id":"aa90c557-e630-4925-8b5c-8b20848779b4",
       "typeLine":"Creature — Snake Shaman",
       "scryfallId":"6912d171-5f26-45d3-9c6a-911e509d083a",
       "colorIdentity":[
@@ -1272,7 +1278,7 @@
       "quantity":1,
       "name":"Simic Growth Chamber",
       "tags":[
-
+        "land"
       ],
       "manaCost":"",
       "loadInProgress":false,
@@ -1281,7 +1287,7 @@
         "usd":"0.21",
         "eur":"0.13"
       },
-      "id":"2bf031a9-b4fa-42d2-884d-2385a5f8f9ae",
+      "id":"7f9a26fb-3552-47c1-807a-d48c678dffc7",
       "typeLine":"Land",
       "scryfallId":"10919cb8-8307-44fc-a2fa-4aefc53d11b6",
       "colorIdentity":[
@@ -1293,7 +1299,7 @@
       "quantity":1,
       "name":"Simic Signet",
       "tags":[
-
+        "ramp"
       ],
       "manaCost":"{2}",
       "loadInProgress":false,
@@ -1302,7 +1308,7 @@
         "usd":"0.49",
         "eur":"0.14"
       },
-      "id":"95b2ed2c-1177-4d97-b298-97aae507336b",
+      "id":"8e1ea23b-4f40-4243-989f-8796bfec5e1b",
       "typeLine":"Artifact",
       "scryfallId":"12013400-21db-4a3b-9e4e-edbea7c8021f",
       "colorIdentity":[
@@ -1314,7 +1320,7 @@
       "quantity":1,
       "name":"Simic Sky Swallower",
       "tags":[
-
+        "finisher"
       ],
       "manaCost":"{5}{G}{U}",
       "loadInProgress":false,
@@ -1324,7 +1330,7 @@
         "eur":"0.13",
         "tix":"0.01"
       },
-      "id":"64da3c39-9462-410f-beb0-2c22e954d147",
+      "id":"7b74630a-f537-47b0-8834-e578520a3e37",
       "typeLine":"Creature — Leviathan",
       "scryfallId":"b18816df-9b73-4a3f-a1d5-ceabf76d3fb0",
       "colorIdentity":[
@@ -1336,16 +1342,16 @@
       "quantity":1,
       "name":"Sol Ring",
       "tags":[
-
+        "ramp"
       ],
       "manaCost":"{1}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/222.jpg?1535505021",
       "price":{
-        "usd":"2.54",
+        "usd":"2.44",
         "eur":"1.10"
       },
-      "id":"61f7e32a-bdad-4673-850a-9c5d463dba22",
+      "id":"b7255cbf-b620-47a6-8bd7-790e364be1d4",
       "typeLine":"Artifact",
       "scryfallId":"83a0f2eb-2f6d-4aaa-b7a9-ea06d5de7eca",
       "colorIdentity":[
@@ -1356,17 +1362,18 @@
       "quantity":1,
       "name":"Spell Swindle",
       "tags":[
-
+        "ramp",
+        "removal"
       ],
       "manaCost":"{3}{U}{U}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/xln/82.jpg?1527428654",
       "price":{
-        "usd":"0.61",
+        "usd":"0.62",
         "eur":"0.41",
-        "tix":"0.02"
+        "tix":"0.01"
       },
-      "id":"51c8ccce-1d8e-4a10-a32a-73931de3867c",
+      "id":"4961cde6-6ef1-4a1f-b5a5-83b3ac63889e",
       "typeLine":"Instant",
       "scryfallId":"6e619ada-e9ce-4758-afd8-8def853877eb",
       "colorIdentity":[
@@ -1377,16 +1384,16 @@
       "quantity":1,
       "name":"Stroke of Genius",
       "tags":[
-
+        "card_draw"
       ],
       "manaCost":"{X}{2}{U}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c15/108.jpg?1519044768",
       "price":{
         "usd":"0.53",
-        "eur":"0.40"
+        "eur":"0.43"
       },
-      "id":"97f6a5de-6b17-414d-9922-bf39046baacf",
+      "id":"183909d4-c002-463a-9a71-609934b849e4",
       "typeLine":"Instant",
       "scryfallId":"5ecb5078-4439-4fdc-88e8-aac3becbbad8",
       "colorIdentity":[
@@ -1397,16 +1404,16 @@
       "quantity":1,
       "name":"Stunt Double",
       "tags":[
-
+        "flash"
       ],
       "manaCost":"{3}{U}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/cn2/38.jpg?1517813031",
       "price":{
-        "usd":"2.26",
-        "eur":"0.99"
+        "usd":"2.27",
+        "eur":"1.02"
       },
-      "id":"e5b8fdc5-fef4-4d19-a74f-c2d7b405c73f",
+      "id":"07727be2-af79-4a32-8714-a015ae4fff34",
       "typeLine":"Creature — Shapeshifter",
       "scryfallId":"3344c1ea-e8b2-481e-b9eb-604c87e34925",
       "colorIdentity":[
@@ -1417,16 +1424,16 @@
       "quantity":1,
       "name":"Swiftfoot Boots",
       "tags":[
-
+        "protection"
       ],
       "manaCost":"{2}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/225.jpg?1535505062",
       "price":{
-        "usd":"0.98",
+        "usd":"0.93",
         "eur":"0.27"
       },
-      "id":"c8921c26-0653-4bd0-8584-24304d7b76d6",
+      "id":"889e63be-fd4b-475c-85a2-85ac03b8269c",
       "typeLine":"Artifact — Equipment",
       "scryfallId":"1ae84b5c-d3ad-48a3-9ccc-1dd76cee392c",
       "colorIdentity":[
@@ -1437,17 +1444,17 @@
       "quantity":1,
       "name":"Sylvan Caryatid",
       "tags":[
-
+        "ramp"
       ],
       "manaCost":"{1}{G}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/ths/180.jpg?1517813031",
       "price":{
-        "usd":"3.24",
+        "usd":"3.30",
         "eur":"2.39",
-        "tix":"0.03"
+        "tix":"0.02"
       },
-      "id":"3fb79176-7995-417d-83d8-aa677fe7f9af",
+      "id":"3ff13bd7-7829-4c7f-90c0-e013b9dff95d",
       "typeLine":"Creature — Plant",
       "scryfallId":"d40b65c1-b24d-492d-81b9-d8474ebdc08c",
       "colorIdentity":[
@@ -1458,17 +1465,18 @@
       "quantity":1,
       "name":"Sylvan Library",
       "tags":[
-
+        "card_draw",
+        "deck_manipulation"
       ],
       "manaCost":"{1}{G}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/ema/187.jpg?1526080191",
       "price":{
-        "usd":"23.38",
-        "eur":"13.24",
+        "usd":"23.40",
+        "eur":"13.23",
         "tix":"0.14"
       },
-      "id":"0f1547d1-e7f8-4ffb-a8e8-170f007fb7e4",
+      "id":"edca3bfc-32c4-4110-a78d-d2a8090f4768",
       "typeLine":"Enchantment",
       "scryfallId":"d5b5d2a7-8185-4df0-a35a-f89c12857f87",
       "colorIdentity":[
@@ -1479,17 +1487,17 @@
       "quantity":1,
       "name":"Teferi, Mage of Zhalfir",
       "tags":[
-
+        "flash"
       ],
       "manaCost":"{2}{U}{U}{U}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/ima/75.jpg?1530591994",
       "price":{
-        "usd":"2.89",
-        "eur":"1.54",
+        "usd":"2.85",
+        "eur":"1.55",
         "tix":"0.30"
       },
-      "id":"7d392425-ce78-4964-ae3f-a2e85971ff95",
+      "id":"fa7e039c-7506-4fb9-b980-cd02d49350f9",
       "typeLine":"Legendary Creature — Human Wizard",
       "scryfallId":"19573a69-5022-4d63-9252-c8789602d051",
       "colorIdentity":[
@@ -1500,7 +1508,7 @@
       "quantity":1,
       "name":"Temple of Mystery",
       "tags":[
-
+        "land"
       ],
       "manaCost":"",
       "loadInProgress":false,
@@ -1508,9 +1516,9 @@
       "price":{
         "usd":"0.99",
         "eur":"1.15",
-        "tix":"0.02"
+        "tix":"0.03"
       },
-      "id":"0a74df46-09b0-4572-a015-e786e9d1b056",
+      "id":"68f0ac42-5088-4503-b0fb-979aaecc24d5",
       "typeLine":"Land",
       "scryfallId":"2f66945b-3e64-498a-9478-5f96a61d4ec7",
       "colorIdentity":[
@@ -1522,16 +1530,16 @@
       "quantity":1,
       "name":"Temple of the False God",
       "tags":[
-
+        "land"
       ],
       "manaCost":"",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/285.jpg?1535505916",
       "price":{
-        "usd":"0.39",
+        "usd":"0.31",
         "eur":"0.16"
       },
-      "id":"83eaea49-f510-416b-b0b5-e874eb296015",
+      "id":"dfd96662-298a-45b9-b2e2-0c39850c45c2",
       "typeLine":"Land",
       "scryfallId":"1f799c15-8f84-4ca2-a55f-ed7784d09a9a",
       "colorIdentity":[
@@ -1542,16 +1550,16 @@
       "quantity":1,
       "name":"Temur Sabertooth",
       "tags":[
-
+        "protection"
       ],
       "manaCost":"{2}{G}{G}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c17/159.jpg?1517813031",
       "price":{
         "usd":"0.25",
-        "eur":"0.16"
+        "eur":"0.17"
       },
-      "id":"795967bd-5362-4abc-904a-cb0ba49bffc8",
+      "id":"102bdb13-3a22-4339-a13c-3dba79eb090e",
       "typeLine":"Creature — Cat",
       "scryfallId":"2bf59e8d-0746-440d-878f-d6f6f74610d8",
       "colorIdentity":[
@@ -1568,10 +1576,10 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/286.jpg?1535505932",
       "price":{
-        "usd":"0.18",
+        "usd":"0.10",
         "eur":"0.08"
       },
-      "id":"c650b5b0-c452-4b79-a3b9-e3766d708a82",
+      "id":"88b882da-4782-44f1-baf2-72b772178650",
       "typeLine":"Land",
       "scryfallId":"fc282cec-c74a-4431-bbbc-e8febe71adf2",
       "colorIdentity":[
@@ -1591,7 +1599,7 @@
         "usd":"0.10",
         "eur":"0.09"
       },
-      "id":"670977cd-f5e6-4c1d-a247-ac6760c02569",
+      "id":"58a91265-ea4f-47f4-b563-061fe85240db",
       "typeLine":"Land",
       "scryfallId":"fc81cc34-f78a-411e-8dbd-b13b3d62e587",
       "colorIdentity":[
@@ -1603,16 +1611,17 @@
       "quantity":1,
       "name":"Thought Vessel",
       "tags":[
-
+        "infinite_hand_size",
+        "ramp"
       ],
       "manaCost":"{2}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/cm2/224.jpg?1534113121",
       "price":{
-        "usd":"6.47",
-        "eur":"3.21"
+        "usd":"6.42",
+        "eur":"3.25"
       },
-      "id":"397285e2-bff2-4aee-8a34-d64936b05933",
+      "id":"5e915045-521e-4c1c-9804-5ec9c0e79723",
       "typeLine":"Artifact",
       "scryfallId":"19ce4784-139d-442c-86a9-3e45e91038b7",
       "colorIdentity":[
@@ -1623,17 +1632,17 @@
       "quantity":1,
       "name":"Trygon Predator",
       "tags":[
-
+        "removal"
       ],
       "manaCost":"{1}{G}{U}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/ema/209.jpg?1519049079",
       "price":{
         "usd":"0.23",
-        "eur":"0.28",
+        "eur":"0.27",
         "tix":"0.01"
       },
-      "id":"ca4aba79-b04c-4344-8f48-f9ee55cad95d",
+      "id":"458340a1-8075-4668-a232-b19c001b2423",
       "typeLine":"Creature — Beast",
       "scryfallId":"cd9f1b7c-96b4-4036-9c1b-0ea9891da89e",
       "colorIdentity":[
@@ -1645,7 +1654,8 @@
       "quantity":1,
       "name":"Urban Evolution",
       "tags":[
-
+        "card_draw",
+        "ramp"
       ],
       "manaCost":"{3}{G}{U}",
       "loadInProgress":false,
@@ -1655,7 +1665,7 @@
         "eur":"0.10",
         "tix":"0.01"
       },
-      "id":"980493d8-839b-4259-9106-560fc2e2086a",
+      "id":"6aaa27b6-5914-4320-bb6c-b780b51104b1",
       "typeLine":"Sorcery",
       "scryfallId":"9a005974-ba57-42cf-a54f-4aba41cad144",
       "colorIdentity":[
@@ -1667,16 +1677,16 @@
       "quantity":1,
       "name":"Vedalken Orrery",
       "tags":[
-
+        "flash"
       ],
       "manaCost":"{4}",
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/cns/206.jpg?1517813031",
       "price":{
-        "usd":"21.17",
-        "eur":"11.16"
+        "usd":"20.14",
+        "eur":"11.15"
       },
-      "id":"f9e44411-5fb5-4688-8469-270d117f5290",
+      "id":"6dcceafa-4600-4979-a1c7-cc5aadec4462",
       "typeLine":"Artifact",
       "scryfallId":"178c71e6-a905-4050-b483-044462c4c1c5",
       "colorIdentity":[
@@ -1687,7 +1697,8 @@
       "quantity":1,
       "name":"Winged Coatl",
       "tags":[
-
+        "flash",
+        "removal"
       ],
       "manaCost":"{1}{G}{U}",
       "loadInProgress":false,
@@ -1696,7 +1707,7 @@
         "usd":"0.21",
         "eur":"0.15"
       },
-      "id":"91b1fd55-30cc-40d1-929a-4ebfd1ee6e84",
+      "id":"5e3f48e1-16c2-4718-aefd-0b84dbc96442",
       "typeLine":"Creature — Snake",
       "scryfallId":"bc4be69d-68e7-4e56-8c32-b252a40f0ca3",
       "colorIdentity":[
@@ -1743,7 +1754,7 @@
         "eur":"0.97",
         "tix":"0.02"
       },
-      "id":"7536365b-407f-4dc6-bf0b-1e54c7832d29",
+      "id":"994ad0ed-8b8d-4465-8152-3051e69920bf",
       "typeLine":"Legendary Creature — Elf Druid",
       "scryfallId":"3ce37555-49a2-4112-95b4-f3376b55b45b",
       "colorIdentity":[
