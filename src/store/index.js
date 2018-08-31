@@ -19,18 +19,29 @@ const EMPTY_DECK = {
   format: '',
   description: '',
   colorIdentity: '',
-  mainDeck: [],
-  sideboard: [],
-  commandZone: []
+  mainDeck: {},
+  sideboard: {},
+  commandZone: {}
 }
 const savedDeck = savedDeckManager.load()
 
 const deck = Object.assign({}, EMPTY_DECK, savedDeck)
 
+// TODO convert old style to new style
+// if (Array.isArray(deck.mainDeck)) {
+//   DECK_LIST_TYPES.forEach((list) => {
+//     deck[list] = deck[list].reduce((cards, card) => {
+//       cards[card.id] = card
+//
+//       return cards
+//     }, {})
+//   })
+// }
+
 if (deck.__VERSION !== VERSION) {
   DECK_LIST_TYPES.forEach((list) => {
-    deck[list].forEach((card) => {
-      card.loadInProgress = true
+    Object.keys(deck[list]).forEach((cardId) => {
+      deck[list][cardId].loadInProgress = true
     })
   })
 
@@ -38,7 +49,8 @@ if (deck.__VERSION !== VERSION) {
 }
 
 function compileColors (set, list) {
-  list.forEach((card) => {
+  Object.keys(list).forEach((cardId) => {
+    const card = list[cardId]
     card.colorIdentity && card.colorIdentity.forEach((color) => {
       set.add(color)
     })
@@ -76,7 +88,7 @@ const store = new Vuex.Store({
     updateColorIdentity (state, hasCommandZone) {
       let colors = new Set()
 
-      if (hasCommandZone && state.deck.commandZone.length > 0) {
+      if (hasCommandZone && Object.keys(state.deck.commandZone).length > 0) {
         compileColors(colors, state.deck.commandZone)
       } else {
         DECK_LIST_TYPES.forEach((list) => {
@@ -93,20 +105,16 @@ const store = new Vuex.Store({
       }, '')
     },
     addCard (state, {card, type}) {
-      state.deck[type].push(card)
+      Vue.set(state.deck[type], card.id, card)
     },
     removeCard (state, {card, type}) {
-      const list = state.deck[type]
-      const index = list.findIndex(c => c === card)
-
-      list.splice(index, 1)
+      Vue.delete(state.deck[type], card.id)
     },
     removeList (state, type) {
       const list = state.deck[type]
-
-      while (list.length) {
-        list.pop()
-      }
+      Object.keys(list).forEach((cardId) => {
+        Vue.delete(list, cardId)
+      })
     }
   },
   actions: {
@@ -150,7 +158,11 @@ const store = new Vuex.Store({
     },
     refetchPendingCards ({state, dispatch}) {
       DECK_LIST_TYPES.forEach((type) => {
-        state.deck[type].forEach((card) => {
+        const list = state.deck[type]
+
+        Object.keys(list).forEach((cardId) => {
+          const card = list[cardId]
+
           if (card.loadInProgress) {
             dispatch('lookupCard', card)
           }

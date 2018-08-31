@@ -58,6 +58,7 @@
 </template>
 
 <script>
+const uuid = require('uuid/v4')
 const MISSING_CARD_IMAGE = require('../../lib/constants').MISSING_CARD_IMAGE
 const DEFAULT_SELECTED_CARD = {
   image: MISSING_CARD_IMAGE,
@@ -89,7 +90,12 @@ export default {
     mapState(['deckView']),
     {
       cards () {
-        return this.$store.state.deck[this.type]
+        const list = this.$store.state.deck[this.type]
+
+        return Object.keys(list).reduce((cards, cardId) => {
+          cards.push(list[cardId])
+          return cards
+        }, [])
       },
       defaultNumber () {
         return this.isSingletonFormat ? '1' : '4'
@@ -148,6 +154,8 @@ export default {
         if (!card.name) {
           return
         }
+
+        card.id = uuid()
 
         this.$store.commit('addCard', {card, type: this.type})
 
