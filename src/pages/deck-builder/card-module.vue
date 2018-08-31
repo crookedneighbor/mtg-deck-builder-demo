@@ -6,7 +6,7 @@
           v-for="option in viewAbleMenuOptions" :key="`menu-option-${option.key}`"
           :data-cy="`${option.key}-secondary-menu-selection`"
           :class="{'is-active': option.key === menuView}"
-          @click="menuView = option.key"
+          @click="updateMenuView(option.key)"
         >
           <a>
             <span>{{option.name}}</span>
@@ -30,7 +30,7 @@
 </template>
 
 <script>
-const {mapGetters} = require('vuex')
+const {mapState, mapGetters} = require('vuex')
 const Search = require('./search.vue')
 
 export default {
@@ -39,7 +39,6 @@ export default {
   },
   data () {
     return {
-      menuView: 'search',
       menuOptions: [{
         key: 'commander',
         name: 'Commander',
@@ -57,11 +56,17 @@ export default {
   },
   created () {
     this.$root.$on('focus-search', () => {
-      this.menuView = 'search'
+      this.updateMenuView('search')
     })
+  },
+  methods: {
+    updateMenuView (value) {
+      this.$store.commit('updateMenuView', value)
+    }
   },
   computed: Object.assign(
     mapGetters(['hasCommandZone']),
+    mapState(['menuView']),
     {
       commandZone () {
         return this.$store.state.deck.commandZone

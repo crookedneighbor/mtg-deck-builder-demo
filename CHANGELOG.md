@@ -1,6 +1,7 @@
 # unreleaed
 ## Fixes
 * Fix issue where deck could not be imported
+* Fixes issue where views would not reset correctly upon deletion
 
 ## Features
 * Export deck with .json extension

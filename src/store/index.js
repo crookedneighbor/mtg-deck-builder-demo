@@ -73,12 +73,16 @@ const store = new Vuex.Store({
     },
     isFirstTime: Boolean(savedDeck),
 
-    deckView: 'mainDeck'
+    deckView: 'mainDeck',
+    menuView: 'search'
   },
 
   mutations: {
     updateDeckView (state, value) {
       state.deckView = value
+    },
+    updateMenuView (state, value) {
+      state.menuView = value
     },
     updateDeck (state, deck) {
       Object.keys(deck).forEach((key) => {
@@ -135,6 +139,8 @@ const store = new Vuex.Store({
       commit('removeList', 'mainDeck')
       commit('removeList', 'sideboard')
       commit('removeList', 'commandZone')
+      commit('updateDeckView', 'mainDeck')
+      commit('updateMenuView', 'search')
     },
     lookupCard (context, card) {
       let promise
