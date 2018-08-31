@@ -74,9 +74,9 @@ function formatDeckExportForTappedOut (deck) {
 function formatDeckImportForTappedOut (textFile) {
   let atSideboard = false
   let deck = {
-    mainDeck: [],
-    sideboard: [],
-    commandZone: []
+    mainDeck: {},
+    sideboard: {},
+    commandZone: {}
   }
 
   textFile.split('\n').forEach((rawLine) => {
@@ -97,12 +97,12 @@ function formatDeckImportForTappedOut (textFile) {
     card.loadInProgress = true
 
     if (atSideboard) {
-      deck.sideboard.push(card)
+      deck.sideboard[card.id] = card
     } else {
       if (isCommander) {
-        deck.commandZone.push(card)
+        deck.commandZone[card.id] = card
       } else {
-        deck.mainDeck.push(card)
+        deck.mainDeck[card.id] = card
       }
     }
   })

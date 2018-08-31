@@ -1,3 +1,5 @@
+const uuid = require('uuid/v4')
+
 function extractQuantity (number) {
   if (!number) {
     return 1
@@ -23,12 +25,14 @@ function extractTags (tags) {
 }
 
 module.exports = function extractCardInput (input) {
+  const id = uuid()
   const pieces = input.match(/^(\d*x? )?([^#]*)(.*)?$/)
   const quantity = extractQuantity(pieces[1])
   const name = pieces[2].trim()
   const tags = extractTags(pieces[3])
 
   return {
+    id,
     quantity,
     name,
     tags,

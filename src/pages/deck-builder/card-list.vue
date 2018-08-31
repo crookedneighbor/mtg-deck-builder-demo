@@ -155,8 +155,6 @@ export default {
           return
         }
 
-        card.id = uuid()
-
         this.$store.commit('addCard', {card, type: this.type})
 
         this.newCard = ''
