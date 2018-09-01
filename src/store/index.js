@@ -3,6 +3,7 @@ const Vuex = require('vuex')
 
 const uuid = require('uuid/v4')
 
+const Deck = require('../lib/deck')
 const constants = require('../lib/constants')
 const MISSING_CARD_IMAGE = constants.MISSING_CARD_IMAGE
 const DECK_LIST_TYPES = constants.DECK_LIST_TYPES
@@ -48,20 +49,11 @@ if (deck.__VERSION !== VERSION) {
   deck.__VERSION = VERSION
 }
 
-function compileColors (set, list) {
-  Object.keys(list).forEach((cardId) => {
-    const card = list[cardId]
-    card.colorIdentity && card.colorIdentity.forEach((color) => {
-      set.add(color)
-    })
-  })
-}
-
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    deck: {
+    deck: new Deck({
       __VERSION: deck.__VERSION,
       name: deck.name,
       format: deck.format,
@@ -70,7 +62,7 @@ const store = new Vuex.Store({
       mainDeck: deck.mainDeck,
       sideboard: deck.sideboard,
       commandZone: deck.commandZone
-    },
+    }),
     isFirstTime: Boolean(savedDeck),
 
     deckView: 'mainDeck',
@@ -84,101 +76,42 @@ const store = new Vuex.Store({
     updateMenuView (state, value) {
       state.menuView = value
     },
-    updateDeck (state, deck) {
-      Object.keys(deck).forEach((key) => {
-        state.deck[key] = deck[key]
-      })
-    },
-    updateColorIdentity (state, hasCommandZone) {
-      let colors = new Set()
-
-      if (hasCommandZone && Object.keys(state.deck.commandZone).length > 0) {
-        compileColors(colors, state.deck.commandZone)
-      } else {
-        DECK_LIST_TYPES.forEach((list) => {
-          compileColors(colors, state.deck[list])
-        })
-      }
-
-      state.deck.colorIdentity = ['W', 'U', 'B', 'R', 'G'].reduce((str, color) => {
-        if (colors.has(color)) {
-          str += `{${color}}`
-        }
-
-        return str
-      }, '')
+    updateDeck (state, deckUpdates) {
+      state.deck.updateDeck(deckUpdates)
     },
     addCard (state, {card, type}) {
-      Vue.set(state.deck[type], card.id, card)
+      state.deck.addCard(type, card)
     },
     removeCard (state, {card, type}) {
-      Vue.delete(state.deck[type], card.id)
+      state.deck.removeCard(type, card)
     },
     removeList (state, type) {
-      const list = state.deck[type]
-      Object.keys(list).forEach((cardId) => {
-        Vue.delete(list, cardId)
-      })
+      state.deck.removeAllCardsFromList(type)
     }
   },
   actions: {
-    saveDeck ({commit, state, getters}) {
-      commit('updateColorIdentity', getters.hasCommandZone)
-      savedDeckManager.save(state.deck)
+    saveDeck ({state}) {
+      state.deck.saveDeck()
     },
-    deleteDeck ({ commit }) {
-      savedDeckManager.remove()
-
-      commit('updateDeck', {
-        name: '',
-        description: '',
-        format: '',
-        colorIdentity: ''
-      })
-
-      commit('removeList', 'mainDeck')
-      commit('removeList', 'sideboard')
-      commit('removeList', 'commandZone')
+    deleteDeck ({ state, commit }) {
+      state.deck.deleteDeck()
       commit('updateDeckView', 'mainDeck')
       commit('updateMenuView', 'search')
     },
-    lookupCard (context, card) {
-      let promise
-
-      card.loadInProgress = true
-      card.image = card.image || MISSING_CARD_IMAGE
-      card.price = card.price || {}
-      card.id = card.id || uuid()
-
-      if (card.scryfallId) {
-        promise = findCardByScryfallId(card.scryfallId)
-      } else {
-        promise = findCardByName(card.name)
-      }
-
-      return promise.then(res => formatCard(res, card)).catch((e) => {
-        card.error = e.message
-      }).then(() => {
-        card.loadInProgress = false
-      })
+    lookupCard ({state}, card) {
+      return state.deck.lookupCard(card)
     },
-    refetchPendingCards ({state, dispatch}) {
-      DECK_LIST_TYPES.forEach((type) => {
-        const list = state.deck[type]
-
-        Object.keys(list).forEach((cardId) => {
-          const card = list[cardId]
-
-          if (card.loadInProgress) {
-            dispatch('lookupCard', card)
-          }
-        })
-      })
+    refetchPendingCards ({state}) {
+      state.deck.refetchPendingCards()
     }
   },
   getters: {
-    hasCommandZone: state => state.deck.format === 'commander' || state.deck.format === 'brawl',
-    isSingletonFormat: state => state.deck.format === 'commander' || state.deck.format === 'brawl'
+    hasCommandZone (state) {
+      return state.deck.hasCommandZone()
+    },
+    isSingletonFormat (state) {
+      return state.deck.isSingletonFormat()
+    }
   }
 })
 
