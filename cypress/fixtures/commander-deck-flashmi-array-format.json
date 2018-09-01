@@ -1,12 +1,11 @@
 {
   "__VERSION":"2018-08-28__optimize_refetching_logic",
   "name":"Flashmi",
-  "description":"Play big dumb creatures on every person's turn!",
   "format":"commander",
+  "description":"Play big dumb creatures on every person's turn!",
   "colorIdentity":"{U}{G}",
-  "mainDeck":{
-    "11e6357a-4bd4-4f4e-8ea5-a1aa81524ac3":{
-      "id":"11e6357a-4bd4-4f4e-8ea5-a1aa81524ac3",
+  "mainDeck":[
+    {
       "quantity":1,
       "name":"Acidic Slime",
       "tags":[
@@ -16,17 +15,17 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/127.jpg?1535503706",
       "price":{
-        "usd":"0.11",
-        "eur":"0.11"
+        "usd":"0.13",
+        "eur":"0.10"
       },
+      "id":"61806e7a-7f9e-4815-ba02-04363b721e5a",
       "typeLine":"Creature — Ooze",
       "scryfallId":"abd6f5d1-7421-47f6-9e95-70372a365716",
       "colorIdentity":[
         "G"
       ]
     },
-    "cd9564f2-0ac8-43cc-abdd-f550991fc552":{
-      "id":"cd9564f2-0ac8-43cc-abdd-f550991fc552",
+    {
       "quantity":1,
       "name":"Alchemist's Refuge",
       "tags":[
@@ -37,10 +36,11 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/avr/225.jpg?1517813031",
       "price":{
-        "usd":"3.13",
-        "eur":"2.09",
+        "usd":"3.23",
+        "eur":"2.10",
         "tix":"0.03"
       },
+      "id":"3b95a804-507b-4c52-9a78-0841a8a75c03",
       "typeLine":"Land",
       "scryfallId":"c767a897-52e3-4401-8104-930157bb2b02",
       "colorIdentity":[
@@ -48,8 +48,7 @@
         "U"
       ]
     },
-    "9eca1ed5-62c0-44f3-8a5e-cd678c672807":{
-      "id":"9eca1ed5-62c0-44f3-8a5e-cd678c672807",
+    {
       "quantity":1,
       "name":"Altered Ego",
       "tags":[
@@ -63,6 +62,7 @@
         "eur":"0.23",
         "tix":"0.01"
       },
+      "id":"9e3bd552-609e-4ff2-a476-c0850895f5bb",
       "typeLine":"Creature — Shapeshifter",
       "scryfallId":"c05da08d-8fac-47bc-80d8-78a80d1463d2",
       "colorIdentity":[
@@ -70,8 +70,7 @@
         "U"
       ]
     },
-    "04f4222b-2de6-4ca7-bcb9-62960a2ffc7d":{
-      "id":"04f4222b-2de6-4ca7-bcb9-62960a2ffc7d",
+    {
       "quantity":1,
       "name":"Archetype of Imagination",
       "tags":[
@@ -81,17 +80,17 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/81.jpg?1535503022",
       "price":{
-        "usd":"0.12",
+        "usd":"0.13",
         "eur":"0.07"
       },
+      "id":"c95424bf-97c1-4c3b-8701-9d40fef7b8fe",
       "typeLine":"Enchantment Creature — Human Wizard",
       "scryfallId":"037b396c-2146-4d86-9d13-757685c850c7",
       "colorIdentity":[
         "U"
       ]
     },
-    "9896215a-877f-47e0-b0c1-d680c9a5f010":{
-      "id":"9896215a-877f-47e0-b0c1-d680c9a5f010",
+    {
       "quantity":1,
       "name":"Artisan of Kozilek",
       "tags":[
@@ -101,17 +100,17 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/cm2/14.jpg?1534110612",
       "price":{
-        "usd":"0.33",
-        "eur":"0.20"
+        "usd":"0.34",
+        "eur":"0.21"
       },
+      "id":"6ab3ce4f-7fe3-47d1-af61-c8e94875aa95",
       "typeLine":"Creature — Eldrazi",
       "scryfallId":"07daf75f-2e4d-479f-8231-6966335fa32e",
       "colorIdentity":[
 
       ]
     },
-    "b8f82a3b-d0b7-459b-a575-8894e00628ec":{
-      "id":"b8f82a3b-d0b7-459b-a575-8894e00628ec",
+    {
       "quantity":1,
       "name":"As Foretold",
       "tags":[
@@ -121,18 +120,18 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/akh/42.jpg?1517813031",
       "price":{
-        "usd":"5.69",
-        "eur":"5.39",
-        "tix":"0.83"
+        "usd":"5.73",
+        "eur":"5.43",
+        "tix":"0.84"
       },
+      "id":"42b93c38-33e2-43c7-b5da-fb9068630533",
       "typeLine":"Enchantment",
       "scryfallId":"0f91d225-788e-42fc-9d01-8668f672b717",
       "colorIdentity":[
         "U"
       ]
     },
-    "b43a61ca-5161-4856-86b4-9f26f52b2bd2":{
-      "id":"b43a61ca-5161-4856-86b4-9f26f52b2bd2",
+    {
       "quantity":1,
       "name":"Avatar of Might",
       "tags":[
@@ -146,14 +145,14 @@
         "eur":"0.50",
         "tix":"0.01"
       },
+      "id":"e79b2be9-8296-447f-89ac-7572f010023b",
       "typeLine":"Creature — Avatar",
       "scryfallId":"ca570876-23b2-4915-a5b9-20f1fa976fab",
       "colorIdentity":[
         "G"
       ]
     },
-    "3ff97de4-100d-4878-9d60-1c7b061965ff":{
-      "id":"3ff97de4-100d-4878-9d60-1c7b061965ff",
+    {
       "quantity":1,
       "name":"Beast Within",
       "tags":[
@@ -163,17 +162,17 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/bbd/190.jpg?1529062906",
       "price":{
-        "usd":"0.98",
-        "eur":"0.42"
+        "usd":"0.97",
+        "eur":"0.43"
       },
+      "id":"296b4908-6351-4d88-990e-e154f55afacb",
       "typeLine":"Instant",
       "scryfallId":"ab3e096a-d6e8-4148-bbea-f26fc67e2fe2",
       "colorIdentity":[
         "G"
       ]
     },
-    "48cc01bd-798d-48f0-9629-6e0f4c392b26":{
-      "id":"48cc01bd-798d-48f0-9629-6e0f4c392b26",
+    {
       "quantity":1,
       "name":"Birds of Paradise",
       "tags":[
@@ -184,16 +183,16 @@
       "image":"https://img.scryfall.com/cards/normal/en/cn2/176.jpg?1517813031",
       "price":{
         "usd":"7.49",
-        "eur":"4.76"
+        "eur":"4.70"
       },
+      "id":"7e36a232-fce2-4b28-8939-8ee2ba56e92a",
       "typeLine":"Creature — Bird",
       "scryfallId":"feefe9f0-24a6-461c-9ef1-86c5a6f33b83",
       "colorIdentity":[
         "G"
       ]
     },
-    "62cff46a-0ed9-4540-af3e-38f4bd98792b":{
-      "id":"62cff46a-0ed9-4540-af3e-38f4bd98792b",
+    {
       "quantity":1,
       "name":"Blue Sun's Zenith",
       "tags":[
@@ -204,17 +203,17 @@
       "image":"https://img.scryfall.com/cards/normal/en/a25/44.jpg?1521725066",
       "price":{
         "usd":"0.49",
-        "eur":"0.36",
-        "tix":"0.10"
+        "eur":"0.38",
+        "tix":"0.09"
       },
+      "id":"44e2b2c9-9665-4a8a-a3cd-4c22ea1b43f6",
       "typeLine":"Instant",
       "scryfallId":"500a2aa4-712f-41be-920e-f2f448ff83d0",
       "colorIdentity":[
         "U"
       ]
     },
-    "0d0787bb-b4b4-43fa-932b-ac8c9297fe2f":{
-      "id":"0d0787bb-b4b4-43fa-932b-ac8c9297fe2f",
+    {
       "quantity":1,
       "name":"Botanical Sanctum",
       "tags":[
@@ -224,10 +223,11 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/kld/244.jpg?1517813031",
       "price":{
-        "usd":"3.08",
-        "eur":"2.94",
-        "tix":"0.65"
+        "usd":"3.04",
+        "eur":"2.91",
+        "tix":"0.66"
       },
+      "id":"e75126fd-e4ef-4041-8e8c-fa3ce11d7e94",
       "typeLine":"Land",
       "scryfallId":"8744471b-a528-47d9-84d0-4526273f55e9",
       "colorIdentity":[
@@ -235,8 +235,7 @@
         "U"
       ]
     },
-    "9c00d293-f5fb-42fb-8736-232555e39e87":{
-      "id":"9c00d293-f5fb-42fb-8736-232555e39e87",
+    {
       "quantity":1,
       "name":"Brainstorm",
       "tags":[
@@ -246,17 +245,17 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/82.jpg?1535503035",
       "price":{
-        "usd":"0.45",
-        "eur":"0.36"
+        "usd":"0.42",
+        "eur":"0.35"
       },
+      "id":"92bb99bd-382f-4ca1-acb6-2f2cd54afbc1",
       "typeLine":"Instant",
       "scryfallId":"821f1c26-6253-4ecc-a243-a5662c637a4a",
       "colorIdentity":[
         "U"
       ]
     },
-    "b3f1d47f-77b1-4d3e-9846-82ba3937d024":{
-      "id":"b3f1d47f-77b1-4d3e-9846-82ba3937d024",
+    {
       "quantity":1,
       "name":"Brittle Effigy",
       "tags":[
@@ -267,16 +266,16 @@
       "image":"https://img.scryfall.com/cards/normal/en/ddt/56.jpg?1517813031",
       "price":{
         "usd":"0.14",
-        "eur":"0.19"
+        "eur":"0.18"
       },
+      "id":"8c701429-ac93-438d-beef-8feea376bd63",
       "typeLine":"Artifact",
       "scryfallId":"d492418e-fce9-4333-85e7-004a06546b3c",
       "colorIdentity":[
 
       ]
     },
-    "4330342b-9504-4130-9513-218770b2b881":{
-      "id":"4330342b-9504-4130-9513-218770b2b881",
+    {
       "quantity":1,
       "name":"Burgeoning",
       "tags":[
@@ -286,17 +285,17 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c16/143.jpg?1517813031",
       "price":{
-        "usd":"6.94",
-        "eur":"2.67"
+        "usd":"6.93",
+        "eur":"2.65"
       },
+      "id":"13e5bee1-ab2a-4e59-8196-b57b4560597d",
       "typeLine":"Enchantment",
       "scryfallId":"6da045f8-6278-4c84-9d39-025adf0789c1",
       "colorIdentity":[
         "G"
       ]
     },
-    "ef02766e-b122-43ec-8ca5-364bcff33c01":{
-      "id":"ef02766e-b122-43ec-8ca5-364bcff33c01",
+    {
       "quantity":1,
       "name":"Colossus of Akros",
       "tags":[
@@ -310,14 +309,14 @@
         "eur":"0.48",
         "tix":"0.01"
       },
+      "id":"cdd3ad1c-bfbe-4602-b525-8bf76c87be62",
       "typeLine":"Artifact Creature — Golem",
       "scryfallId":"3e394ffe-7460-4c59-a403-e9404b0d10c1",
       "colorIdentity":[
 
       ]
     },
-    "5c48f2f9-2548-421d-9860-eb8933519847":{
-      "id":"5c48f2f9-2548-421d-9860-eb8933519847",
+    {
       "quantity":1,
       "name":"Command Tower",
       "tags":[
@@ -327,17 +326,17 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/240.jpg?1535505276",
       "price":{
-        "usd":"0.99",
-        "eur":"0.38"
+        "usd":"1.02",
+        "eur":"0.37"
       },
+      "id":"140f30a2-6c35-417a-ba22-b416ee5504f3",
       "typeLine":"Land",
       "scryfallId":"6d28946e-a478-4e0b-b39b-ec0236ddc9a5",
       "colorIdentity":[
 
       ]
     },
-    "bc7ae464-9e4b-4192-8a1e-2433edae8fe6":{
-      "id":"bc7ae464-9e4b-4192-8a1e-2433edae8fe6",
+    {
       "quantity":1,
       "name":"Conduit of Ruin",
       "tags":[
@@ -348,17 +347,17 @@
       "image":"https://img.scryfall.com/cards/normal/en/bfz/4.jpg?1530717556",
       "price":{
         "usd":"0.49",
-        "eur":"0.49",
-        "tix":"0.02"
+        "eur":"0.50",
+        "tix":"0.01"
       },
+      "id":"19baeaa7-5b87-40d7-b150-231b173f31d4",
       "typeLine":"Creature — Eldrazi",
       "scryfallId":"4bc855d3-817c-4748-a7f5-1533d8b0e930",
       "colorIdentity":[
 
       ]
     },
-    "8c84d6e9-aff6-41d1-a07f-9088a4adb58a":{
-      "id":"8c84d6e9-aff6-41d1-a07f-9088a4adb58a",
+    {
       "quantity":1,
       "name":"Courser of Kruphix",
       "tags":[
@@ -368,18 +367,18 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/a25/164.jpg?1521660883",
       "price":{
-        "usd":"3.89",
-        "eur":"3.55",
-        "tix":"2.09"
+        "usd":"3.81",
+        "eur":"3.58",
+        "tix":"2.07"
       },
+      "id":"df266e15-020f-4c09-b5ca-ae039e9c17cc",
       "typeLine":"Enchantment Creature — Centaur",
       "scryfallId":"8683a978-1bef-4b01-9361-56b1fc157d26",
       "colorIdentity":[
         "G"
       ]
     },
-    "fd1aff47-787d-41fe-b0e6-6cb2da4dd302":{
-      "id":"fd1aff47-787d-41fe-b0e6-6cb2da4dd302",
+    {
       "quantity":1,
       "name":"Crystal Ball",
       "tags":[
@@ -389,17 +388,17 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/201.jpg?1535504715",
       "price":{
-        "usd":"0.14",
+        "usd":"0.15",
         "eur":"0.15"
       },
+      "id":"1ddcd5ef-832a-4217-b4ac-33324c55779e",
       "typeLine":"Artifact",
       "scryfallId":"d344d88f-a63b-4593-990f-af6346cad91a",
       "colorIdentity":[
 
       ]
     },
-    "63f5634f-dbde-473b-be0d-b095d5807038":{
-      "id":"63f5634f-dbde-473b-be0d-b095d5807038",
+    {
       "quantity":1,
       "name":"Cyclonic Rift",
       "tags":[
@@ -409,18 +408,18 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/mm3/35.jpg?1517813031",
       "price":{
-        "usd":"15.27",
-        "eur":"9.34",
-        "tix":"0.42"
+        "usd":"15.37",
+        "eur":"9.27",
+        "tix":"0.41"
       },
+      "id":"194bf59d-b0a9-4ae1-93ee-084150a0d36c",
       "typeLine":"Instant",
       "scryfallId":"268f6afc-bf16-4ca7-a986-945a95d3bffc",
       "colorIdentity":[
         "U"
       ]
     },
-    "16981c10-c876-4ce3-a5bb-82082a9281ea":{
-      "id":"16981c10-c876-4ce3-a5bb-82082a9281ea",
+    {
       "quantity":1,
       "name":"Desert of the Indomitable",
       "tags":[
@@ -431,17 +430,17 @@
       "image":"https://img.scryfall.com/cards/normal/en/hou/172.jpg?1517813031",
       "price":{
         "usd":"0.09",
-        "eur":"0.08",
+        "eur":"0.09",
         "tix":"0.01"
       },
+      "id":"4310af1a-ec91-4d40-b4b9-8f111ca3416a",
       "typeLine":"Land — Desert",
       "scryfallId":"7d42aa0c-0408-4b0d-bec5-9861dbcf9ee1",
       "colorIdentity":[
         "G"
       ]
     },
-    "d7054e58-5ee4-4e73-a68e-2edd7503e28e":{
-      "id":"d7054e58-5ee4-4e73-a68e-2edd7503e28e",
+    {
       "quantity":1,
       "name":"Desert of the Mindful",
       "tags":[
@@ -455,14 +454,14 @@
         "eur":"0.07",
         "tix":"0.01"
       },
+      "id":"aa8b74cf-b3dd-4a44-ab7c-061c2143a2c7",
       "typeLine":"Land — Desert",
       "scryfallId":"91b92d87-776c-490f-9ff1-234e47145df8",
       "colorIdentity":[
         "U"
       ]
     },
-    "f630243c-0d6a-446d-ada7-960109b3e4fe":{
-      "id":"f630243c-0d6a-446d-ada7-960109b3e4fe",
+    {
       "quantity":1,
       "name":"Draining Whelk",
       "tags":[
@@ -472,18 +471,18 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/tsp/57.jpg?1517813031",
       "price":{
-        "usd":"3.38",
-        "eur":"1.03",
-        "tix":"0.02"
+        "usd":"3.36",
+        "eur":"1.07",
+        "tix":"0.01"
       },
+      "id":"8d171f78-7c60-493b-93eb-a3191e4e5c45",
       "typeLine":"Creature — Illusion",
       "scryfallId":"c559d326-b97b-43d9-b7c9-c09e1a0e9db6",
       "colorIdentity":[
         "U"
       ]
     },
-    "a402e136-acf5-4066-b412-fbf72424e5f2":{
-      "id":"a402e136-acf5-4066-b412-fbf72424e5f2",
+    {
       "quantity":1,
       "name":"Eternal Witness",
       "tags":[
@@ -494,16 +493,16 @@
       "image":"https://img.scryfall.com/cards/normal/en/cm2/136.jpg?1534112110",
       "price":{
         "usd":"6.87",
-        "eur":"3.92"
+        "eur":"3.88"
       },
+      "id":"11a1a139-a438-48c4-9f51-e008ab7686eb",
       "typeLine":"Creature — Human Shaman",
       "scryfallId":"ee7d035f-184f-4067-876a-1d26cb8d3fa2",
       "colorIdentity":[
         "G"
       ]
     },
-    "7e1162d0-76ef-4606-95a3-d7e41494de66":{
-      "id":"7e1162d0-76ef-4606-95a3-d7e41494de66",
+    {
       "quantity":1,
       "name":"Evolving Wilds",
       "tags":[
@@ -513,17 +512,17 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/245.jpg?1535505351",
       "price":{
-        "usd":"0.09",
+        "usd":"0.08",
         "eur":"0.07"
       },
+      "id":"b91eb124-862f-4d4f-b129-2183a10fe9be",
       "typeLine":"Land",
       "scryfallId":"b34c171f-8d86-429d-ad5d-f3cd64cce2b3",
       "colorIdentity":[
 
       ]
     },
-    "5443352f-2009-428e-bd46-8ead5bfd7be8":{
-      "id":"5443352f-2009-428e-bd46-8ead5bfd7be8",
+    {
       "quantity":1,
       "name":"Farseek",
       "tags":[
@@ -533,17 +532,17 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c17/149.jpg?1531251195",
       "price":{
-        "usd":"0.91",
+        "usd":"0.79",
         "eur":"0.23"
       },
+      "id":"893b1b52-c9bb-4f32-98d6-8c98b54193e5",
       "typeLine":"Sorcery",
       "scryfallId":"7f5a3b1c-dcbc-4803-8e5b-42314d46701e",
       "colorIdentity":[
         "G"
       ]
     },
-    "387e8660-6745-4a29-8190-91fccef2b93b":{
-      "id":"387e8660-6745-4a29-8190-91fccef2b93b",
+    {
       "quantity":1,
       "name":"Fellwar Stone",
       "tags":[
@@ -553,17 +552,17 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/cm2/189.jpg?1534112735",
       "price":{
-        "usd":"2.27",
-        "eur":"0.26"
+        "usd":"2.38",
+        "eur":"0.27"
       },
+      "id":"3b6ec5a6-4698-481e-8b37-a220bde5dd42",
       "typeLine":"Artifact",
       "scryfallId":"1e60622b-7c25-444d-8eeb-c443acdfc488",
       "colorIdentity":[
 
       ]
     },
-    "43bc30cc-a973-4e5a-924a-42dc28d78213":{
-      "id":"43bc30cc-a973-4e5a-924a-42dc28d78213",
+    {
       "quantity":1,
       "name":"Fertile Ground",
       "tags":[
@@ -576,14 +575,14 @@
         "usd":"0.09",
         "eur":"0.07"
       },
+      "id":"83420a8f-b912-4402-b800-a697bd9dd898",
       "typeLine":"Enchantment — Aura",
       "scryfallId":"5e1fbfce-9677-4ae2-b525-1bb371c8e109",
       "colorIdentity":[
         "G"
       ]
     },
-    "efed2aed-f99b-425e-bcf0-d60d1557ca3d":{
-      "id":"efed2aed-f99b-425e-bcf0-d60d1557ca3d",
+    {
       "quantity":1,
       "name":"Fleetfeather Cockatrice",
       "tags":[
@@ -598,6 +597,7 @@
         "eur":"0.08",
         "tix":"0.01"
       },
+      "id":"17987f39-6f59-47fc-a4ba-9a3e3a97ddad",
       "typeLine":"Creature — Cockatrice",
       "scryfallId":"1139236e-5d71-4fc1-937d-ba1efadee031",
       "colorIdentity":[
@@ -605,8 +605,7 @@
         "U"
       ]
     },
-    "ee1f4164-cf60-4229-bb71-af3e3558f483":{
-      "id":"ee1f4164-cf60-4229-bb71-af3e3558f483",
+    {
       "quantity":10,
       "name":"Forest",
       "tags":[
@@ -619,14 +618,14 @@
         "usd":"0.25",
         "eur":"0.09"
       },
+      "id":"bffa3ce3-6b85-482f-8883-26422e79e83a",
       "typeLine":"Basic Land — Forest",
       "scryfallId":"3d365b22-2304-4f20-86f9-9560f59546f1",
       "colorIdentity":[
         "G"
       ]
     },
-    "6ea4eab5-126f-44bf-9bd9-442cb8427075":{
-      "id":"6ea4eab5-126f-44bf-9bd9-442cb8427075",
+    {
       "quantity":1,
       "name":"Future Sight",
       "tags":[
@@ -640,14 +639,14 @@
         "eur":"0.55",
         "tix":"0.02"
       },
+      "id":"85481736-aeda-40b9-862c-9e476bff084e",
       "typeLine":"Enchantment",
       "scryfallId":"fdf3b52f-edcd-429d-9a65-703bbd97cb5e",
       "colorIdentity":[
         "U"
       ]
     },
-    "a1cc0a07-bb48-48e9-8a2d-ce69511cae2f":{
-      "id":"a1cc0a07-bb48-48e9-8a2d-ce69511cae2f",
+    {
       "quantity":1,
       "name":"Halimar Depths",
       "tags":[
@@ -660,14 +659,14 @@
         "usd":"0.19",
         "eur":"0.19"
       },
+      "id":"ffa5fc48-bb09-4b9b-a09f-158ac7acb316",
       "typeLine":"Land",
       "scryfallId":"29479ab2-c492-479c-82ba-441703b27c0c",
       "colorIdentity":[
         "U"
       ]
     },
-    "65e072c2-3ebf-4174-a773-a9f039921f1c":{
-      "id":"65e072c2-3ebf-4174-a773-a9f039921f1c",
+    {
       "quantity":1,
       "name":"Heroic Intervention",
       "tags":[
@@ -678,17 +677,17 @@
       "image":"https://img.scryfall.com/cards/normal/en/aer/109.jpg?1517813031",
       "price":{
         "usd":"5.49",
-        "eur":"4.17",
-        "tix":"0.19"
+        "eur":"4.27",
+        "tix":"0.14"
       },
+      "id":"53f673c1-600a-4e66-b027-84289df90be4",
       "typeLine":"Instant",
       "scryfallId":"8f5a620c-fde7-4b72-bf8a-efc4f14560c5",
       "colorIdentity":[
         "G"
       ]
     },
-    "cae97dfb-2561-43ea-9697-54e38cadef73":{
-      "id":"cae97dfb-2561-43ea-9697-54e38cadef73",
+    {
       "quantity":1,
       "name":"Hinterland Harbor",
       "tags":[
@@ -698,10 +697,11 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/dom/240.jpg?1524792404",
       "price":{
-        "usd":"2.39",
-        "eur":"2.15",
-        "tix":"0.68"
+        "usd":"2.31",
+        "eur":"2.14",
+        "tix":"0.72"
       },
+      "id":"3e21679c-c922-4b28-a2cd-bbee36d91ceb",
       "typeLine":"Land",
       "scryfallId":"d631d040-51e9-4540-91e7-aeb5ade84090",
       "colorIdentity":[
@@ -709,8 +709,7 @@
         "U"
       ]
     },
-    "6b02e127-2074-478b-9319-6cb0630bade2":{
-      "id":"6b02e127-2074-478b-9319-6cb0630bade2",
+    {
       "quantity":1,
       "name":"Imprisoned in the Moon",
       "tags":[
@@ -720,18 +719,18 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/emn/65.jpg?1517813031",
       "price":{
-        "usd":"1.95",
-        "eur":"0.45",
-        "tix":"0.02"
+        "usd":"2.45",
+        "eur":"0.44",
+        "tix":"0.01"
       },
+      "id":"ba5e5e7b-eae7-480d-ab85-a87f569ff213",
       "typeLine":"Enchantment — Aura",
       "scryfallId":"7990ebba-e9f2-4ba4-a352-e26ec81d4bed",
       "colorIdentity":[
         "U"
       ]
     },
-    "e76a8e8f-b597-4a2b-b146-d7802c8a2a06":{
-      "id":"e76a8e8f-b597-4a2b-b146-d7802c8a2a06",
+    {
       "quantity":9,
       "name":"Island",
       "tags":[
@@ -744,14 +743,14 @@
         "usd":"0.25",
         "eur":"0.06"
       },
+      "id":"2aec9067-5436-480d-a020-6be4823975e5",
       "typeLine":"Basic Land — Island",
       "scryfallId":"28347f33-bfd5-48fd-ab10-228dfad1669d",
       "colorIdentity":[
         "U"
       ]
     },
-    "dba1b36c-99da-41f9-9697-76b33dc769fe":{
-      "id":"dba1b36c-99da-41f9-9697-76b33dc769fe",
+    {
       "quantity":1,
       "name":"Kaseto, Orochi Archmage",
       "tags":[
@@ -764,6 +763,7 @@
         "usd":"0.73",
         "eur":"0.81"
       },
+      "id":"da50cb0b-3028-461f-9ddc-6376b9e6bd24",
       "typeLine":"Legendary Creature — Snake Wizard",
       "scryfallId":"ee333196-20e2-4414-8bb4-5cae6b88893e",
       "colorIdentity":[
@@ -771,8 +771,7 @@
         "U"
       ]
     },
-    "465c422b-cb79-4670-bb55-05977118543e":{
-      "id":"465c422b-cb79-4670-bb55-05977118543e",
+    {
       "quantity":1,
       "name":"Kiora's Follower",
       "tags":[
@@ -782,9 +781,10 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/ddo/52.jpg?1530676847",
       "price":{
-        "usd":"0.16",
+        "usd":"0.15",
         "eur":"0.20"
       },
+      "id":"928621cf-8e8d-4fa9-aaf3-fe67d6f1ed6e",
       "typeLine":"Creature — Merfolk",
       "scryfallId":"d9704f4f-eb5b-4862-8efd-ff1d8fd4177a",
       "colorIdentity":[
@@ -792,8 +792,7 @@
         "U"
       ]
     },
-    "4b58f70f-d367-4019-8c01-f24b28302bf7":{
-      "id":"4b58f70f-d367-4019-8c01-f24b28302bf7",
+    {
       "quantity":1,
       "name":"Kruphix, God of Horizons",
       "tags":[
@@ -804,9 +803,10 @@
       "image":"https://img.scryfall.com/cards/normal/en/jou/152.jpg?1517813031",
       "price":{
         "usd":"8.49",
-        "eur":"5.25",
-        "tix":"0.69"
+        "eur":"5.30",
+        "tix":"0.66"
       },
+      "id":"43a7e41a-2fa4-4a51-ac73-a3723f087362",
       "typeLine":"Legendary Enchantment Creature — God",
       "scryfallId":"27427233-da58-45af-ade8-e0727929efaa",
       "colorIdentity":[
@@ -814,8 +814,7 @@
         "U"
       ]
     },
-    "44f57744-ed1c-4b79-9eae-ffb26b2145d7":{
-      "id":"44f57744-ed1c-4b79-9eae-ffb26b2145d7",
+    {
       "quantity":1,
       "name":"Leyline of Anticipation",
       "tags":[
@@ -826,17 +825,17 @@
       "image":"https://img.scryfall.com/cards/normal/en/m11/61.jpg?1517813031",
       "price":{
         "usd":"14.99",
-        "eur":"9.34",
-        "tix":"0.24"
+        "eur":"9.51",
+        "tix":"0.34"
       },
+      "id":"431ed985-068f-47f7-810e-e4410f9b9f76",
       "typeLine":"Enchantment",
       "scryfallId":"d7dbb092-3bb0-445e-ab26-d939cac92a73",
       "colorIdentity":[
         "U"
       ]
     },
-    "18cbb10e-033c-4973-b013-14b364329b13":{
-      "id":"18cbb10e-033c-4973-b013-14b364329b13",
+    {
       "quantity":1,
       "name":"Lightning Greaves",
       "tags":[
@@ -849,14 +848,14 @@
         "usd":"3.99",
         "eur":"1.88"
       },
+      "id":"1de844ad-f3fd-42cb-ab73-a6078886b924",
       "typeLine":"Artifact — Equipment",
       "scryfallId":"f0fbee02-b6cc-4cd1-a702-cf4f89c17921",
       "colorIdentity":[
 
       ]
     },
-    "6e900525-43be-4e99-8360-8cc2d4de92bc":{
-      "id":"6e900525-43be-4e99-8360-8cc2d4de92bc",
+    {
       "quantity":1,
       "name":"Mind's Dilation",
       "tags":[
@@ -867,17 +866,17 @@
       "image":"https://img.scryfall.com/cards/normal/en/emn/70.jpg?1517813031",
       "price":{
         "usd":"3.99",
-        "eur":"1.40",
+        "eur":"1.35",
         "tix":"0.12"
       },
+      "id":"a58841a2-1b7a-4b1d-889a-4aba8d17d31f",
       "typeLine":"Enchantment",
       "scryfallId":"b3d6522a-b9a0-4185-b5ba-c20fa1b772eb",
       "colorIdentity":[
         "U"
       ]
     },
-    "d0dd925f-7237-43e6-9a67-f6c9790fdd59":{
-      "id":"d0dd925f-7237-43e6-9a67-f6c9790fdd59",
+    {
       "quantity":1,
       "name":"Momir Vig, Simic Visionary",
       "tags":[
@@ -887,10 +886,11 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/dis/118.jpg?1517813031",
       "price":{
-        "usd":"2.99",
-        "eur":"1.73",
+        "usd":"3.43",
+        "eur":"1.72",
         "tix":"0.01"
       },
+      "id":"c49e5fe4-dbff-4397-a32b-630453265e1b",
       "typeLine":"Legendary Creature — Elf Wizard",
       "scryfallId":"25a8c801-df0c-402b-a41c-4703a2abfb66",
       "colorIdentity":[
@@ -898,8 +898,7 @@
         "U"
       ]
     },
-    "8f0226fc-78de-45f1-be49-c5ac62a109d4":{
-      "id":"8f0226fc-78de-45f1-be49-c5ac62a109d4",
+    {
       "quantity":1,
       "name":"Moonring Island",
       "tags":[
@@ -913,14 +912,14 @@
         "eur":"0.13",
         "tix":"0.01"
       },
+      "id":"f947b535-76be-4a3f-8a91-ad103f2226cc",
       "typeLine":"Land — Island",
       "scryfallId":"64b36993-666c-40d0-b61a-1d162bd06dcc",
       "colorIdentity":[
         "U"
       ]
     },
-    "5b199459-64cd-47b7-bf77-83b481733e6c":{
-      "id":"5b199459-64cd-47b7-bf77-83b481733e6c",
+    {
       "quantity":1,
       "name":"Mosswort Bridge",
       "tags":[
@@ -930,17 +929,17 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/267.jpg?1535505657",
       "price":{
-        "usd":"0.16",
+        "usd":"0.19",
         "eur":"0.15"
       },
+      "id":"feaeb2c7-097f-4f24-8b27-135056b6e731",
       "typeLine":"Land",
       "scryfallId":"b4f80d5f-539b-4abf-909b-be710d95a2a1",
       "colorIdentity":[
         "G"
       ]
     },
-    "45b6fde6-6f3f-4904-89d1-cf1854b99c67":{
-      "id":"45b6fde6-6f3f-4904-89d1-cf1854b99c67",
+    {
       "quantity":1,
       "name":"Murkfiend Liege",
       "tags":[
@@ -953,6 +952,7 @@
         "usd":"2.49",
         "eur":"1.02"
       },
+      "id":"5a6a747c-32ed-4b59-9dd5-fee746036cb3",
       "typeLine":"Creature — Horror",
       "scryfallId":"b85d2921-16ee-48bf-abd3-f49fae163855",
       "colorIdentity":[
@@ -960,8 +960,7 @@
         "U"
       ]
     },
-    "c47719ee-99b5-4b81-a92b-5e6332d45048":{
-      "id":"c47719ee-99b5-4b81-a92b-5e6332d45048",
+    {
       "quantity":1,
       "name":"Nevinyrral's Disk",
       "tags":[
@@ -972,16 +971,16 @@
       "image":"https://img.scryfall.com/cards/normal/en/c17/217.jpg?1517813031",
       "price":{
         "usd":"1.16",
-        "eur":"0.62"
+        "eur":"0.61"
       },
+      "id":"cac651af-88f6-47b5-ad98-842a0fe76a38",
       "typeLine":"Artifact",
       "scryfallId":"9c79e497-656e-40f5-8a32-2ec5541915ad",
       "colorIdentity":[
 
       ]
     },
-    "1261acc9-a276-487f-92a6-5c4b66e3d0bc":{
-      "id":"1261acc9-a276-487f-92a6-5c4b66e3d0bc",
+    {
       "quantity":1,
       "name":"Nimbus Swimmer",
       "tags":[
@@ -994,6 +993,7 @@
         "usd":"0.10",
         "eur":"0.08"
       },
+      "id":"1702bde6-c572-431b-8fa9-4cd3aa134e54",
       "typeLine":"Creature — Leviathan",
       "scryfallId":"1efbf7be-bc11-4285-a37d-83790b292b3a",
       "colorIdentity":[
@@ -1001,8 +1001,7 @@
         "U"
       ]
     },
-    "91a07ead-ca04-4cde-b28d-7df43022aca6":{
-      "id":"91a07ead-ca04-4cde-b28d-7df43022aca6",
+    {
       "quantity":1,
       "name":"Nissa, Steward of Elements",
       "tags":[
@@ -1013,9 +1012,10 @@
       "image":"https://img.scryfall.com/cards/normal/en/akh/204.jpg?1517813031",
       "price":{
         "usd":"3.45",
-        "eur":"3.34",
+        "eur":"3.53",
         "tix":"0.28"
       },
+      "id":"46ae4443-e673-4627-a8a7-d217fe137869",
       "typeLine":"Legendary Planeswalker — Nissa",
       "scryfallId":"c79036a1-2239-4d4f-8b58-6cf9ac4863fc",
       "colorIdentity":[
@@ -1023,8 +1023,7 @@
         "U"
       ]
     },
-    "e8a60607-c04a-416e-9a57-d3a54fbbde69":{
-      "id":"e8a60607-c04a-416e-9a57-d3a54fbbde69",
+    {
       "quantity":1,
       "name":"Nylea, God of the Hunt",
       "tags":[
@@ -1035,18 +1034,18 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/ths/166.jpg?1517813031",
       "price":{
-        "usd":"6.51",
-        "eur":"4.42",
-        "tix":"0.72"
+        "usd":"6.54",
+        "eur":"4.48",
+        "tix":"0.70"
       },
+      "id":"e9c62d29-082b-4f6b-b0f5-f1525a31a24a",
       "typeLine":"Legendary Enchantment Creature — God",
       "scryfallId":"f185a734-a32a-4244-88e8-dabafbfd064f",
       "colorIdentity":[
         "G"
       ]
     },
-    "6b880484-fe01-4616-a00f-9e26ce456351":{
-      "id":"6b880484-fe01-4616-a00f-9e26ce456351",
+    {
       "quantity":1,
       "name":"Plasm Capture",
       "tags":[
@@ -1059,6 +1058,7 @@
         "usd":"0.33",
         "eur":"0.43"
       },
+      "id":"d3d53355-abf0-4a1a-b361-bd812e8031fe",
       "typeLine":"Instant",
       "scryfallId":"37fa090d-b756-4de3-8dcb-c20c5fcd4c6a",
       "colorIdentity":[
@@ -1066,8 +1066,7 @@
         "U"
       ]
     },
-    "59b26218-cf34-43cb-8da1-2ac8d047baa9":{
-      "id":"59b26218-cf34-43cb-8da1-2ac8d047baa9",
+    {
       "quantity":1,
       "name":"Praetor's Counsel",
       "tags":[
@@ -1081,14 +1080,14 @@
         "usd":"2.79",
         "eur":"1.12"
       },
+      "id":"7c872ce1-360a-4558-b54c-326ef6b0da40",
       "typeLine":"Sorcery",
       "scryfallId":"b6d5bf06-f735-4e9f-9460-e6cdf501662f",
       "colorIdentity":[
         "G"
       ]
     },
-    "5bfa89da-e831-4a7f-baea-b2f1fc54607b":{
-      "id":"5bfa89da-e831-4a7f-baea-b2f1fc54607b",
+    {
       "quantity":1,
       "name":"Propaganda",
       "tags":[
@@ -1098,17 +1097,17 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c16/94.jpg?1517813031",
       "price":{
-        "usd":"8.76",
-        "eur":"4.64"
+        "usd":"7.99",
+        "eur":"4.69"
       },
+      "id":"4ab6a4b3-8cf3-4d3e-b434-bb89d4b9f2c4",
       "typeLine":"Enchantment",
       "scryfallId":"c180f9bd-7dd7-4318-8625-2fa674cbc528",
       "colorIdentity":[
         "U"
       ]
     },
-    "9632a9b9-a228-4030-bc16-49cde5eddb8c":{
-      "id":"9632a9b9-a228-4030-bc16-49cde5eddb8c",
+    {
       "quantity":1,
       "name":"Rampant Growth",
       "tags":[
@@ -1121,14 +1120,14 @@
         "usd":"0.23",
         "eur":"0.13"
       },
+      "id":"43277e79-aff3-4bfc-87e3-87efc455ace3",
       "typeLine":"Sorcery",
       "scryfallId":"1c0a6253-aa08-4393-b370-bb3e2496d88c",
       "colorIdentity":[
         "G"
       ]
     },
-    "ef626db9-c1dc-4131-8c6f-892ad14da885":{
-      "id":"ef626db9-c1dc-4131-8c6f-892ad14da885",
+    {
       "quantity":1,
       "name":"Reality Shift",
       "tags":[
@@ -1141,14 +1140,14 @@
         "usd":"0.79",
         "eur":"0.24"
       },
+      "id":"9098c51b-70aa-4af7-a606-85bde1f85100",
       "typeLine":"Instant",
       "scryfallId":"c9a96e38-413f-49cd-90fa-178a91a406ba",
       "colorIdentity":[
         "U"
       ]
     },
-    "e40fbd1a-a3cc-43d0-8fd7-5673bbb2909a":{
-      "id":"e40fbd1a-a3cc-43d0-8fd7-5673bbb2909a",
+    {
       "quantity":1,
       "name":"Reliquary Tower",
       "tags":[
@@ -1159,18 +1158,18 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/m19/254.jpg?1531451525",
       "price":{
-        "usd":"1.71",
+        "usd":"1.72",
         "eur":"0.64",
         "tix":"0.04"
       },
+      "id":"e5d96b73-77e4-4962-bc04-e4cfd7271e10",
       "typeLine":"Land",
       "scryfallId":"81766fd6-c7e0-4527-a63e-512d126c0421",
       "colorIdentity":[
 
       ]
     },
-    "89c1a57f-b80f-40c4-a92d-096a2c59bd41":{
-      "id":"89c1a57f-b80f-40c4-a92d-096a2c59bd41",
+    {
       "quantity":1,
       "name":"Rishkar's Expertise",
       "tags":[
@@ -1182,17 +1181,17 @@
       "image":"https://img.scryfall.com/cards/normal/en/aer/123.jpg?1517813031",
       "price":{
         "usd":"1.49",
-        "eur":"0.70",
-        "tix":"0.02"
+        "eur":"0.69",
+        "tix":"0.01"
       },
+      "id":"7114647a-0e94-46d4-9080-a61fbee059f3",
       "typeLine":"Sorcery",
       "scryfallId":"5d58ba68-05c1-4cd8-a93d-321cd1739ccb",
       "colorIdentity":[
         "G"
       ]
     },
-    "638e1fca-09e3-48bb-85c3-8d1d7d150174":{
-      "id":"638e1fca-09e3-48bb-85c3-8d1d7d150174",
+    {
       "quantity":1,
       "name":"River's Rebuke",
       "tags":[
@@ -1202,18 +1201,18 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/xln/71.jpg?1527428461",
       "price":{
-        "usd":"0.94",
-        "eur":"0.39",
-        "tix":"0.19"
+        "usd":"0.98",
+        "eur":"0.38",
+        "tix":"0.25"
       },
+      "id":"15e33249-1c00-4dd3-917f-c7663e175d32",
       "typeLine":"Sorcery",
       "scryfallId":"fda8ef30-bbfa-4857-9750-0dd0def8b13f",
       "colorIdentity":[
         "U"
       ]
     },
-    "b439b910-0d55-4ea0-a86c-0618a2532a2e":{
-      "id":"b439b910-0d55-4ea0-a86c-0618a2532a2e",
+    {
       "quantity":1,
       "name":"Rogue's Passage",
       "tags":[
@@ -1224,16 +1223,16 @@
       "image":"https://img.scryfall.com/cards/normal/en/c17/272.jpg?1517813031",
       "price":{
         "usd":"0.42",
-        "eur":"0.18"
+        "eur":"0.16"
       },
+      "id":"1d5d914c-b3df-4f8c-9fa6-f8162085768d",
       "typeLine":"Land",
       "scryfallId":"766b7834-f54e-4948-80c5-bc37c1d5344e",
       "colorIdentity":[
 
       ]
     },
-    "5e81c293-c1a2-41f1-992f-69dacec02835":{
-      "id":"5e81c293-c1a2-41f1-992f-69dacec02835",
+    {
       "quantity":1,
       "name":"Sagu Mauler",
       "tags":[
@@ -1243,10 +1242,11 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/ktk/196.jpg?1517813031",
       "price":{
-        "usd":"0.17",
+        "usd":"0.16",
         "eur":"0.18",
         "tix":"0.01"
       },
+      "id":"d69144d2-8529-47f8-aa33-e42898f2fe7f",
       "typeLine":"Creature — Beast",
       "scryfallId":"4c64af58-963d-497b-ab95-104839d96b94",
       "colorIdentity":[
@@ -1254,8 +1254,7 @@
         "U"
       ]
     },
-    "5b4b3dfc-f7ef-48bb-a7d7-185656dd6b1c":{
-      "id":"5b4b3dfc-f7ef-48bb-a7d7-185656dd6b1c",
+    {
       "quantity":1,
       "name":"Sakura-Tribe Elder",
       "tags":[
@@ -1266,16 +1265,16 @@
       "image":"https://img.scryfall.com/cards/normal/en/c18/160.jpg?1535504129",
       "price":{
         "usd":"0.96",
-        "eur":"0.31"
+        "eur":"0.30"
       },
+      "id":"aa90c557-e630-4925-8b5c-8b20848779b4",
       "typeLine":"Creature — Snake Shaman",
       "scryfallId":"6912d171-5f26-45d3-9c6a-911e509d083a",
       "colorIdentity":[
         "G"
       ]
     },
-    "b309e4a0-08e9-489d-bd83-21815c89454c":{
-      "id":"b309e4a0-08e9-489d-bd83-21815c89454c",
+    {
       "quantity":1,
       "name":"Simic Growth Chamber",
       "tags":[
@@ -1285,9 +1284,10 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/282.jpg?1535505875",
       "price":{
-        "usd":"0.17",
-        "eur":"0.14"
+        "usd":"0.21",
+        "eur":"0.13"
       },
+      "id":"7f9a26fb-3552-47c1-807a-d48c678dffc7",
       "typeLine":"Land",
       "scryfallId":"10919cb8-8307-44fc-a2fa-4aefc53d11b6",
       "colorIdentity":[
@@ -1295,8 +1295,7 @@
         "U"
       ]
     },
-    "f40cbe96-c35d-43b6-b072-e2a1b8b4af0b":{
-      "id":"f40cbe96-c35d-43b6-b072-e2a1b8b4af0b",
+    {
       "quantity":1,
       "name":"Simic Signet",
       "tags":[
@@ -1307,8 +1306,9 @@
       "image":"https://img.scryfall.com/cards/normal/en/cm2/215.jpg?1534113028",
       "price":{
         "usd":"0.49",
-        "eur":"0.13"
+        "eur":"0.14"
       },
+      "id":"8e1ea23b-4f40-4243-989f-8796bfec5e1b",
       "typeLine":"Artifact",
       "scryfallId":"12013400-21db-4a3b-9e4e-edbea7c8021f",
       "colorIdentity":[
@@ -1316,8 +1316,7 @@
         "U"
       ]
     },
-    "e44e2f4c-24ab-4f9f-a613-c4d54bb42feb":{
-      "id":"e44e2f4c-24ab-4f9f-a613-c4d54bb42feb",
+    {
       "quantity":1,
       "name":"Simic Sky Swallower",
       "tags":[
@@ -1328,9 +1327,10 @@
       "image":"https://img.scryfall.com/cards/normal/en/ima/208.jpg?1530592586",
       "price":{
         "usd":"0.18",
-        "eur":"0.12",
+        "eur":"0.13",
         "tix":"0.01"
       },
+      "id":"7b74630a-f537-47b0-8834-e578520a3e37",
       "typeLine":"Creature — Leviathan",
       "scryfallId":"b18816df-9b73-4a3f-a1d5-ceabf76d3fb0",
       "colorIdentity":[
@@ -1338,8 +1338,7 @@
         "U"
       ]
     },
-    "55fc79ba-2fd9-4aab-bedf-50bb1a4bb784":{
-      "id":"55fc79ba-2fd9-4aab-bedf-50bb1a4bb784",
+    {
       "quantity":1,
       "name":"Sol Ring",
       "tags":[
@@ -1349,17 +1348,17 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/222.jpg?1535505021",
       "price":{
-        "usd":"2.55",
-        "eur":"1.09"
+        "usd":"2.44",
+        "eur":"1.10"
       },
+      "id":"b7255cbf-b620-47a6-8bd7-790e364be1d4",
       "typeLine":"Artifact",
       "scryfallId":"83a0f2eb-2f6d-4aaa-b7a9-ea06d5de7eca",
       "colorIdentity":[
 
       ]
     },
-    "a5afb233-7660-440e-84dc-84f8b70d1818":{
-      "id":"a5afb233-7660-440e-84dc-84f8b70d1818",
+    {
       "quantity":1,
       "name":"Spell Swindle",
       "tags":[
@@ -1370,18 +1369,18 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/xln/82.jpg?1527428654",
       "price":{
-        "usd":"0.63",
+        "usd":"0.62",
         "eur":"0.41",
         "tix":"0.01"
       },
+      "id":"4961cde6-6ef1-4a1f-b5a5-83b3ac63889e",
       "typeLine":"Instant",
       "scryfallId":"6e619ada-e9ce-4758-afd8-8def853877eb",
       "colorIdentity":[
         "U"
       ]
     },
-    "59c236db-f4eb-4dd9-9046-d084c63aa318":{
-      "id":"59c236db-f4eb-4dd9-9046-d084c63aa318",
+    {
       "quantity":1,
       "name":"Stroke of Genius",
       "tags":[
@@ -1392,16 +1391,16 @@
       "image":"https://img.scryfall.com/cards/normal/en/c15/108.jpg?1519044768",
       "price":{
         "usd":"0.53",
-        "eur":"0.42"
+        "eur":"0.43"
       },
+      "id":"183909d4-c002-463a-9a71-609934b849e4",
       "typeLine":"Instant",
       "scryfallId":"5ecb5078-4439-4fdc-88e8-aac3becbbad8",
       "colorIdentity":[
         "U"
       ]
     },
-    "a4ba4e85-94ba-456e-b881-ae328438ac7f":{
-      "id":"a4ba4e85-94ba-456e-b881-ae328438ac7f",
+    {
       "quantity":1,
       "name":"Stunt Double",
       "tags":[
@@ -1411,17 +1410,17 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/cn2/38.jpg?1517813031",
       "price":{
-        "usd":"2.28",
-        "eur":"1.01"
+        "usd":"2.27",
+        "eur":"1.02"
       },
+      "id":"07727be2-af79-4a32-8714-a015ae4fff34",
       "typeLine":"Creature — Shapeshifter",
       "scryfallId":"3344c1ea-e8b2-481e-b9eb-604c87e34925",
       "colorIdentity":[
         "U"
       ]
     },
-    "39ae83b8-5ac6-434a-8930-d336c0392409":{
-      "id":"39ae83b8-5ac6-434a-8930-d336c0392409",
+    {
       "quantity":1,
       "name":"Swiftfoot Boots",
       "tags":[
@@ -1431,17 +1430,17 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/225.jpg?1535505062",
       "price":{
-        "usd":"0.91",
-        "eur":"0.28"
+        "usd":"0.93",
+        "eur":"0.27"
       },
+      "id":"889e63be-fd4b-475c-85a2-85ac03b8269c",
       "typeLine":"Artifact — Equipment",
       "scryfallId":"1ae84b5c-d3ad-48a3-9ccc-1dd76cee392c",
       "colorIdentity":[
 
       ]
     },
-    "311c1fb6-8f1f-4310-936f-508265a34afa":{
-      "id":"311c1fb6-8f1f-4310-936f-508265a34afa",
+    {
       "quantity":1,
       "name":"Sylvan Caryatid",
       "tags":[
@@ -1451,18 +1450,18 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/ths/180.jpg?1517813031",
       "price":{
-        "usd":"3.32",
-        "eur":"2.37",
-        "tix":"0.03"
+        "usd":"3.30",
+        "eur":"2.39",
+        "tix":"0.02"
       },
+      "id":"3ff13bd7-7829-4c7f-90c0-e013b9dff95d",
       "typeLine":"Creature — Plant",
       "scryfallId":"d40b65c1-b24d-492d-81b9-d8474ebdc08c",
       "colorIdentity":[
         "G"
       ]
     },
-    "5bc00be3-77cd-40b7-81a5-bde7a6062b5e":{
-      "id":"5bc00be3-77cd-40b7-81a5-bde7a6062b5e",
+    {
       "quantity":1,
       "name":"Sylvan Library",
       "tags":[
@@ -1473,18 +1472,18 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/ema/187.jpg?1526080191",
       "price":{
-        "usd":"23.36",
-        "eur":"13.28",
+        "usd":"23.40",
+        "eur":"13.23",
         "tix":"0.14"
       },
+      "id":"edca3bfc-32c4-4110-a78d-d2a8090f4768",
       "typeLine":"Enchantment",
       "scryfallId":"d5b5d2a7-8185-4df0-a35a-f89c12857f87",
       "colorIdentity":[
         "G"
       ]
     },
-    "8b8cd38c-8cbf-438c-9e47-1d748f99602c":{
-      "id":"8b8cd38c-8cbf-438c-9e47-1d748f99602c",
+    {
       "quantity":1,
       "name":"Teferi, Mage of Zhalfir",
       "tags":[
@@ -1494,18 +1493,18 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/ima/75.jpg?1530591994",
       "price":{
-        "usd":"2.77",
+        "usd":"2.85",
         "eur":"1.55",
         "tix":"0.30"
       },
+      "id":"fa7e039c-7506-4fb9-b980-cd02d49350f9",
       "typeLine":"Legendary Creature — Human Wizard",
       "scryfallId":"19573a69-5022-4d63-9252-c8789602d051",
       "colorIdentity":[
         "U"
       ]
     },
-    "43ebbecb-0835-426b-9d7c-07ba6448c10f":{
-      "id":"43ebbecb-0835-426b-9d7c-07ba6448c10f",
+    {
       "quantity":1,
       "name":"Temple of Mystery",
       "tags":[
@@ -1519,6 +1518,7 @@
         "eur":"1.15",
         "tix":"0.03"
       },
+      "id":"68f0ac42-5088-4503-b0fb-979aaecc24d5",
       "typeLine":"Land",
       "scryfallId":"2f66945b-3e64-498a-9478-5f96a61d4ec7",
       "colorIdentity":[
@@ -1526,8 +1526,7 @@
         "U"
       ]
     },
-    "328bd020-80a0-47cc-8b4a-c6ad5500807c":{
-      "id":"328bd020-80a0-47cc-8b4a-c6ad5500807c",
+    {
       "quantity":1,
       "name":"Temple of the False God",
       "tags":[
@@ -1540,14 +1539,14 @@
         "usd":"0.31",
         "eur":"0.16"
       },
+      "id":"dfd96662-298a-45b9-b2e2-0c39850c45c2",
       "typeLine":"Land",
       "scryfallId":"1f799c15-8f84-4ca2-a55f-ed7784d09a9a",
       "colorIdentity":[
 
       ]
     },
-    "0b10068c-2e6d-45f3-92dd-d9a15ecf7dcf":{
-      "id":"0b10068c-2e6d-45f3-92dd-d9a15ecf7dcf",
+    {
       "quantity":1,
       "name":"Temur Sabertooth",
       "tags":[
@@ -1558,16 +1557,16 @@
       "image":"https://img.scryfall.com/cards/normal/en/c17/159.jpg?1517813031",
       "price":{
         "usd":"0.25",
-        "eur":"0.16"
+        "eur":"0.17"
       },
+      "id":"102bdb13-3a22-4339-a13c-3dba79eb090e",
       "typeLine":"Creature — Cat",
       "scryfallId":"2bf59e8d-0746-440d-878f-d6f6f74610d8",
       "colorIdentity":[
         "G"
       ]
     },
-    "4a976370-6aca-4da5-901f-4d45a8036e35":{
-      "id":"4a976370-6aca-4da5-901f-4d45a8036e35",
+    {
       "quantity":1,
       "name":"Terramorphic Expanse",
       "tags":[
@@ -1577,17 +1576,17 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/286.jpg?1535505932",
       "price":{
-        "usd":"0.13",
-        "eur":"0.09"
+        "usd":"0.10",
+        "eur":"0.08"
       },
+      "id":"88b882da-4782-44f1-baf2-72b772178650",
       "typeLine":"Land",
       "scryfallId":"fc282cec-c74a-4431-bbbc-e8febe71adf2",
       "colorIdentity":[
 
       ]
     },
-    "7a90e27c-0bcc-4d63-93f8-62f6095794ae":{
-      "id":"7a90e27c-0bcc-4d63-93f8-62f6095794ae",
+    {
       "quantity":1,
       "name":"Thornwood Falls",
       "tags":[
@@ -1598,8 +1597,9 @@
       "image":"https://img.scryfall.com/cards/normal/en/c18/287.jpg?1535505945",
       "price":{
         "usd":"0.10",
-        "eur":"0.08"
+        "eur":"0.09"
       },
+      "id":"58a91265-ea4f-47f4-b563-061fe85240db",
       "typeLine":"Land",
       "scryfallId":"fc81cc34-f78a-411e-8dbd-b13b3d62e587",
       "colorIdentity":[
@@ -1607,8 +1607,7 @@
         "U"
       ]
     },
-    "46029cd9-1c40-410f-b074-1b27db5fb7d6":{
-      "id":"46029cd9-1c40-410f-b074-1b27db5fb7d6",
+    {
       "quantity":1,
       "name":"Thought Vessel",
       "tags":[
@@ -1619,17 +1618,17 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/cm2/224.jpg?1534113121",
       "price":{
-        "usd":"6.48",
-        "eur":"3.26"
+        "usd":"6.42",
+        "eur":"3.25"
       },
+      "id":"5e915045-521e-4c1c-9804-5ec9c0e79723",
       "typeLine":"Artifact",
       "scryfallId":"19ce4784-139d-442c-86a9-3e45e91038b7",
       "colorIdentity":[
 
       ]
     },
-    "982489f5-3455-4f75-8aea-d1ba8c58ac1d":{
-      "id":"982489f5-3455-4f75-8aea-d1ba8c58ac1d",
+    {
       "quantity":1,
       "name":"Trygon Predator",
       "tags":[
@@ -1639,10 +1638,11 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/ema/209.jpg?1519049079",
       "price":{
-        "usd":"0.24",
+        "usd":"0.23",
         "eur":"0.27",
         "tix":"0.01"
       },
+      "id":"458340a1-8075-4668-a232-b19c001b2423",
       "typeLine":"Creature — Beast",
       "scryfallId":"cd9f1b7c-96b4-4036-9c1b-0ea9891da89e",
       "colorIdentity":[
@@ -1650,8 +1650,7 @@
         "U"
       ]
     },
-    "5f27e0de-8519-42e2-b584-a403ebf01200":{
-      "id":"5f27e0de-8519-42e2-b584-a403ebf01200",
+    {
       "quantity":1,
       "name":"Urban Evolution",
       "tags":[
@@ -1666,6 +1665,7 @@
         "eur":"0.10",
         "tix":"0.01"
       },
+      "id":"6aaa27b6-5914-4320-bb6c-b780b51104b1",
       "typeLine":"Sorcery",
       "scryfallId":"9a005974-ba57-42cf-a54f-4aba41cad144",
       "colorIdentity":[
@@ -1673,8 +1673,7 @@
         "U"
       ]
     },
-    "2b35963d-7dae-4301-b303-5e095ff1a7eb":{
-      "id":"2b35963d-7dae-4301-b303-5e095ff1a7eb",
+    {
       "quantity":1,
       "name":"Vedalken Orrery",
       "tags":[
@@ -1684,17 +1683,17 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/cns/206.jpg?1517813031",
       "price":{
-        "usd":"19.67",
-        "eur":"11.16"
+        "usd":"20.14",
+        "eur":"11.15"
       },
+      "id":"6dcceafa-4600-4979-a1c7-cc5aadec4462",
       "typeLine":"Artifact",
       "scryfallId":"178c71e6-a905-4050-b483-044462c4c1c5",
       "colorIdentity":[
 
       ]
     },
-    "8e44c32b-4782-4541-8c4f-f654ed0a25d1":{
-      "id":"8e44c32b-4782-4541-8c4f-f654ed0a25d1",
+    {
       "quantity":1,
       "name":"Winged Coatl",
       "tags":[
@@ -1706,8 +1705,9 @@
       "image":"https://img.scryfall.com/cards/normal/en/cma/197.jpg?1519870503",
       "price":{
         "usd":"0.21",
-        "eur":"0.16"
+        "eur":"0.15"
       },
+      "id":"5e3f48e1-16c2-4718-aefd-0b84dbc96442",
       "typeLine":"Creature — Snake",
       "scryfallId":"bc4be69d-68e7-4e56-8c32-b252a40f0ca3",
       "colorIdentity":[
@@ -1715,10 +1715,9 @@
         "U"
       ]
     }
-  },
-  "sideboard":{
-    "af3d1207-d58a-4a40-ab78-e3b4aa46f657":{
-      "id":"af3d1207-d58a-4a40-ab78-e3b4aa46f657",
+  ],
+  "sideboard":[
+    {
       "quantity":1,
       "name":"Food Chain",
       "tags":[
@@ -1729,19 +1728,19 @@
       "image":"https://img.scryfall.com/cards/normal/en/mmq/246.jpg?1526079999",
       "price":{
         "usd":"39.99",
-        "eur":"24.31",
-        "tix":"2.38"
+        "eur":"24.16",
+        "tix":"2.45"
       },
+      "id":"121412bf-1f71-43b3-aed5-f2a8513a15cb",
       "typeLine":"Enchantment",
       "scryfallId":"18a1bb9e-006c-495e-8f99-d451183d2669",
       "colorIdentity":[
         "G"
       ]
     }
-  },
-  "commandZone":{
-    "ae3d6421-5c48-4038-a562-65fa60634630":{
-      "id":"ae3d6421-5c48-4038-a562-65fa60634630",
+  ],
+  "commandZone":[
+    {
       "quantity":1,
       "name":"Rashmi, Eternities Crafter",
       "tags":[
@@ -1752,9 +1751,10 @@
       "image":"https://img.scryfall.com/cards/normal/en/kld/184.jpg?1517813031",
       "price":{
         "usd":"0.99",
-        "eur":"0.96",
+        "eur":"0.97",
         "tix":"0.02"
       },
+      "id":"994ad0ed-8b8d-4465-8152-3051e69920bf",
       "typeLine":"Legendary Creature — Elf Druid",
       "scryfallId":"3ce37555-49a2-4112-95b4-f3376b55b45b",
       "colorIdentity":[
@@ -1762,5 +1762,5 @@
         "U"
       ]
     }
-  }
+  ]
 }

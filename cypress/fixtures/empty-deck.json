@@ -4,10 +4,10 @@
   "format":"",
   "description":"",
   "colorIdentity":"",
-  "mainDeck":[
-  ],
-  "sideboard":[
-  ],
-  "commandZone":[
-  ]
+  "mainDeck": {
+  },
+  "sideboard":{ 
+  },
+  "commandZone":{ 
+  }
 }

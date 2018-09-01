@@ -1,4 +1,4 @@
-describe('Add Card', function () {
+describe('Update Card', function () {
   beforeEach(function () {
     cy.start('commander-deck-flashmi')
   })
