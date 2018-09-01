@@ -52,20 +52,27 @@ function formatDeckExportForTappedOut (deck) {
     return `${card.quantity} ${card.name}`
   }
 
-  function addToCards (card) {
-    cards.push(formatCardForTappedOut(card))
+  function addToCards (list, transform) {
+    Object.keys(list).forEach((cardId) => {
+      let card = list[cardId]
+      let transformedCard = formatCardForTappedOut(card)
+
+      if (transform) {
+        transformedCard = transform(transformedCard)
+      }
+
+      cards.push(transformedCard)
+    })
   }
 
-  deck.mainDeck.forEach(addToCards)
-  deck.commandZone.forEach((card) => {
-    let formattedCard = formatCardForTappedOut(card)
-
-    cards.push(formattedCard + TAPPEDOUT_COMMANDER_SYMBOL)
+  addToCards(deck.mainDeck)
+  addToCards(deck.commandZone, (card) => {
+    return card + TAPPEDOUT_COMMANDER_SYMBOL
   })
 
-  if (deck.sideboard.length > 0) {
+  if (Object.keys(deck.sideboard).length > 0) {
     cards.push('\nSideboard:')
-    deck.sideboard.forEach(addToCards)
+    addToCards(deck.sideboard)
   }
 
   return cards.join('\n')
@@ -100,6 +107,7 @@ function formatDeckImportForTappedOut (textFile) {
       deck.sideboard[card.id] = card
     } else {
       if (isCommander) {
+        deck.format = 'commander'
         deck.commandZone[card.id] = card
       } else {
         deck.mainDeck[card.id] = card
