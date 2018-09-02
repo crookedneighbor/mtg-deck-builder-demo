@@ -58,7 +58,7 @@
 </template>
 
 <script>
-const MISSING_CARD_IMAGE = require('../../lib/constants').MISSING_CARD_IMAGE
+const MISSING_CARD_IMAGE = require('../../../lib/constants').MISSING_CARD_IMAGE
 const DEFAULT_SELECTED_CARD = {
   image: MISSING_CARD_IMAGE,
   price: {
@@ -66,9 +66,9 @@ const DEFAULT_SELECTED_CARD = {
   }
 }
 
-const extractCardInput = require('../../lib/extract-card-input')
+const extractCardInput = require('../../../lib/extract-card-input')
 
-const Mana = require('../../components/mana.vue')
+const Mana = require('../../../components/mana.vue')
 
 const {mapGetters, mapState} = require('vuex')
 

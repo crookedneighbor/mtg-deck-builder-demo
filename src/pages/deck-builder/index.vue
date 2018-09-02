@@ -15,11 +15,11 @@
 
 <script>
 const {mapState} = require('vuex')
-const MainDetails = require('./main-details.vue')
+const MainDetails = require('./main-details/index.vue')
 const FirstTimeModal = require('./first-time-modal.vue')
 const Shortcuts = require('./shortcuts.vue')
-const DeckList = require('./deck-list.vue')
-const CardModule = require('./card-module.vue')
+const DeckList = require('./deck-list/index.vue')
+const CardModule = require('./card-module/index.vue')
 
 export default {
   components: {

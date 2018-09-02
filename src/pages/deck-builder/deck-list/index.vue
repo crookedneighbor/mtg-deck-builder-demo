@@ -16,21 +16,21 @@
     </div>
 
     <div class="box">
-      <card-list
+      <cards
         v-for="list in listTypes" :key="`card-list-${list.key}`"
         :type="list.key"
-        ></card-list>
+      ></cards>
     </div>
   </div>
 </template>
 
 <script>
 const {mapState, mapMutations, mapGetters} = require('vuex')
-const CardList = require('./card-list.vue')
+const Cards = require('./cards.vue')
 
 export default {
   components: {
-    'card-list': CardList
+    'cards': Cards
   },
   data () {
     return {

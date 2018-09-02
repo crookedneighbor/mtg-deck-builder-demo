@@ -38,8 +38,8 @@
 
 <script>
 const {mapState} = require('vuex')
-const searchForCards = require('../../lib/scryfall').searchForCards
-const formatCard = require('../../lib/scryfall').formatCard
+const searchForCards = require('../../../lib/scryfall').searchForCards
+const formatCard = require('../../../lib/scryfall').formatCard
 
 export default {
   data () {

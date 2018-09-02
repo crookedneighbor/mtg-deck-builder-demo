@@ -43,10 +43,10 @@
 <script>
 const autosize = require('autosize')
 const {mapActions, mapMutations, mapGetters, mapState} = require('vuex')
-const constructComputedMethodsForDeck = require('../../lib/construct-computed-methods-for-deck')
+const constructComputedMethodsForDeck = require('../../../lib/construct-computed-methods-for-deck')
 
-const Modal = require('../../components/modal.vue')
-const Mana = require('../../components/mana.vue')
+const Modal = require('../../../components/modal.vue')
+const Mana = require('../../../components/mana.vue')
 const ImportExportButtons = require('./import-export-buttons.vue')
 
 export default {

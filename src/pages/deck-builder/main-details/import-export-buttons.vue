@@ -40,7 +40,7 @@
 
 <script>
 const {mapActions, mapMutations, mapState} = require('vuex')
-const extractCardInput = require('../../lib/extract-card-input')
+const extractCardInput = require('../../../lib/extract-card-input')
 
 const TAPPEDOUT_COMMANDER_SYMBOL = ' *CMDR*'
 
