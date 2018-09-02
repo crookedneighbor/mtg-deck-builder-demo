@@ -66,10 +66,10 @@ export default {
   },
   computed: Object.assign(
     mapGetters(['hasCommandZone']),
-    mapState(['menuView']),
+    mapState(['menuView', 'deck']),
     {
       commandZone () {
-        return this.$store.state.deck.commandZone
+        return this.deck.commandZone
       },
       viewAbleMenuOptions () {
         return this.menuOptions.filter((option) => option.shouldShow())

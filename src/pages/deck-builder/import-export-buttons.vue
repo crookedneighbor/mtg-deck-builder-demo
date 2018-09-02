@@ -39,8 +39,7 @@
 </template>
 
 <script>
-const {mapActions} = require('vuex')
-const constructComputedMethodsForDeck = require('../../lib/construct-computed-methods-for-deck')
+const {mapActions, mapState} = require('vuex')
 const extractCardInput = require('../../lib/extract-card-input')
 
 const TAPPEDOUT_COMMANDER_SYMBOL = ' *CMDR*'
@@ -128,12 +127,10 @@ export default {
     }
   },
   computed: Object.assign(
-    constructComputedMethodsForDeck([
-      'name'
-    ]),
+    mapState(['deck']),
     {
       downloadFileName () {
-        let name = `${this.name} - ${(new Date()).toString()}`
+        let name = `${this.deck.name} - ${(new Date()).toString()}`
 
         if (this.exportType === 'us') {
           name = name + '.json'
@@ -144,7 +141,7 @@ export default {
     }
   ),
   methods: Object.assign(
-    mapActions(['deleteDeck', 'saveDeck']),
+    mapActions(['deleteDeck']),
     {
       prepareExport () {
         let deck
@@ -154,9 +151,9 @@ export default {
         }
 
         if (this.exportType === 'us') {
-          deck = JSON.stringify(this.$store.state.deck)
+          deck = JSON.stringify(this.deck)
         } else if (this.exportType === 'tappedout') {
-          deck = formatDeckExportForTappedOut(this.$store.state.deck)
+          deck = formatDeckExportForTappedOut(this.deck)
         }
 
         let data = new Blob([deck], {type: 'text/plain'})
@@ -194,10 +191,10 @@ export default {
             }
 
             this.deleteDeck()
-            this.$store.commit('updateDeck', parsedDeck)
-            this.$store.dispatch('refetchPendingCards')
+            this.deck.updateDeck(parsedDeck)
+            this.deck.refetchPendingCards()
             this.$store.commit('updateDeckView', 'mainDeck')
-            this.saveDeck()
+            this.deck.saveDeck()
 
             this.$emit('close-modal')
           } catch (e) {

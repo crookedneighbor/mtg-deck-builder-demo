@@ -14,6 +14,7 @@
 </template>
 
 <script>
+const {mapState} = require('vuex')
 const MainDetails = require('./main-details.vue')
 const FirstTimeModal = require('./first-time-modal.vue')
 const Shortcuts = require('./shortcuts.vue')
@@ -31,8 +32,9 @@ export default {
   data () {
     return {}
   },
+  computed: mapState(['deck']),
   created () {
-    this.$store.dispatch('refetchPendingCards')
+    this.deck.refetchPendingCards()
   }
 }
 </script>

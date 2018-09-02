@@ -1,4 +1,5 @@
 const Vue = require('vue')
+const uuid = require('uuid/v4')
 
 const constants = require('./constants')
 const savedDeckManager = require('./state')
@@ -21,7 +22,7 @@ function compileColors (set, list) {
 
 class Deck {
   constructor (config) {
-    this.__VERSION = config.__VERSION,
+    this.__VERSION = config.__VERSION
     this.name = config.name
     this.description = config.description
     this.format = config.format

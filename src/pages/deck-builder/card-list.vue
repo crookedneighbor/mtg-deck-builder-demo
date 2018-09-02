@@ -58,7 +58,6 @@
 </template>
 
 <script>
-const uuid = require('uuid/v4')
 const MISSING_CARD_IMAGE = require('../../lib/constants').MISSING_CARD_IMAGE
 const DEFAULT_SELECTED_CARD = {
   image: MISSING_CARD_IMAGE,
@@ -71,12 +70,12 @@ const extractCardInput = require('../../lib/extract-card-input')
 
 const Mana = require('../../components/mana.vue')
 
-const {mapGetters, mapActions, mapState} = require('vuex')
+const {mapGetters, mapState} = require('vuex')
 
 export default {
   props: ['type'],
   components: {
-    'mana': Mana
+    mana: Mana
   },
   data () {
     return {
@@ -87,10 +86,10 @@ export default {
   },
   computed: Object.assign(
     mapGetters(['isSingletonFormat']),
-    mapState(['deckView']),
+    mapState(['deckView', 'deck']),
     {
       cards () {
-        const list = this.$store.state.deck[this.type]
+        const list = this.deck[this.type]
 
         return Object.keys(list).reduce((cards, cardId) => {
           cards.push(list[cardId])
@@ -112,7 +111,6 @@ export default {
     }
   ),
   methods: Object.assign(
-    mapActions(['lookupCard']),
     {
       anyTagActive () {
         for (let tag in this.activeDeckTags) {
@@ -155,11 +153,11 @@ export default {
           return
         }
 
-        this.$store.commit('addCard', {card, type: this.type})
+        this.deck.addCard(this.type, card)
 
         this.newCard = ''
 
-        this.lookupCard(card).then(() => this.saveDeck())
+        this.deck.lookupCard(card).then(() => this.saveDeck())
       },
       updateCard (card, event) {
         this.cardInFocus = null
@@ -168,7 +166,7 @@ export default {
         event.target.blur()
 
         if (pieces.name === '') {
-          this.$store.commit('removeCard', {card, type: this.type})
+          this.deck.removeCard(this.type, card)
           this.saveDeck()
           return
         }
@@ -191,11 +189,11 @@ export default {
 
         card.name = pieces.name
 
-        this.lookupCard(card).then(() => this.saveDeck())
+        this.deck.lookupCard(card).then(() => this.saveDeck())
       },
       saveDeck () {
         this.$forceUpdate()
-        this.$store.dispatch('saveDeck')
+        this.deck.saveDeck()
       },
       focusCard (card, event) {
         let position

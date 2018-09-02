@@ -68,10 +68,10 @@ export default {
       'colorIdentity'
     ]),
     mapGetters(['hasCommandZone']),
-    mapState(['deckView'])
+    mapState(['deck', 'deckView'])
   ),
   methods: Object.assign(
-    mapActions(['deleteDeck', 'saveDeck']),
+    mapActions(['deleteDeck']),
     {
       closeSettingsModal () {
         this.shouldShowSettingsModal = false
@@ -86,12 +86,12 @@ export default {
         this.shouldShowSettingsModal = false
       },
       onFormatChange (event) {
-        this.$store.commit('updateDeck', {
+        this.deck.updateDeck({
           format: event.target.value
         })
 
         if (!this.hasCommandZone) {
-          this.$store.commit('removeList', 'commandZone')
+          this.deck.removeAllCardsFromList('commandZone')
 
           if (this.deckView === 'commandZone') {
             this.$store.commit('updateDeckView', 'mainDeck')
@@ -99,6 +99,9 @@ export default {
         }
 
         this.saveDeck()
+      },
+      saveDeck () {
+        this.deck.saveDeck()
       }
     }
   ),

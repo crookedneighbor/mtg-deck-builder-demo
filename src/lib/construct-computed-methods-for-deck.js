@@ -2,7 +2,7 @@ module.exports = function constructComputedMethodsForDeck (methods) {
   return methods.reduce((accum, key) => {
     accum[key] = {
       set (val) {
-        this.$store.commit('updateDeck', {
+        this.$store.state.deck.updateDeck({
           [key]: val
         })
       },

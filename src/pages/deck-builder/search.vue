@@ -73,15 +73,15 @@ export default {
       this.searchError = ''
     },
     addCard (card) {
-      const list = this.$store.state.deck[this.deckView]
+      const list = this.deck[this.deckView]
       const lastCard = list[list.length - 1]
 
       if (lastCard && lastCard.name === card.name) {
         lastCard.quantity++
       } else {
-        this.$store.commit('addCard', {card, type: this.deckView})
+        this.deck.addCard(this.deckView, card)
       }
-      this.$store.dispatch('saveDeck')
+      this.deck.saveDeck()
     },
     onSearchScroll (event) {
       if (this.shouldLookForMoreResults(event)) {
@@ -122,7 +122,8 @@ export default {
   },
   computed: Object.assign(
     mapState([
-      'deckView'
+      'deckView',
+      'deck'
     ])
   )
 }

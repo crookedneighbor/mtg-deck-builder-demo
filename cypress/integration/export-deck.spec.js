@@ -52,8 +52,8 @@ describe('Export Deck', function () {
       expect(numberOfCardsInMainDeck).to.equal(99)
       expect(Object.keys(deck.commandZone)).to.have.length(1)
 
-      expect(deck.mainDeck["11e6357a-4bd4-4f4e-8ea5-a1aa81524ac3"].name).to.equal('Acidic Slime')
-      expect(deck.commandZone["ae3d6421-5c48-4038-a562-65fa60634630"].name).to.equal('Rashmi, Eternities Crafter')
+      expect(deck.mainDeck['11e6357a-4bd4-4f4e-8ea5-a1aa81524ac3'].name).to.equal('Acidic Slime')
+      expect(deck.commandZone['ae3d6421-5c48-4038-a562-65fa60634630'].name).to.equal('Rashmi, Eternities Crafter')
     })
   })
 
