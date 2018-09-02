@@ -39,7 +39,7 @@
 </template>
 
 <script>
-const {mapActions, mapState} = require('vuex')
+const {mapActions, mapMutations, mapState} = require('vuex')
 const extractCardInput = require('../../lib/extract-card-input')
 
 const TAPPEDOUT_COMMANDER_SYMBOL = ' *CMDR*'
@@ -142,6 +142,7 @@ export default {
   ),
   methods: Object.assign(
     mapActions(['deleteDeck']),
+    mapMutations(['updateDeckView']),
     {
       prepareExport () {
         let deck
@@ -193,7 +194,7 @@ export default {
             this.deleteDeck()
             this.deck.updateDeck(parsedDeck)
             this.deck.refetchPendingCards()
-            this.$store.commit('updateDeckView', 'mainDeck')
+            this.updateDeckView('mainDeck')
             this.deck.saveDeck()
 
             this.$emit('close-modal')

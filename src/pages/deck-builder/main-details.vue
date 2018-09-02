@@ -42,7 +42,7 @@
 
 <script>
 const autosize = require('autosize')
-const {mapActions, mapGetters, mapState} = require('vuex')
+const {mapActions, mapMutations, mapGetters, mapState} = require('vuex')
 const constructComputedMethodsForDeck = require('../../lib/construct-computed-methods-for-deck')
 
 const Modal = require('../../components/modal.vue')
@@ -72,6 +72,7 @@ export default {
   ),
   methods: Object.assign(
     mapActions(['deleteDeck']),
+    mapMutations(['updateDeckView']),
     {
       closeSettingsModal () {
         this.shouldShowSettingsModal = false
@@ -94,7 +95,7 @@ export default {
           this.deck.removeAllCardsFromList('commandZone')
 
           if (this.deckView === 'commandZone') {
-            this.$store.commit('updateDeckView', 'mainDeck')
+            this.updateDeckView('mainDeck')
           }
         }
 

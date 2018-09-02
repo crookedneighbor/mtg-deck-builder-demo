@@ -6,7 +6,7 @@
           v-for="list in listTypeOptions" :key="`card-list-selection-${list.key}`"
           :class="{'is-active': list.key === deckView}"
           :data-cy="`${list.key}-selection`"
-          @click="selectType(list.key)"
+          @click="updateDeckView(list.key)"
         >
           <a>
             <span>{{list.name}}</span>
@@ -25,7 +25,7 @@
 </template>
 
 <script>
-const {mapState, mapGetters} = require('vuex')
+const {mapState, mapMutations, mapGetters} = require('vuex')
 const CardList = require('./card-list.vue')
 
 export default {
@@ -55,11 +55,7 @@ export default {
       }]
     }
   },
-  methods: {
-    selectType (type) {
-      this.$store.commit('updateDeckView', type)
-    }
-  },
+  methods: mapMutations(['updateDeckView']),
   computed: Object.assign(
     mapState([
       'deckView'
@@ -84,7 +80,7 @@ export default {
         view = this.listTypeOptions[0]
       }
 
-      this.selectType(view.key)
+      this.updateDeckView(view.key)
     })
   }
 }

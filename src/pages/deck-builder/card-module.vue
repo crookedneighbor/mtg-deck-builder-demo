@@ -30,7 +30,7 @@
 </template>
 
 <script>
-const {mapState, mapGetters} = require('vuex')
+const {mapState, mapMutations, mapGetters} = require('vuex')
 const Search = require('./search.vue')
 
 export default {
@@ -59,11 +59,7 @@ export default {
       this.updateMenuView('search')
     })
   },
-  methods: {
-    updateMenuView (value) {
-      this.$store.commit('updateMenuView', value)
-    }
-  },
+  methods: mapMutations(['updateMenuView']),
   computed: Object.assign(
     mapGetters(['hasCommandZone']),
     mapState(['menuView', 'deck']),
