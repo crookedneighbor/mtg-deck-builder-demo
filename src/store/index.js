@@ -21,16 +21,20 @@ const savedDeck = savedDeckManager.load()
 
 const deck = Object.assign({}, EMPTY_DECK, savedDeck)
 
-// TODO convert old style to new style
-// if (Array.isArray(deck.mainDeck)) {
-//   DECK_LIST_TYPES.forEach((list) => {
-//     deck[list] = deck[list].reduce((cards, card) => {
-//       cards[card.id] = card
-//
-//       return cards
-//     }, {})
-//   })
-// }
+// Since v0.6.0, the format for decklists
+// changed from an array to an object.
+// For now, we convert the lists ot the new
+// format, but definitely remove this hack
+// by v1.0.0
+if (Array.isArray(deck.mainDeck)) {
+  DECK_LIST_TYPES.forEach((list) => {
+    deck[list] = deck[list].reduce((cards, card) => {
+      cards[card.id] = card
+
+      return cards
+    }, {})
+  })
+}
 
 if (deck.__VERSION !== VERSION) {
   DECK_LIST_TYPES.forEach((list) => {
