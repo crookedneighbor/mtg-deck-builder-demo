@@ -72,6 +72,10 @@ class Deck {
   }
 
   addCard (listType, card) {
+    this.setCard(listType, card)
+  }
+
+  setCard (listType, card) {
     Vue.set(this[listType], card.id, card)
   }
 
@@ -103,7 +107,7 @@ class Deck {
     DECK_LIST_TYPES.forEach(type => this.removeAllCardsFromList(type))
   }
 
-  lookupCard (card) {
+  lookupCard (listType, card) {
     let promise
 
     card.loadInProgress = true
@@ -121,6 +125,8 @@ class Deck {
       card.error = e.message
     }).then(() => {
       card.loadInProgress = false
+      this[listType][card.id] = Object.assign({}, card)
+      this.saveDeck()
     })
   }
 
@@ -132,7 +138,7 @@ class Deck {
         const card = list[cardId]
 
         if (card.loadInProgress) {
-          this.lookupCard(card)
+          this.lookupCard(type, card)
         }
       })
     })

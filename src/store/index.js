@@ -59,7 +59,10 @@ const store = new Vuex.Store({
     isFirstTime: Boolean(savedDeck),
 
     deckView: 'mainDeck',
-    menuView: 'search'
+    menuView: 'search',
+    activeDeckTags: {},
+    cardInFocus: null,
+    cardInPreview: null
   },
 
   mutations: {
@@ -68,6 +71,19 @@ const store = new Vuex.Store({
     },
     updateMenuView (state, value) {
       state.menuView = value
+    },
+    setTagActiveState (state, {tag, value}) {
+      if (typeof value !== 'boolean') {
+        value = !state.activeDeckTags[tag]
+      }
+
+      Vue.set(state.activeDeckTags, tag, value)
+    },
+    setCardInFocus (state, card) {
+      Vue.set(state, 'cardInFocus', card)
+    },
+    setCardInPreview (state, card) {
+      Vue.set(state, 'cardInPreview', card)
     }
   },
   actions: {
