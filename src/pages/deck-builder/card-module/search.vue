@@ -37,6 +37,7 @@
 </template>
 
 <script>
+const uuid = require('uuid/v4')
 const {mapState} = require('vuex')
 const searchForCards = require('../../../lib/scryfall').searchForCards
 const formatCard = require('../../../lib/scryfall').formatCard
@@ -73,11 +74,13 @@ export default {
       this.searchError = ''
     },
     addCard (card) {
-      const list = this.deck[this.deckView]
-      const lastCard = list[list.length - 1]
+      card = Object.assign({}, card, {id: uuid()})
 
-      if (lastCard && lastCard.name === card.name) {
-        lastCard.quantity++
+      const cardInCleanupSection = document.querySelector(`#${this.deckView}-clean-up .card-row[data-card-name="${card.name}"]`)
+
+      if (cardInCleanupSection) {
+        const list = this.deck[this.deckView]
+        list[cardInCleanupSection.getAttribute('data-card-id')].quantity++
       } else {
         this.deck.addCard(this.deckView, card)
       }

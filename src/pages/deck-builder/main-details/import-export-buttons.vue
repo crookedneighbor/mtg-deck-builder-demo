@@ -101,6 +101,7 @@ function formatDeckImportForTappedOut (textFile) {
     let card = extractCardInput(line)
 
     card.loadInProgress = true
+    card.needsCleanup = true
 
     if (atSideboard) {
       deck.sideboard[card.id] = card

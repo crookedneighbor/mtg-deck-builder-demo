@@ -25,7 +25,7 @@ describe('Search', function () {
 
     cy.get('[data-cy="search-results"] .search-result .add-card-to-deck').eq(0).click()
 
-    cy.get('[data-cy="mainDeck-list"] .card-input input').eq(0)
+    cy.get('[data-cy="mainDeck-clean-up"] .card-input input').eq(0)
       .should('have.value', '1 Saheeli, the Gifted')
 
     // add to sideboard
@@ -33,7 +33,7 @@ describe('Search', function () {
 
     cy.get('[data-cy="search-results"] .search-result .add-card-to-deck').eq(0).click()
 
-    cy.get('[data-cy="sideboard-list"] .card-input input').eq(0)
+    cy.get('[data-cy="sideboard-clean-up"] .card-input input').eq(0)
       .should('have.value', '1 Saheeli, the Gifted')
 
     // add to command zone
@@ -43,8 +43,42 @@ describe('Search', function () {
 
     cy.get('[data-cy="search-results"] .search-result .add-card-to-deck').eq(0).click()
 
-    cy.get('[data-cy="commandZone-list"] .card-input input').eq(0)
+    cy.get('[data-cy="commandZone-clean-up"] .card-input input').eq(0)
       .should('have.value', '1 Saheeli, the Gifted')
+  })
+
+  it('can add multiples to deck list', function () {
+    // add to main deck
+    cy.get('[data-cy="search-input"]')
+      .type('Temur Sabertooth{enter}')
+
+    cy.get('[data-cy="search-results"] .search-result .add-card-to-deck').eq(0).click()
+
+    cy.get('[data-cy="mainDeck-clean-up"] .card-input input').eq(0)
+      .should('have.value', '1 Temur Sabertooth')
+    cy.get('[data-cy="search-results"] .search-result .add-card-to-deck').eq(0).click()
+
+    cy.get('[data-cy="mainDeck-clean-up"] .card-input input').eq(0)
+      .should('have.value', '2 Temur Sabertooth')
+
+    cy.get('[data-cy="search-results"] .search-result .add-card-to-deck').eq(0).click()
+    cy.get('[data-cy="mainDeck-clean-up"] .card-input input').eq(0)
+      .should('have.value', '3 Temur Sabertooth')
+
+    cy.get('[data-cy="search-input"]')
+      .clear()
+      .type('Arcades{enter}')
+
+    cy.get('[data-cy="search-results"] .search-result .add-card-to-deck').eq(0).click()
+    cy.get('[data-cy="search-results"] .search-result .add-card-to-deck').eq(1).click()
+
+    cy.get('[data-cy="search-input"]')
+      .clear()
+      .type('Temur Sabertooth{enter}')
+
+    cy.get('[data-cy="search-results"] .search-result .add-card-to-deck').eq(0).click()
+    cy.get('[data-cy="mainDeck-clean-up"] .card-input input').eq(0)
+      .should('have.value', '4 Temur Sabertooth')
   })
 
   it('displays search errors', function () {

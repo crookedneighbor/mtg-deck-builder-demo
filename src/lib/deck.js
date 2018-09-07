@@ -72,6 +72,8 @@ class Deck {
   }
 
   addCard (listType, card) {
+    card.needsCleanup = true
+
     this.setCard(listType, card)
   }
 

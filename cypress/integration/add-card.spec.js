@@ -10,7 +10,7 @@ describe('Add Card', function () {
 
     cy.reload()
 
-    cy.get('.card-input:first input').should('have.value', '1 Rishkar\'s Expertise')
+    cy.get('[data-cy="mainDeck-sorcery"] .card-input input').should('have.value', '1 Rishkar\'s Expertise')
   })
 
   it('adds multiples of a card', function () {
@@ -49,14 +49,11 @@ describe('Add Card', function () {
 
     cy.reload()
 
-    cy.get('[data-cy="mainDeck-list"] .card-input input').eq(0)
-      .should('have.value', '1 Rishkar\'s Expertise')
+    cy.get('[data-cy="mainDeck-sorcery"] .card-input input').should('have.value', '1 Rishkar\'s Expertise')
 
-    cy.get('[data-cy="mainDeck-list"] .card-input input').eq(1)
-      .should('have.value', '1 Rashmi, Eternities Crafter')
+    cy.get('[data-cy="mainDeck-creature"] .card-input input').should('have.value', '1 Rashmi, Eternities Crafter')
 
-    cy.get('[data-cy="mainDeck-list"] .card-input input').eq(2)
-      .should('have.value', '13 Forest')
+    cy.get('[data-cy="mainDeck-land"] .card-input input').should('have.value', '13 Forest')
   })
 
   it('can add cards to sideboard', function () {
@@ -80,14 +77,11 @@ describe('Add Card', function () {
 
     cy.get('[data-cy="sideboard-selection"]').click()
 
-    cy.get('[data-cy="sideboard-list"] .card-input input').eq(0)
-      .should('have.value', '1 Rishkar\'s Expertise')
+    cy.get('[data-cy="sideboard-sorcery"] .card-input input').should('have.value', '1 Rishkar\'s Expertise')
 
-    cy.get('[data-cy="sideboard-list"] .card-input input').eq(1)
-      .should('have.value', '1 Rashmi, Eternities Crafter')
+    cy.get('[data-cy="sideboard-creature"] .card-input input').should('have.value', '1 Rashmi, Eternities Crafter')
 
-    cy.get('[data-cy="sideboard-list"] .card-input input').eq(2)
-      .should('have.value', '13 Forest')
+    cy.get('[data-cy="sideboard-land"] .card-input input').should('have.value', '13 Forest')
   })
 
   it('can add cards to command zone', function () {
@@ -108,10 +102,10 @@ describe('Add Card', function () {
 
     cy.get('[data-cy="commandZone-selection"]').click()
 
-    cy.get('[data-cy="commandZone-list"] .card-input input').eq(0)
-      .should('have.value', '1 Reyhan, Last of the Abzan')
-
-    cy.get('[data-cy="commandZone-list"] .card-input input').eq(1)
+    cy.get('[data-cy="commandZone-creature"] .card-input input').eq(0)
       .should('have.value', '1 Ravos, Soultender')
+
+    cy.get('[data-cy="commandZone-creature"] .card-input input').eq(1)
+      .should('have.value', '1 Reyhan, Last of the Abzan')
   })
 })

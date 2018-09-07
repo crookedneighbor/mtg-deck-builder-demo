@@ -10,5 +10,25 @@ module.exports = {
     'commandZone',
     'sideboard'
   ],
+  CARD_TYPES_BY_PRIORITY: [
+    'land',
+    'creature',
+    'artifact',
+    'enchantment',
+    'planeswalker',
+    'instant',
+    'sorcery',
+    'tribal',
+    'conspiracy',
+    'phenomenon',
+    'plane',
+    'scheme',
+    'vanguard'
+  ],
+  CARD_TYPES_WITH_NONSTANDARD_PLURALS: {
+    sorcery: 'sorceries',
+    conspiracy: 'conspiracies',
+    phenomenon: 'phenomena'
+  },
   MISSING_CARD_IMAGE: 'https://img.scryfall.com/errors/missing.jpg'
 }

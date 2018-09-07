@@ -4,34 +4,33 @@ describe('Update Card', function () {
   })
 
   it('updates a card', function () {
-    cy.get('.card-input:first input').should('not.have.value', '1 Rishkar\'s Expertise')
+    cy.get('.card-input:first input').should('have.value', '1 Alchemist\'s Refuge')
 
-    cy.get('.card-input:first input').clear().type('Rishkar\'s Expert{enter}')
-    cy.get('.card-input:first input').should('have.value', '1 Rishkar\'s Expertise')
+    cy.get('.card-input:first input').clear().type('Academy Rui').blur()
+    cy.get('[data-cy="mainDeck-clean-up"] .card-input:first input').should('have.value', '1 Academy Ruins')
 
     cy.reload()
 
-    cy.get('.card-input:first input').should('have.value', '1 Rishkar\'s Expertise')
-
+    cy.get('.card-input:first input').should('have.value', '1 Academy Ruins')
     // add tags
-    cy.get('.card-input:first input').type(' #card_draw #cheat_mana_cost{enter}')
+    cy.get('.card-input:first input').type(' #land #artifact_recursion{enter}')
     cy.get('.card-input:first .tags .tag').should('have.length', 2)
-    cy.get('.card-input:first .tags .tag').eq(0).contains('Card Draw')
-    cy.get('.card-input:first .tags .tag').eq(1).contains('Cheat Mana Cost')
+    cy.get('.card-input:first .tags .tag').eq(0).contains('Land')
+    cy.get('.card-input:first .tags .tag').eq(1).contains('Artifact Recursion')
 
     cy.reload()
 
-    cy.get('.card-input:first input').should('have.value', '1 Rishkar\'s Expertise')
+    cy.get('.card-input:first input').should('have.value', '1 Academy Ruins')
     cy.get('.card-input:first .tags .tag').should('have.length', 2)
-    cy.get('.card-input:first .tags .tag').eq(0).contains('Card Draw')
-    cy.get('.card-input:first .tags .tag').eq(1).contains('Cheat Mana Cost')
+    cy.get('.card-input:first .tags .tag').eq(0).contains('Land')
+    cy.get('.card-input:first .tags .tag').eq(1).contains('Artifact Recursion')
 
     // check that text version of tags are displayed when in focus
-    cy.get('.card-input:first input').click().should('have.value', '1 Rishkar\'s Expertise #card_draw #cheat_mana_cost')
+    cy.get('.card-input:first input').click().should('have.value', '1 Academy Ruins #land #artifact_recursion')
 
     // update quantity
     cy.get('.card-input:first input').type('{selectall}{leftarrow}{del}25{enter}')
-    cy.get('.card-input:first input').should('have.value', '25 Rishkar\'s Expertise')
+    cy.get('.card-input:first input').should('have.value', '25 Academy Ruins')
   })
 
   // Need to figure out how best to assert that a request was made

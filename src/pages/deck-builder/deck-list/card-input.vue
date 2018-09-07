@@ -3,11 +3,20 @@
     class="card-row"
     @mouseover="setPreviewCard(card)"
     @mouseout="clearPreviewCard"
+    :data-card-id="card.id"
+    :data-card-name="card.name"
   >
     <td
       class="card-input"
     >
-      <input class="input hidden-input" :value="cardInputValue(card)" @keyup.enter="blur($event)" @blur="updateCard(card, $event)" :disabled="card.loadInProgress" @focus="focusCard(card, $event)" />
+      <input
+        class="input hidden-input"
+        :value="cardInputValue(card)"
+        @keyup.enter="blur($event)"
+        @blur="updateCard(card, $event)"
+        :disabled="card.loadInProgress"
+        @focus="focusCard(card, $event)"
+      />
       <div v-if="card.error" class="card-lookup-error has-text-danger">{{card.error}}</div>
       <div class="tags" v-if="card.tags.length > 0 && cardInFocus !== card">
         <span
@@ -101,6 +110,7 @@ export default {
 
         if (pieces.name !== card.name) {
           // force fresh look up if card name has changed
+          card.needsCleanup = true
           delete card.scryfallId
         }
 

@@ -1,7 +1,7 @@
 <template>
   <tr class="new-card">
     <td>
-      <input :id="type + '-new-card'" data-cy="new-card-input" v-model="newCard" type="text" class="input hidden-input" @keyup.enter="addNew" @blur="addNew" v-bind:placeholder="defaultNumber + ' Card Name'"/>
+      <input :id="type + '-new-card'" data-cy="new-card-input" v-model="newCard" type="text" class="input hidden-input" @focus="setFocus" @keyup.enter="addNew" @blur="addNew" v-bind:placeholder="defaultNumber + ' Card Name'"/>
     </td>
     <td></td>
   </tr>
@@ -10,7 +10,7 @@
 <script>
 const extractCardInput = require('../../../lib/extract-card-input')
 
-const {mapGetters, mapState} = require('vuex')
+const {mapGetters, mapState, mapMutations} = require('vuex')
 
 export default {
   props: ['type'],
@@ -32,8 +32,14 @@ export default {
     }
   ),
   methods: Object.assign(
+    mapMutations(['setCardInFocus']),
     {
+      setFocus () {
+        this.setCardInFocus(true)
+      },
       addNew () {
+        this.setCardInFocus(null)
+
         const card = extractCardInput(this.newCard)
 
         if (!card.name) {

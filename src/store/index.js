@@ -21,6 +21,14 @@ const savedDeck = savedDeckManager.load()
 
 const deck = Object.assign({}, EMPTY_DECK, savedDeck)
 
+function forEachCardInDeck (deck, cb) {
+  DECK_LIST_TYPES.forEach((list) => {
+    Object.keys(deck[list]).forEach((cardId) => {
+      cb(deck[list][cardId])
+    })
+  })
+}
+
 // Since v0.6.0, the format for decklists
 // changed from an array to an object.
 // For now, we convert the lists ot the new
@@ -37,14 +45,18 @@ if (Array.isArray(deck.mainDeck)) {
 }
 
 if (deck.__VERSION !== VERSION) {
-  DECK_LIST_TYPES.forEach((list) => {
-    Object.keys(deck[list]).forEach((cardId) => {
-      deck[list][cardId].loadInProgress = true
-    })
+  forEachCardInDeck(deck, (card) => {
+    card.loadInProgress = true
   })
 
   deck.__VERSION = VERSION
 }
+
+forEachCardInDeck(deck, (card) => {
+  if (card.needsCleanup && !card.error) {
+    card.needsCleanup = false
+  }
+})
 
 Vue.use(Vuex)
 

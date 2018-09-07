@@ -8,7 +8,7 @@ describe('Support Legacy Format', function () {
     cy.get('[data-cy="deck-description-input"]').should('have.value', 'Play big dumb creatures on every person\'s turn!')
     cy.get('[data-cy="format-select"]').should('have.value', 'commander')
     cy.get('[data-cy="mainDeck-list"] .card-input input').eq(0)
-      .should('have.value', '1 Acidic Slime')
+      .should('have.value', '1 Alchemist\'s Refuge')
 
     cy.get('[data-cy="mainDeck-list"] .card-input').should('have.length', 82)
 
