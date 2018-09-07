@@ -108,4 +108,12 @@ describe('Add Card', function () {
     cy.get('[data-cy="commandZone-creature"] .card-input input').eq(1)
       .should('have.value', '1 Reyhan, Last of the Abzan')
   })
+
+  it('can add new cards by clicking the Add New button', function () {
+    cy.get('[data-cy="focus-add-new-button"]').click()
+
+    cy.focused().should('have.id', 'mainDeck-new-card').type('1 Myr Retriev{enter}')
+
+    cy.get('[data-cy="mainDeck-clean-up"] .card-input input').should('have.value', '1 Myr Retriever')
+  })
 })

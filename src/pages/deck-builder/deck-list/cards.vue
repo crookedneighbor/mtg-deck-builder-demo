@@ -1,6 +1,6 @@
 <template>
   <div :data-cy="type + '-list'" v-if="deckView === type">
-    <button class="button" @click="focusOnAddNew">Add New</button>
+    <button data-cy="focus-add-new-button" class="button" @click="focusOnAddNew">Add New</button>
     <table
       v-for="collection in collectionOfCards" :key="collection.key"
       :data-cy="type + '-' + collection.key"
@@ -41,7 +41,7 @@
     </table>
     <table class="table is-fullwidth">
       <tbody>
-        <new-card :id="newCardId" :type="type"></new-card>
+        <new-card :type="type"></new-card>
       </tbody>
     </table>
 
@@ -140,7 +140,7 @@ export default {
     ]),
     {
       newCardId () {
-        return `${this.type}-new-card-input`
+        return `${this.type}-new-card`
       },
       cards () {
         const list = this.deck[this.type]
@@ -257,7 +257,7 @@ export default {
         return formatTag(tag)
       },
       focusOnAddNew () {
-        document.querySelector(`#${this.newCardId} input`).focus()
+        document.querySelector(`#${this.newCardId}`).focus()
       }
     }
   )
