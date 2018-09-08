@@ -1,6 +1,29 @@
 <template>
   <div :data-cy="type + '-list'" v-if="deckView === type">
-    <button data-cy="focus-add-new-button" class="button" @click="focusOnAddNew">Add New</button>
+    <button data-cy="focus-add-new-button" class="button" @click="focusOnAddNew">Add New Card</button>
+
+    <hr>
+
+    <div class="columns">
+      <div class="column">
+        <label class="label">Group By</label>
+        <div class="select">
+          <select data-cy="group-by-choice" v-model="groupByChoice">
+            <option value="card-type">Card Type</option>
+            <option value="converted-mana-cost">Converted Cost</option>
+          </select>
+        </div>
+      </div>
+      <div class="column">
+        <label class="label">Order Group By</label>
+        <div class="select">
+          <select data-cy="sort-by-choice" v-model="sortByChoice">
+            <option value="name">Name</option>
+            <option value="converted-mana-cost">Converted Cost</option>
+          </select>
+        </div>
+      </div>
+    </div>
     <table
       v-for="collection in collectionOfCards" :key="collection.key"
       :data-cy="type + '-' + collection.key"
@@ -74,6 +97,24 @@ const NewCard = require('./new-card.vue')
 
 const {mapMutations, mapState} = require('vuex')
 
+function sortByProperty (first, second, property) {
+  let prop1 = first[property]
+  let prop2 = second[property]
+
+  if (typeof prop1 === 'string' && typeof prop2 === 'string') {
+    prop1 = prop1.toLowerCase()
+    prop2 = prop2.toLowerCase()
+  }
+
+  if (prop1 > prop2) {
+    return 1
+  }
+  if (prop1 < prop2) {
+    return -1
+  }
+  return 0
+}
+
 export default {
   props: ['type'],
   components: {
@@ -82,8 +123,8 @@ export default {
   },
   data () {
     return {
-      primaryOrganizationChoice: 'card-type',
-      primaryOrganizationalChoices: {
+      groupByChoice: 'card-type',
+      groupByChoices: {
         'card-type': {
           key: 'card-type',
           duplicates: false,
@@ -113,20 +154,24 @@ export default {
           })
         }
       },
-      secondaryOrganizationalChoices: {
-        'name': {
+      sortByChoice: 'name',
+      sortByChoices: {
+        name: {
           key: 'name',
           sort (card1, card2) {
-            const name1 = card1.name.toUpperCase()
-            const name2 = card2.name.toUpperCase()
+            return sortByProperty(card1, card2, 'name')
+          }
+        },
+        'converted-mana-cost': {
+          key: 'converted-mana-cost',
+          sort (card1, card2) {
+            let result = sortByProperty(card1, card2, 'cmc')
 
-            if (name1 > name2) {
-              return 1
+            if (result !== 0) {
+              return result
             }
-            if (name1 < name2) {
-              return -1
-            }
-            return 0
+
+            return sortByProperty(card1, card2, 'name')
           }
         }
       }
@@ -151,7 +196,9 @@ export default {
         }, [])
       },
       collectionOfCards () {
-        let choice = this.primaryOrganizationalChoices[this.primaryOrganizationChoice]
+        let choice = this.groupByChoices[this.groupByChoice]
+        let sortByChoice = this.sortByChoices[this.sortByChoice]
+
         let allowDuplicates = choice.duplicates
         let cardsInCollection = {}
 
@@ -175,7 +222,7 @@ export default {
               }
 
               return shouldInclude
-            }).sort(this.secondaryOrganizationalChoices.name.sort)
+            }).sort(sortByChoice.sort)
           }
 
           section.quantity = section.cards.reduce((amount, card) => {

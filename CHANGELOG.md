@@ -5,6 +5,7 @@
 
 ## Features
 * Export deck with .json extension
+* Display cards in groups
 
 # 0.5.0
 ## Fixes

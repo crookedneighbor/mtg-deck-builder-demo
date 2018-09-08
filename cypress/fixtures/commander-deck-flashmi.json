@@ -16,14 +16,15 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/127.jpg?1535503706",
       "price":{
-        "usd":"0.11",
-        "eur":"0.11"
+        "usd":"0.13",
+        "eur":"0.10"
       },
       "typeLine":"Creature — Ooze",
       "scryfallId":"abd6f5d1-7421-47f6-9e95-70372a365716",
       "colorIdentity":[
         "G"
-      ]
+      ],
+      "cmc":5
     },
     "cd9564f2-0ac8-43cc-abdd-f550991fc552":{
       "id":"cd9564f2-0ac8-43cc-abdd-f550991fc552",
@@ -37,16 +38,17 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/avr/225.jpg?1517813031",
       "price":{
-        "usd":"3.13",
-        "eur":"2.09",
-        "tix":"0.03"
+        "usd":"3.08",
+        "eur":"2.08",
+        "tix":"0.02"
       },
       "typeLine":"Land",
       "scryfallId":"c767a897-52e3-4401-8104-930157bb2b02",
       "colorIdentity":[
         "G",
         "U"
-      ]
+      ],
+      "cmc":0
     },
     "9eca1ed5-62c0-44f3-8a5e-cd678c672807":{
       "id":"9eca1ed5-62c0-44f3-8a5e-cd678c672807",
@@ -60,7 +62,7 @@
       "image":"https://img.scryfall.com/cards/normal/en/soi/241.jpg?1517813031",
       "price":{
         "usd":"0.25",
-        "eur":"0.23",
+        "eur":"0.24",
         "tix":"0.01"
       },
       "typeLine":"Creature — Shapeshifter",
@@ -68,7 +70,8 @@
       "colorIdentity":[
         "G",
         "U"
-      ]
+      ],
+      "cmc":4
     },
     "04f4222b-2de6-4ca7-bcb9-62960a2ffc7d":{
       "id":"04f4222b-2de6-4ca7-bcb9-62960a2ffc7d",
@@ -81,14 +84,15 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/81.jpg?1535503022",
       "price":{
-        "usd":"0.12",
-        "eur":"0.07"
+        "usd":"0.13",
+        "eur":"0.08"
       },
       "typeLine":"Enchantment Creature — Human Wizard",
       "scryfallId":"037b396c-2146-4d86-9d13-757685c850c7",
       "colorIdentity":[
         "U"
-      ]
+      ],
+      "cmc":6
     },
     "9896215a-877f-47e0-b0c1-d680c9a5f010":{
       "id":"9896215a-877f-47e0-b0c1-d680c9a5f010",
@@ -101,14 +105,15 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/cm2/14.jpg?1534110612",
       "price":{
-        "usd":"0.33",
+        "usd":"0.34",
         "eur":"0.20"
       },
       "typeLine":"Creature — Eldrazi",
       "scryfallId":"07daf75f-2e4d-479f-8231-6966335fa32e",
       "colorIdentity":[
 
-      ]
+      ],
+      "cmc":9
     },
     "b8f82a3b-d0b7-459b-a575-8894e00628ec":{
       "id":"b8f82a3b-d0b7-459b-a575-8894e00628ec",
@@ -121,15 +126,16 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/akh/42.jpg?1517813031",
       "price":{
-        "usd":"5.69",
-        "eur":"5.39",
-        "tix":"0.83"
+        "usd":"5.56",
+        "eur":"5.46",
+        "tix":"1.00"
       },
       "typeLine":"Enchantment",
       "scryfallId":"0f91d225-788e-42fc-9d01-8668f672b717",
       "colorIdentity":[
         "U"
-      ]
+      ],
+      "cmc":3
     },
     "b43a61ca-5161-4856-86b4-9f26f52b2bd2":{
       "id":"b43a61ca-5161-4856-86b4-9f26f52b2bd2",
@@ -142,15 +148,16 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/10e/251.jpg?1521654064",
       "price":{
-        "usd":"0.69",
-        "eur":"0.50",
-        "tix":"0.01"
+        "usd":"0.59",
+        "eur":"0.49",
+        "tix":"0.02"
       },
       "typeLine":"Creature — Avatar",
       "scryfallId":"ca570876-23b2-4915-a5b9-20f1fa976fab",
       "colorIdentity":[
         "G"
-      ]
+      ],
+      "cmc":8
     },
     "3ff97de4-100d-4878-9d60-1c7b061965ff":{
       "id":"3ff97de4-100d-4878-9d60-1c7b061965ff",
@@ -163,14 +170,15 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/bbd/190.jpg?1529062906",
       "price":{
-        "usd":"0.98",
-        "eur":"0.42"
+        "usd":"0.95",
+        "eur":"0.50"
       },
       "typeLine":"Instant",
       "scryfallId":"ab3e096a-d6e8-4148-bbea-f26fc67e2fe2",
       "colorIdentity":[
         "G"
-      ]
+      ],
+      "cmc":3
     },
     "48cc01bd-798d-48f0-9629-6e0f4c392b26":{
       "id":"48cc01bd-798d-48f0-9629-6e0f4c392b26",
@@ -183,14 +191,15 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/cn2/176.jpg?1517813031",
       "price":{
-        "usd":"7.49",
+        "usd":"7.11",
         "eur":"4.76"
       },
       "typeLine":"Creature — Bird",
       "scryfallId":"feefe9f0-24a6-461c-9ef1-86c5a6f33b83",
       "colorIdentity":[
         "G"
-      ]
+      ],
+      "cmc":1
     },
     "62cff46a-0ed9-4540-af3e-38f4bd98792b":{
       "id":"62cff46a-0ed9-4540-af3e-38f4bd98792b",
@@ -205,13 +214,14 @@
       "price":{
         "usd":"0.49",
         "eur":"0.36",
-        "tix":"0.10"
+        "tix":"0.12"
       },
       "typeLine":"Instant",
       "scryfallId":"500a2aa4-712f-41be-920e-f2f448ff83d0",
       "colorIdentity":[
         "U"
-      ]
+      ],
+      "cmc":3
     },
     "0d0787bb-b4b4-43fa-932b-ac8c9297fe2f":{
       "id":"0d0787bb-b4b4-43fa-932b-ac8c9297fe2f",
@@ -224,16 +234,17 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/kld/244.jpg?1517813031",
       "price":{
-        "usd":"3.08",
-        "eur":"2.94",
-        "tix":"0.65"
+        "usd":"3.06",
+        "eur":"2.96",
+        "tix":"0.63"
       },
       "typeLine":"Land",
       "scryfallId":"8744471b-a528-47d9-84d0-4526273f55e9",
       "colorIdentity":[
         "G",
         "U"
-      ]
+      ],
+      "cmc":0
     },
     "9c00d293-f5fb-42fb-8736-232555e39e87":{
       "id":"9c00d293-f5fb-42fb-8736-232555e39e87",
@@ -246,14 +257,15 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/82.jpg?1535503035",
       "price":{
-        "usd":"0.45",
-        "eur":"0.36"
+        "usd":"0.39",
+        "eur":"0.40"
       },
       "typeLine":"Instant",
       "scryfallId":"821f1c26-6253-4ecc-a243-a5662c637a4a",
       "colorIdentity":[
         "U"
-      ]
+      ],
+      "cmc":1
     },
     "b3f1d47f-77b1-4d3e-9846-82ba3937d024":{
       "id":"b3f1d47f-77b1-4d3e-9846-82ba3937d024",
@@ -266,14 +278,15 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/ddt/56.jpg?1517813031",
       "price":{
-        "usd":"0.14",
-        "eur":"0.19"
+        "usd":"0.15",
+        "eur":"0.18"
       },
       "typeLine":"Artifact",
       "scryfallId":"d492418e-fce9-4333-85e7-004a06546b3c",
       "colorIdentity":[
 
-      ]
+      ],
+      "cmc":1
     },
     "4330342b-9504-4130-9513-218770b2b881":{
       "id":"4330342b-9504-4130-9513-218770b2b881",
@@ -286,14 +299,15 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c16/143.jpg?1517813031",
       "price":{
-        "usd":"6.94",
-        "eur":"2.67"
+        "usd":"7.27",
+        "eur":"2.68"
       },
       "typeLine":"Enchantment",
       "scryfallId":"6da045f8-6278-4c84-9d39-025adf0789c1",
       "colorIdentity":[
         "G"
-      ]
+      ],
+      "cmc":1
     },
     "ef02766e-b122-43ec-8ca5-364bcff33c01":{
       "id":"ef02766e-b122-43ec-8ca5-364bcff33c01",
@@ -306,7 +320,7 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/ths/214.jpg?1517813031",
       "price":{
-        "usd":"1.25",
+        "usd":"1.21",
         "eur":"0.48",
         "tix":"0.01"
       },
@@ -314,7 +328,8 @@
       "scryfallId":"3e394ffe-7460-4c59-a403-e9404b0d10c1",
       "colorIdentity":[
 
-      ]
+      ],
+      "cmc":8
     },
     "5c48f2f9-2548-421d-9860-eb8933519847":{
       "id":"5c48f2f9-2548-421d-9860-eb8933519847",
@@ -334,7 +349,8 @@
       "scryfallId":"6d28946e-a478-4e0b-b39b-ec0236ddc9a5",
       "colorIdentity":[
 
-      ]
+      ],
+      "cmc":0
     },
     "bc7ae464-9e4b-4192-8a1e-2433edae8fe6":{
       "id":"bc7ae464-9e4b-4192-8a1e-2433edae8fe6",
@@ -348,14 +364,15 @@
       "image":"https://img.scryfall.com/cards/normal/en/bfz/4.jpg?1530717556",
       "price":{
         "usd":"0.49",
-        "eur":"0.49",
+        "eur":"0.45",
         "tix":"0.02"
       },
       "typeLine":"Creature — Eldrazi",
       "scryfallId":"4bc855d3-817c-4748-a7f5-1533d8b0e930",
       "colorIdentity":[
 
-      ]
+      ],
+      "cmc":6
     },
     "8c84d6e9-aff6-41d1-a07f-9088a4adb58a":{
       "id":"8c84d6e9-aff6-41d1-a07f-9088a4adb58a",
@@ -368,15 +385,16 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/a25/164.jpg?1521660883",
       "price":{
-        "usd":"3.89",
-        "eur":"3.55",
-        "tix":"2.09"
+        "usd":"3.19",
+        "eur":"3.61",
+        "tix":"2.27"
       },
       "typeLine":"Enchantment Creature — Centaur",
       "scryfallId":"8683a978-1bef-4b01-9361-56b1fc157d26",
       "colorIdentity":[
         "G"
-      ]
+      ],
+      "cmc":3
     },
     "fd1aff47-787d-41fe-b0e6-6cb2da4dd302":{
       "id":"fd1aff47-787d-41fe-b0e6-6cb2da4dd302",
@@ -389,14 +407,15 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/201.jpg?1535504715",
       "price":{
-        "usd":"0.14",
-        "eur":"0.15"
+        "usd":"0.12",
+        "eur":"0.16"
       },
       "typeLine":"Artifact",
       "scryfallId":"d344d88f-a63b-4593-990f-af6346cad91a",
       "colorIdentity":[
 
-      ]
+      ],
+      "cmc":3
     },
     "63f5634f-dbde-473b-be0d-b095d5807038":{
       "id":"63f5634f-dbde-473b-be0d-b095d5807038",
@@ -409,15 +428,16 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/mm3/35.jpg?1517813031",
       "price":{
-        "usd":"15.27",
-        "eur":"9.34",
-        "tix":"0.42"
+        "usd":"16.16",
+        "eur":"9.44",
+        "tix":"0.32"
       },
       "typeLine":"Instant",
       "scryfallId":"268f6afc-bf16-4ca7-a986-945a95d3bffc",
       "colorIdentity":[
         "U"
-      ]
+      ],
+      "cmc":2
     },
     "16981c10-c876-4ce3-a5bb-82082a9281ea":{
       "id":"16981c10-c876-4ce3-a5bb-82082a9281ea",
@@ -430,15 +450,16 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/hou/172.jpg?1517813031",
       "price":{
-        "usd":"0.09",
-        "eur":"0.08",
+        "usd":"0.07",
+        "eur":"0.10",
         "tix":"0.01"
       },
       "typeLine":"Land — Desert",
       "scryfallId":"7d42aa0c-0408-4b0d-bec5-9861dbcf9ee1",
       "colorIdentity":[
         "G"
-      ]
+      ],
+      "cmc":0
     },
     "d7054e58-5ee4-4e73-a68e-2edd7503e28e":{
       "id":"d7054e58-5ee4-4e73-a68e-2edd7503e28e",
@@ -452,14 +473,15 @@
       "image":"https://img.scryfall.com/cards/normal/en/hou/173.jpg?1517813031",
       "price":{
         "usd":"0.09",
-        "eur":"0.07",
+        "eur":"0.08",
         "tix":"0.01"
       },
       "typeLine":"Land — Desert",
       "scryfallId":"91b92d87-776c-490f-9ff1-234e47145df8",
       "colorIdentity":[
         "U"
-      ]
+      ],
+      "cmc":0
     },
     "f630243c-0d6a-446d-ada7-960109b3e4fe":{
       "id":"f630243c-0d6a-446d-ada7-960109b3e4fe",
@@ -472,15 +494,16 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/tsp/57.jpg?1517813031",
       "price":{
-        "usd":"3.38",
-        "eur":"1.03",
-        "tix":"0.02"
+        "usd":"3.43",
+        "eur":"1.10",
+        "tix":"0.01"
       },
       "typeLine":"Creature — Illusion",
       "scryfallId":"c559d326-b97b-43d9-b7c9-c09e1a0e9db6",
       "colorIdentity":[
         "U"
-      ]
+      ],
+      "cmc":6
     },
     "a402e136-acf5-4066-b412-fbf72424e5f2":{
       "id":"a402e136-acf5-4066-b412-fbf72424e5f2",
@@ -493,14 +516,15 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/cm2/136.jpg?1534112110",
       "price":{
-        "usd":"6.87",
-        "eur":"3.92"
+        "usd":"6.95",
+        "eur":"3.87"
       },
       "typeLine":"Creature — Human Shaman",
       "scryfallId":"ee7d035f-184f-4067-876a-1d26cb8d3fa2",
       "colorIdentity":[
         "G"
-      ]
+      ],
+      "cmc":3
     },
     "7e1162d0-76ef-4606-95a3-d7e41494de66":{
       "id":"7e1162d0-76ef-4606-95a3-d7e41494de66",
@@ -520,7 +544,8 @@
       "scryfallId":"b34c171f-8d86-429d-ad5d-f3cd64cce2b3",
       "colorIdentity":[
 
-      ]
+      ],
+      "cmc":0
     },
     "5443352f-2009-428e-bd46-8ead5bfd7be8":{
       "id":"5443352f-2009-428e-bd46-8ead5bfd7be8",
@@ -533,14 +558,15 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c17/149.jpg?1531251195",
       "price":{
-        "usd":"0.91",
+        "usd":"0.83",
         "eur":"0.23"
       },
       "typeLine":"Sorcery",
       "scryfallId":"7f5a3b1c-dcbc-4803-8e5b-42314d46701e",
       "colorIdentity":[
         "G"
-      ]
+      ],
+      "cmc":2
     },
     "387e8660-6745-4a29-8190-91fccef2b93b":{
       "id":"387e8660-6745-4a29-8190-91fccef2b93b",
@@ -553,14 +579,15 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/cm2/189.jpg?1534112735",
       "price":{
-        "usd":"2.27",
-        "eur":"0.26"
+        "usd":"2.41",
+        "eur":"0.25"
       },
       "typeLine":"Artifact",
       "scryfallId":"1e60622b-7c25-444d-8eeb-c443acdfc488",
       "colorIdentity":[
 
-      ]
+      ],
+      "cmc":2
     },
     "43bc30cc-a973-4e5a-924a-42dc28d78213":{
       "id":"43bc30cc-a973-4e5a-924a-42dc28d78213",
@@ -573,14 +600,15 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/147.jpg?1535503969",
       "price":{
-        "usd":"0.09",
+        "usd":"0.08",
         "eur":"0.07"
       },
       "typeLine":"Enchantment — Aura",
       "scryfallId":"5e1fbfce-9677-4ae2-b525-1bb371c8e109",
       "colorIdentity":[
         "G"
-      ]
+      ],
+      "cmc":2
     },
     "efed2aed-f99b-425e-bcf0-d60d1557ca3d":{
       "id":"efed2aed-f99b-425e-bcf0-d60d1557ca3d",
@@ -595,7 +623,7 @@
       "image":"https://img.scryfall.com/cards/normal/en/jou/149.jpg?1517813031",
       "price":{
         "usd":"0.07",
-        "eur":"0.08",
+        "eur":"0.05",
         "tix":"0.01"
       },
       "typeLine":"Creature — Cockatrice",
@@ -603,7 +631,8 @@
       "colorIdentity":[
         "G",
         "U"
-      ]
+      ],
+      "cmc":5
     },
     "ee1f4164-cf60-4229-bb71-af3e3558f483":{
       "id":"ee1f4164-cf60-4229-bb71-af3e3558f483",
@@ -617,13 +646,14 @@
       "image":"https://img.scryfall.com/cards/normal/en/c18/305.jpg?1535506209",
       "price":{
         "usd":"0.25",
-        "eur":"0.09"
+        "eur":"0.08"
       },
       "typeLine":"Basic Land — Forest",
       "scryfallId":"3d365b22-2304-4f20-86f9-9560f59546f1",
       "colorIdentity":[
         "G"
-      ]
+      ],
+      "cmc":0
     },
     "6ea4eab5-126f-44bf-9bd9-442cb8427075":{
       "id":"6ea4eab5-126f-44bf-9bd9-442cb8427075",
@@ -636,15 +666,16 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/ema/50.jpg?1519048136",
       "price":{
-        "usd":"0.45",
-        "eur":"0.55",
+        "usd":"0.49",
+        "eur":"0.41",
         "tix":"0.02"
       },
       "typeLine":"Enchantment",
       "scryfallId":"fdf3b52f-edcd-429d-9a65-703bbd97cb5e",
       "colorIdentity":[
         "U"
-      ]
+      ],
+      "cmc":5
     },
     "a1cc0a07-bb48-48e9-8a2d-ce69511cae2f":{
       "id":"a1cc0a07-bb48-48e9-8a2d-ce69511cae2f",
@@ -657,14 +688,15 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/253.jpg?1535505457",
       "price":{
-        "usd":"0.19",
+        "usd":"0.22",
         "eur":"0.19"
       },
       "typeLine":"Land",
       "scryfallId":"29479ab2-c492-479c-82ba-441703b27c0c",
       "colorIdentity":[
         "U"
-      ]
+      ],
+      "cmc":0
     },
     "65e072c2-3ebf-4174-a773-a9f039921f1c":{
       "id":"65e072c2-3ebf-4174-a773-a9f039921f1c",
@@ -677,15 +709,16 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/aer/109.jpg?1517813031",
       "price":{
-        "usd":"5.49",
-        "eur":"4.17",
-        "tix":"0.19"
+        "usd":"5.38",
+        "eur":"3.80",
+        "tix":"0.15"
       },
       "typeLine":"Instant",
       "scryfallId":"8f5a620c-fde7-4b72-bf8a-efc4f14560c5",
       "colorIdentity":[
         "G"
-      ]
+      ],
+      "cmc":2
     },
     "cae97dfb-2561-43ea-9697-54e38cadef73":{
       "id":"cae97dfb-2561-43ea-9697-54e38cadef73",
@@ -698,16 +731,17 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/dom/240.jpg?1524792404",
       "price":{
-        "usd":"2.39",
-        "eur":"2.15",
-        "tix":"0.68"
+        "usd":"2.41",
+        "eur":"2.19",
+        "tix":"0.51"
       },
       "typeLine":"Land",
       "scryfallId":"d631d040-51e9-4540-91e7-aeb5ade84090",
       "colorIdentity":[
         "G",
         "U"
-      ]
+      ],
+      "cmc":0
     },
     "6b02e127-2074-478b-9319-6cb0630bade2":{
       "id":"6b02e127-2074-478b-9319-6cb0630bade2",
@@ -720,15 +754,16 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/emn/65.jpg?1517813031",
       "price":{
-        "usd":"1.95",
+        "usd":"1.99",
         "eur":"0.45",
-        "tix":"0.02"
+        "tix":"0.01"
       },
       "typeLine":"Enchantment — Aura",
       "scryfallId":"7990ebba-e9f2-4ba4-a352-e26ec81d4bed",
       "colorIdentity":[
         "U"
-      ]
+      ],
+      "cmc":3
     },
     "e76a8e8f-b597-4a2b-b146-d7802c8a2a06":{
       "id":"e76a8e8f-b597-4a2b-b146-d7802c8a2a06",
@@ -742,13 +777,14 @@
       "image":"https://img.scryfall.com/cards/normal/en/c18/296.jpg?1535506080",
       "price":{
         "usd":"0.25",
-        "eur":"0.06"
+        "eur":"0.07"
       },
       "typeLine":"Basic Land — Island",
       "scryfallId":"28347f33-bfd5-48fd-ab10-228dfad1669d",
       "colorIdentity":[
         "U"
-      ]
+      ],
+      "cmc":0
     },
     "dba1b36c-99da-41f9-9697-76b33dc769fe":{
       "id":"dba1b36c-99da-41f9-9697-76b33dc769fe",
@@ -762,14 +798,15 @@
       "image":"https://img.scryfall.com/cards/normal/en/c15/47.jpg?1519044359",
       "price":{
         "usd":"0.73",
-        "eur":"0.81"
+        "eur":"0.71"
       },
       "typeLine":"Legendary Creature — Snake Wizard",
       "scryfallId":"ee333196-20e2-4414-8bb4-5cae6b88893e",
       "colorIdentity":[
         "G",
         "U"
-      ]
+      ],
+      "cmc":3
     },
     "465c422b-cb79-4670-bb55-05977118543e":{
       "id":"465c422b-cb79-4670-bb55-05977118543e",
@@ -783,14 +820,15 @@
       "image":"https://img.scryfall.com/cards/normal/en/ddo/52.jpg?1530676847",
       "price":{
         "usd":"0.16",
-        "eur":"0.20"
+        "eur":"0.23"
       },
       "typeLine":"Creature — Merfolk",
       "scryfallId":"d9704f4f-eb5b-4862-8efd-ff1d8fd4177a",
       "colorIdentity":[
         "G",
         "U"
-      ]
+      ],
+      "cmc":2
     },
     "4b58f70f-d367-4019-8c01-f24b28302bf7":{
       "id":"4b58f70f-d367-4019-8c01-f24b28302bf7",
@@ -804,15 +842,16 @@
       "image":"https://img.scryfall.com/cards/normal/en/jou/152.jpg?1517813031",
       "price":{
         "usd":"8.49",
-        "eur":"5.25",
-        "tix":"0.69"
+        "eur":"5.16",
+        "tix":"0.82"
       },
       "typeLine":"Legendary Enchantment Creature — God",
       "scryfallId":"27427233-da58-45af-ade8-e0727929efaa",
       "colorIdentity":[
         "G",
         "U"
-      ]
+      ],
+      "cmc":5
     },
     "44f57744-ed1c-4b79-9eae-ffb26b2145d7":{
       "id":"44f57744-ed1c-4b79-9eae-ffb26b2145d7",
@@ -827,13 +866,14 @@
       "price":{
         "usd":"14.99",
         "eur":"9.34",
-        "tix":"0.24"
+        "tix":"0.31"
       },
       "typeLine":"Enchantment",
       "scryfallId":"d7dbb092-3bb0-445e-ab26-d939cac92a73",
       "colorIdentity":[
         "U"
-      ]
+      ],
+      "cmc":4
     },
     "18cbb10e-033c-4973-b013-14b364329b13":{
       "id":"18cbb10e-033c-4973-b013-14b364329b13",
@@ -847,13 +887,14 @@
       "image":"https://img.scryfall.com/cards/normal/en/cm2/196.jpg?1534112815",
       "price":{
         "usd":"3.99",
-        "eur":"1.88"
+        "eur":"1.92"
       },
       "typeLine":"Artifact — Equipment",
       "scryfallId":"f0fbee02-b6cc-4cd1-a702-cf4f89c17921",
       "colorIdentity":[
 
-      ]
+      ],
+      "cmc":2
     },
     "6e900525-43be-4e99-8360-8cc2d4de92bc":{
       "id":"6e900525-43be-4e99-8360-8cc2d4de92bc",
@@ -866,15 +907,16 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/emn/70.jpg?1517813031",
       "price":{
-        "usd":"3.99",
-        "eur":"1.40",
+        "usd":"3.87",
+        "eur":"1.51",
         "tix":"0.12"
       },
       "typeLine":"Enchantment",
       "scryfallId":"b3d6522a-b9a0-4185-b5ba-c20fa1b772eb",
       "colorIdentity":[
         "U"
-      ]
+      ],
+      "cmc":7
     },
     "d0dd925f-7237-43e6-9a67-f6c9790fdd59":{
       "id":"d0dd925f-7237-43e6-9a67-f6c9790fdd59",
@@ -888,15 +930,16 @@
       "image":"https://img.scryfall.com/cards/normal/en/dis/118.jpg?1517813031",
       "price":{
         "usd":"2.99",
-        "eur":"1.73",
-        "tix":"0.01"
+        "eur":"1.62",
+        "tix":"0.02"
       },
       "typeLine":"Legendary Creature — Elf Wizard",
       "scryfallId":"25a8c801-df0c-402b-a41c-4703a2abfb66",
       "colorIdentity":[
         "G",
         "U"
-      ]
+      ],
+      "cmc":5
     },
     "8f0226fc-78de-45f1-be49-c5ac62a109d4":{
       "id":"8f0226fc-78de-45f1-be49-c5ac62a109d4",
@@ -910,14 +953,15 @@
       "image":"https://img.scryfall.com/cards/normal/en/shm/276.jpg?1517813031",
       "price":{
         "usd":"0.22",
-        "eur":"0.13",
+        "eur":"0.14",
         "tix":"0.01"
       },
       "typeLine":"Land — Island",
       "scryfallId":"64b36993-666c-40d0-b61a-1d162bd06dcc",
       "colorIdentity":[
         "U"
-      ]
+      ],
+      "cmc":0
     },
     "5b199459-64cd-47b7-bf77-83b481733e6c":{
       "id":"5b199459-64cd-47b7-bf77-83b481733e6c",
@@ -930,14 +974,15 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/267.jpg?1535505657",
       "price":{
-        "usd":"0.16",
+        "usd":"0.23",
         "eur":"0.15"
       },
       "typeLine":"Land",
       "scryfallId":"b4f80d5f-539b-4abf-909b-be710d95a2a1",
       "colorIdentity":[
         "G"
-      ]
+      ],
+      "cmc":0
     },
     "45b6fde6-6f3f-4904-89d1-cf1854b99c67":{
       "id":"45b6fde6-6f3f-4904-89d1-cf1854b99c67",
@@ -951,14 +996,15 @@
       "image":"https://img.scryfall.com/cards/normal/en/cma/204.jpg?1519870594",
       "price":{
         "usd":"2.49",
-        "eur":"1.02"
+        "eur":"1.11"
       },
       "typeLine":"Creature — Horror",
       "scryfallId":"b85d2921-16ee-48bf-abd3-f49fae163855",
       "colorIdentity":[
         "G",
         "U"
-      ]
+      ],
+      "cmc":5
     },
     "c47719ee-99b5-4b81-a92b-5e6332d45048":{
       "id":"c47719ee-99b5-4b81-a92b-5e6332d45048",
@@ -971,14 +1017,15 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c17/217.jpg?1517813031",
       "price":{
-        "usd":"1.16",
-        "eur":"0.62"
+        "usd":"1.23",
+        "eur":"0.63"
       },
       "typeLine":"Artifact",
       "scryfallId":"9c79e497-656e-40f5-8a32-2ec5541915ad",
       "colorIdentity":[
 
-      ]
+      ],
+      "cmc":4
     },
     "1261acc9-a276-487f-92a6-5c4b66e3d0bc":{
       "id":"1261acc9-a276-487f-92a6-5c4b66e3d0bc",
@@ -992,14 +1039,15 @@
       "image":"https://img.scryfall.com/cards/normal/en/ddo/54.jpg?1530676854",
       "price":{
         "usd":"0.10",
-        "eur":"0.08"
+        "eur":"0.10"
       },
       "typeLine":"Creature — Leviathan",
       "scryfallId":"1efbf7be-bc11-4285-a37d-83790b292b3a",
       "colorIdentity":[
         "G",
         "U"
-      ]
+      ],
+      "cmc":2
     },
     "91a07ead-ca04-4cde-b28d-7df43022aca6":{
       "id":"91a07ead-ca04-4cde-b28d-7df43022aca6",
@@ -1012,16 +1060,17 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/akh/204.jpg?1517813031",
       "price":{
-        "usd":"3.45",
-        "eur":"3.34",
-        "tix":"0.28"
+        "usd":"3.70",
+        "eur":"3.19",
+        "tix":"0.30"
       },
       "typeLine":"Legendary Planeswalker — Nissa",
       "scryfallId":"c79036a1-2239-4d4f-8b58-6cf9ac4863fc",
       "colorIdentity":[
         "G",
         "U"
-      ]
+      ],
+      "cmc":2
     },
     "e8a60607-c04a-416e-9a57-d3a54fbbde69":{
       "id":"e8a60607-c04a-416e-9a57-d3a54fbbde69",
@@ -1035,15 +1084,16 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/ths/166.jpg?1517813031",
       "price":{
-        "usd":"6.51",
-        "eur":"4.42",
-        "tix":"0.72"
+        "usd":"6.50",
+        "eur":"4.18",
+        "tix":"0.78"
       },
       "typeLine":"Legendary Enchantment Creature — God",
       "scryfallId":"f185a734-a32a-4244-88e8-dabafbfd064f",
       "colorIdentity":[
         "G"
-      ]
+      ],
+      "cmc":4
     },
     "6b880484-fe01-4616-a00f-9e26ce456351":{
       "id":"6b880484-fe01-4616-a00f-9e26ce456351",
@@ -1057,14 +1107,15 @@
       "image":"https://img.scryfall.com/cards/normal/en/ddo/55.jpg?1530676857",
       "price":{
         "usd":"0.33",
-        "eur":"0.43"
+        "eur":"0.47"
       },
       "typeLine":"Instant",
       "scryfallId":"37fa090d-b756-4de3-8dcb-c20c5fcd4c6a",
       "colorIdentity":[
         "G",
         "U"
-      ]
+      ],
+      "cmc":4
     },
     "59b26218-cf34-43cb-8da1-2ac8d047baa9":{
       "id":"59b26218-cf34-43cb-8da1-2ac8d047baa9",
@@ -1079,13 +1130,14 @@
       "image":"https://img.scryfall.com/cards/normal/en/cma/134.jpg?1519869641",
       "price":{
         "usd":"2.79",
-        "eur":"1.12"
+        "eur":"1.13"
       },
       "typeLine":"Sorcery",
       "scryfallId":"b6d5bf06-f735-4e9f-9460-e6cdf501662f",
       "colorIdentity":[
         "G"
-      ]
+      ],
+      "cmc":8
     },
     "5bfa89da-e831-4a7f-baea-b2f1fc54607b":{
       "id":"5bfa89da-e831-4a7f-baea-b2f1fc54607b",
@@ -1098,14 +1150,15 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c16/94.jpg?1517813031",
       "price":{
-        "usd":"8.76",
-        "eur":"4.64"
+        "usd":"9.00",
+        "eur":"5.23"
       },
       "typeLine":"Enchantment",
       "scryfallId":"c180f9bd-7dd7-4318-8625-2fa674cbc528",
       "colorIdentity":[
         "U"
-      ]
+      ],
+      "cmc":3
     },
     "9632a9b9-a228-4030-bc16-49cde5eddb8c":{
       "id":"9632a9b9-a228-4030-bc16-49cde5eddb8c",
@@ -1118,14 +1171,15 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/dds/48.jpg?1517813031",
       "price":{
-        "usd":"0.23",
-        "eur":"0.13"
+        "usd":"0.22",
+        "eur":"0.12"
       },
       "typeLine":"Sorcery",
       "scryfallId":"1c0a6253-aa08-4393-b370-bb3e2496d88c",
       "colorIdentity":[
         "G"
-      ]
+      ],
+      "cmc":2
     },
     "ef626db9-c1dc-4131-8c6f-892ad14da885":{
       "id":"ef626db9-c1dc-4131-8c6f-892ad14da885",
@@ -1138,14 +1192,15 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c17/91.jpg?1517813031",
       "price":{
-        "usd":"0.79",
-        "eur":"0.24"
+        "usd":"0.94",
+        "eur":"0.26"
       },
       "typeLine":"Instant",
       "scryfallId":"c9a96e38-413f-49cd-90fa-178a91a406ba",
       "colorIdentity":[
         "U"
-      ]
+      ],
+      "cmc":2
     },
     "e40fbd1a-a3cc-43d0-8fd7-5673bbb2909a":{
       "id":"e40fbd1a-a3cc-43d0-8fd7-5673bbb2909a",
@@ -1160,14 +1215,15 @@
       "image":"https://img.scryfall.com/cards/normal/en/m19/254.jpg?1531451525",
       "price":{
         "usd":"1.71",
-        "eur":"0.64",
+        "eur":"0.62",
         "tix":"0.04"
       },
       "typeLine":"Land",
       "scryfallId":"81766fd6-c7e0-4527-a63e-512d126c0421",
       "colorIdentity":[
 
-      ]
+      ],
+      "cmc":0
     },
     "89c1a57f-b80f-40c4-a92d-096a2c59bd41":{
       "id":"89c1a57f-b80f-40c4-a92d-096a2c59bd41",
@@ -1181,15 +1237,16 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/aer/123.jpg?1517813031",
       "price":{
-        "usd":"1.49",
-        "eur":"0.70",
-        "tix":"0.02"
+        "usd":"1.75",
+        "eur":"0.68",
+        "tix":"0.01"
       },
       "typeLine":"Sorcery",
       "scryfallId":"5d58ba68-05c1-4cd8-a93d-321cd1739ccb",
       "colorIdentity":[
         "G"
-      ]
+      ],
+      "cmc":6
     },
     "638e1fca-09e3-48bb-85c3-8d1d7d150174":{
       "id":"638e1fca-09e3-48bb-85c3-8d1d7d150174",
@@ -1202,15 +1259,16 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/xln/71.jpg?1527428461",
       "price":{
-        "usd":"0.94",
-        "eur":"0.39",
-        "tix":"0.19"
+        "usd":"0.96",
+        "eur":"0.40",
+        "tix":"0.13"
       },
       "typeLine":"Sorcery",
       "scryfallId":"fda8ef30-bbfa-4857-9750-0dd0def8b13f",
       "colorIdentity":[
         "U"
-      ]
+      ],
+      "cmc":6
     },
     "b439b910-0d55-4ea0-a86c-0618a2532a2e":{
       "id":"b439b910-0d55-4ea0-a86c-0618a2532a2e",
@@ -1224,13 +1282,14 @@
       "image":"https://img.scryfall.com/cards/normal/en/c17/272.jpg?1517813031",
       "price":{
         "usd":"0.42",
-        "eur":"0.18"
+        "eur":"0.21"
       },
       "typeLine":"Land",
       "scryfallId":"766b7834-f54e-4948-80c5-bc37c1d5344e",
       "colorIdentity":[
 
-      ]
+      ],
+      "cmc":0
     },
     "5e81c293-c1a2-41f1-992f-69dacec02835":{
       "id":"5e81c293-c1a2-41f1-992f-69dacec02835",
@@ -1244,7 +1303,7 @@
       "image":"https://img.scryfall.com/cards/normal/en/ktk/196.jpg?1517813031",
       "price":{
         "usd":"0.17",
-        "eur":"0.18",
+        "eur":"0.15",
         "tix":"0.01"
       },
       "typeLine":"Creature — Beast",
@@ -1252,7 +1311,8 @@
       "colorIdentity":[
         "G",
         "U"
-      ]
+      ],
+      "cmc":6
     },
     "5b4b3dfc-f7ef-48bb-a7d7-185656dd6b1c":{
       "id":"5b4b3dfc-f7ef-48bb-a7d7-185656dd6b1c",
@@ -1265,14 +1325,15 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/160.jpg?1535504129",
       "price":{
-        "usd":"0.96",
-        "eur":"0.31"
+        "usd":"1.06",
+        "eur":"0.32"
       },
       "typeLine":"Creature — Snake Shaman",
       "scryfallId":"6912d171-5f26-45d3-9c6a-911e509d083a",
       "colorIdentity":[
         "G"
-      ]
+      ],
+      "cmc":2
     },
     "b309e4a0-08e9-489d-bd83-21815c89454c":{
       "id":"b309e4a0-08e9-489d-bd83-21815c89454c",
@@ -1285,7 +1346,7 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/282.jpg?1535505875",
       "price":{
-        "usd":"0.17",
+        "usd":"0.19",
         "eur":"0.14"
       },
       "typeLine":"Land",
@@ -1293,7 +1354,8 @@
       "colorIdentity":[
         "G",
         "U"
-      ]
+      ],
+      "cmc":0
     },
     "f40cbe96-c35d-43b6-b072-e2a1b8b4af0b":{
       "id":"f40cbe96-c35d-43b6-b072-e2a1b8b4af0b",
@@ -1314,7 +1376,8 @@
       "colorIdentity":[
         "G",
         "U"
-      ]
+      ],
+      "cmc":2
     },
     "e44e2f4c-24ab-4f9f-a613-c4d54bb42feb":{
       "id":"e44e2f4c-24ab-4f9f-a613-c4d54bb42feb",
@@ -1327,16 +1390,17 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/ima/208.jpg?1530592586",
       "price":{
-        "usd":"0.18",
+        "usd":"0.19",
         "eur":"0.12",
-        "tix":"0.01"
+        "tix":"0.02"
       },
       "typeLine":"Creature — Leviathan",
       "scryfallId":"b18816df-9b73-4a3f-a1d5-ceabf76d3fb0",
       "colorIdentity":[
         "G",
         "U"
-      ]
+      ],
+      "cmc":7
     },
     "55fc79ba-2fd9-4aab-bedf-50bb1a4bb784":{
       "id":"55fc79ba-2fd9-4aab-bedf-50bb1a4bb784",
@@ -1349,14 +1413,15 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/222.jpg?1535505021",
       "price":{
-        "usd":"2.55",
-        "eur":"1.09"
+        "usd":"2.94",
+        "eur":"1.12"
       },
       "typeLine":"Artifact",
       "scryfallId":"83a0f2eb-2f6d-4aaa-b7a9-ea06d5de7eca",
       "colorIdentity":[
 
-      ]
+      ],
+      "cmc":1
     },
     "a5afb233-7660-440e-84dc-84f8b70d1818":{
       "id":"a5afb233-7660-440e-84dc-84f8b70d1818",
@@ -1370,15 +1435,16 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/xln/82.jpg?1527428654",
       "price":{
-        "usd":"0.63",
-        "eur":"0.41",
+        "usd":"0.61",
+        "eur":"0.42",
         "tix":"0.01"
       },
       "typeLine":"Instant",
       "scryfallId":"6e619ada-e9ce-4758-afd8-8def853877eb",
       "colorIdentity":[
         "U"
-      ]
+      ],
+      "cmc":5
     },
     "59c236db-f4eb-4dd9-9046-d084c63aa318":{
       "id":"59c236db-f4eb-4dd9-9046-d084c63aa318",
@@ -1391,14 +1457,15 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c15/108.jpg?1519044768",
       "price":{
-        "usd":"0.53",
-        "eur":"0.42"
+        "usd":"0.52",
+        "eur":"0.45"
       },
       "typeLine":"Instant",
       "scryfallId":"5ecb5078-4439-4fdc-88e8-aac3becbbad8",
       "colorIdentity":[
         "U"
-      ]
+      ],
+      "cmc":3
     },
     "a4ba4e85-94ba-456e-b881-ae328438ac7f":{
       "id":"a4ba4e85-94ba-456e-b881-ae328438ac7f",
@@ -1411,14 +1478,15 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/cn2/38.jpg?1517813031",
       "price":{
-        "usd":"2.28",
-        "eur":"1.01"
+        "usd":"2.34",
+        "eur":"1.05"
       },
       "typeLine":"Creature — Shapeshifter",
       "scryfallId":"3344c1ea-e8b2-481e-b9eb-604c87e34925",
       "colorIdentity":[
         "U"
-      ]
+      ],
+      "cmc":4
     },
     "39ae83b8-5ac6-434a-8930-d336c0392409":{
       "id":"39ae83b8-5ac6-434a-8930-d336c0392409",
@@ -1431,14 +1499,15 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/225.jpg?1535505062",
       "price":{
-        "usd":"0.91",
-        "eur":"0.28"
+        "usd":"0.99",
+        "eur":"0.30"
       },
       "typeLine":"Artifact — Equipment",
       "scryfallId":"1ae84b5c-d3ad-48a3-9ccc-1dd76cee392c",
       "colorIdentity":[
 
-      ]
+      ],
+      "cmc":2
     },
     "311c1fb6-8f1f-4310-936f-508265a34afa":{
       "id":"311c1fb6-8f1f-4310-936f-508265a34afa",
@@ -1451,15 +1520,16 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/ths/180.jpg?1517813031",
       "price":{
-        "usd":"3.32",
-        "eur":"2.37",
-        "tix":"0.03"
+        "usd":"3.46",
+        "eur":"2.26",
+        "tix":"0.02"
       },
       "typeLine":"Creature — Plant",
       "scryfallId":"d40b65c1-b24d-492d-81b9-d8474ebdc08c",
       "colorIdentity":[
         "G"
-      ]
+      ],
+      "cmc":2
     },
     "5bc00be3-77cd-40b7-81a5-bde7a6062b5e":{
       "id":"5bc00be3-77cd-40b7-81a5-bde7a6062b5e",
@@ -1473,15 +1543,16 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/ema/187.jpg?1526080191",
       "price":{
-        "usd":"23.36",
-        "eur":"13.28",
-        "tix":"0.14"
+        "usd":"22.77",
+        "eur":"13.17",
+        "tix":"0.16"
       },
       "typeLine":"Enchantment",
       "scryfallId":"d5b5d2a7-8185-4df0-a35a-f89c12857f87",
       "colorIdentity":[
         "G"
-      ]
+      ],
+      "cmc":2
     },
     "8b8cd38c-8cbf-438c-9e47-1d748f99602c":{
       "id":"8b8cd38c-8cbf-438c-9e47-1d748f99602c",
@@ -1494,15 +1565,16 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/ima/75.jpg?1530591994",
       "price":{
-        "usd":"2.77",
-        "eur":"1.55",
+        "usd":"2.61",
+        "eur":"1.54",
         "tix":"0.30"
       },
       "typeLine":"Legendary Creature — Human Wizard",
       "scryfallId":"19573a69-5022-4d63-9252-c8789602d051",
       "colorIdentity":[
         "U"
-      ]
+      ],
+      "cmc":5
     },
     "43ebbecb-0835-426b-9d7c-07ba6448c10f":{
       "id":"43ebbecb-0835-426b-9d7c-07ba6448c10f",
@@ -1516,7 +1588,7 @@
       "image":"https://img.scryfall.com/cards/normal/en/ths/226.jpg?1517813031",
       "price":{
         "usd":"0.99",
-        "eur":"1.15",
+        "eur":"1.09",
         "tix":"0.03"
       },
       "typeLine":"Land",
@@ -1524,7 +1596,8 @@
       "colorIdentity":[
         "G",
         "U"
-      ]
+      ],
+      "cmc":0
     },
     "328bd020-80a0-47cc-8b4a-c6ad5500807c":{
       "id":"328bd020-80a0-47cc-8b4a-c6ad5500807c",
@@ -1537,14 +1610,15 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/285.jpg?1535505916",
       "price":{
-        "usd":"0.31",
-        "eur":"0.16"
+        "usd":"0.39",
+        "eur":"0.15"
       },
       "typeLine":"Land",
       "scryfallId":"1f799c15-8f84-4ca2-a55f-ed7784d09a9a",
       "colorIdentity":[
 
-      ]
+      ],
+      "cmc":0
     },
     "0b10068c-2e6d-45f3-92dd-d9a15ecf7dcf":{
       "id":"0b10068c-2e6d-45f3-92dd-d9a15ecf7dcf",
@@ -1564,7 +1638,8 @@
       "scryfallId":"2bf59e8d-0746-440d-878f-d6f6f74610d8",
       "colorIdentity":[
         "G"
-      ]
+      ],
+      "cmc":4
     },
     "4a976370-6aca-4da5-901f-4d45a8036e35":{
       "id":"4a976370-6aca-4da5-901f-4d45a8036e35",
@@ -1577,14 +1652,15 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/286.jpg?1535505932",
       "price":{
-        "usd":"0.13",
-        "eur":"0.09"
+        "usd":"0.11",
+        "eur":"0.06"
       },
       "typeLine":"Land",
       "scryfallId":"fc282cec-c74a-4431-bbbc-e8febe71adf2",
       "colorIdentity":[
 
-      ]
+      ],
+      "cmc":0
     },
     "7a90e27c-0bcc-4d63-93f8-62f6095794ae":{
       "id":"7a90e27c-0bcc-4d63-93f8-62f6095794ae",
@@ -1597,15 +1673,16 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/c18/287.jpg?1535505945",
       "price":{
-        "usd":"0.10",
-        "eur":"0.08"
+        "usd":"0.11",
+        "eur":"0.09"
       },
       "typeLine":"Land",
       "scryfallId":"fc81cc34-f78a-411e-8dbd-b13b3d62e587",
       "colorIdentity":[
         "G",
         "U"
-      ]
+      ],
+      "cmc":0
     },
     "46029cd9-1c40-410f-b074-1b27db5fb7d6":{
       "id":"46029cd9-1c40-410f-b074-1b27db5fb7d6",
@@ -1619,14 +1696,15 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/cm2/224.jpg?1534113121",
       "price":{
-        "usd":"6.48",
-        "eur":"3.26"
+        "usd":"6.95",
+        "eur":"3.44"
       },
       "typeLine":"Artifact",
       "scryfallId":"19ce4784-139d-442c-86a9-3e45e91038b7",
       "colorIdentity":[
 
-      ]
+      ],
+      "cmc":2
     },
     "982489f5-3455-4f75-8aea-d1ba8c58ac1d":{
       "id":"982489f5-3455-4f75-8aea-d1ba8c58ac1d",
@@ -1639,8 +1717,8 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/ema/209.jpg?1519049079",
       "price":{
-        "usd":"0.24",
-        "eur":"0.27",
+        "usd":"0.23",
+        "eur":"0.26",
         "tix":"0.01"
       },
       "typeLine":"Creature — Beast",
@@ -1648,7 +1726,8 @@
       "colorIdentity":[
         "G",
         "U"
-      ]
+      ],
+      "cmc":3
     },
     "5f27e0de-8519-42e2-b584-a403ebf01200":{
       "id":"5f27e0de-8519-42e2-b584-a403ebf01200",
@@ -1662,8 +1741,8 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/mm3/198.jpg?1517813031",
       "price":{
-        "usd":"0.14",
-        "eur":"0.10",
+        "usd":"0.15",
+        "eur":"0.13",
         "tix":"0.01"
       },
       "typeLine":"Sorcery",
@@ -1671,7 +1750,8 @@
       "colorIdentity":[
         "G",
         "U"
-      ]
+      ],
+      "cmc":5
     },
     "2b35963d-7dae-4301-b303-5e095ff1a7eb":{
       "id":"2b35963d-7dae-4301-b303-5e095ff1a7eb",
@@ -1684,14 +1764,15 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/cns/206.jpg?1517813031",
       "price":{
-        "usd":"19.67",
-        "eur":"11.16"
+        "usd":"18.27",
+        "eur":"11.44"
       },
       "typeLine":"Artifact",
       "scryfallId":"178c71e6-a905-4050-b483-044462c4c1c5",
       "colorIdentity":[
 
-      ]
+      ],
+      "cmc":4
     },
     "8e44c32b-4782-4541-8c4f-f654ed0a25d1":{
       "id":"8e44c32b-4782-4541-8c4f-f654ed0a25d1",
@@ -1706,14 +1787,15 @@
       "image":"https://img.scryfall.com/cards/normal/en/cma/197.jpg?1519870503",
       "price":{
         "usd":"0.21",
-        "eur":"0.16"
+        "eur":"0.18"
       },
       "typeLine":"Creature — Snake",
       "scryfallId":"bc4be69d-68e7-4e56-8c32-b252a40f0ca3",
       "colorIdentity":[
         "G",
         "U"
-      ]
+      ],
+      "cmc":3
     }
   },
   "sideboard":{
@@ -1729,14 +1811,15 @@
       "image":"https://img.scryfall.com/cards/normal/en/mmq/246.jpg?1526079999",
       "price":{
         "usd":"39.99",
-        "eur":"24.31",
-        "tix":"2.38"
+        "eur":"23.78",
+        "tix":"2.43"
       },
       "typeLine":"Enchantment",
       "scryfallId":"18a1bb9e-006c-495e-8f99-d451183d2669",
       "colorIdentity":[
         "G"
-      ]
+      ],
+      "cmc":3
     }
   },
   "commandZone":{
@@ -1751,8 +1834,8 @@
       "loadInProgress":false,
       "image":"https://img.scryfall.com/cards/normal/en/kld/184.jpg?1517813031",
       "price":{
-        "usd":"0.99",
-        "eur":"0.96",
+        "usd":"1.25",
+        "eur":"0.99",
         "tix":"0.02"
       },
       "typeLine":"Legendary Creature — Elf Druid",
@@ -1760,7 +1843,8 @@
       "colorIdentity":[
         "G",
         "U"
-      ]
+      ],
+      "cmc":4
     }
   }
 }
