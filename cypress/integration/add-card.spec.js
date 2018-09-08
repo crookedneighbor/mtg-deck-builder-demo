@@ -110,6 +110,10 @@ describe('Add Card', function () {
   })
 
   it('can add new cards by clicking the Add New button', function () {
+    // make it so add new button is available by having at least one card in deck
+    cy.get('[data-cy="new-card-input"]').type('4 Hostage Taker{enter}')
+    cy.get('[data-cy="mainDeck-clean-up"] .tag').click()
+
     cy.get('[data-cy="focus-add-new-button"]').click()
 
     cy.focused().should('have.id', 'mainDeck-new-card').type('1 Myr Retriev{enter}')

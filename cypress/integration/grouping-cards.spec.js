@@ -8,6 +8,24 @@ describe('Grouping Cards', function () {
     cy.get('[data-cy="sort-by-choice"]').should('have.value', 'name')
   })
 
+  it('does not show group and sort options in empty deck', function () {
+    cy.get('[data-cy="settings-button"]').click()
+    cy.get('[data-cy="delete-button"]').click()
+
+    cy.get('[data-cy="group-by-choice"]').should('not.exist')
+    cy.get('[data-cy="sort-by-choice"]').should('not.exist')
+
+    cy.get('[data-cy="new-card-input"]').type('4 Hostage Taker{enter}')
+
+    cy.get('[data-cy="group-by-choice"]').should('not.exist')
+    cy.get('[data-cy="sort-by-choice"]').should('not.exist')
+
+    cy.get('[data-cy="mainDeck-clean-up"] .tag').click()
+
+    cy.get('[data-cy="group-by-choice"]').should('exist')
+    cy.get('[data-cy="sort-by-choice"]').should('exist')
+  })
+
   it('groups by type', function () {
     cy.get('[data-cy="group-by-choice"]').select('card-type')
 

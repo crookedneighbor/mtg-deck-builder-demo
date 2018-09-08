@@ -1,29 +1,32 @@
 <template>
   <div :data-cy="type + '-list'" v-if="deckView === type">
-    <button data-cy="focus-add-new-button" class="button" @click="focusOnAddNew">Add New Card</button>
+    <div  v-if="cardsInDeckList.length > 0">
+      <button data-cy="focus-add-new-button" class="button" @click="focusOnAddNew">Add New Card</button>
 
-    <hr>
+      <hr>
 
-    <div class="columns">
-      <div class="column">
-        <label class="label">Group By</label>
-        <div class="select">
-          <select data-cy="group-by-choice" v-model="groupByChoice">
-            <option value="card-type">Card Type</option>
-            <option value="converted-mana-cost">Converted Cost</option>
-          </select>
+      <div class="columns">
+        <div class="column">
+          <label class="label">Group By</label>
+          <div class="select">
+            <select data-cy="group-by-choice" v-model="groupByChoice">
+              <option value="card-type">Card Type</option>
+              <option value="converted-mana-cost">Converted Cost</option>
+            </select>
+          </div>
         </div>
-      </div>
-      <div class="column">
-        <label class="label">Order Group By</label>
-        <div class="select">
-          <select data-cy="sort-by-choice" v-model="sortByChoice">
-            <option value="name">Name</option>
-            <option value="converted-mana-cost">Converted Cost</option>
-          </select>
+        <div class="column">
+          <label class="label">Order Group By</label>
+          <div class="select">
+            <select data-cy="sort-by-choice" v-model="sortByChoice">
+              <option value="name">Name</option>
+              <option value="converted-mana-cost">Converted Cost</option>
+            </select>
+          </div>
         </div>
       </div>
     </div>
+
     <table
       v-for="collection in collectionOfCards" :key="collection.key"
       :data-cy="type + '-' + collection.key"
@@ -194,6 +197,9 @@ export default {
           cards.push(list[cardId])
           return cards
         }, [])
+      },
+      cardsInDeckList () {
+        return this.cards.filter(card => !card.needsCleanup)
       },
       collectionOfCards () {
         let choice = this.groupByChoices[this.groupByChoice]
