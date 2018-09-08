@@ -1,3 +1,7 @@
+# unreleased
+## Features
+* Allow grouping by no group
+
 # 0.6.0
 ## Fixes
 * Fix issue where deck could not be imported

@@ -70,6 +70,13 @@ describe('Grouping Cards', function () {
     cy.get('[data-cy="mainDeck-cmc-9"] .card-row').should('have.length', 1)
   })
 
+  it('allows no grouping', function () {
+    cy.get('[data-cy="group-by-choice"]').select('no-grouping')
+
+    cy.get('[data-cy="mainDeck-no-grouping"] th').contains('Cards')
+    cy.get('[data-cy="mainDeck-no-grouping"] .card-row').should('have.length', 82)
+  })
+
   it('sorts by name', function () {
     cy.get('[data-cy="group-by-choice"]').select('card-type')
     cy.get('[data-cy="sort-by-choice"]').select('name')

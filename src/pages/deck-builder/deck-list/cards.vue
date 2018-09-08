@@ -10,8 +10,11 @@
           <label class="label">Group By</label>
           <div class="select">
             <select data-cy="group-by-choice" v-model="groupByChoice">
-              <option value="card-type">Card Type</option>
-              <option value="converted-mana-cost">Converted Cost</option>
+              <option
+                v-for="choice in groupByChoices" :key="`choice-option-${choice.key}`"
+                :value="choice.key">
+                {{choice.label}}
+              </option>
             </select>
           </div>
         </div>
@@ -130,6 +133,7 @@ export default {
       groupByChoices: {
         'card-type': {
           key: 'card-type',
+          label: 'Card Type',
           duplicates: false,
           sections: CARD_TYPES_BY_PRIORITY.map((type) => {
             return {
@@ -143,6 +147,7 @@ export default {
         },
         'converted-mana-cost': {
           key: 'converted-mana-cost',
+          label: 'Converted Mana Cost',
           duplicates: false,
           sections: [...Array(20).keys()].map((cost) => {
             return {
@@ -155,6 +160,18 @@ export default {
               }
             }
           })
+        },
+        'no-grouping': {
+          key: 'no-grouping',
+          label: 'No Grouping',
+          duplicates: false,
+          sections: [{
+            key: 'no-grouping',
+            heading: 'Cards',
+            include (card) {
+              return card
+            }
+          }]
         }
       },
       sortByChoice: 'name',
