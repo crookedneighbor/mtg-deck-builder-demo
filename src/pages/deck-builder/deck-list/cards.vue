@@ -11,7 +11,7 @@
           <div class="select">
             <select data-cy="group-by-choice" v-model="groupByChoice">
               <option
-                v-for="choice in groupByChoices" :key="`choice-option-${choice.key}`"
+                v-for="choice in groupByChoices" :key="`group-choice-option-${choice.key}`"
                 :value="choice.key">
                 {{choice.label}}
               </option>
@@ -22,8 +22,11 @@
           <label class="label">Order Group By</label>
           <div class="select">
             <select data-cy="sort-by-choice" v-model="sortByChoice">
-              <option value="name">Name</option>
-              <option value="converted-mana-cost">Converted Cost</option>
+              <option
+                v-for="choice in sortByChoices" :key="`sort-choice-option-${choice.key}`"
+                :value="choice.key">
+                {{choice.label}}
+              </option>
             </select>
           </div>
         </div>
@@ -147,7 +150,7 @@ export default {
         },
         'converted-mana-cost': {
           key: 'converted-mana-cost',
-          label: 'Converted Mana Cost',
+          label: 'Converted Cost',
           duplicates: false,
           sections: [...Array(20).keys()].map((cost) => {
             return {
@@ -178,12 +181,14 @@ export default {
       sortByChoices: {
         name: {
           key: 'name',
+          label: 'Name',
           sort (card1, card2) {
             return sortByProperty(card1, card2, 'name')
           }
         },
         'converted-mana-cost': {
           key: 'converted-mana-cost',
+          label: 'Converted Cost',
           sort (card1, card2) {
             let result = sortByProperty(card1, card2, 'cmc')
 
