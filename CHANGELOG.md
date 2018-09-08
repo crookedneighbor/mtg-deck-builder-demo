@@ -1,4 +1,4 @@
-# unreleaed
+# 0.6.0
 ## Fixes
 * Fix issue where deck could not be imported
 * Fixes issue where views would not reset correctly upon deletion
