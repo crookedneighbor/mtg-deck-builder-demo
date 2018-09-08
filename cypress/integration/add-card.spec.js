@@ -47,6 +47,8 @@ describe('Add Card', function () {
     cy.get('[data-cy="mainDeck-list"] .card-input input').eq(2)
       .should('have.value', '13 Forest')
 
+    cy.get('[data-cy="mainDeck-selection"]').contains('Main Deck (15)')
+
     cy.reload()
 
     cy.get('[data-cy="mainDeck-sorcery"] .card-input input').should('have.value', '1 Rishkar\'s Expertise')
@@ -73,6 +75,8 @@ describe('Add Card', function () {
     cy.get('[data-cy="sideboard-list"] .card-input input').eq(2)
       .should('have.value', '13 Forest')
 
+    cy.get('[data-cy="sideboard-selection"]').contains('Sideboard (15)')
+
     cy.reload()
 
     cy.get('[data-cy="sideboard-selection"]').click()
@@ -97,6 +101,8 @@ describe('Add Card', function () {
 
     cy.get('[data-cy="commandZone-list"] .card-input input').eq(1)
       .should('have.value', '1 Ravos, Soultender')
+
+    cy.get('[data-cy="commandZone-selection"]').contains('Command Zone (2)')
 
     cy.reload()
 

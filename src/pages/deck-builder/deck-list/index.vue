@@ -9,7 +9,7 @@
           @click="updateDeckView(list.key)"
         >
           <a>
-            <span>{{list.name}}</span>
+          <span>{{list.name}} <span v-if="list.cards() > 0">({{list.cards()}})</span></span>
           </a>
         </li>
       </ul>
@@ -37,18 +37,27 @@ export default {
       listTypes: [{
         key: 'mainDeck',
         name: 'Main Deck',
+        cards: () => {
+          return this.deck.numberOfCards('mainDeck')
+        },
         shouldShow () {
           return true
         }
       }, {
         key: 'commandZone',
         name: 'Command Zone',
+        cards: () => {
+          return this.deck.numberOfCards('commandZone')
+        },
         shouldShow: () => {
           return this.hasCommandZone
         }
       }, {
         key: 'sideboard',
         name: 'Sideboard',
+        cards: () => {
+          return this.deck.numberOfCards('sideboard')
+        },
         shouldShow () {
           return true
         }
@@ -58,6 +67,7 @@ export default {
   methods: mapMutations(['updateDeckView']),
   computed: Object.assign(
     mapState([
+      'deck',
       'deckView'
     ]),
     mapGetters(['hasCommandZone']),

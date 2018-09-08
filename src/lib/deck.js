@@ -47,8 +47,18 @@ class Deck {
     return this.format === 'commander' || this.format === 'brawl'
   }
 
+  numberOfCards (deckType) {
+    return Object.keys(this[deckType]).reduce((count, cardId) => {
+      let cardQuantity = this[deckType][cardId].quantity
+
+      count += cardQuantity
+
+      return count
+    }, 0)
+  }
+
   hasAnyCards (deckType) {
-    return Object.keys(this[deckType]).length > 0
+    return this.numberOfCards(deckType) > 0
   }
 
   updateColorIdentity () {
