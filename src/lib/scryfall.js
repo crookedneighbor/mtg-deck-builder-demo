@@ -27,6 +27,7 @@ function formatCard (response, card = {}) {
   card.manaCost = response.mana_cost || (response.card_faces && response.card_faces[0].mana_cost) || ''
   card.cmc = response.cmc
   card.colorIdentity = response.color_identity
+  card.colors = response.colors
   card.price = {
     usd: response.usd,
     eur: response.eur,

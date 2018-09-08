@@ -70,6 +70,32 @@ describe('Grouping Cards', function () {
     cy.get('[data-cy="mainDeck-cmc-9"] .card-row').should('have.length', 1)
   })
 
+  it('groups by color', function () {
+    cy.get('[data-cy="group-by-choice"]').select('color')
+
+    cy.get('[data-cy="mainDeck-color-U"] th').contains('Blue')
+    cy.get('[data-cy="mainDeck-color-U"] .card-row').should('have.length', 17)
+    cy.get('[data-cy="mainDeck-color-G"] th').contains('Green')
+    cy.get('[data-cy="mainDeck-color-G"] .card-row').should('have.length', 18)
+    cy.get('[data-cy="mainDeck-color-gold"] th').contains('Multicolored')
+    cy.get('[data-cy="mainDeck-color-gold"] .card-row').should('have.length', 15)
+    cy.get('[data-cy="mainDeck-color-colorless"] th').contains('Colorless')
+    cy.get('[data-cy="mainDeck-color-colorless"] .card-row').should('have.length', 32)
+  })
+
+  it('groups by color identity', function () {
+    cy.get('[data-cy="group-by-choice"]').select('color-identity')
+
+    cy.get('[data-cy="mainDeck-color-identity-U"] th').contains('Blue')
+    cy.get('[data-cy="mainDeck-color-identity-U"] .card-row').should('have.length', 21)
+    cy.get('[data-cy="mainDeck-color-identity-G"] th').contains('Green')
+    cy.get('[data-cy="mainDeck-color-identity-G"] .card-row').should('have.length', 21)
+    cy.get('[data-cy="mainDeck-color-identity-GU"] th').contains('Simic')
+    cy.get('[data-cy="mainDeck-color-identity-GU"] .card-row').should('have.length', 22)
+    cy.get('[data-cy="mainDeck-color-identity-colorless"] th').contains('Colorless')
+    cy.get('[data-cy="mainDeck-color-identity-colorless"] .card-row').should('have.length', 18)
+  })
+
   it('allows no grouping', function () {
     cy.get('[data-cy="group-by-choice"]').select('no-grouping')
 

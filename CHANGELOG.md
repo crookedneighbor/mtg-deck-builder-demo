@@ -1,6 +1,8 @@
 # unreleased
 ## Features
 * Allow grouping by no group
+* Add grouping by color
+* Add grouping by color identity
 
 # 0.6.0
 ## Fixes

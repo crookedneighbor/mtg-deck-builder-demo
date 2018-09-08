@@ -100,6 +100,11 @@ const formatTag = require('../../../lib/format-tag')
 const capitalize = require('../../../lib/capitalize')
 const CARD_TYPES_BY_PRIORITY = constants.CARD_TYPES_BY_PRIORITY
 const CARD_TYPES_WITH_NONSTANDARD_PLURALS = constants.CARD_TYPES_WITH_NONSTANDARD_PLURALS
+const COLORS = constants.COLORS
+const TWO_COLOR_GUILDS = constants.TWO_COLOR_GUILDS
+const THREE_COLOR_GROUPS = constants.THREE_COLOR_GROUPS
+const FOUR_COLOR_GROUPS = constants.FOUR_COLOR_GROUPS
+const FIVE_COLOR = constants.FIVE_COLOR
 
 const CardInput = require('./card-input.vue')
 const NewCard = require('./new-card.vue')
@@ -147,6 +152,95 @@ export default {
               }
             }
           })
+        },
+        'color': {
+          key: 'color',
+          label: 'Color',
+          duplicates: false,
+          sections: [
+            ...COLORS.map((color) => {
+              let colorInitial = color.key
+
+              return {
+                key: `color-${colorInitial}`,
+                heading: color.name,
+                include (card) {
+                  let colors = card.colors
+
+                  return colors.length === 1 && colors[0] === colorInitial
+                }
+              }
+            }),
+            {
+              key: 'color-gold',
+              heading: 'Multicolored',
+              include (card) {
+                let colors = card.colors
+
+                return colors.length > 1
+              }
+            },
+            {
+              key: 'color-colorless',
+              heading: 'Colorless',
+              include (card) {
+                let colors = card.colors
+
+                return colors.length === 0
+              }
+            }]
+        },
+        'color-identity': {
+          key: 'color-identity',
+          label: 'Color Identity',
+          duplicates: false,
+          sections: [
+            ...COLORS.map((color) => {
+              let colorInitial = color.key
+
+              return {
+                key: `color-identity-${colorInitial}`,
+                heading: color.name,
+                include (card) {
+                  let colors = card.colorIdentity
+
+                  return colors.length === 1 && colors[0] === colorInitial
+                }
+              }
+            }),
+            ...[
+              ...TWO_COLOR_GUILDS,
+              ...THREE_COLOR_GROUPS,
+              ...FOUR_COLOR_GROUPS,
+              FIVE_COLOR
+            ].map((config) => {
+              return {
+                key: `color-identity-${config.key}`,
+                heading: config.name,
+                include (card) {
+                  const sameLength = config.colors.length === card.colorIdentity.length
+
+                  if (!sameLength) {
+                    return false
+                  }
+
+                  return config.colors.reduce((isIdentical, color) => {
+                    if (!isIdentical) {
+                      return false
+                    }
+
+                    return Boolean(card.colorIdentity.find(colorToFind => color === colorToFind))
+                  }, true)
+                }
+              }
+            }), {
+              key: 'color-identity-colorless',
+              heading: 'Colorless',
+              include (card) {
+                return card.colorIdentity.length === 0
+              }
+            }
+          ]
         },
         'converted-mana-cost': {
           key: 'converted-mana-cost',
