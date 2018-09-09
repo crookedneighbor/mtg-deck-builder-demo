@@ -39,6 +39,7 @@
 <script>
 const uuid = require('uuid/v4')
 const {mapState} = require('vuex')
+const addActiveTags = require('../../../lib/add-active-tags')
 const searchForCards = require('../../../lib/scryfall').searchForCards
 const formatCard = require('../../../lib/scryfall').formatCard
 
@@ -75,6 +76,8 @@ export default {
     },
     addCard (card) {
       card = Object.assign({}, card, {id: uuid()})
+
+      addActiveTags(card, this.activeDeckTags)
 
       const cardInCleanupSection = document.querySelector(`#${this.deckView}-clean-up .card-row[data-card-name="${card.name}"]`)
 
@@ -125,6 +128,7 @@ export default {
   },
   computed: Object.assign(
     mapState([
+      'activeDeckTags',
       'deckView',
       'deck'
     ])

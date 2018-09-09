@@ -44,6 +44,25 @@ describe('Search', function () {
       .should('have.value', '1 Saheeli, the Gifted')
   })
 
+  it.only('applies active tags to search results', function () {
+    // add cards with tags
+    cy.get('[data-cy="new-card-input"]').type('4 Rite of Repl #win_condition #token_copy{enter}')
+    cy.get('[data-cy="new-card-input"]').type('2 Cackl Counterpar #token_copy{enter}')
+    cy.get('[data-cy="new-card-input"]').type('3 Muldrifter #card_draw{enter}')
+
+    // activate tags
+    cy.get('[data-cy="tag-choices"] .tags .tag').eq(1).click()
+    cy.get('[data-cy="tag-choices"] .tags .tag').eq(2).click()
+
+    cy.get('[data-cy="search-input"]').type('Arcane Artisa{enter}')
+
+    cy.get('[data-cy="search-results"] .search-result .add-card-to-deck').eq(0).click()
+
+    cy.get('[data-cy="mainDeck-clean-up"] .card-input input').eq(3)
+      .click()
+      .should('have.value', '1 Arcane Artisan #token_copy #card_draw')
+  })
+
   it('can add multiples to deck list', function () {
     // add to main deck
     cy.get('[data-cy="search-input"]')

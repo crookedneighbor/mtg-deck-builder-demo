@@ -9,6 +9,7 @@
 
 <script>
 const extractCardInput = require('../../../lib/extract-card-input')
+const addActiveTags = require('../../../lib/add-active-tags')
 
 const {mapGetters, mapState, mapMutations} = require('vuex')
 
@@ -47,11 +48,7 @@ export default {
           return
         }
 
-        Object.keys(this.activeDeckTags).forEach((tagName) => {
-          if (this.activeDeckTags[tagName] && card.tags.indexOf(tagName) === -1) {
-            card.tags.push(tagName)
-          }
-        })
+        addActiveTags(card, this.activeDeckTags)
 
         this.deck.addCard(this.type, card)
 
