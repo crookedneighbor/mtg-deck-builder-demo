@@ -216,7 +216,7 @@ export default {
             ].map((config) => {
               return {
                 key: `color-identity-${config.key}`,
-                heading: config.name,
+                heading: `${config.name} (${config.key})`,
                 include (card) {
                   const sameLength = config.colors.length === card.colorIdentity.length
 
