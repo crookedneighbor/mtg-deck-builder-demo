@@ -129,6 +129,10 @@ function sortByProperty (first, second, property) {
   return 0
 }
 
+function getPrimaryType (card) {
+  return CARD_TYPES_BY_PRIORITY.find(type => card.typeLine.toLowerCase().indexOf(type) > -1)
+}
+
 export default {
   props: ['type'],
   components: {
@@ -322,6 +326,23 @@ export default {
 
               if (result !== 0) {
                 return result
+              }
+
+              return sortByProperty(card1, card2, 'name')
+            }
+          },
+          'type': {
+            key: 'type',
+            label: 'Type',
+            sort (card1, card2) {
+              let type1 = getPrimaryType(card1)
+              let type2 = getPrimaryType(card2)
+
+              if (type1 > type2) {
+                return 1
+              }
+              if (type1 < type2) {
+                return -1
               }
 
               return sortByProperty(card1, card2, 'name')

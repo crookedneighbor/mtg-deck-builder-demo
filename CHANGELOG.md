@@ -6,6 +6,7 @@
 * Add grouping by tags
 * Automatically add tags to new cards when active tags are enabled (#6)
 * Tags are now sorted alphabetically for easier use
+* Add sorting by type
 
 # 0.6.0
 ## Fixes

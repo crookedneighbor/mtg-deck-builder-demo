@@ -168,4 +168,22 @@ describe('Grouping Cards', function () {
     cy.get('[data-cy="mainDeck-artifact"] .card-row input').eq(8).should('have.value', '1 Nevinyrral\'s Disk')
     cy.get('[data-cy="mainDeck-artifact"] .card-row input').eq(9).should('have.value', '1 Vedalken Orrery')
   })
+
+  it('sorts by types', function () {
+    cy.get('[data-cy="group-by-choice"]').select('color-identity')
+    cy.get('[data-cy="sort-by-choice"]').select('type')
+
+    // give time for deck to update
+    cy.wait(1)
+
+    cy.get('[data-cy="mainDeck-color-identity-U"] .card-row input').eq(0).should('have.value', '1 Archetype of Imagination')
+    cy.get('[data-cy="mainDeck-color-identity-U"] .card-row input').eq(1).should('have.value', '1 Draining Whelk')
+    cy.get('[data-cy="mainDeck-color-identity-U"] .card-row input').eq(19).should('have.value', '1 Moonring Island')
+    cy.get('[data-cy="mainDeck-color-identity-U"] .card-row input').eq(20).should('have.value', '1 River\'s Rebuke')
+
+    cy.get('[data-cy="mainDeck-color-identity-G"] .card-row input').eq(0).should('have.value', '1 Acidic Slime')
+    cy.get('[data-cy="mainDeck-color-identity-G"] .card-row input').eq(1).should('have.value', '1 Avatar of Might')
+    cy.get('[data-cy="mainDeck-color-identity-G"] .card-row input').eq(19).should('have.value', '1 Rampant Growth')
+    cy.get('[data-cy="mainDeck-color-identity-G"] .card-row input').eq(20).should('have.value', '1 Rishkar\'s Expertise')
+  })
 })
