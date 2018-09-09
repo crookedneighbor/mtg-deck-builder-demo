@@ -23,7 +23,8 @@ export default {
     mapGetters(['isSingletonFormat']),
     mapState([
       'deck',
-      'deckView'
+      'deckView',
+      'activeDeckTags'
     ]),
     {
       defaultNumber () {
@@ -45,6 +46,12 @@ export default {
         if (!card.name) {
           return
         }
+
+        Object.keys(this.activeDeckTags).forEach((tagName) => {
+          if (this.activeDeckTags[tagName] && card.tags.indexOf(tagName) === -1) {
+            card.tags.push(tagName)
+          }
+        })
 
         this.deck.addCard(this.type, card)
 

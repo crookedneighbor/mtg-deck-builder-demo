@@ -77,7 +77,7 @@
       </tbody>
     </table>
 
-    <div v-if="cardListTags.length > 0">
+    <div data-cy="tag-choices" v-if="cardListTags.length > 0">
       <h3 class="subtitle">Filter Cards by Tags</h3>
 
       <div class="tags">
