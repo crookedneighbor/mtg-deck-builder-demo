@@ -3,6 +3,7 @@
 * Allow grouping by no group
 * Add grouping by color
 * Add grouping by color identity
+* Add grouping by tags
 * Automatically add tags to new cards when active tags are enabled (#6)
 * Tags are now sorted alphabetically for easier use
 

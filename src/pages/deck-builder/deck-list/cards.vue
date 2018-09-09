@@ -138,162 +138,7 @@ export default {
   data () {
     return {
       groupByChoice: 'card-type',
-      groupByChoices: {
-        'card-type': {
-          key: 'card-type',
-          label: 'Card Type',
-          duplicates: false,
-          sections: CARD_TYPES_BY_PRIORITY.map((type) => {
-            return {
-              key: type,
-              heading: capitalize(CARD_TYPES_WITH_NONSTANDARD_PLURALS[type] ? CARD_TYPES_WITH_NONSTANDARD_PLURALS[type] : `${type}s`),
-              include (card) {
-                return card.typeLine && card.typeLine.toLowerCase().indexOf(type) > -1
-              }
-            }
-          })
-        },
-        'color': {
-          key: 'color',
-          label: 'Color',
-          duplicates: false,
-          sections: [
-            ...COLORS.map((color) => {
-              let colorInitial = color.key
-
-              return {
-                key: `color-${colorInitial}`,
-                heading: color.name,
-                include (card) {
-                  let colors = card.colors
-
-                  return colors.length === 1 && colors[0] === colorInitial
-                }
-              }
-            }),
-            {
-              key: 'color-gold',
-              heading: 'Multicolored',
-              include (card) {
-                let colors = card.colors
-
-                return colors.length > 1
-              }
-            },
-            {
-              key: 'color-colorless',
-              heading: 'Colorless',
-              include (card) {
-                let colors = card.colors
-
-                return colors.length === 0
-              }
-            }]
-        },
-        'color-identity': {
-          key: 'color-identity',
-          label: 'Color Identity',
-          duplicates: false,
-          sections: [
-            ...COLORS.map((color) => {
-              let colorInitial = color.key
-
-              return {
-                key: `color-identity-${colorInitial}`,
-                heading: color.name,
-                include (card) {
-                  let colors = card.colorIdentity
-
-                  return colors.length === 1 && colors[0] === colorInitial
-                }
-              }
-            }),
-            ...[
-              ...TWO_COLOR_GUILDS,
-              ...THREE_COLOR_GROUPS,
-              ...FOUR_COLOR_GROUPS,
-              FIVE_COLOR
-            ].map((config) => {
-              return {
-                key: `color-identity-${config.key}`,
-                heading: `${config.name} (${config.key})`,
-                include (card) {
-                  const sameLength = config.colors.length === card.colorIdentity.length
-
-                  if (!sameLength) {
-                    return false
-                  }
-
-                  return config.colors.reduce((isIdentical, color) => {
-                    if (!isIdentical) {
-                      return false
-                    }
-
-                    return Boolean(card.colorIdentity.find(colorToFind => color === colorToFind))
-                  }, true)
-                }
-              }
-            }), {
-              key: 'color-identity-colorless',
-              heading: 'Colorless',
-              include (card) {
-                return card.colorIdentity.length === 0
-              }
-            }
-          ]
-        },
-        'converted-mana-cost': {
-          key: 'converted-mana-cost',
-          label: 'Converted Cost',
-          duplicates: false,
-          sections: [...Array(20).keys()].map((cost) => {
-            return {
-              key: `cmc-${cost}`,
-              heading: `${cost} CMC`,
-              include (card) {
-                let cmc = Number(String(card.cmc).split('.')[0])
-
-                return cmc === cost
-              }
-            }
-          })
-        },
-        'no-grouping': {
-          key: 'no-grouping',
-          label: 'No Grouping',
-          duplicates: false,
-          sections: [{
-            key: 'no-grouping',
-            heading: 'Cards',
-            include (card) {
-              return card
-            }
-          }]
-        }
-      },
-      sortByChoice: 'name',
-      sortByChoices: {
-        name: {
-          key: 'name',
-          label: 'Name',
-          sort (card1, card2) {
-            return sortByProperty(card1, card2, 'name')
-          }
-        },
-        'converted-mana-cost': {
-          key: 'converted-mana-cost',
-          label: 'Converted Cost',
-          sort (card1, card2) {
-            let result = sortByProperty(card1, card2, 'cmc')
-
-            if (result !== 0) {
-              return result
-            }
-
-            return sortByProperty(card1, card2, 'name')
-          }
-        }
-      }
+      sortByChoice: 'name'
     }
   },
   computed: Object.assign(
@@ -303,6 +148,187 @@ export default {
       'activeDeckTags'
     ]),
     {
+      groupByChoices() {
+        return {
+          'card-type': {
+            key: 'card-type',
+            label: 'Card Type',
+            duplicates: false,
+            sections: CARD_TYPES_BY_PRIORITY.map((type) => {
+              return {
+                key: type,
+                heading: capitalize(CARD_TYPES_WITH_NONSTANDARD_PLURALS[type] ? CARD_TYPES_WITH_NONSTANDARD_PLURALS[type] : `${type}s`),
+                include (card) {
+                  return card.typeLine && card.typeLine.toLowerCase().indexOf(type) > -1
+                }
+              }
+            })
+          },
+          'color': {
+            key: 'color',
+            label: 'Color',
+            duplicates: false,
+            sections: [
+              ...COLORS.map((color) => {
+                let colorInitial = color.key
+
+                return {
+                  key: `color-${colorInitial}`,
+                  heading: color.name,
+                  include (card) {
+                    let colors = card.colors
+
+                    return colors.length === 1 && colors[0] === colorInitial
+                  }
+                }
+              }),
+              {
+                key: 'color-gold',
+                heading: 'Multicolored',
+                include (card) {
+                  let colors = card.colors
+
+                  return colors.length > 1
+                }
+              },
+              {
+                key: 'color-colorless',
+                heading: 'Colorless',
+                include (card) {
+                  let colors = card.colors
+
+                  return colors.length === 0
+                }
+              }]
+          },
+          'color-identity': {
+            key: 'color-identity',
+            label: 'Color Identity',
+            duplicates: false,
+            sections: [
+              ...COLORS.map((color) => {
+                let colorInitial = color.key
+
+                return {
+                  key: `color-identity-${colorInitial}`,
+                  heading: color.name,
+                  include (card) {
+                    let colors = card.colorIdentity
+
+                    return colors.length === 1 && colors[0] === colorInitial
+                  }
+                }
+              }),
+              ...[
+                ...TWO_COLOR_GUILDS,
+                ...THREE_COLOR_GROUPS,
+                ...FOUR_COLOR_GROUPS,
+                FIVE_COLOR
+              ].map((config) => {
+                return {
+                  key: `color-identity-${config.key}`,
+                  heading: `${config.name} (${config.key})`,
+                  include (card) {
+                    const sameLength = config.colors.length === card.colorIdentity.length
+
+                    if (!sameLength) {
+                      return false
+                    }
+
+                    return config.colors.reduce((isIdentical, color) => {
+                      if (!isIdentical) {
+                        return false
+                      }
+
+                      return Boolean(card.colorIdentity.find(colorToFind => color === colorToFind))
+                    }, true)
+                  }
+                }
+              }), {
+                key: 'color-identity-colorless',
+                heading: 'Colorless',
+                include (card) {
+                  return card.colorIdentity.length === 0
+                }
+              }
+            ]
+          },
+          'converted-mana-cost': {
+            key: 'converted-mana-cost',
+            label: 'Converted Cost',
+            duplicates: false,
+            sections: [...Array(20).keys()].map((cost) => {
+              return {
+                key: `cmc-${cost}`,
+                heading: `${cost} CMC`,
+                include (card) {
+                  let cmc = Number(String(card.cmc).split('.')[0])
+
+                  return cmc === cost
+                }
+              }
+            })
+          },
+          tags: {
+            key: 'tags',
+            label: 'Tags',
+            duplicates: true,
+            sections: [
+              ...this.cardListTags.map((tagName) => {
+                return {
+                  key: `tag-${tagName}`,
+                  heading: this.formatTag(tagName),
+                  include (card) {
+                    return card.tags.indexOf(tagName) > -1
+                  }
+                }
+              }), {
+                key: 'tag-no-tags',
+                heading: 'No Tags',
+                include (card) {
+                  return card.tags.length === 0
+                }
+              }
+            ]
+          },
+          'no-grouping': {
+            key: 'no-grouping',
+            label: 'No Grouping',
+            duplicates: false,
+            sections: [{
+              key: 'no-grouping',
+              heading: 'Cards',
+              include (card) {
+                return card
+              }
+            }]
+          }
+        }
+      },
+      sortByChoices() {
+        return {
+          name: {
+            key: 'name',
+            label: 'Name',
+            sort (card1, card2) {
+              return sortByProperty(card1, card2, 'name')
+            }
+          },
+          'converted-mana-cost': {
+            key: 'converted-mana-cost',
+            label: 'Converted Cost',
+            sort (card1, card2) {
+              let result = sortByProperty(card1, card2, 'cmc')
+
+              if (result !== 0) {
+                return result
+              }
+
+              return sortByProperty(card1, card2, 'name')
+            }
+          }
+        }
+      },
       newCardId () {
         return `${this.type}-new-card`
       },

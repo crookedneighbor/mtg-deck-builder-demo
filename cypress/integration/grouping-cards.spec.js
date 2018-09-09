@@ -96,6 +96,17 @@ describe('Grouping Cards', function () {
     cy.get('[data-cy="mainDeck-color-identity-colorless"] .card-row').should('have.length', 18)
   })
 
+  it('groups by tags', function () {
+    cy.get('[data-cy="group-by-choice"]').select('tags')
+
+    cy.get('[data-cy="mainDeck-tag-card_draw"] th').contains('Card Draw')
+    cy.get('[data-cy="mainDeck-tag-card_draw"] .card-row').should('have.length', 5)
+    cy.get('[data-cy="mainDeck-tag-cheat_mana_cost"] th').contains('Cheat Mana Cost')
+    cy.get('[data-cy="mainDeck-tag-cheat_mana_cost"] .card-row').should('have.length', 8)
+    cy.get('[data-cy="mainDeck-tag-deck_manipulation"] th').contains('Deck Manipulation')
+    cy.get('[data-cy="mainDeck-tag-deck_manipulation"] .card-row').should('have.length', 6)
+  })
+
   it('allows no grouping', function () {
     cy.get('[data-cy="group-by-choice"]').select('no-grouping')
 
