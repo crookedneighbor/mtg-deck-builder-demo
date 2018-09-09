@@ -132,12 +132,12 @@ describe('Add Card', function () {
     cy.get('[data-cy="new-card-input"]').type('2 Cackl Counterpar #token_copy{enter}')
     cy.get('[data-cy="new-card-input"]').type('3 Muldrifter #card_draw{enter}')
 
+    cy.get('[data-cy="tag-choices"] .tags .tag').eq(0).click()
     cy.get('[data-cy="tag-choices"] .tags .tag').eq(1).click()
-    cy.get('[data-cy="tag-choices"] .tags .tag').eq(2).click()
 
     cy.get('[data-cy="new-card-input"]').type('4 Arcane Artisan{enter}')
 
-    cy.get('[data-cy="mainDeck-clean-up"] .card-input input').eq(3).click().should('have.value', '4 Arcane Artisan #token_copy #card_draw')
+    cy.get('[data-cy="mainDeck-clean-up"] .card-input input').eq(3).click().should('have.value', '4 Arcane Artisan #card_draw #token_copy')
   })
 
   it('adds active tags as additional tags if new card has tags already', function () {
@@ -145,11 +145,11 @@ describe('Add Card', function () {
     cy.get('[data-cy="new-card-input"]').type('2 Cackl Counterpar #token_copy{enter}')
     cy.get('[data-cy="new-card-input"]').type('3 Muldrifter #card_draw{enter}')
 
+    cy.get('[data-cy="tag-choices"] .tags .tag').eq(0).click()
     cy.get('[data-cy="tag-choices"] .tags .tag').eq(1).click()
-    cy.get('[data-cy="tag-choices"] .tags .tag').eq(2).click()
 
     cy.get('[data-cy="new-card-input"]').type('4 Arcane Artisan #win_condition #group_hug{enter}')
 
-    cy.get('[data-cy="mainDeck-clean-up"] .card-input input').eq(3).click().should('have.value', '4 Arcane Artisan #win_condition #group_hug #token_copy #card_draw')
+    cy.get('[data-cy="mainDeck-clean-up"] .card-input input').eq(3).click().should('have.value', '4 Arcane Artisan #card_draw #group_hug #token_copy #win_condition')
   })
 })

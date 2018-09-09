@@ -4,6 +4,7 @@
 * Add grouping by color
 * Add grouping by color identity
 * Automatically add tags to new cards when active tags are enabled (#6)
+* Tags are now sorted alphabetically for easier use
 
 # 0.6.0
 ## Fixes

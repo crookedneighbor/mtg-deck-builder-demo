@@ -4,4 +4,6 @@ module.exports = function addActiveTags (card, activeDeckTags) {
       card.tags.push(tagName)
     }
   })
+
+  card.tags.sort()
 }

@@ -378,7 +378,7 @@ export default {
           card.tags.forEach(tag => tags.add(tag))
         })
 
-        return Array.from(tags)
+        return Array.from(tags).sort()
       }
     }
   ),
