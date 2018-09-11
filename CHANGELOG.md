@@ -1,4 +1,4 @@
-# unreleased
+# 0.7.0
 ## Features
 * Allow grouping by no group
 * Add grouping by color
