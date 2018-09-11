@@ -102,7 +102,7 @@ class Deck {
 
   updateDeck (updates) {
     Object.keys(updates).forEach((key) => {
-      this[key] = updates[key]
+      Vue.set(this, key, updates[key])
     })
   }
 
@@ -193,7 +193,8 @@ class Deck {
       name: '',
       description: '',
       format: '',
-      colorIdentity: ''
+      colorIdentity: '',
+      updateInProgress: false
     })
     DECK_LIST_TYPES.forEach(type => this.removeAllCardsFromList(type))
   }
