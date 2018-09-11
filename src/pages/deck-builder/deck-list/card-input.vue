@@ -14,7 +14,7 @@
         :value="cardInputValue(card)"
         @keyup.enter="blur($event)"
         @blur="updateCard(card, $event)"
-        :disabled="card.loadInProgress"
+        :disabled="card.lookupInProgress"
         @focus="focusCard(card, $event)"
       />
       <div v-if="card.error" class="card-lookup-error has-text-danger">{{card.error}}</div>

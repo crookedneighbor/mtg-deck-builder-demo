@@ -21,6 +21,15 @@
         :type="list.key"
       ></cards>
     </div>
+    <div class="modal"
+      :class="{'is-active': deck.updateInProgress}"
+    >
+      <div class="modal-background"></div>
+      <div class="modal-content">
+        <h3 class="title">Deck Update in Progress: {{Math.floor(numberOfCardsLoaded / totalNumberOfCards * 100)}}%</h3>
+        <progress class="progress is-large is-info" :value="numberOfCardsLoaded" :max="totalNumberOfCards">{{numberOfCardsLoaded}}%</progress>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -38,7 +47,7 @@ export default {
         key: 'mainDeck',
         name: 'Main Deck',
         cards: () => {
-          return this.deck.numberOfCards('mainDeck')
+          return this.deck.numberOfCardsInList('mainDeck')
         },
         shouldShow () {
           return true
@@ -47,7 +56,7 @@ export default {
         key: 'commandZone',
         name: 'Command Zone',
         cards: () => {
-          return this.deck.numberOfCards('commandZone')
+          return this.deck.numberOfCardsInList('commandZone')
         },
         shouldShow: () => {
           return this.hasCommandZone
@@ -56,7 +65,7 @@ export default {
         key: 'sideboard',
         name: 'Sideboard',
         cards: () => {
-          return this.deck.numberOfCards('sideboard')
+          return this.deck.numberOfCardsInList('sideboard')
         },
         shouldShow () {
           return true
@@ -76,6 +85,12 @@ export default {
         return this.listTypes.filter((list) => {
           return list.shouldShow()
         })
+      },
+      numberOfCardsLoaded () {
+        return this.deck.getNumberOfCardsLoaded()
+      },
+      totalNumberOfCards () {
+        return this.deck.totalNumberOfCards()
       }
     }
   ),
@@ -99,5 +114,9 @@ export default {
 <style scoped>
 #deck-selection {
   margin-bottom: 0;
+}
+
+.progress::-webkit-progress-value {
+  transition: width 0.5s ease;
 }
 </style>

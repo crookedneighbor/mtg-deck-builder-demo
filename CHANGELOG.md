@@ -7,6 +7,7 @@
 * Automatically add tags to new cards when active tags are enabled (#6)
 * Tags are now sorted alphabetically for easier use
 * Add sorting by type
+* Introduce loading screen when deck needs updating
 
 # 0.6.0
 ## Fixes

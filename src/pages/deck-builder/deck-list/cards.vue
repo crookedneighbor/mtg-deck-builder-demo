@@ -152,7 +152,7 @@ export default {
       'activeDeckTags'
     ]),
     {
-      groupByChoices() {
+      groupByChoices () {
         return {
           'card-type': {
             key: 'card-type',
@@ -309,7 +309,7 @@ export default {
           }
         }
       },
-      sortByChoices() {
+      sortByChoices () {
         return {
           name: {
             key: 'name',
@@ -442,7 +442,11 @@ export default {
             .find(organizedCard => organizedCard.name === card.name)
 
           if (!cardThatAlreadyExists) {
-            card.needsCleanup = false
+            if (card.error) {
+              this.deck.lookupCard(this.type, card)
+            } else {
+              card.needsCleanup = false
+            }
             return
           }
 

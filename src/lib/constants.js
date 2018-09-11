@@ -3,7 +3,7 @@ module.exports = {
   // from scryfall. This should be changed whenever there's a new
   // field added to the stored decks. For organizational puproses,
   // the naming convention is YYYY-MM-DD__reason_for_change
-  VERSION: '2018-09-08__add_color_property',
+  VERSION: '2018-09-10__set_up_better_load_state',
 
   DECK_LIST_TYPES: [
     'mainDeck',
