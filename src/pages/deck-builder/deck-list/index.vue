@@ -21,7 +21,9 @@
         :type="list.key"
       ></cards>
     </div>
-    <div class="modal"
+    <div
+      data-cy="deck-update-in-progress-modal"
+      class="modal"
       :class="{'is-active': deck.updateInProgress}"
     >
       <div class="modal-background"></div>

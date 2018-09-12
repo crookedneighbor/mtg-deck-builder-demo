@@ -55,6 +55,10 @@ class Deck {
 
     updateDeckFromLegacyFormat(this)
 
+    this.cleanUp()
+  }
+
+  cleanUp () {
     if (this.__VERSION !== VERSION) {
       this.updateInProgress = true
     }
@@ -74,16 +78,17 @@ class Deck {
         this.updateInProgress = false
         this.saveDeck()
       })
-    } else if (this.totalNumberOfCards(card => card.lookupInProgress || card.error) > 0) {
+    } else if (this.totalNumberOfCards(card => card.needsCleanup || card.lookupInProgress || card.error) > 0) {
       this.updateInProgress = true
 
-      this.refetchCards(card => card.lookupInProgress || card.error).then(() => {
+      this.refetchCards(card => card.needsCleanup || card.lookupInProgress || card.error).then(() => {
         this.forEachCardInDeck((card) => {
           if (!card.error) {
             card.needsCleanup = false
           }
         })
         this.updateInProgress = false
+        this.saveDeck()
       })
     }
   }

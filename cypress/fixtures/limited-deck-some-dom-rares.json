@@ -1,0 +1,93 @@
+{
+  "__VERSION":"2018-01-01__small_old_deck_that_will_be_updated",
+  "name":"Rares!",
+  "description":"Some rares I got.",
+  "format":"limited",
+  "colorIdentity":"{W}{B}",
+  "mainDeck":{
+    "393cc150-fe2a-48e7-81ca-e307282bac0d":{
+      "quantity":1,
+      "id":"393cc150-fe2a-48e7-81ca-e307282bac0d",
+      "name":"Aryel, Knight of Windgrace",
+      "typeLine":"Legendary Creature — Human Knight",
+      "scryfallId":"58e2981b-bf25-4d9d-8811-5a1ff0b4d5d2",
+      "manaCost":"{2}{W}{B}",
+      "cmc":4,
+      "colorIdentity":[
+        "B",
+        "W"
+      ],
+      "colors":[
+        "B",
+        "W"
+      ],
+      "price":{
+        "usd":"0.36",
+        "eur":"0.23",
+        "tix":"0.01"
+      },
+      "tags":[
+
+      ],
+      "image":"https://img.scryfall.com/cards/normal/en/dom/192.jpg?1524791924",
+      "needsCleanup":true
+    },
+    "2c4ca587-207a-40cc-bc13-18b1309f8af3":{
+      "quantity":1,
+      "id":"2c4ca587-207a-40cc-bc13-18b1309f8af3",
+      "name":"Benalish Marshal",
+      "typeLine":"Creature — Human Knight",
+      "scryfallId":"6dd1a7fc-5dbd-4ed2-9b02-9fd5c55bb629",
+      "manaCost":"{W}{W}{W}",
+      "cmc":3,
+      "colorIdentity":[
+        "W"
+      ],
+      "colors":[
+        "W"
+      ],
+      "price":{
+        "usd":"1.17",
+        "eur":"1.09",
+        "tix":"0.29"
+      },
+      "tags":[
+
+      ],
+      "image":"https://img.scryfall.com/cards/normal/en/dom/6.jpg?1525141989",
+      "needsCleanup":true
+    },
+    "412b0832-2f50-4130-b80b-cb9d5d2f7d8c":{
+      "quantity":1,
+      "id":"412b0832-2f50-4130-b80b-cb9d5d2f7d8c",
+      "name":"Blackblade Reforged",
+      "typeLine":"Legendary Artifact — Equipment",
+      "scryfallId":"862d38d1-e3d0-47e1-a535-ff445b1c55c6",
+      "manaCost":"{2}",
+      "cmc":2,
+      "colorIdentity":[
+
+      ],
+      "colors":[
+
+      ],
+      "price":{
+        "usd":"0.82",
+        "eur":"0.32",
+        "tix":"0.01"
+      },
+      "tags":[
+
+      ],
+      "image":"https://img.scryfall.com/cards/normal/en/dom/211.jpg?1524792125",
+      "needsCleanup":true
+    }
+  },
+  "sideboard":{
+
+  },
+  "commandZone":{
+
+  },
+  "updateInProgress":false
+}

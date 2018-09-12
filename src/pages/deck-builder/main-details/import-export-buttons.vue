@@ -193,20 +193,10 @@ export default {
             }
 
             this.deleteDeck()
-            this.deck.updateInProgress = true
-            this.$emit('close-modal')
             this.deck.updateDeck(parsedDeck)
             this.updateDeckView('mainDeck')
-            this.deck.refetchCards((card) => {
-              return card.needsCleanup
-            }).then(() => {
-              this.deck.forEachCardInDeck((card) => {
-                if (!card.error) {
-                  card.needsCleanup = false
-                }
-              })
-              this.deck.updateInProgress = false
-            })
+            this.$emit('close-modal')
+            this.deck.cleanUp()
           } catch (e) {
             console.error(e)
             this.importError = 'Something went wrong when importing the deck. Be sure you used a file that you exported from this app.'

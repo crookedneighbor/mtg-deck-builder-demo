@@ -1,4 +1,7 @@
 // based on https://github.com/cypress-io/cypress/issues/170#issuecomment-311196166
+
+const VERSION = require('../../src/lib/constants').VERSION
+
 describe('Import Deck', function () {
   beforeEach(function () {
     cy.start()
@@ -8,6 +11,7 @@ describe('Import Deck', function () {
     let dataTransfer = new DataTransfer()
 
     return cy.fixture('commander-deck-flashmi').then((deck) => {
+      deck.__VERSION = VERSION
       let deckAsString = JSON.stringify(deck)
       let deckFile = new File([deckAsString], 'deck.json')
 
@@ -18,7 +22,6 @@ describe('Import Deck', function () {
       return cy.get('[data-cy="import-input"]')
     }).then((el) => {
       el[0].files = dataTransfer.files
-      el[0].dispatchEvent(new Event('change', {bubbles: true}))
     }).then(() => {
       cy.get('[data-cy="deck-name-input"]').should('have.value', 'Flashmi')
       cy.get('[data-cy="deck-description-input"]').should('have.value', 'Play big dumb creatures on every person\'s turn!')
@@ -32,6 +35,32 @@ describe('Import Deck', function () {
 
       cy.get('[data-cy="commandZone-list"] .card-input input').eq(0)
         .should('have.value', '1 Rashmi, Eternities Crafter')
+    })
+  })
+
+  it('imports deck and re-fetches cards if VERSION is old', function () {
+    let dataTransfer = new DataTransfer()
+
+    return cy.fixture('limited-deck-some-dom-rares').then((deck) => {
+      let deckAsString = JSON.stringify(deck)
+      let deckFile = new File([deckAsString], 'deck.json')
+
+      dataTransfer.items.add(deckFile)
+
+      cy.get('[data-cy="settings-button"]').click()
+
+      return cy.get('[data-cy="import-input"]')
+    }).then((el) => {
+      el[0].files = dataTransfer.files
+    }).then(() => {
+      cy.get('[data-cy="deck-update-in-progress-modal"]').contains('Deck Update in Progress:')
+      cy.get('[data-cy="deck-update-in-progress-modal"]').should('not.be.visible')
+
+      cy.get('[data-cy="deck-name-input"]').should('have.value', 'Rares!')
+      cy.get('[data-cy="deck-description-input"]').should('have.value', 'Some rares I got.')
+      cy.get('[data-cy="format-select"]').should('have.value', 'limited')
+      cy.get('[data-cy="mainDeck-list"] .card-input input').eq(0)
+        .should('have.value', '1 Aryel, Knight of Windgrace')
     })
   })
 
@@ -50,11 +79,10 @@ describe('Import Deck', function () {
       return cy.get('[data-cy="import-input"]')
     }).then((el) => {
       el[0].files = dataTransfer.files
-      el[0].dispatchEvent(new Event('change', {bubbles: true}))
     }).then(() => {
       cy.get('[data-cy="deck-name-input"]').should('have.value', '')
       cy.get('[data-cy="deck-description-input"]').should('have.value', '')
-      cy.get('[data-cy="format-select"]').should('have.value', null)
+      cy.get('[data-cy="format-select"]').should('have.value', 'commander')
       cy.get('[data-cy="mainDeck-list"] .card-input input').eq(0)
         .should('have.value', '1 Acidic Slime')
 
