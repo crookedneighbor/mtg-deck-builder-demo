@@ -1,4 +1,4 @@
-# unreleased
+# 0.7.1
 ## Fixes
 * Re-lookup import deck cards when VERSION is out of date
 * Save deck automatically after import
