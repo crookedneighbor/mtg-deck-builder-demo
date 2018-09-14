@@ -2,6 +2,7 @@
 ## Features
 * Display number of search results
 * Automatically restrict search by commander's color identity (if applicable)
+* Automatically restrict search by deck's format (if applicable)
 
 ## Fixes
 * Fix issue where search would stall out when no search terms were provided

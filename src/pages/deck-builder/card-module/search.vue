@@ -76,6 +76,10 @@ export default {
         search += ` ids:${this.deck.colorIdentity.join('')}`
       }
 
+      if (this.shouldRestrictByFormat) {
+        search += ` format:${this.deck.format}`
+      }
+
       searchForCards(search).then((res) => {
         return this.addToSearchResults(res)
       }).catch((err) => {
@@ -157,6 +161,15 @@ export default {
         }
 
         return !this.searchHasTerm('id(s|entity)?(=|:|>=|<=|!=|>|<)')
+      },
+      shouldRestrictByFormat () {
+        let deckHasRestrictiveFormat = this.deck.format && this.deck.format !== 'limited'
+
+        if (!deckHasRestrictiveFormat) {
+          return false
+        }
+
+        return !this.searchHasTerm('f(ormat)?(:|=)')
       }
     }
   )
