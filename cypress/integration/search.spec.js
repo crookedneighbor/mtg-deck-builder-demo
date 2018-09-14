@@ -1,4 +1,15 @@
 describe('Search', function () {
+  function expectFetchQuery (query) {
+    cy.get('[data-cy="search-input"]').type('{enter}')
+    cy.get('[data-cy="search-results"] .search-result .add-card-to-deck').should('exist')
+
+    cy.window().its('fetch').should('be.calledWith', query)
+
+    cy.window().then((win) => {
+      win.fetch.reset()
+    })
+  }
+
   beforeEach(function () {
     cy.start()
   })
@@ -119,5 +130,63 @@ describe('Search', function () {
       .type('Experiment{enter}')
 
     cy.get('[data-cy="search-error"]').should('not.be.visible')
+  })
+
+  it('restricts search to commander\'s color identity', function () {
+    cy.get('[data-cy="search-input"]').type('t:creature o:"+1/+1 counter"')
+
+    // does not adhere to commander color if no format
+    expectFetchQuery('https://api.scryfall.com/cards/search?q=t%3Acreature%20o%3A%22%2B1%2F%2B1%20counter%22')
+
+    cy.get('[data-cy="format-select"]').select('frontier')
+    // does not adhere to commander color if format is not commander or brawl
+    expectFetchQuery('https://api.scryfall.com/cards/search?q=t%3Acreature%20o%3A%22%2B1%2F%2B1%20counter%22%20format%3Afrontier')
+
+    cy.get('[data-cy="format-select"]').select('commander')
+
+    // does not adhere to commander color if no commander in command zone
+    expectFetchQuery('https://api.scryfall.com/cards/search?q=t%3Acreature%20o%3A%22%2B1%2F%2B1%20counter%22%20format%3Acommander')
+
+    cy.get('[data-cy="commandZone-selection"]').click()
+    cy.get('[data-cy="new-card-input"]')
+      .type('Reyhan, last of{enter}')
+    cy.get('[data-cy="commandZone-list"] .card-input input').eq(0)
+      .should('have.value', '1 Reyhan, Last of the Abzan')
+
+    // does adhere to commander color if commander in command zone
+    expectFetchQuery('https://api.scryfall.com/cards/search?q=t%3Acreature%20o%3A%22%2B1%2F%2B1%20counter%22%20ids%3ABG%20format%3Acommander')
+
+    cy.get('[data-cy="commandZone-selection"]').click()
+    cy.get('[data-cy="new-card-input"]')
+      .type('Ravo, Sou Tend{enter}')
+
+    cy.get('[data-cy="commandZone-list"] .card-input input').eq(1)
+      .should('have.value', '1 Ravos, Soultender')
+
+    // does adhere to commander color if multiple commanders in command zone
+    expectFetchQuery('https://api.scryfall.com/cards/search?q=t%3Acreature%20o%3A%22%2B1%2F%2B1%20counter%22%20ids%3AWBG%20format%3Acommander')
+
+    // adheres for brawl
+    cy.get('[data-cy="format-select"]').select('brawl')
+
+    cy.get('[data-cy="search-input"]').type('{enter}')
+
+    expectFetchQuery('https://api.scryfall.com/cards/search?q=t%3Acreature%20o%3A%22%2B1%2F%2B1%20counter%22%20ids%3AWBG%20format%3Abrawl')
+  })
+
+  it('restricts search to format', function () {
+    cy.get('[data-cy="search-input"]').type('t:creature o:"+1/+1 counter"')
+
+    // does not specify format if no format selected
+    expectFetchQuery('https://api.scryfall.com/cards/search?q=t%3Acreature%20o%3A%22%2B1%2F%2B1%20counter%22')
+
+    cy.get('[data-cy="format-select"]').select('limited')
+    // does not specify format if limited is selected format
+    expectFetchQuery('https://api.scryfall.com/cards/search?q=t%3Acreature%20o%3A%22%2B1%2F%2B1%20counter%22')
+
+    cy.get('[data-cy="format-select"]').select('pauper')
+
+    // does specify format
+    expectFetchQuery('https://api.scryfall.com/cards/search?q=t%3Acreature%20o%3A%22%2B1%2F%2B1%20counter%22%20format%3Apauper')
   })
 })
