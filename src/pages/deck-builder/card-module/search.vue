@@ -71,7 +71,12 @@ export default {
       }
 
       this.searchLoading = true
-      searchForCards(this.search).then((res) => {
+
+      if (this.shouldRestrictToColorIdentity) {
+        search += ` ids:${this.deck.colorIdentity.join('')}`
+      }
+
+      searchForCards(search).then((res) => {
         return this.addToSearchResults(res)
       }).catch((err) => {
         this.searchError = err.message
@@ -123,6 +128,9 @@ export default {
       let hasMoreResults = this.rawResponseFromScryfall && this.rawResponseFromScryfall.has_more
 
       return !this.searchLoading && hasMoreResults && isAtEndOfCurrentResults
+    },
+    searchHasTerm (term) {
+      return this.search.match(new RegExp(term))
     }
   },
   created () {
@@ -139,7 +147,18 @@ export default {
       'activeDeckTags',
       'deckView',
       'deck'
-    ])
+    ]),
+    {
+      shouldRestrictToColorIdentity () {
+        let deckHasRestrictiveColorIdentity = this.deck.hasCommandZone() && this.deck.colorIdentity.length > 0
+
+        if (!deckHasRestrictiveColorIdentity) {
+          return false
+        }
+
+        return !this.searchHasTerm('id(s|entity)?(=|:|>=|<=|!=|>|<)')
+      }
+    }
   )
 }
 </script>
