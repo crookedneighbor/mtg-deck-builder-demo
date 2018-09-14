@@ -1,4 +1,4 @@
-const VERSION = require('../../src/lib/constants').VERSION
+const VERSION = require('../../client/lib/constants').VERSION
 
 // preloads site with deck, defaults to an empty deck
 Cypress.Commands.add('start', (deckName = 'empty-deck') => {

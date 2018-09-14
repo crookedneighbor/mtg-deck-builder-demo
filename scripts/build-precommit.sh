@@ -1,4 +1,4 @@
-diff=$(git diff src/ package.json)
+diff=$(git diff client/ package.json)
 size=${#diff}
 
 if [ $size = 0 ]; then
