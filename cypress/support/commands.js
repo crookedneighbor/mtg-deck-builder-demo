@@ -10,6 +10,7 @@ Cypress.Commands.add('start', (deckName = 'empty-deck') => {
     cy.visit('http://localhost:8080', {
       onBeforeLoad (win) {
         win.localStorage.setItem('deck', deckAsString)
+        cy.spy(win, 'fetch')
       }
     })
   })

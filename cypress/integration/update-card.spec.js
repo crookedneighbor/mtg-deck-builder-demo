@@ -33,9 +33,31 @@ describe('Update Card', function () {
     cy.get('.card-input:first input').should('have.value', '25 Academy Ruins')
   })
 
-  // Need to figure out how best to assert that a request was made
-  // when the underlying request is using fetch, which Cypress
-  // does not yet support
-  // https://github.com/cypress-io/cypress/issues/95
-  it('updates a card without making unnecessary network requests')
+  it('updates card quantity without making unnecessary network requests', function () {
+    cy.get('.card-input:first input').should('have.value', '1 Alchemist\'s Refuge')
+
+    // update quantity
+    cy.get('.card-input:first input').type('{selectall}{leftarrow}{del}25').blur()
+    cy.get('.card-input:first input').should('have.value', '25 Alchemist\'s Refuge')
+
+    cy.wait(100)
+
+    cy.window().its('fetch').should('not.be.called')
+  })
+
+  it('updates card tags without making unnecessary network requests if name does not change', function () {
+    cy.get('.card-input:first input').should('have.value', '1 Alchemist\'s Refuge')
+
+    // update quantity
+    cy.get('.card-input:first input').type('{backspace}e{selectall}{rightarrow}{backspace}{backspace}{backspace}{backspace}mana_source').blur()
+    cy.get('.card-input:first input').should('have.value', '1 Alchemist\'s Refuge')
+
+    cy.wait(100)
+
+    cy.get('.card-input:first .tags .tag').should('have.length', 2)
+    cy.get('.card-input:first .tags .tag').eq(0).contains('Flash')
+    cy.get('.card-input:first .tags .tag').eq(1).contains('Mana Source')
+
+    cy.window().its('fetch').should('not.be.called')
+  })
 })
