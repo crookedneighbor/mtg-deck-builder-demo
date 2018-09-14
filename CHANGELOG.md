@@ -1,4 +1,4 @@
-# unreleased
+# 0.8.0
 ## Features
 * Display number of search results
 * Automatically restrict search by commander's color identity (if applicable)
