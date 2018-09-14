@@ -55,15 +55,17 @@ export default {
   },
   methods: {
     searchForCards () {
-      this.searchLoading = true
+      let search = this.search
+
       this.clearSearchError()
       this.searchResults = []
       this.rawResponseFromScryfall = null
 
-      if (!this.search) {
+      if (!search) {
         return
       }
 
+      this.searchLoading = true
       searchForCards(this.search).then((res) => {
         return this.addToSearchResults(res)
       }).catch((err) => {

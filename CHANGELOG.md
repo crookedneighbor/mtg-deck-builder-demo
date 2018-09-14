@@ -1,3 +1,7 @@
+# unreleased
+## Fixes
+* Fix issue where search would stall out when no search terms were provided
+
 # 0.7.1
 ## Fixes
 * Re-lookup import deck cards when VERSION is out of date
