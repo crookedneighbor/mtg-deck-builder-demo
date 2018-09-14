@@ -47,11 +47,12 @@ class Deck {
     this.name = config.name
     this.description = config.description
     this.format = config.format
-    this.colorIdentity = config.colorIdentity
 
     this.mainDeck = config.mainDeck
     this.sideboard = config.sideboard
     this.commandZone = config.commandZone
+
+    this.updateColorIdentity()
 
     updateDeckFromLegacyFormat(this)
 
@@ -156,13 +157,9 @@ class Deck {
       })
     }
 
-    this.colorIdentity = ['W', 'U', 'B', 'R', 'G'].reduce((str, color) => {
-      if (colors.has(color)) {
-        str += `{${color}}`
-      }
-
-      return str
-    }, '')
+    this.colorIdentity = ['W', 'U', 'B', 'R', 'G'].filter((color) => {
+      return colors.has(color)
+    })
   }
 
   addCard (listType, card) {

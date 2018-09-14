@@ -64,11 +64,22 @@ export default {
     constructComputedMethodsForDeck([
       'name',
       'description',
-      'format',
-      'colorIdentity'
+      'format'
     ]),
     mapGetters(['hasCommandZone']),
-    mapState(['deck', 'deckView'])
+    mapState(['deck', 'deckView']),
+    {
+      colorIdentity () {
+        if (!this.deck.colorIdentity) {
+          return ''
+        }
+        return this.deck.colorIdentity.reduce((str, color) => {
+          str += `{${color}}`
+
+          return str
+        }, '')
+      }
+    }
   ),
   methods: Object.assign(
     mapActions(['deleteDeck']),
