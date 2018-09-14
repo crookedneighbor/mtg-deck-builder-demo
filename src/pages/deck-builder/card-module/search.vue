@@ -4,7 +4,7 @@
       <input data-cy="search-input" id="search-input" class="input" v-model="search" placeholder="Card Name or Scryfall search" @keydown.enter="searchForCards" :disabled="searchLoading"/>
     </div>
 
-    <p class="content has-text-right is-size-7">
+    <p class="has-text-right is-size-7">
       See <a class="link" href="https://scryfall.com/docs/reference" target="_blank">Scryfall Syntax Guide</a> for help with search syntax.
     </p>
 
@@ -33,6 +33,9 @@
         </span>
       </div>
     </div>
+
+    <p id="search-result-numbers" class="has-text-right is-size-7" v-if="totalSearchResults > 0">{{searchResults.length}} / {{totalSearchResults}} results</p>
+
   </div>
 </template>
 
@@ -50,7 +53,8 @@ export default {
       search: '',
       searchLoading: false,
       searchError: '',
-      searchResults: []
+      searchResults: [],
+      totalSearchResults: 0
     }
   },
   methods: {
@@ -59,6 +63,7 @@ export default {
 
       this.clearSearchError()
       this.searchResults = []
+      this.totalSearchResults = 0
       this.rawResponseFromScryfall = null
 
       if (!search) {
@@ -102,6 +107,7 @@ export default {
     },
     addToSearchResults (res) {
       this.rawResponseFromScryfall = res
+      this.totalSearchResults = res.total_cards
 
       return Promise.all(res.map(card => formatCard(card))).then((cards) => {
         this.searchResults.push.apply(this.searchResults, cards)
@@ -162,5 +168,9 @@ export default {
 #search #search-results {
   height: 500px;
   overflow: scroll;
+}
+
+#search-result-numbers {
+  margin-bottom: -15px;
 }
 </style>

@@ -1,4 +1,7 @@
 # unreleased
+## Features
+* Display number of search results
+
 ## Fixes
 * Fix issue where search would stall out when no search terms were provided
 
