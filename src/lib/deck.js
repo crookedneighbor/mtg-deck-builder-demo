@@ -191,7 +191,16 @@ class Deck {
 
   saveDeck () {
     this.updateColorIdentity()
-    savedDeckManager.save(this)
+
+    savedDeckManager.save({
+      __VERSION: this.__VERSION,
+      name: this.name,
+      description: this.description,
+      format: this.format,
+      mainDeck: this.mainDeck,
+      sideboard: this.sideboard,
+      commandZone: this.commandZone
+    })
   }
 
   deleteDeck () {
