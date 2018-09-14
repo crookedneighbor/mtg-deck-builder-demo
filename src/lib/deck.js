@@ -108,8 +108,13 @@ class Deck {
 
   updateDeck (updates) {
     Object.keys(updates).forEach((key) => {
+      if (key === 'colorIdentity') {
+        return
+      }
       Vue.set(this, key, updates[key])
     })
+
+    this.updateColorIdentity()
   }
 
   hasCommandZone () {
@@ -195,10 +200,10 @@ class Deck {
       name: '',
       description: '',
       format: '',
-      colorIdentity: '',
       updateInProgress: false
     })
     DECK_LIST_TYPES.forEach(type => this.removeAllCardsFromList(type))
+    this.updateColorIdentity()
   }
 
   lookupCard (listType, card) {
