@@ -5,5 +5,8 @@
   "globals": {
     "expect": false,
     "expectToReject": false
+  },
+  "rules": {
+    "no-unused-expressions": 0
   }
 }

@@ -27,7 +27,20 @@ describe('mongoDriver', function () {
 
       return this.driver.connect().then(() => {
         expect(MongoClient.connect).to.be.calledOnce
-        expect(MongoClient.connect).to.be.calledWith('mongodb://mongo:27017/mtg-deck')
+        expect(MongoClient.connect).to.be.calledWith('mongodb://mongo:27017/mtg-deck-test')
+      })
+    })
+
+    it('skips connection if db property already exists', function () {
+      this.sandbox.stub(MongoClient, 'connect').resolves({
+        db: this.sandbox.stub()
+      })
+
+      this.driver.db = {}
+
+      return this.driver.connect().then((result) => {
+        expect(MongoClient.connect).to.not.be.called
+        expect(result).to.equal(this.driver.db)
       })
     })
 
@@ -41,7 +54,7 @@ describe('mongoDriver', function () {
 
       return this.driver.connect().then(() => {
         expect(client.db).to.be.calledOnce
-        expect(client.db).to.be.calledWith('mtg-deck')
+        expect(client.db).to.be.calledWith('mtg-deck-test')
         expect(this.driver.db).to.equal('foo')
       })
     })

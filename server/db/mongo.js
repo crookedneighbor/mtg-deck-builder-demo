@@ -1,11 +1,17 @@
 'use strict'
 
 const MongoClient = require('mongodb').MongoClient
+const mongoUrl = process.env.MONGO_URL || 'mongodb://mongo:27017/mtg-deck'
+const mongoDatabase = process.env.MONGO_DATABASE || 'mtg-deck'
 
 module.exports = class MongoDriver {
   connect () {
-    return MongoClient.connect('mongodb://mongo:27017/mtg-deck').then((client) => {
-      this.db = client.db('mtg-deck')
+    if (this.db) {
+      return Promise.resolve(this.db)
+    }
+
+    return MongoClient.connect(mongoUrl).then((client) => {
+      this.db = client.db(mongoDatabase)
 
       return this
     })

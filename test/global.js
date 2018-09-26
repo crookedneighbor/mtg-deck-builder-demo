@@ -1,3 +1,6 @@
+process.env.MONGO_URL = 'mongodb://mongo:27017/mtg-deck-test'
+process.env.MONGO_DATABASE = 'mtg-deck-test'
+
 const sinon = require('sinon')
 const sinonChai = require('sinon-chai')
 const chai = require('chai')
