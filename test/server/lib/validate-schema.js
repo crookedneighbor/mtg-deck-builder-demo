@@ -184,6 +184,6 @@ describe('validate', function () {
 
     let errors = validate(object, this.schema)
 
-     expect(errors.length).to.equal(5)
+    expect(errors.length).to.equal(5)
   })
 })
