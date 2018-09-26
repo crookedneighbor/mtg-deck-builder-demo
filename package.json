@@ -13,9 +13,10 @@
     "build:watch": "watchify -vd -p browserify-hmr -e client/main.js -o dist/build.js",
     "dev": "npm-run-all --parallel build:watch start:dev",
     "cypress:open": "cypress open",
-    "lint": "eslint --ext .js,.vue client server cypress",
+    "lint": "eslint --ext .js,.vue client server cypress test",
     "pretest": "npm run lint",
     "test": "npm run test:integration",
+    "test:server": "mocha test/global.js test/server/**/*.js",
     "test:integration": "cypress run"
   },
   "keywords": [
@@ -26,7 +27,8 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "jsonschema": "^1.2.4"
   },
   "devDependencies": {
     "autosize": "^4.0.2",
