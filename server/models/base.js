@@ -2,6 +2,7 @@
 
 const validateSchema = require('../lib/validate-schema')
 const db = require('../db')()
+const store = Symbol('store')
 
 const REQUIRED_STATIC_PROPERTIES = [
   'schema',
@@ -11,14 +12,6 @@ const REQUIRED_STATIC_PROPERTIES = [
 const REQUIRED_INSTANCE_PROPERTIES = [
   'toJSON'
 ]
-
-function applyValuesInSchema (schema, self, rawObject) {
-  Object.entries(schema.properties).forEach(([key, value]) => {
-    if (rawObject[key] != null) {
-      self[key] = rawObject[key]
-    }
-  })
-}
 
 class BaseModel {
   constructor (rawObject) {
@@ -33,16 +26,53 @@ class BaseModel {
     if (missingInstanceProperty) {
       throw new Error(`${missingInstanceProperty} must be set.`)
     }
+    this[store] = {}
 
-    applyValuesInSchema(this.constructor.schema, this, rawObject)
+    this.applyValuesInSchema(rawObject)
 
     if (rawObject._id) {
       this._id = rawObject._id
     }
   }
 
+  applyValuesInSchema (rawObject) {
+    Object.entries(this.constructor.schema.properties).forEach(([key, value]) => {
+      this[store][key] = {
+        data: rawObject[key],
+        originalData: rawObject[key],
+        isChanged: () => {
+          return this[store][key].data !== this[store][key].originalData
+        }
+      }
+
+      Object.defineProperty(this, key, {
+        set (value) {
+          this[store][key].data = value
+        },
+        get () {
+          return this[store][key].data
+        }
+      })
+    })
+  }
+
+  serialize () {
+
+    return serializedData
+  }
+
   isNew () {
     return !this._id
+  }
+
+  getChangedData () {
+    return Object.entries(this[store]).reduce((data, [key, value]) => {
+      if (value.isChanged()) {
+        data[key] = value.data
+      }
+
+      return data
+    }, {})
   }
 
   validate () {
@@ -65,10 +95,22 @@ class BaseModel {
     }
 
     if (this._id) {
-      return db.updateById(this.constructor.collectionName, this._id, this)
+      let data = this.getChangedData()
+
+      return db.updateById(this.constructor.collectionName, this._id, data)
     }
 
-    return db.add(this.constructor.collectionName, this)
+    let serializedData = Object.entries(this.constructor.schema.properties).reduce((data, [key, value]) => {
+      data[key] = this[key]
+
+      return data
+    }, {})
+
+    return db.add(this.constructor.collectionName, serializedData).then((result) => {
+      Object.entries(result.ops[0]).forEach(([key, value]) => {
+        this[store][key].data = this[store][key].originalData = value
+      })
+    })
   }
 
   static findOne (query) {

@@ -1,9 +1,8 @@
 const User = require('../../../server/models/user')
 
-describe('User', function () {
+describe.only('User', function () {
   beforeEach(function () {
     this.user = new User({
-      _id: 'user-id',
       account: {
         displayName: 'User Name',
         email: 'user@example.com',
@@ -25,11 +24,24 @@ describe('User', function () {
     })
 
     it('throws a validation error if model does not pass validation', function () {
-      delete this.user.account
+      this.user.account = null
 
       expect(() => {
         this.user.toJSON()
       }).to.throw('User validation failed.')
+    })
+  })
+
+  describe('save', function () {
+    it('creates a new user', function () {
+      expect(this.user._id).to.not.exist
+
+      return this.user.save().then((res) => {
+        return User.findOne({_id: this.user._id})
+      }).then((user) => {
+        expect(user._id).to.deep.equal(this.user._id)
+        expect(user.account).to.deep.equal(this.user.account)
+      })
     })
   })
 })

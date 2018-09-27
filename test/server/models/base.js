@@ -8,6 +8,9 @@ describe('BaseModel', function () {
         id: 'CustomModel',
         type: 'object',
         properties: {
+          _id: {
+            type: 'string'
+          },
           foo: {
             type: 'string'
           },
@@ -175,8 +178,14 @@ describe('BaseModel', function () {
 
   describe('save', function () {
     beforeEach(function () {
-      this.sandbox.stub(db, 'add').resolves()
-      this.sandbox.stub(db, 'updateById').resolves()
+      this.sandbox.stub(db, 'add').resolves({
+        _id: 'unique-id',
+        bar: true
+      })
+      this.sandbox.stub(db, 'updateById').resolves({
+        _id: 'unique-id',
+        bar: false
+      })
     })
 
     it('adds a new entry to database if it is a new data', function () {
@@ -191,15 +200,17 @@ describe('BaseModel', function () {
       })
     })
 
-    it('updates an entry if it is an existing object', function () {
+    it('updates only changed properties from instantiation if it is an existing document', function () {
       let model = new CustomModel({
         _id: 'unique-id',
         bar: true
       })
 
+      model.bar = false
+
       return model.save().then(() => {
         expect(db.updateById).to.be.calledOnce
-        expect(db.updateById).to.be.calledWith('customModels', model._id, model)
+        expect(db.updateById).to.be.calledWith('customModels', model._id, {bar: false})
         expect(db.add).to.not.be.called
       })
     })

@@ -2,6 +2,6 @@ version: "2"
 services:
   app:
     build: .
-    command: npm start
+    command: npm install --production && npm start
     ports:
       - "80:80"

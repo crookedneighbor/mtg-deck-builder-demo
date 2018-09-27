@@ -6,14 +6,26 @@ const mongoDatabase = process.env.MONGO_DATABASE || 'mtg-deck'
 
 module.exports = class MongoDriver {
   connect () {
-    if (this.db) {
+    if (this.isConnected()) {
       return Promise.resolve(this.db)
     }
 
     return MongoClient.connect(mongoUrl).then((client) => {
+      this.client = client
       this.db = client.db(mongoDatabase)
 
       return this
+    })
+  }
+
+  isConnected () {
+    return Boolean(this.client && this.client.isConnected())
+  }
+
+  disconnect () {
+    return this.client.close().then(() => {
+      delete this.client
+      delete this.db
     })
   }
 
@@ -22,6 +34,8 @@ module.exports = class MongoDriver {
 
     if (Array.isArray(docs)) {
       operation += 'Many'
+    } else {
+      operation += 'One'
     }
 
     return this.db.collection(collection)[operation](docs)

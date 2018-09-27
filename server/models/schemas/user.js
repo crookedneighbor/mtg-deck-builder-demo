@@ -7,7 +7,7 @@ module.exports = {
   type: 'object',
   properties: {
     _id: {
-      type: 'string'
+      type: 'object'
     },
     account: {
       type: 'object',
