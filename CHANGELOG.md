@@ -1,3 +1,6 @@
+# 0.8.1
+* Update scryfall-client to v0.8.2
+
 # 0.8.0
 ## Features
 * Display number of search results
